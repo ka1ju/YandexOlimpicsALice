@@ -1,6 +1,30 @@
 {
-  "Add wallet": ["Adding a wallet to the list with current money", ["Add wallet X --> Y, Z", "X - wallet name, Y - money, Z - currency"]],
-  "Remove wallet": ["Removes current wallet", ["Add wallet X", "X - wallet name"]],
-  "Request money": ["Adds money to the current wallet, and adds current operation to the list of operations"],
-  "Spend money": ["Removes money from current wallet, and adds current operation to the list of operations"]
+  "Добавление кошелька":
+  [
+    "Добавляет кошелёк с выбранным названием",
+    [
+      "Добавить кошелёк X --> Y, Z", "X - имя кошелька, Y - количество денег, Z - валюта"
+    ]
+  ],
+  "Удалить кошелёк":
+  [
+    "Удаляет кошелёк ",
+    [
+      "Удалить кошелёк X", "X - имя кошелька"
+    ]
+  ],
+  "Добавить деньги":
+  [
+    "Добавляет деньги на выбраный кошелёк, а также добавляет операцию в таблицу операций",
+    [
+      "Получить X Y на Z, P", "X - количество денег, Y - валюта, Z - имя кошелька, P - операция"
+    ]
+  ],
+  "Потратить деньги":
+  [
+    "Удаляет деньги с выбранного кошелька, а также добавляет операцию в таблицу операций",
+    [
+      "Потратить X Y с  Z, P", "X - количество денег, Y - валюта, Z - имя кошелька, P - операция"
+    ]
+  ]
 }
