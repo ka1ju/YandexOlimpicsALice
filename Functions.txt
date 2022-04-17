@@ -1,4 +1,0 @@
-Add wallet
-Delete wallet
-Spending money
-Receiving money
