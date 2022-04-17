@@ -1,0 +1,6 @@
+{
+  "Add wallet": ["Adding a wallet to the list with current money", ["Add wallet X --> Y, Z", "X - wallet name, Y - money, Z - currency"]],
+  "Remove wallet": ["Removes current wallet", ["Add wallet X", "X - wallet name"]],
+  "Request money": ["Adds money to the current wallet, and adds current operation to the list of operations"],
+  "Spend money": ["Removes money from current wallet, and adds current operation to the list of operations"]
+}
