@@ -1,1 +1,1 @@
-# YandexOlimpicsALice
+# YandexOlympicsAlice
