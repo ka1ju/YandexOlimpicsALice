@@ -34,6 +34,22 @@ def handle_dialog(req, res):
         res['response']['text'] = hello()
         return
 
+    if ('создать' in req['session']['text'] or 'добавить' in req['session']['text']) and \
+            ('кошелёк' in req['session']['text'] or 'счёт' in req['session']['text']):
+        pass
+
+    elif ('удалить' in req['session']['text'] or 'убрать' in req['session']['text']) and \
+            ('кошелёк' in req['session']['text'] or 'счёт' in req['session']['text']):
+        pass
+
+    elif ('пополнить' in req['session']['text'] or 'зачислить' in req['session']['text']) and \
+            ('кошелёк' in req['session']['text'] or 'счёт' in req['session']['text']):
+        pass
+
+    elif ('потратить' in req['session']['text'] or 'зачислить' in req['session']['text']) and \
+            ('кошелёк' in req['session']['text'] or 'счёт' in req['session']['text']):
+        pass
+
     res['response']['text'] = "hmm"
 
 
