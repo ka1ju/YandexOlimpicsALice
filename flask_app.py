@@ -31,24 +31,13 @@ def handle_dialog(req, res):
     a = ''
 
     if req['session']['new']:
-        a = hello(0)
-        pass
-
-    if req['request']['original_utterance'].lower() in [
-        'ладно',
-        'куплю',
-        'покупаю',
-        'хорошо'
-    ]:
-        res['response']['text'] = 'Слона можно найти на Яндекс.Маркете!'
-        res['response']['end_session'] = True
+        res['response']['text'] = hello()
         return
 
-    res['response']['text'] = a
-    return
+    res['response']['text'] = "hmm"
 
 
-def hello(req):
+def hello():
     return "Привет, меня зовут Олег. Я создан для того чтобы вести учёт ваших трат. Вот краткий список моих функций:\n" \
            + out()
 
