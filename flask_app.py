@@ -29,17 +29,11 @@ def main():
 def handle_dialog(req, res):
     user_id = req['session']['user_id']
 
+    a = ''
+
     if req['session']['new']:
-        sessionStorage[user_id] = {
-            'suggests': [
-                "Не хочу.",
-                "Не буду.",
-                "Отстань!",
-            ]
-        }
-        res['response']['text'] = 'Привет! Купи слона!'
-        res['response']['buttons'] = get_suggests(user_id)
-        return
+        a = hello(0)
+        pass
 
     if req['request']['original_utterance'].lower() in [
         'ладно',
@@ -51,9 +45,12 @@ def handle_dialog(req, res):
         res['response']['end_session'] = True
         return
 
-    res['response']['text'] = \
-        f"Все говорят '{req['request']['original_utterance']}', а ты купи слона!"
+    res['response']['text'] = a
     res['response']['buttons'] = get_suggests(user_id)
+
+
+def hello(req):
+    return "Привет я бот Олек)"
 
 
 def get_suggests(user_id):
