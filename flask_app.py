@@ -1,12 +1,11 @@
 from flask import Flask, request
 import logging
 import json
+from funcs import out
 
 app = Flask(__name__)
 
 logging.basicConfig(level=logging.INFO)
-
-sessionStorage = {}
 
 
 @app.route('/', methods=['POST'])
@@ -46,32 +45,12 @@ def handle_dialog(req, res):
         return
 
     res['response']['text'] = a
-    res['response']['buttons'] = get_suggests(user_id)
+    return
 
 
 def hello(req):
-    return "Привет я бот Олек)"
-
-
-def get_suggests(user_id):
-    session = sessionStorage[user_id]
-
-    suggests = [
-        {'title': suggest, 'hide': True}
-        for suggest in session['suggests'][:2]
-    ]
-
-    session['suggests'] = session['suggests'][1:]
-    sessionStorage[user_id] = session
-
-    if len(suggests) < 2:
-        suggests.append({
-            "title": "Ладно",
-            "url": "https://market.yandex.ru/search?text=слон",
-            "hide": True
-        })
-
-    return suggests
+    return "Привет, меня зовут Олег. Я создан для того чтобы вести учёт ваших трат. Вот краткий список моих функций:\n" \
+           + out()
 
 
 if __name__ == '__main__':
