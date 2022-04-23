@@ -72,6 +72,12 @@ def handle_dialog(req, res):
         logging.info("Giving statics about expenses")
         return
 
+    if ('выв' in user_message or 'дай' in user_message or 'ска' in user_message) and \
+            ('кошел' in user_message or 'счёт' in user_message):
+        res['response']['text'] = "Вывел кошельки"
+        logging.info("Giving all wallets")
+        return
+
     res['response']['text'] = "Извините, я Вас не понял."
 
 
