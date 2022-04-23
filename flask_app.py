@@ -32,21 +32,25 @@ def handle_dialog(req, res):
 
     if ('созд' in req['session']['text'] or 'доб' in req['session']['text']) and \
             ('кошел' in req['session']['text'] or 'счёт' in req['session']['text']):
+        res['response']['text'] = "Хорошо, создадим кошелёк"
         return
 
     if ('удал' in req['session']['text'] or 'убр' in req['session']['text']) and \
             ('кошел' in req['session']['text'] or 'счёт' in req['session']['text']):
+        res['response']['text'] = "Подтвердите удаление кошелька"
         return
 
     if ('пополн' in req['session']['text'] or 'зачисл' in req['session']['text']) and \
             ('кошел' in req['session']['text'] or 'счёт' in req['session']['text']):
+        res['response']['text'] = "Пополнил кошелёк"
         return
 
     if ('трат' in req['session']['text'] or 'снять' in req['session']['text']) and \
             ('кошел' in req['session']['text'] or 'счёт' in req['session']['text']):
+        res['response']['text'] = "Снял с кошелька"
         return
 
-    res['response']['text'] = "hmm"
+    res['response']['text'] = "Извините, я Вас не понял."
 
 
 def hello():
