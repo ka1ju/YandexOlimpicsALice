@@ -50,6 +50,9 @@ def handle_dialog(req, res):
         res['response']['text'] = "Снял с кошелька"
         return
 
+    if True:
+        pass
+
     res['response']['text'] = "Извините, я Вас не понял."
 
 
