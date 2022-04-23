@@ -26,29 +26,25 @@ def main():
 
 
 def handle_dialog(req, res):
-    user_id = req['session']['user_id']
-
-    a = ''
-
     if req['session']['new']:
         res['response']['text'] = hello()
         return
 
-    if ('создать' in req['session']['text'] or 'добавить' in req['session']['text']) and \
-            ('кошелёк' in req['session']['text'] or 'счёт' in req['session']['text']):
-        pass
+    if ('созд' in req['session']['text'] or 'доб' in req['session']['text']) and \
+            ('кошел' in req['session']['text'] or 'счёт' in req['session']['text']):
+        return
 
-    elif ('удалить' in req['session']['text'] or 'убрать' in req['session']['text']) and \
-            ('кошелёк' in req['session']['text'] or 'счёт' in req['session']['text']):
-        pass
+    if ('удал' in req['session']['text'] or 'убр' in req['session']['text']) and \
+            ('кошел' in req['session']['text'] or 'счёт' in req['session']['text']):
+        return
 
-    elif ('пополнить' in req['session']['text'] or 'зачислить' in req['session']['text']) and \
-            ('кошелёк' in req['session']['text'] or 'счёт' in req['session']['text']):
-        pass
+    if ('пополн' in req['session']['text'] or 'зачисл' in req['session']['text']) and \
+            ('кошел' in req['session']['text'] or 'счёт' in req['session']['text']):
+        return
 
-    elif ('потратить' in req['session']['text'] or 'зачислить' in req['session']['text']) and \
-            ('кошелёк' in req['session']['text'] or 'счёт' in req['session']['text']):
-        pass
+    if ('трат' in req['session']['text'] or 'снять' in req['session']['text']) and \
+            ('кошел' in req['session']['text'] or 'счёт' in req['session']['text']):
+        return
 
     res['response']['text'] = "hmm"
 
