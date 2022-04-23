@@ -2,6 +2,7 @@ from flask import Flask, request
 import logging
 import json
 from funcs import out
+from oleg import *
 
 app = Flask(__name__)
 
@@ -54,11 +55,6 @@ def handle_dialog(req, res):
         pass
 
     res['response']['text'] = "Извините, я Вас не понял."
-
-
-def hello():
-    return "Привет, меня зовут Олег. Я создан для того чтобы вести учёт ваших трат. Вот краткий список моих функций:\n" \
-           + out()
 
 
 if __name__ == '__main__':
