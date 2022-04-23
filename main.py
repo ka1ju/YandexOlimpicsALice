@@ -52,8 +52,16 @@ def handle_dialog(req, res):
         res['response']['text'] = "Снял с кошелька"
         return
 
-    if True:
-        pass
+    if ('выв' in req['request']['command'] or 'дай' in req['request']['command']) and \
+            'инф' in req['request']['command'] and \
+            ('кошел' in req['request']['command'] or 'счёт' in req['request']['command']):
+        res['response']['text'] = "Вывел информацию о счёте"
+        return
+
+    if ('выв' in req['request']['command'] or 'дай' in req['request']['command']) and \
+            'стат' in req['request']['command']:
+        res['response']['text'] = "Вывел информацию о счёте"
+        return
 
     res['response']['text'] = "Извините, я Вас не понял."
 
