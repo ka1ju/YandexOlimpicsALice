@@ -28,38 +28,40 @@ def main():
 
 def handle_dialog(req, res):
     user_id = req['session']['user_id']
+    user_message = req['request']['command'].lower()
+
     if req['session']['new']:
         res['response']['text'] = authorization(user_id)
         return
 
-    if ('созд' in req['request']['command'] or 'доб' in req['request']['command']) and \
-            ('кошел' in req['request']['command'] or 'счёт' in req['request']['command']):
+    if ('созд' in user_message or 'доб' in user_message) and \
+            ('кошел' in user_message or 'счёт' in user_message):
         res['response']['text'] = "Хорошо, создадим кошелёк"
         return
 
-    if ('удал' in req['request']['command'] or 'убр' in req['request']['command']) and \
-            ('кошел' in req['request']['command'] or 'счёт' in req['request']['command']):
+    if ('удал' in user_message or 'убр' in user_message) and \
+            ('кошел' in user_message or 'счёт' in user_message):
         res['response']['text'] = "Подтвердите удаление кошелька"
         return
 
-    if ('пополн' in req['request']['command'] or 'зачисл' in req['request']['command']) and \
-            ('кошел' in req['request']['command'] or 'счёт' in req['request']['command']):
+    if ('пополн' in user_message or 'зачисл' in user_message) and \
+            ('кошел' in user_message or 'счёт' in user_message):
         res['response']['text'] = "Пополнил кошелёк"
         return
 
-    if ('трат' in req['request']['command'] or 'сн' in req['request']['command']) and \
-            ('кошел' in req['request']['command'] or 'счёт' in req['request']['command']):
+    if ('трат' in user_message or 'сн' in user_message) and \
+            ('кошел' in user_message or 'счёт' in user_message):
         res['response']['text'] = "Снял с кошелька"
         return
 
-    if ('выв' in req['request']['command'] or 'дай' in req['request']['command']) and \
-            'инф' in req['request']['command'] and \
-            ('кошел' in req['request']['command'] or 'счёт' in req['request']['command']):
+    if ('выв' in user_message or 'дай' in user_message) and \
+            'инф' in user_message and \
+            ('кошел' in user_message or 'счёт' in user_message):
         res['response']['text'] = "Вывел информацию о счёте"
         return
 
-    if ('выв' in req['request']['command'] or 'дай' in req['request']['command']) and \
-            'стат' in req['request']['command']:
+    if ('выв' in user_message or 'дай' in user_message) and \
+            'стат' in user_message:
         res['response']['text'] = "Вывел информацию о счёте"
         return
 
