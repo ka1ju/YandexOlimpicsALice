@@ -26,4 +26,4 @@ def wasting(s, user_name):
     change_db("accounts", "Accounts", {"bank": summ}, {"account": N, "user_id": user_id})
     change_db("waste", "Waste", {"count": newcount}, {"account_id": id, "category": t})
 # N - название счёта, x - сумма, t - категория
-# это пока без распознавания. но я уже прописал, что программа делает, после распознавания
+# частично сделал распознавание
