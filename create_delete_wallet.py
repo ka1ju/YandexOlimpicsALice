@@ -86,7 +86,7 @@ def delete_wallet(req):
             yes.append(i)
     if len(no) > 0:
         if len(no) > 1:
-            print(f"""Счетов "{'", "'.join(no)}" не существет""")
+            print(f"""Счетов "{'", "'.join(no)}" не существует""")
         else:
             print(f'Счёта "{no[0]}" не существует')
     if len(yes) > 0:
