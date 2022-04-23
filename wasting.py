@@ -2,8 +2,7 @@ from db_working import to_db, from_db, change_db, remove_from_db
 
 
 def wasting(s, user_name):
-    list1 = ['развлечения', 'продукты', 'налоги', 'магазины', 'другое']
-    list = {"развлечения": '', 'продукты': '', 'налоги': '', "магазины": ''}
+    list = [('развлечения', []), ('продукты', []), ('налоги', []), ('магазины', []), ('другое', [])]
     user_id1 = [i.id for i in from_db("users", "Users", {"Username": user_name})]
     user_id = user_id1[0]
     N = ''
@@ -13,9 +12,11 @@ def wasting(s, user_name):
     for i in range(0, len(a)):
         if ord('0') <= ord(a[i][0]) <= ord('9'):
             x = a[i]
-    names = [i.account for i in from_db("accounts", "Accounts", {"user_id": user_id })]
+    names = [i.account for i in from_db("accounts", "Accounts", {"user_id": user_id})]
+    for i in range(len(names)):
+        names[i] = names[i][0:-3]
     for i in a:
-        if i in names:
+        if i[0:-3] in names:
             N = i
             break
 
