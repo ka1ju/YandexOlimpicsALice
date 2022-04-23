@@ -32,37 +32,44 @@ def handle_dialog(req, res):
 
     if req['session']['new']:
         res['response']['text'] = authorization(user_id)
+        logging.info("Authorising user")
         return
 
     if ('созд' in user_message or 'доб' in user_message) and \
             ('кошел' in user_message or 'счёт' in user_message):
         res['response']['text'] = "Хорошо, создадим кошелёк"
+        logging.info("Adding wallet")
         return
 
     if ('удал' in user_message or 'убр' in user_message) and \
             ('кошел' in user_message or 'счёт' in user_message):
         res['response']['text'] = "Подтвердите удаление кошелька"
+        logging.info("Deleting wallet")
         return
 
     if ('пополн' in user_message or 'зачисл' in user_message) and \
             ('кошел' in user_message or 'счёт' in user_message):
         res['response']['text'] = "Пополнил кошелёк"
+        logging.info("Adding money")
         return
 
     if ('трат' in user_message or 'сн' in user_message) and \
             ('кошел' in user_message or 'счёт' in user_message):
         res['response']['text'] = "Снял с кошелька"
+        logging.info("Spending money")
         return
 
     if ('выв' in user_message or 'дай' in user_message or 'ска' in user_message) and \
             'инф' in user_message and \
             ('кошел' in user_message or 'счёт' in user_message):
         res['response']['text'] = "Вывел информацию о счёте"
+        logging.info("Giving info about wallet")
         return
 
     if ('выв' in user_message or 'дай' in user_message or 'ска' in user_message) and \
             'стат' in user_message:
         res['response']['text'] = "Вывел статистику"
+        logging.info("Giving statics about expenses")
         return
 
     res['response']['text'] = "Извините, я Вас не понял."
