@@ -62,7 +62,7 @@ def handle_dialog(req, res):
 
     if ('выв' in user_message or 'дай' in user_message) and \
             'стат' in user_message:
-        res['response']['text'] = "Вывел информацию о счёте"
+        res['response']['text'] = "Вывел статистику"
         return
 
     res['response']['text'] = "Извините, я Вас не понял."
