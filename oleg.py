@@ -1,12 +1,13 @@
 from db_working import *
 
 
-def authorization(usr_name):
-    a = from_db('users', 'Users', {'username': usr_name})
+def authorization(user_name):
+    a = from_db('users', 'Users', {'username': user_name})
     if a:
         return 'Приветствую, приятного пользования'
     else:
-        to_db('users', 'Users', ['username', 'password'], [usr_name, '1'])
+        to_db('users', 'Users', ('username', 'password'), (user_name, '1'))
+        print(user_name)
         return 'Привет, меня зовут Олег. Я создан для того чтобы вести учёт ваших трат. ' \
                'Вот краткий список моих функций:\n\
                 Добавление кошелька\n\
