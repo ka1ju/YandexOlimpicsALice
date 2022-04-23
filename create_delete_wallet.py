@@ -69,7 +69,7 @@ def create_wallet(req):
 def delete_wallet(req):
     req = req.lower().split()
     req_lst = ["удали", "счёт", "счета", "кошелёк", "кошельки", "с", "на", "названием", "название", "названиями",
-               "который", "которые", "назваются", "назвается", "привет", "пожалуйста", "пока", "спасибо", "а", "ещё"]
+               "который", "которые", "называются", "называется", "привет", "пожалуйста", "пока", "спасибо", "а", "ещё"]
     lst = []
     for it in req:
         if it not in req_lst:
@@ -78,7 +78,6 @@ def delete_wallet(req):
     no = []
     yes = []
     import pymorphy2
-    morph = pymorphy2.MorphAnalyzer()
     for i in lst:
         if len(from_db("accounts", "Accounts", {"accounts": i})) == 0:
             no.append(i)
