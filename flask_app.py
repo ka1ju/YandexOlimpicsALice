@@ -27,8 +27,9 @@ def main():
 
 
 def handle_dialog(req, res):
+    user_id = req['session']['user_id']
     if req['session']['new']:
-        res['response']['text'] = hello()
+        res['response']['text'] = autorization(user_id)
         return
 
     if ('созд' in req['request']['command'] or 'доб' in req['request']['command']) and \
