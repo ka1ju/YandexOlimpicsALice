@@ -30,23 +30,23 @@ def handle_dialog(req, res):
         res['response']['text'] = hello()
         return
 
-    if ('созд' in req['session']['text'] or 'доб' in req['session']['text']) and \
-            ('кошел' in req['session']['text'] or 'счёт' in req['session']['text']):
+    if ('созд' in req['request']['command'] or 'доб' in req['request']['command']) and \
+            ('кошел' in req['request']['command'] or 'счёт' in req['request']['command']):
         res['response']['text'] = "Хорошо, создадим кошелёк"
         return
 
-    if ('удал' in req['session']['text'] or 'убр' in req['session']['text']) and \
-            ('кошел' in req['session']['text'] or 'счёт' in req['session']['text']):
+    if ('удал' in req['request']['command'] or 'убр' in req['request']['command']) and \
+            ('кошел' in req['request']['command'] or 'счёт' in req['request']['command']):
         res['response']['text'] = "Подтвердите удаление кошелька"
         return
 
-    if ('пополн' in req['session']['text'] or 'зачисл' in req['session']['text']) and \
-            ('кошел' in req['session']['text'] or 'счёт' in req['session']['text']):
+    if ('пополн' in req['request']['command'] or 'зачисл' in req['request']['command']) and \
+            ('кошел' in req['request']['command'] or 'счёт' in req['request']['command']):
         res['response']['text'] = "Пополнил кошелёк"
         return
 
-    if ('трат' in req['session']['text'] or 'снять' in req['session']['text']) and \
-            ('кошел' in req['session']['text'] or 'счёт' in req['session']['text']):
+    if ('трат' in req['request']['command'] or 'сн' in req['request']['command']) and \
+            ('кошел' in req['request']['command'] or 'счёт' in req['request']['command']):
         res['response']['text'] = "Снял с кошелька"
         return
 
