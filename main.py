@@ -3,6 +3,7 @@ import logging
 import json
 from funcs import out
 from oleg import *
+from all_wallets import *
 
 app = Flask(__name__)
 
@@ -76,6 +77,7 @@ def handle_dialog(req, res):
             ('кошел' in user_message or 'счёт' in user_message):
         res['response']['text'] = "Вывел кошельки"
         logging.info("Giving all wallets")
+        print(return_wallets())
         return
 
     res['response']['text'] = "Извините, я Вас не понял."

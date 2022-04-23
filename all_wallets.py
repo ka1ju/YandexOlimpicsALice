@@ -2,4 +2,5 @@ from db_working import *
 
 
 def return_wallets():
-    pass
+    wallets = from_db("accounts", "accounts", )
+    return '\n'.join(wallets)
