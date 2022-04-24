@@ -4,6 +4,7 @@ import json
 from funcs import out
 from oleg import *
 from all_wallets import *
+from create_delete_wallet import *
 
 app = Flask(__name__)
 
@@ -29,7 +30,7 @@ def main():
 
 def handle_dialog(req, res):
     user_id = req['session']['user_id']
-    user_message = req['request']['command'].lower()
+    user_message = req['request']['original_utterance'].lower()
 
     if req['session']['new']:
         res['response']['text'] = authorization(user_id)
@@ -38,13 +39,13 @@ def handle_dialog(req, res):
 
     if ('созд' in user_message or 'доб' in user_message) and \
             ('кошел' in user_message or 'счёт' in user_message):
-        res['response']['text'] = "Хорошо, создадим кошелёк"
+        res['response']['text'] = create_wallet(user_message, user_id)
         logging.info("Adding wallet")
         return
 
     if ('удал' in user_message or 'убр' in user_message) and \
             ('кошел' in user_message or 'счёт' in user_message):
-        res['response']['text'] = "Подтвердите удаление кошелька"
+        res['response']['text'] = delete_wallet(user_message, user_id)
         logging.info("Deleting wallet")
         return
 
@@ -75,9 +76,8 @@ def handle_dialog(req, res):
 
     if ('выв' in user_message or 'дай' in user_message or 'ска' in user_message) and \
             ('кошел' in user_message or 'счёт' in user_message):
-        res['response']['text'] = "Вывел кошельки"
+        res['response']['text'] = "Вот ваши кошельки:\n" + return_wallets(user_id)
         logging.info("Giving all wallets")
-        print(return_wallets())
         return
 
     res['response']['text'] = "Извините, я Вас не понял."

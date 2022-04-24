@@ -1,4 +1,4 @@
-def to_db(db_table_file_name, db_class_name, names, texts, db_name="database.db"):
+def to_db(db_table_file_name, db_class_name, names, texts, user_id=0, db_name="database.db"):
     try:
         Db, db_sess = create_session(db_table_file_name, db_class_name, db_name)[0], \
                       create_session(db_table_file_name, db_class_name, db_name)[1]
@@ -6,8 +6,7 @@ def to_db(db_table_file_name, db_class_name, names, texts, db_name="database.db"
         if type(names) == str:
             print(f"WARNING database logs | для записи был передан элемент, содержащий одну колонну в базе данных")
             exec(f"db_string.{names} = '{texts}'")
-            print(f"database logs | Запись {texts} в таблицу {db_class_name}, "
-                  f"колонна {names}. База данных: {db_table_file_name}")
+            print(f"database logs | Запись {texts} в таблицу {db_class_name}, колонна {names}. База данных: {db_table_file_name}")
             # write to database
             db_sess.add(db_string)
             print("database logs | Элемент добавлен успешно")
@@ -16,15 +15,10 @@ def to_db(db_table_file_name, db_class_name, names, texts, db_name="database.db"
                 col_name = names[i]
                 text = texts[i]
                 if db_class_name == "Accounts":
-                    current_username = "Test2"
-                    current_password = "Testirovka126"
-                    exec(f"""db_string.user_id = '{[i.id for i in from_db("users", "Users", 
-                                                                          {"username": current_username,
-                                                                           "password": current_password})
-                                                    ][0]}'""")
+                    current_username = user_id
+                    exec(f"""db_string.user_id = '{[i.id for i in from_db("users", "Users", {"id": current_username}, "database.db")][0]}'""")
                 exec(f"db_string.{col_name} = '{text}'")
-                print(f'database logs | Запись "{text}" в таблицу "{db_class_name}", '
-                      f'колонна "{col_name}". База данных: "{db_table_file_name}"')
+                print(f'database logs | Запись "{text}" в таблицу "{db_class_name}", колонна "{col_name}". База данных: "{db_table_file_name}"')
                 # write to database
                 db_sess.add(db_string)
                 print("database logs | Элемент добавлен успешно")
@@ -34,8 +28,7 @@ def to_db(db_table_file_name, db_class_name, names, texts, db_name="database.db"
         print(f"ERROR database logs | При создании элемента произошла ошибка\n{e}")
 
 
-# в функцию передаётся имя бд (name.db), имя таблицы, как в файле в папке data (users), имя класса из этого файла
-# (# Users), имя столбца из таблицы (username), текст, который нужно записать ("Hello world!")
+# в функцию передаётся имя бд (name.db), имя таблицы, как в файле в папке data (users), имя класса из этого файла (Users), имя столбца из таблицы (username), текст, который нужно записать ("Hello world!")
 
 
 def from_db(db_table_file_name, db_class_name, filter_d=None, db_name="database.db"):
