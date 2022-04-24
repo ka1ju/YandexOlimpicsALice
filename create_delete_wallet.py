@@ -10,7 +10,7 @@ def create_wallet(req, user_ya_id):
                 "евро": "евро",
                 "доллар": "доллар", "долларов": "доллар", "доллара": "доллар",
                 "тенге": "тенге"}
-    user_id = [i for i in from_db("users", "Users", {"username": user_ya_id})][0]
+    user_id = [i.id for i in from_db("users", "Users", {"username": user_ya_id})][0]
     lst = []
     c = False
     wait = False
@@ -71,7 +71,7 @@ def delete_wallet(req, user_ya_id):
     for it in req:
         if it not in req_lst:
             lst.append(it.strip(","))
-    user_id = [i for i in from_db("users", "Users", {"username": user_ya_id})][0]
+    user_id = [i.id for i in from_db("users", "Users", {"username": user_ya_id})][0]
     lst = " ".join(lst).split(" и ")
     no = []
     yes = []
