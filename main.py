@@ -76,9 +76,8 @@ def handle_dialog(req, res):
 
     if ('выв' in user_message or 'дай' in user_message or 'ска' in user_message) and \
             ('кошел' in user_message or 'счёт' in user_message):
-        res['response']['text'] = "Вывел кошельки"
+        res['response']['text'] = "Вот ваши кошельки:\n" + return_wallets(user_id)
         logging.info("Giving all wallets")
-        print(return_wallets())
         return
 
     res['response']['text'] = "Извините, я Вас не понял."
