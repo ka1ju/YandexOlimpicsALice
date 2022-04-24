@@ -5,6 +5,7 @@ from funcs import out
 from oleg import *
 from all_wallets import *
 from create_delete_wallet import *
+from helper import *
 
 app = Flask(__name__)
 
@@ -30,7 +31,7 @@ def main():
 
 def handle_dialog(req, res):
     user_id = req['session']['user_id']
-    user_message = req['request']['original_utterance'].lower()
+    user_message: object = req['request']['original_utterance'].lower()
 
     if req['session']['new']:
         res['response']['text'] = authorization(user_id)
@@ -78,6 +79,10 @@ def handle_dialog(req, res):
             ('кошел' in user_message or 'счёт' in user_message):
         res['response']['text'] = "Вот ваши кошельки:\n" + return_wallets(user_id)
         logging.info("Giving all wallets")
+        return
+
+    if "помо" in user_message or ("что" in user_message and "ты" in user_message and "умеешь" in user_message):
+        res['response']['text'] = helper()
         return
 
     res['response']['text'] = "Извините, я Вас не понял."
