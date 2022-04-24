@@ -10,7 +10,7 @@ def create_wallet(req, user_ya_id):
                 "евро": "евро",
                 "доллар": "доллар", "долларов": "доллар", "доллара": "доллар",
                 "тенге": "тенге"}
-    user_id = from_db("users", "Users", {"username": user_ya_id})
+    user_id = [i.id for i in from_db("users", "Users", {"username": user_ya_id})][0]
     lst = []
     c = False
     wait = False
@@ -47,6 +47,7 @@ def create_wallet(req, user_ya_id):
         res_d[k.strip()] = (b_k, c_k)
     no = []
     for i in res_d:
+        print(user_id)
         if len(from_db("accounts", "Accounts", {"user_id": int(user_id), "accounts": i})) == 0:
             to_db("accounts", "Accounts", ("accounts", "bank", "currency"), (i, res_d[i][0], res_d[i][-1]), int(user_id))
         else:
@@ -76,7 +77,7 @@ def delete_wallet(req, user_ya_id):
     for it in req:
         if it not in req_lst:
             lst.append(it.strip(","))
-    user_id = from_db("users", "Users", {"username": user_ya_id})
+    user_id = [i.id for i in from_db("users", "Users", {"username": user_ya_id})][0]
     lst = " ".join(lst).split(" и ")
     no = []
     yes = []
@@ -96,10 +97,3 @@ def delete_wallet(req, user_ya_id):
             print(f"""Счета "{'", "'.join(yes)}" были удалены""")
         else:
             print(f'Счёт "{yes[0]}" был удалён')
-
-
-#create_wallet("создай счёт как дела 500 рублей")
-#create_wallet("привет! создай счет база и негры", "Test2")
-# delete_wallet("удали счёт база и негры")
-#create_wallet("Создай счет альфа, пожалуйста", "Test2")
-# print - то, что должна сказать алиса
