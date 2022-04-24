@@ -35,11 +35,14 @@ def wasting(s, user_name):
         summ1 = [j.bank for j in from_db("accounts", "Accounts", {"accounts": N, "user_id": user_id})]
         summ = summ1[0]
         summ -= x
-        newcount1 = [k.count for k in from_db("waste", "Waste", {"account_id": id, "category": t})]
-        newcount = newcount1[0]
-        newcount += x
         change_db("accounts", "Accounts", {"bank": summ}, {"accounts": N, "user_id": user_id})
-        change_db("waste", "Waste", {"count": newcount}, {"account_id": id, "category": t})
+        newcount1 = [k.count for k in from_db("waste", "Waste", {"account_id": id, "category": t})]
+        if len(newcount1) != 0:
+            newcount = newcount1[0]
+            newcount += x
+            change_db("waste", "Waste", {"count": newcount}, {"account_id": id, "category": t})
+        else:
+            to_db("waste", "Waste", {"account_id": id, "category": t, "count": x})
         return 'Успешно'
     else:
         return 'Извините, не совсем Вас поняла'
