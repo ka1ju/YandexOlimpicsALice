@@ -10,7 +10,7 @@ def create_wallet(req, user_ya_id):
                 "евро": "евро",
                 "доллар": "доллар", "долларов": "доллар", "доллара": "доллар",
                 "тенге": "тенге"}
-    user_id = from_db("users", "Users", {"username": user_ya_id})
+    user_id = from_db("users", "Users", {"username": user_ya_id})[0]
     lst = []
     c = False
     wait = False
@@ -48,9 +48,9 @@ def create_wallet(req, user_ya_id):
             no.append(i)
     if len(no) > 0:
         if len(no) > 1:
-            return f"""Счета "{'", "'.join(no)}" уже существуют"""
+            print(f"""Счета "{'", "'.join(no)}" уже существуют""")
         else:
-            return f'Счёт "{no[0]}" уже существует'
+            print(f'Счёт "{no[0]}" уже существует')
     else:
         res_lst = []
         import pymorphy2
@@ -59,9 +59,9 @@ def create_wallet(req, user_ya_id):
             t = morph.parse(res_d[k][1])[0]
             res_lst.append(f'"{k.capitalize()}" с суммой {res_d[k][0]} {t.make_agree_with_number(res_d[k][0]).word}\n')
         if len(res_d.keys()) > 1:
-            return f"Созданы счета:\n{''.join(res_lst)}"
+            print(f"Созданы счета:\n{''.join(res_lst)}")
         else:
-            return f"Создан счёт {''.join(res_lst)}"
+            print(f"Создан счёт {''.join(res_lst)}")
 
 
 def delete_wallet(req, user_ya_id):
@@ -71,7 +71,7 @@ def delete_wallet(req, user_ya_id):
     for it in req:
         if it not in req_lst:
             lst.append(it.strip(","))
-    user_id = from_db("users", "Users", {"username": user_ya_id})
+    user_id = from_db("users", "Users", {"username": user_ya_id})[0]
     lst = " ".join(lst).split(" и ")
     no = []
     yes = []
@@ -83,14 +83,14 @@ def delete_wallet(req, user_ya_id):
             yes.append(i)
     if len(no) > 0:
         if len(no) > 1:
-            return f"""Счетов "{'", "'.join(no)}" не существует"""
+            print(f"""Счетов "{'", "'.join(no)}" не существует""")
         else:
-            return f'Счёта "{no[0]}" не существует'
+            print(f'Счёта "{no[0]}" не существует')
     if len(yes) > 0:
         if len(yes) > 1:
-            return f"""Счета "{'", "'.join(yes)}" были удалены"""
+            print(f"""Счета "{'", "'.join(yes)}" были удалены""")
         else:
-            return f'Счёт "{yes[0]}" был удалён'
+            print(f'Счёт "{yes[0]}" был удалён')
 
 
 #create_wallet("создай счёт как дела 500 рублей")
