@@ -3,14 +3,14 @@ from db_working import to_db, remove_from_db, from_db
 
 def create_wallet(req, user_ya_id):
     req = req.lower().split()
-    req_lst = ["создай", "счёт", "счета", "кошелёк", "кошельки", "с", "на", "названием", "название", "названиями", "который", "которые", "называются", "назвается", "суммой", "начальной", "номинал", "номиналом", "в", "привет", "пожалуйста", "пока", "спасибо", "а", "ещё"]
+    req_lst = ["олег", "создай", "счет", "счета", "кошелек", "кошельки", "с", "на", "названием", "название", "названиями", "который", "которые", "называются", "назвается", "суммой", "начальной", "номинал", "номиналом", "в", "привет", "пожалуйста", "пока", "спасибо", "а", "ещё"]
     cur_lst = ["рубль", "рубля", "рублей", "евро", "доллар", "долларов", "доллара", "тенге"]
     cur_d = {
                 "рубль": "рубль", "рубля": "рубль", "рублей": "рубль",
                 "евро": "евро",
                 "доллар": "доллар", "долларов": "доллар", "доллара": "доллар",
                 "тенге": "тенге"}
-    user_id = [i.id for i in from_db("users", "Users", {"username": user_ya_id})][0]
+    user_id = from_db("users", "Users", {"username": user_ya_id})
     lst = []
     c = False
     wait = False
@@ -27,7 +27,12 @@ def create_wallet(req, user_ya_id):
             lst.append(it)
         if it.strip(",") in cur_lst:
             lst.append(it.strip(","))
+    lst.append("")
     lst = " ".join(lst).split(" и ")
+    if lst[-1] == "":
+        lst.remove(lst[-1])
+    for i in range(len(lst)):
+        lst[i] = lst[i].strip()
     res_d = {}
     for el in lst:
         el = el.split()
@@ -42,15 +47,15 @@ def create_wallet(req, user_ya_id):
         res_d[k.strip()] = (b_k, c_k)
     no = []
     for i in res_d:
-        if len(from_db("accounts", "Accounts", {"accounts": i, "bank": int(res_d[i][0]), "currency": res_d[i][-1]})) == 0:
+        if len(from_db("accounts", "Accounts", {"user_id": int(user_id), "accounts": i})) == 0:
             to_db("accounts", "Accounts", ("accounts", "bank", "currency"), (i, res_d[i][0], res_d[i][-1]), int(user_id))
         else:
             no.append(i)
     if len(no) > 0:
         if len(no) > 1:
-            return f"""Счета "{'", "'.join(no)}" уже существуют"""
+            print(f"""Счета "{'", "'.join(no)}" уже существуют""")
         else:
-            return f'Счёт "{no[0]}" уже существует'
+            print(f'Счёт "{no[0]}" уже существует')
     else:
         res_lst = []
         import pymorphy2
@@ -59,9 +64,9 @@ def create_wallet(req, user_ya_id):
             t = morph.parse(res_d[k][1])[0]
             res_lst.append(f'"{k.capitalize()}" с суммой {res_d[k][0]} {t.make_agree_with_number(res_d[k][0]).word}\n')
         if len(res_d.keys()) > 1:
-            return f"Созданы счета:\n{''.join(res_lst)}"
+            print(f"Созданы счета:\n{''.join(res_lst)}")
         else:
-            return f"Создан счёт {''.join(res_lst)}"
+            print(f"Создан счёт {''.join(res_lst)}")
 
 
 def delete_wallet(req, user_ya_id):
@@ -71,7 +76,7 @@ def delete_wallet(req, user_ya_id):
     for it in req:
         if it not in req_lst:
             lst.append(it.strip(","))
-    user_id = [i.id for i in from_db("users", "Users", {"username": user_ya_id})][0]
+    user_id = from_db("users", "Users", {"username": user_ya_id})
     lst = " ".join(lst).split(" и ")
     no = []
     yes = []
@@ -83,18 +88,18 @@ def delete_wallet(req, user_ya_id):
             yes.append(i)
     if len(no) > 0:
         if len(no) > 1:
-            return f"""Счетов "{'", "'.join(no)}" не существует"""
+            print(f"""Счетов "{'", "'.join(no)}" не существует""")
         else:
-            return f'Счёта "{no[0]}" не существует'
+            print(f'Счёта "{no[0]}" не существует')
     if len(yes) > 0:
         if len(yes) > 1:
-            return f"""Счета "{'", "'.join(yes)}" были удалены"""
+            print(f"""Счета "{'", "'.join(yes)}" были удалены""")
         else:
-            return f'Счёт "{yes[0]}" был удалён'
+            print(f'Счёт "{yes[0]}" был удалён')
 
 
 #create_wallet("создай счёт как дела 500 рублей")
-#create_wallet("привет! создай счёт база на 500 долларов и счёт негры, а ещё как какать 500")
+#create_wallet("привет! создай счет база и негры", "Test2")
 # delete_wallet("удали счёт база и негры")
-
+#create_wallet("Создай счет альфа, пожалуйста", "Test2")
 # print - то, что должна сказать алиса
