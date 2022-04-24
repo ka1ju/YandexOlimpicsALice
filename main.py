@@ -91,4 +91,4 @@ def handle_dialog(req, res):
 if __name__ == '__main__':
     app.run(port=5000)
 
-# "C:\Users\Ярослав\OneDrive\Рабочий стол\ngrok" http 5000
+# C:\Users\Ярослав\One Drive\Рабочий стол ngrok http 5000
