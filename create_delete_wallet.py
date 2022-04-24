@@ -47,16 +47,15 @@ def create_wallet(req, user_ya_id):
         res_d[k.strip()] = (b_k, c_k)
     no = []
     for i in res_d:
-        print(user_id)
         if len(from_db("accounts", "Accounts", {"user_id": int(user_id), "accounts": i})) == 0:
             to_db("accounts", "Accounts", ("accounts", "bank", "currency"), (i, res_d[i][0], res_d[i][-1]), int(user_id))
         else:
             no.append(i)
     if len(no) > 0:
         if len(no) > 1:
-            print(f"""Счета "{'", "'.join(no)}" уже существуют""")
+            return f"""Счета "{'", "'.join(no)}" уже существуют"""
         else:
-            print(f'Счёт "{no[0]}" уже существует')
+            return f'Счёт "{no[0]}" уже существует'
     else:
         res_lst = []
         import pymorphy2
@@ -65,9 +64,9 @@ def create_wallet(req, user_ya_id):
             t = morph.parse(res_d[k][1])[0]
             res_lst.append(f'"{k.capitalize()}" с суммой {res_d[k][0]} {t.make_agree_with_number(res_d[k][0]).word}\n')
         if len(res_d.keys()) > 1:
-            print(f"Созданы счета:\n{''.join(res_lst)}")
+            return f"Созданы счета:\n{''.join(res_lst)}"
         else:
-            print(f"Создан счёт {''.join(res_lst)}")
+            return f"Создан счёт {''.join(res_lst)}"
 
 
 def delete_wallet(req, user_ya_id):
@@ -89,11 +88,11 @@ def delete_wallet(req, user_ya_id):
             yes.append(i)
     if len(no) > 0:
         if len(no) > 1:
-            print(f"""Счетов "{'", "'.join(no)}" не существует""")
+            return f"""Счетов "{'", "'.join(no)}" не существует"""
         else:
-            print(f'Счёта "{no[0]}" не существует')
+            return f'Счёта "{no[0]}" не существует'
     if len(yes) > 0:
         if len(yes) > 1:
-            print(f"""Счета "{'", "'.join(yes)}" были удалены""")
+            return f"""Счета "{'", "'.join(yes)}" были удалены"""
         else:
-            print(f'Счёт "{yes[0]}" был удалён')
+            return f'Счёт "{yes[0]}" был удалён'
