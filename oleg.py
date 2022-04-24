@@ -41,3 +41,5 @@ def statistic(str, usr_name):
     else:
         return 'Уточните, пожалуйста, с какого счета нужно вывести статистику.'
 
+
+#C:\Users\talek\Desktop\ngrok
