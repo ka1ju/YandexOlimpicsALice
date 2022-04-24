@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="создал if для вывода всех кошельков">
+    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="закинул в main обнову со своей ветки">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all_wallets.py" beforeDir="false" afterPath="$PROJECT_DIR$/all_wallets.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Ярик" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -320,6 +321,7 @@
     <MESSAGE value="Добавил ключевое слово" />
     <MESSAGE value="..." />
     <MESSAGE value="создал if для вывода всех кошельков" />
-    <option name="LAST_COMMIT_MESSAGE" value="создал if для вывода всех кошельков" />
+    <MESSAGE value="закинул в main обнову со своей ветки" />
+    <option name="LAST_COMMIT_MESSAGE" value="закинул в main обнову со своей ветки" />
   </component>
 </project>
