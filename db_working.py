@@ -16,8 +16,7 @@ def to_db(db_table_file_name, db_class_name, names, texts, user_id=0, db_name="d
                 text = texts[i]
                 if db_class_name == "Accounts":
                     current_username = user_id
-                    current_password = 1
-                    exec(f"""db_string.user_id = '{[i.id for i in from_db("users", "Users", {"username": current_username, "password": current_password}, "database.db")][0]}'""")
+                    exec(f"""db_string.user_id = '{[i.id for i in from_db("users", "Users", {"id": current_username}, "database.db")][0]}'""")
                 exec(f"db_string.{col_name} = '{text}'")
                 print(f'database logs | Запись "{text}" в таблицу "{db_class_name}", колонна "{col_name}". База данных: "{db_table_file_name}"')
                 # write to database

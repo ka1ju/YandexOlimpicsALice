@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="..." />
+    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="Обновил user_message">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,9 +40,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "exceleditor.install": "true",
     "last_opened_file_path": "C:/Users/Ярослав/Documents/my_projects/YandexOlympicsAlice",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -313,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650804715847</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Обновил user_message">
+      <created>1650805204947</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1650805204947</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -391,6 +401,7 @@
     <MESSAGE value="Обновил функцию Артёма" />
     <MESSAGE value="Добавил pymorphy2 в requirements.txt" />
     <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value="Обновил user_message" />
+    <option name="LAST_COMMIT_MESSAGE" value="Обновил user_message" />
   </component>
 </project>
