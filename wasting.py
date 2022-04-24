@@ -15,8 +15,8 @@ def wasting(s, user_name):
         if ord('0') <= ord(a[i][0]) <= ord('9'):
             x = int(a[i])
     names = [i.accounts for i in from_db("accounts", "Accounts", {"user_id": user_id})]
-    for i in a:
-        if i in names:
+    for i in names:
+        if i in s:
             N = i
             break
     for i in a:
@@ -26,10 +26,7 @@ def wasting(s, user_name):
     for i in range(len(list)):
         if n in list[i][1]:
             t = list[i][0]
-    print(N)
-    print(t)
     id1 = [i.id for i in from_db("accounts", "Accounts", {"accounts": N, "user_id": user_id})]
-    print([i.id for i in from_db("accounts", "Accounts", {"accounts": N, "user_id": user_id})])
     id = id1[0]
     summ1 = [j.bank for j in from_db("accounts", "Accounts", {"accounts": N, "user_id": user_id})]
     summ = summ1[0]
