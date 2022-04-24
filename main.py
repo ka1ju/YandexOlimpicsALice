@@ -4,6 +4,7 @@ import json
 from funcs import out
 from oleg import *
 from all_wallets import *
+from create_delete_wallet import *
 
 app = Flask(__name__)
 
@@ -38,13 +39,13 @@ def handle_dialog(req, res):
 
     if ('созд' in user_message or 'доб' in user_message) and \
             ('кошел' in user_message or 'счёт' in user_message):
-        res['response']['text'] = "Хорошо, создадим кошелёк"
+        res['response']['text'] = create_wallet(user_message, user_id)
         logging.info("Adding wallet")
         return
 
     if ('удал' in user_message or 'убр' in user_message) and \
             ('кошел' in user_message or 'счёт' in user_message):
-        res['response']['text'] = "Подтвердите удаление кошелька"
+        res['response']['text'] = delete_wallet(user_message, user_id)
         logging.info("Deleting wallet")
         return
 
