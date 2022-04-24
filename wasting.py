@@ -43,8 +43,8 @@ def wasting(s, user_name):
             change_db("waste", "Waste", {"count": newcount}, {"account_id": id, "category": t})
         else:
             to_db("waste", "Waste", {"account_id": id, "category": t, "count": x})
-        return 'Успешно'
+        st = 'Успешно списано ' + str(x) + ' рублей с кошелька ' + N + ' за ' + t
+        return st
     else:
         return 'Извините, не совсем Вас поняла'
-# N - название счёта, x - сумма, t - категория
 # частично сделал распознавание
