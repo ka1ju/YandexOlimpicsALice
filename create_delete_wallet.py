@@ -1,5 +1,5 @@
 from db_working import to_db, remove_from_db, from_db
-import w2n
+from word2number import w2n
 import pymorphy2
 morph = pymorphy2.MorphAnalyzer()
 
@@ -33,7 +33,7 @@ def create_wallet(req, user_ya_id):
         if "," in it and c:
             lst.append("и")
             c = False
-        if wait and num.isdigit():
+        if wait and str(num).isdigit():
             wait = False
             lst.append(int(num))
         if it.strip(",") in cur_lst:
