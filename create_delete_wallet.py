@@ -3,7 +3,7 @@ from db_working import to_db, remove_from_db, from_db
 
 def create_wallet(req, user_ya_id):
     req = req.lower().split()
-    req_lst = ["олег", "создай", "счет", "счета", "кошелек", "кошельки", "с", "на", "названием", "название", "названиями", "который", "которые", "называются", "назвается", "суммой", "начальной", "номинал", "номиналом", "в", "привет", "пожалуйста", "пока", "спасибо", "а", "ещё"]
+    req_lst = ["олег", "создай", "счет", "счёт", "счета", "кошелек", "кошелёк", "кошельки", "с", "на", "названием", "название", "названиями", "который", "которые", "называются", "назвается", "суммой", "начальной", "номинал", "номиналом", "в", "привет", "пожалуйста", "пока", "спасибо", "а", "ещё", "еще"]
     cur_lst = ["рубль", "рубля", "рублей", "евро", "доллар", "долларов", "доллара", "тенге"]
     cur_d = {
                 "рубль": "рубль", "рубля": "рубль", "рублей": "рубль",
@@ -15,6 +15,8 @@ def create_wallet(req, user_ya_id):
     c = False
     wait = False
     for it in req:
+        it = it.strip(".")
+        it = it.strip("-")
         if it.strip(",") not in req_lst and it.strip(",").isalpha() and it.strip(",") not in cur_lst:
             lst.append(it.strip(","))
             c = True
@@ -46,32 +48,36 @@ def create_wallet(req, user_ya_id):
                 c_k = cur_d[item]
         res_d[k.strip()] = (b_k, c_k)
     no = []
-    for i in res_d:
-        if len(from_db("accounts", "Accounts", {"user_id": int(user_id), "accounts": i})) == 0:
-            to_db("accounts", "Accounts", ("accounts", "bank", "currency"), (i, res_d[i][0], res_d[i][-1]), int(user_id))
+    if len(lst) != 0:
+        for i in res_d:
+            print(user_id)
+            if len(from_db("accounts", "Accounts", {"user_id": int(user_id), "accounts": i})) == 0:
+                to_db("accounts", "Accounts", ("accounts", "bank", "currency"), (i, res_d[i][0], res_d[i][-1]), int(user_id))
+            else:
+                no.append(i)
+        if len(no) > 0:
+            if len(no) > 1:
+                print(f"""Счета "{'", "'.join(no)}" уже существуют""")
+            else:
+                print(f'Счёт "{no[0]}" уже существует')
         else:
-            no.append(i)
-    if len(no) > 0:
-        if len(no) > 1:
-            return f"""Счета "{'", "'.join(no)}" уже существуют"""
-        else:
-            return f'Счёт "{no[0]}" уже существует'
+            res_lst = []
+            import pymorphy2
+            morph = pymorphy2.MorphAnalyzer()
+            for k in res_d:
+                t = morph.parse(res_d[k][1])[0]
+                res_lst.append(f'"{k.capitalize()}" с суммой {res_d[k][0]} {t.make_agree_with_number(res_d[k][0]).word}\n')
+            if len(res_d.keys()) > 1:
+                print(f"Созданы счета:\n{''.join(res_lst)}")
+            else:
+                print(f"Создан счёт {''.join(res_lst)}")
     else:
-        res_lst = []
-        import pymorphy2
-        morph = pymorphy2.MorphAnalyzer()
-        for k in res_d:
-            t = morph.parse(res_d[k][1])[0]
-            res_lst.append(f'"{k.capitalize()}" с суммой {res_d[k][0]} {t.make_agree_with_number(res_d[k][0]).word}\n')
-        if len(res_d.keys()) > 1:
-            return f"Созданы счета:\n{''.join(res_lst)}"
-        else:
-            return f"Создан счёт {''.join(res_lst)}"
+        return "Не понял вас, повторите"
 
 
 def delete_wallet(req, user_ya_id):
     req = req.lower().split()
-    req_lst = ["удали", "счёт", "счета", "кошелёк", "кошельки", "с", "на", "названием", "название", "названиями", "который", "которые", "называются", "назвается", "привет", "пожалуйста", "пока", "спасибо", "а", "ещё"]
+    req_lst = ["олег", "удали", "счет", "счёт", "счета", "кошелек", "кошелёк", "кошельки", "с", "на", "названием", "название", "названиями", "который", "которые", "называются", "назвается", "привет", "пожалуйста", "пока", "спасибо", "а", "ещё", "еще"]
     lst = []
     for it in req:
         if it not in req_lst:
@@ -80,19 +86,22 @@ def delete_wallet(req, user_ya_id):
     lst = " ".join(lst).split(" и ")
     no = []
     yes = []
-    for i in lst:
-        if len(from_db("accounts", "Accounts", {"accounts": i, "user_id": user_id})) == 0:
-            no.append(i)
-        else:
-            remove_from_db("accounts", "Accounts", {"accounts": i, "user_id": user_id})
-            yes.append(i)
-    if len(no) > 0:
-        if len(no) > 1:
-            return f"""Счетов "{'", "'.join(no)}" не существует"""
-        else:
-            return f'Счёта "{no[0]}" не существует'
-    if len(yes) > 0:
-        if len(yes) > 1:
-            return f"""Счета "{'", "'.join(yes)}" были удалены"""
-        else:
-            return f'Счёт "{yes[0]}" был удалён'
+    if len(lst) != 0:
+        for i in lst:
+            if len(from_db("accounts", "Accounts", {"accounts": i, "user_id": user_id})) == 0:
+                no.append(i)
+            else:
+                remove_from_db("accounts", "Accounts", {"accounts": i, "user_id": user_id})
+                yes.append(i)
+        if len(no) > 0:
+            if len(no) > 1:
+                print(f"""Счетов "{'", "'.join(no)}" не существует""")
+            else:
+                print(f'Счёта "{no[0]}" не существует')
+        if len(yes) > 0:
+            if len(yes) > 1:
+                print(f"""Счета "{'", "'.join(yes)}" были удалены""")
+            else:
+                print(f'Счёт "{yes[0]}" был удалён')
+    else:
+        return "Не понял вас, повторите"
