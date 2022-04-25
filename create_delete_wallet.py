@@ -26,7 +26,7 @@ def create_wallet(req, user_ya_id):
             num = str(w2n.word_to_num(maybe_num))
         except Exception:
             num = it
-        if it.strip(",") not in req_lst and it.strip(",").isalpha() and it.strip(",") not in cur_lst:
+        if not num.isdigit() and it.strip(",") not in req_lst and it.strip(",").isalpha() and it.strip(",") not in cur_lst:
             lst.append(it.strip(","))
             c = True
             wait = True
