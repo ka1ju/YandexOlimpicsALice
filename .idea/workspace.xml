@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="переименовал функцию Феди на top_up_wallet и файл на то же имя. Также почистил его файл." />
+    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="..." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -522,7 +522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650895741074</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="...">
+      <created>1650895769766</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1650895769766</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -591,12 +598,12 @@
     <MESSAGE value="сделал почище код" />
     <MESSAGE value="Создал функцию помощи" />
     <MESSAGE value="Заменил счЁт на счЕт" />
-    <MESSAGE value="..." />
     <MESSAGE value="обновил коммент с командами для cmd" />
     <MESSAGE value="теперь я могу запускать ngrok с консоли" />
     <MESSAGE value="обновил ngrok чтобы он не брал request-ы от кс" />
     <MESSAGE value="взял ветку Феди" />
     <MESSAGE value="переименовал функцию Феди на top_up_wallet и файл на то же имя. Также почистил его файл." />
-    <option name="LAST_COMMIT_MESSAGE" value="переименовал функцию Феди на top_up_wallet и файл на то же имя. Также почистил его файл." />
+    <MESSAGE value="..." />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
 </project>
