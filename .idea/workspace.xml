@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="взял ветку Феди" />
+    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="переименовал функцию Феди на top_up_wallet и файл на то же имя. Также почистил его файл." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -515,7 +515,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650894799178</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="переименовал функцию Феди на top_up_wallet и файл на то же имя. Также почистил его файл.">
+      <created>1650895741074</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1650895741074</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -565,7 +572,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="добавил авто-файл" />
     <MESSAGE value="Почистил Олега от говна + добавил импорт олега" />
     <MESSAGE value="Пофиксили говнайство с flask_app.py" />
     <MESSAGE value="Почистил часть файла Артёмки" />
@@ -590,6 +596,7 @@
     <MESSAGE value="теперь я могу запускать ngrok с консоли" />
     <MESSAGE value="обновил ngrok чтобы он не брал request-ы от кс" />
     <MESSAGE value="взял ветку Феди" />
-    <option name="LAST_COMMIT_MESSAGE" value="взял ветку Феди" />
+    <MESSAGE value="переименовал функцию Феди на top_up_wallet и файл на то же имя. Также почистил его файл." />
+    <option name="LAST_COMMIT_MESSAGE" value="переименовал функцию Феди на top_up_wallet и файл на то же имя. Также почистил его файл." />
   </component>
 </project>
