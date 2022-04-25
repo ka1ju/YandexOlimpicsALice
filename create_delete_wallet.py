@@ -1,5 +1,5 @@
 from db_working import to_db, remove_from_db, from_db
-from word2number import w2n
+import w2n
 import pymorphy2
 morph = pymorphy2.MorphAnalyzer()
 
@@ -23,7 +23,7 @@ def create_wallet(req, user_ya_id):
         parse_it = morph.parse(it)
         maybe_num = parse_it[0].normal_form
         try:
-            num = w2n.word_to_num(maybe_num)
+            num = str(w2n.word_to_num(maybe_num))
         except Exception:
             num = it
         if it.strip(",") not in req_lst and it.strip(",").isalpha() and it.strip(",") not in cur_lst:
@@ -33,9 +33,9 @@ def create_wallet(req, user_ya_id):
         if "," in it and c:
             lst.append("и")
             c = False
-        if wait and str(num).isdigit():
+        if wait and num.isdigit():
             wait = False
-            lst.append(int(num))
+            lst.append(num)
         if it.strip(",") in cur_lst:
             lst.append(it.strip(","))
     lst.append("")
