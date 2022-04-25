@@ -1,5 +1,5 @@
 from db_working import to_db, remove_from_db, from_db
-from word2number import w2n
+import w2n
 import pymorphy2
 morph = pymorphy2.MorphAnalyzer()
 
