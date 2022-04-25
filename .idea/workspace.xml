@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="теперь я могу запускать ngrok с консоли">
+    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="обновил ngrok чтобы он не брал request-ы от кс">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -423,7 +422,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650826833839</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="обновил ngrok чтобы он не брал request-ы от кс">
+      <created>1650891172032</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1650891172032</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -473,7 +479,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="oleg" />
     <MESSAGE value="добавил гея артура" />
     <MESSAGE value="добавил авто-файл" />
     <MESSAGE value="Почистил Олега от говна + добавил импорт олега" />
@@ -498,6 +503,7 @@
     <MESSAGE value="..." />
     <MESSAGE value="обновил коммент с командами для cmd" />
     <MESSAGE value="теперь я могу запускать ngrok с консоли" />
-    <option name="LAST_COMMIT_MESSAGE" value="теперь я могу запускать ngrok с консоли" />
+    <MESSAGE value="обновил ngrok чтобы он не брал request-ы от кс" />
+    <option name="LAST_COMMIT_MESSAGE" value="обновил ngrok чтобы он не брал request-ы от кс" />
   </component>
 </project>
