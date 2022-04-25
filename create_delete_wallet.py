@@ -1,9 +1,12 @@
 from db_working import to_db, remove_from_db, from_db
+from word2number import w2n
+import pymorphy2
+morph = pymorphy2.MorphAnalyzer()
 
 
 def create_wallet(req, user_ya_id):
     req = req.lower().split()
-    req_lst = ["олег", "создай", "счет", "счёт", "счета", "кошелек", "кошелёк", "кошельки", "с", "на", "названием", "название", "названиями", "который", "которые", "называются", "назвается", "суммой", "начальной", "номинал", "номиналом", "в", "привет", "пожалуйста", "пока", "спасибо", "а", "ещё", "еще"]
+    req_lst = ["олег", "создай", "создать", "добавь", "добавить", "можно", "можешь", "счет", "счёт", "счета", "кошелек", "кошелёк", "кошельки", "с", "на", "названием", "название", "названиями", "который", "которые", "называются", "назвается", "суммой", "начальной", "номинал", "номиналом", "в", "привет", "пожалуйста", "пока", "спасибо", "а", "ещё", "еще"]
     cur_lst = ["рубль", "рубля", "рублей", "евро", "доллар", "долларов", "доллара", "тенге"]
     cur_d = {
                 "рубль": "рубль", "рубля": "рубль", "рублей": "рубль",
@@ -17,6 +20,12 @@ def create_wallet(req, user_ya_id):
     for it in req:
         it = it.strip(".")
         it = it.strip("-")
+        parse_it = morph.parse(it)
+        maybe_num = parse_it[0].normal_form
+        try:
+            num = w2n.word_to_num(maybe_num)
+        except Exception:
+            num = it
         if it.strip(",") not in req_lst and it.strip(",").isalpha() and it.strip(",") not in cur_lst:
             lst.append(it.strip(","))
             c = True
@@ -24,9 +33,9 @@ def create_wallet(req, user_ya_id):
         if "," in it and c:
             lst.append("и")
             c = False
-        if wait and it.strip(",").isdigit():
+        if wait and num.isdigit():
             wait = False
-            lst.append(it)
+            lst.append(int(num))
         if it.strip(",") in cur_lst:
             lst.append(it.strip(","))
     lst.append("")
@@ -61,8 +70,6 @@ def create_wallet(req, user_ya_id):
                 return f'Счёт "{no[0]}" уже существует'
         else:
             res_lst = []
-            import pymorphy2
-            morph = pymorphy2.MorphAnalyzer()
             for k in res_d:
                 t = morph.parse(res_d[k][1])[0]
                 res_lst.append(f'"{k.capitalize()}" с суммой {res_d[k][0]} {t.make_agree_with_number(res_d[k][0]).word}\n')
