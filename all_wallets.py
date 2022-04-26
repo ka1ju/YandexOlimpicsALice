@@ -11,7 +11,6 @@ def return_wallets(user_id):
                pymorphy2.MorphAnalyzer().parse(i.currency)[0].make_agree_with_number(i.bank).inflect({'gent'}).word
                + '.' for i in from_db("accounts", "Accounts", {"user_id": u_id})]
     if len(wallets) > 0:
-
         return "Вот ваши кошельки:\n" + '\n'.join(wallets)
     else:
         answers = ["Пока что кошельков нет", "Извините, но я не нашел у вас ни одного кошелька.",
