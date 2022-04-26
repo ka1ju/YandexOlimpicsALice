@@ -20,8 +20,6 @@ def create_wallet(req, user_ya_id):
             parse_it = morph.parse(req[i])
             maybe_num = parse_it[0].normal_form
             req[i] = str(w2n.word_to_num(maybe_num))
-            if req[i] == "на" and req[i + 1].isdigit():
-                req[i] = ""
         except Exception:
             pass
     user_id = [i.id for i in from_db("users", "Users", {"username": user_ya_id})][0]
@@ -43,6 +41,12 @@ def create_wallet(req, user_ya_id):
             lst.append(it)
         if it.strip(",") in cur_lst:
             lst.append(it.strip(","))
+    for i in range(len(lst)):
+        try:
+            if lst[i] == "на" and (lst[i + 1].isdigit() or lst[i + 1] in ["сумму", "сумма"]):
+                lst[i] = ""
+        except Exception:
+            pass
     lst.append("")
     lst = " ".join(lst).split(" и ")
     if lst[-1] == "":
@@ -100,7 +104,7 @@ def create_wallet(req, user_ya_id):
 
 def delete_wallet(req, user_ya_id):
     req = req.lower().split()
-    req_lst = ["олег", "удали", "счет", "счёт", "счета", "кошелек", "кошелёк", "кошельки", "с", "названием", "название", "названиями", "который", "которые", "называются", "называется", "привет", "пожалуйста", "пока", "спасибо", "а", "ещё", "еще"]
+    req_lst = ["олег", "удали", "счет", "счёт", "счета", "кошелек", "кошелёк", "кошельки", "с", "на", "названием", "название", "названиями", "который", "которые", "называются", "называется", "привет", "пожалуйста", "пока", "спасибо", "а", "ещё", "еще"]
     lst = []
     for it in req:
         if it not in req_lst:
