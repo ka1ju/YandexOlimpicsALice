@@ -131,7 +131,7 @@ def delete_wallet(req, user_ya_id):
                 res_s += ll[r - 1]
             else:
                 r = random.randint(1, 2)
-                ll = [f'Счёт "{yes[0]}" был удалён\n', f'Готово!\nЯ удалил счёт "{yes[0]}" был удалён\n']
+                ll = [f'Счёт "{yes[0]}" был удалён\n', f'Готово!\nЯ удалил счёт "{yes[0]}"\n']
                 res_s += ll[r - 1]
         return res_s.rstrip("\n")
     else:
