@@ -24,9 +24,12 @@ def wasting(s, user_name):
         if ord('0') <= ord(a[i][0]) <= ord('9'):
             x.append(a[i])
     names = [i.accounts for i in from_db("accounts", "Accounts", {"user_id": user_id})]
-    for i in a:
-        if i in names:
-            N.append(i)
+    for i in range(len(a)):
+        s = a[i]
+        for j in range(i + 1, len(a)):
+            s += a[j]
+            if s in names:
+                N.append(i)
     for i in a:
         if i in list2:
             n.append(i)
