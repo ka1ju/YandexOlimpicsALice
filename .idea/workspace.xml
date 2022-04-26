@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="Почистил файл с функциями артёма">
-      <change afterPath="$PROJECT_DIR$/thanks.py" afterDir="false" />
+    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="Сделал так, чтобы после слова спасибо сессия заканчивалась">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prev_alice_message.json" beforeDir="false" afterPath="$PROJECT_DIR$/prev_alice_message.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thanks.py" beforeDir="false" afterPath="$PROJECT_DIR$/thanks.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -578,7 +579,21 @@
       <option name="project" value="LOCAL" />
       <updated>1650978876567</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Создал ответ на слово спасибо">
+      <created>1650979546606</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1650979546606</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Сделал так, чтобы после слова спасибо сессия заканчивалась">
+      <created>1650979620072</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1650979620072</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -589,10 +604,17 @@
             <State>
               <option name="FILTERS">
                 <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/Ярик" />
+                      </list>
+                    </value>
+                  </entry>
                   <entry key="user">
                     <value>
                       <list>
-                        <option value="Федор" />
+                        <option value="*" />
                       </list>
                     </value>
                   </entry>
@@ -608,6 +630,11 @@
         <entry key="Branch">
           <value>
             <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/Ярик" />
+                </option>
+              </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="origin/main" />
@@ -638,17 +665,17 @@
                   <option value="origin/Федя" />
                 </option>
               </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="origin/Ярик" />
-                </option>
-              </RecentGroup>
             </list>
           </value>
         </entry>
         <entry key="User">
           <value>
             <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="Федор" />
@@ -666,8 +693,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="закинул в main обнову со своей ветки" />
-    <MESSAGE value="Обновил функцию Артёма" />
     <MESSAGE value="Добавил pymorphy2 в requirements.txt" />
     <MESSAGE value="Обновил user_message" />
     <MESSAGE value="Обновил файл для работы с бд" />
@@ -691,6 +716,8 @@
     <MESSAGE value="Заменил txt на json и теперь не удаляю файл каждый раз как даун" />
     <MESSAGE value="Обновил кусок артёма" />
     <MESSAGE value="Почистил файл с функциями артёма" />
-    <option name="LAST_COMMIT_MESSAGE" value="Почистил файл с функциями артёма" />
+    <MESSAGE value="Создал ответ на слово спасибо" />
+    <MESSAGE value="Сделал так, чтобы после слова спасибо сессия заканчивалась" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сделал так, чтобы после слова спасибо сессия заканчивалась" />
   </component>
 </project>

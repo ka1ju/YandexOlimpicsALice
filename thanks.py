@@ -11,5 +11,7 @@ def thanks():
     if mess['prev_thanks'] in answers:
         answers.remove(mess['prev_thanks'])
     index = random.randint(0, len(answers) - 1)
-    mess['prev_thanks'] = answers[index]
+    answer = answers[index]
+    mess['prev_thanks'] = answer
     json.dump(mess, out)
+    return answer
