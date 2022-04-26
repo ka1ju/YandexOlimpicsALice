@@ -27,12 +27,6 @@ def create_wallet(req, user_ya_id):
     for it in req:
         it = it.strip(".")
         it = it.strip("-")
-        '''parse_it = morph.parse(it)
-        maybe_num = parse_it[0].normal_form
-        try:
-            num = str(w2n.word_to_num(maybe_num))
-        except Exception:
-            num = it'''
         if it.strip(",") not in req_lst and it.strip(",").isalpha() and it.strip(",") not in cur_lst:
             lst.append(it.strip(","))
             c = True
@@ -64,6 +58,7 @@ def create_wallet(req, user_ya_id):
                 c_k = cur_d[item]
         res_d[k.strip()] = (b_k, c_k)
     no = []
+    res_s = ""
     if len(lst) != 0:
         for i in res_d:
             if len(from_db("accounts", "Accounts", {"user_id": int(user_id), "accounts": i})) == 0:
@@ -72,18 +67,19 @@ def create_wallet(req, user_ya_id):
                 no.append(i)
         if len(no) > 0:
             if len(no) > 1:
-                return f"""Счета "{'", "'.join(no)}" уже существуют"""
+                res_s += f"""Счета "{'", "'.join(no)}" уже существуют\n"""
             else:
-                return f'Счёт "{no[0]}" уже существует'
+                res_s += f'Счёт "{no[0]}" уже существует\n'
         else:
             res_lst = []
             for k in res_d:
                 t = morph.parse(res_d[k][1])[0]
                 res_lst.append(f'"{k.capitalize()}" с суммой {res_d[k][0]} {t.make_agree_with_number(res_d[k][0]).word}\n')
             if len(res_d.keys()) > 1:
-                return f"Созданы счета:\n{''.join(res_lst)}"
+                res_s += f"Созданы счета:\n{''.join(res_lst)}\n"
             else:
-                return f"Создан счёт {''.join(res_lst)}"
+                res_s += f"Создан счёт {''.join(res_lst)}\n"
+        return res_s
     else:
         return "Не понял вас, повторите"
 
@@ -99,6 +95,7 @@ def delete_wallet(req, user_ya_id):
     lst = " ".join(lst).split(" и ")
     no = []
     yes = []
+    res_s = ""
     if len(lst) != 0:
         for i in lst:
             if len(from_db("accounts", "Accounts", {"accounts": i, "user_id": user_id})) == 0:
@@ -108,13 +105,14 @@ def delete_wallet(req, user_ya_id):
                 yes.append(i)
         if len(no) > 0:
             if len(no) > 1:
-                return f"""Счетов "{'", "'.join(no)}" не существует"""
+                res_s += f"""Счетов "{'", "'.join(no)}" не существует\n"""
             else:
-                return f'Счёта "{no[0]}" не существует'
+                res_s += f'Счёта "{no[0]}" не существует\n'
         if len(yes) > 0:
             if len(yes) > 1:
-                return f"""Счета "{'", "'.join(yes)}" были удалены"""
+                res_s += f"""Счета "{'", "'.join(yes)}" были удалены\n"""
             else:
-                return f'Счёт "{yes[0]}" был удалён'
+                res_s += f'Счёт "{yes[0]}" был удалён\n'
+        return res_s.rstrip("\n")
     else:
         return "Не понял вас, повторите"
