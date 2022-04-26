@@ -90,6 +90,7 @@ def handle_dialog(req, res):
 
     if "спасибо" in user_message:
         res['response']['text'] = thanks()
+        res['response']['end_session'] = True
 
     res['response']['text'] = "Извините, я Вас не понял."
 
