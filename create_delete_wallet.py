@@ -13,6 +13,13 @@ def create_wallet(req, user_ya_id):
                 "евро": "евро",
                 "доллар": "доллар", "долларов": "доллар", "доллара": "доллар",
                 "тенге": "тенге"}
+    for i in range(len(req)):
+        try:
+            parse_it = morph.parse(req[i])
+            maybe_num = parse_it[0].normal_form
+            req[i] = str(w2n.word_to_num(maybe_num))
+        except Exception:
+            pass
     user_id = [i.id for i in from_db("users", "Users", {"username": user_ya_id})][0]
     lst = []
     c = False
@@ -20,22 +27,22 @@ def create_wallet(req, user_ya_id):
     for it in req:
         it = it.strip(".")
         it = it.strip("-")
-        parse_it = morph.parse(it)
+        '''parse_it = morph.parse(it)
         maybe_num = parse_it[0].normal_form
         try:
             num = str(w2n.word_to_num(maybe_num))
         except Exception:
-            num = it
-        if not num.isdigit() and it.strip(",") not in req_lst and it.strip(",").isalpha() and it.strip(",") not in cur_lst:
+            num = it'''
+        if it.strip(",") not in req_lst and it.strip(",").isalpha() and it.strip(",") not in cur_lst:
             lst.append(it.strip(","))
             c = True
             wait = True
         if "," in it and c:
             lst.append("и")
             c = False
-        if wait and num.isdigit():
+        if wait and it.isdigit():
             wait = False
-            lst.append(num)
+            lst.append(it)
         if it.strip(",") in cur_lst:
             lst.append(it.strip(","))
     lst.append("")
