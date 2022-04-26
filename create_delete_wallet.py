@@ -1,15 +1,16 @@
 from db_working import to_db, remove_from_db, from_db
 import w2n
 import pymorphy2
+import random
 morph = pymorphy2.MorphAnalyzer()
 
 
 def create_wallet(req, user_ya_id):
     req = req.lower().split()
-    req_lst = ["олег", "создай", "создать", "добавь", "добавить", "можно", "можешь", "счет", "счёт", "счета", "кошелек",
-               "кошелёк", "кошельки", "с", "на", "названием", "название", "названиями", "который", "которые",
-               "называются", "называется", "суммой", "начальной", "номинал", "номиналом", "в", "привет", "пожалуйста",
-               "пока", "спасибо", "а", "ещё", "еще"]
+    req_lst = ["олег", "создай", "создать", "добавь", "добавить", "можно", "можешь", "счет", "счёт", "счета", 
+               "кошелек", "кошелёк", "кошельки", "с", "на", "названием", "название", "названиями", "который",
+               "которые", "называются", "называется", "суммой", "начальной", "номинал", "номиналом", "в", 
+               "привет", "пожалуйста", "пока", "спасибо", "а", "ещё", "еще"]
     cur_lst = ["рубль", "рубля", "рублей", "евро", "доллар", "долларов", "доллара", "тенге"]
     cur_d = {
                 "рубль": "рубль", "рубля": "рубль", "рублей": "рубль",
@@ -50,7 +51,7 @@ def create_wallet(req, user_ya_id):
         lst[i] = lst[i].strip()
     res_d = {}
     for el in lst:
-        el = el.split()
+        ell = el.split()
         k, b_k, c_k = "", 0, "рубль"
         for item in el:
             if item.isalpha() and item not in cur_lst:
@@ -61,38 +62,53 @@ def create_wallet(req, user_ya_id):
                 c_k = cur_d[item]
         res_d[k.strip()] = (b_k, c_k)
     no = []
+    yes = []
     res_s = ""
     if len(lst) != 0:
         for i in res_d:
             if len(from_db("accounts", "Accounts", {"user_id": int(user_id), "accounts": i})) == 0:
-                to_db("accounts", "Accounts", ("accounts", "bank", "currency"),
+                to_db("accounts", "Accounts", ("accounts", "bank", "currency"), 
                       (i, res_d[i][0], res_d[i][-1]), int(user_id))
+                yes.append(i)
             else:
                 no.append(i)
         if len(no) > 0:
             if len(no) > 1:
-                res_s += f"""Счета "{'", "'.join(no)}" уже существуют\n"""
+                r = random.randint(1, 2)
+                ll = [f"""Счета "{'", "'.join(no)}" уже существуют\n""", f"""К сожалению,
+                 счета "{'", "'.join(no)}" уже существуют\n"""]
+                res_s += ll[r]
             else:
-                res_s += f'Счёт "{no[0]}" уже существует\n'
-        else:
+                r = random.randint(1, 3)
+                ll = [f'Счёт "{no[0]}" уже существует\n', f'Увы :(\nСчёт "{no[0]}" уже существует\n',
+                      f'Вы уже создали счёт "{no[0]}" ранее\n']
+                res_s += ll[r]
+        if len(yes) > 0:
             res_lst = []
             for k in res_d:
                 t = morph.parse(res_d[k][1])[0]
-                res_lst.append(f'"{k.capitalize()}" с суммой {res_d[k][0]}'
-                               f' {t.make_agree_with_number(res_d[k][0]).word}\n')
+                res_lst.append(f'"{k.capitalize()}" с суммой {res_d[k][0]} '
+                               f'{t.make_agree_with_number(res_d[k][0]).word}\n')
             if len(res_d.keys()) > 1:
-                res_s += f"Созданы счета:\n{''.join(res_lst)}\n"
+                r = random.randint(1, 3)
+                ll = [f"Созданы счета:\n{''.join(res_lst)}\n", 
+                      f"Ура! Вы создали несколько счетов\n{''.join(res_lst)}\n", 
+                      f"Успешно созданы счета\n{''.join(res_lst)}\n"]
+                res_s += ll[r]
             else:
-                res_s += f"Создан счёт {''.join(res_lst)}\n"
-        return res_s
+                r = random.randint(1, 3)
+                ll = [f"Создан счёт {''.join(res_lst)}\n", f"Поздравляю!\nВы создали счёт {''.join(res_lst)}\n",
+                      f"Новый счёт создан.\nЕго название {''.join(res_lst)}\n"]
+                res_s += ll[r]
+        return res_s.rstrip("\n")
     else:
         return "Не понял вас, повторите"
 
 
 def delete_wallet(req, user_ya_id):
     req = req.lower().split()
-    req_lst = ["олег", "удали", "счет", "счёт", "счета", "кошелек", "кошелёк", "кошельки", "с", "на", "названием",
-               "название", "названиями", "который", "которые", "называются", "называется", "привет", "пожалуйста",
+    req_lst = ["олег", "удали", "счет", "счёт", "счета", "кошелек", "кошелёк", "кошельки", "с", "на", "названием", 
+               "название", "названиями", "который", "которые", "называются", "называется", "привет", "пожалуйста", 
                "пока", "спасибо", "а", "ещё", "еще"]
     lst = []
     for it in req:
@@ -112,14 +128,27 @@ def delete_wallet(req, user_ya_id):
                 yes.append(i)
         if len(no) > 0:
             if len(no) > 1:
-                res_s += f"""Счетов "{'", "'.join(no)}" не существует\n"""
+                r = random.randint(1, 3)
+                lll = [f"""Счетов "{'", "'.join(no)}" не существует\n""", 
+                       f"""Счетов "{'", "'.join(no)}" не найдено\n""", 
+                       f"""Я не нашёл счетов "{'", "'.join(no)}"\n"""]
+                res_s += ll[r]
             else:
-                res_s += f'Счёта "{no[0]}" не существует\n'
+                r = random.randint(1, 3)
+                ll = [f'Счёта "{no[0]}" не существует\n', f'Ой!\n Кажется, я не нашёл счёта "{no[0]}"\n',
+                      f'Что-то не так!\n Счёта "{no[0]}" не существует\n']
+                res_s += ll[r]
         if len(yes) > 0:
             if len(yes) > 1:
-                res_s += f"""Счета "{'", "'.join(yes)}" были удалены\n"""
+                r = random.randint(1, 3)
+                ll = [f"""Счета "{'", "'.join(yes)}" были удалены\n""", 
+                      f"""Счета "{'", "'.join(yes)}" удалены успешно\n""", 
+                      f"""Счетов "{'", "'.join(yes)}" больше не существует\n"""]
+                res_s += ll[r]
             else:
-                res_s += f'Счёт "{yes[0]}" был удалён\n'
+                r = random.randint(1, 2)
+                ll = [f'Счёт "{yes[0]}" был удалён\n', f'Готово!\nЯ удалил счёт "{yes[0]}" был удалён\n']
+                res_s += ll[r]
         return res_s.rstrip("\n")
     else:
         return "Не понял вас, повторите"
