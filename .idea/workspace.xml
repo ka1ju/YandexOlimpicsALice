@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="Добавил в свою функцию обработку случая при котором нет кошельков">
+    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="Сделал так, чтобы бот не говорил одно и то же при отсутствии кошельков по несколько раз.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all_wallets.py" beforeDir="false" afterPath="$PROJECT_DIR$/all_wallets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prev_alice_message.txt" beforeDir="false" afterPath="$PROJECT_DIR$/prev_alice_message.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prev_alice_message.txt" beforeDir="false" afterPath="$PROJECT_DIR$/prev_alice_message.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -551,7 +549,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650976195203</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Сделал так, чтобы бот не говорил одно и то же при отсутствии кошельков по несколько раз.">
+      <created>1650977036496</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1650977036496</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -601,7 +606,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="сделал переменную в main для сообщения от юзера" />
     <MESSAGE value="Пофиксил немного бед" />
     <MESSAGE value="Добавил ключевое слово" />
     <MESSAGE value="создал if для вывода всех кошельков" />
@@ -626,6 +630,7 @@
     <MESSAGE value="обновил путь до ngrok" />
     <MESSAGE value="..." />
     <MESSAGE value="Добавил в свою функцию обработку случая при котором нет кошельков" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил в свою функцию обработку случая при котором нет кошельков" />
+    <MESSAGE value="Сделал так, чтобы бот не говорил одно и то же при отсутствии кошельков по несколько раз." />
+    <option name="LAST_COMMIT_MESSAGE" value="Сделал так, чтобы бот не говорил одно и то же при отсутствии кошельков по несколько раз." />
   </component>
 </project>
