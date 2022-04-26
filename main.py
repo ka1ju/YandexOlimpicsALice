@@ -75,7 +75,9 @@ def handle_dialog(req, res):
         logging.info("Giving statics about expenses")
         return
 
-    if ('выв' in user_message or 'дай' in user_message or 'ска' in user_message or "пок" in user_message) and \
+    if ('выв' in user_message or 'дай' in user_message
+        or 'ска' in user_message or "покаж" in user_message
+        or "показ" in user_message) and \
             ('кошел' in user_message or 'счет' in user_message):
         res['response']['text'] = return_wallets(user_id)
         logging.info("Giving all wallets")
