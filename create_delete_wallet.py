@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from db_working import to_db, remove_from_db, from_db
 import w2n
 import pymorphy2
@@ -48,7 +49,7 @@ def create_wallet(req, user_ya_id):
         lst[i] = lst[i].strip()
     res_d = {}
     for el in lst:
-        ell = el.split()
+        el = el.split()
         k, b_k, c_k = "", 0, "рубль"
         for item in el:
             if item.isalpha() and item not in cur_lst:
