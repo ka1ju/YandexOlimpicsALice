@@ -2,6 +2,7 @@ from db_working import *
 import pymorphy2
 import random
 import os
+import logging
 
 
 def return_wallets(user_id):
@@ -12,17 +13,16 @@ def return_wallets(user_id):
     if len(wallets) > 0:
         return "Вот ваши кошельки:\n" + '\n'.join(wallets)
     else:
-        answer = ""
         answers = ["Пока что кошельков нет", "Извините, но я не нашел у вас ни одного кошелька.",
                    "Вы пока что не создали ни один счёт"]
-        index = random.randint(0, len(answers))
-        while answer == "":
-            if answers[index] != open("prev_alice_message.txt", "r", encoding="utf-8").read():
-                answer = answers[index]
-            else:
-                answers.remove(answers[index])
-            index = random.randint(0, len(answers))
+        message = open("prev_alice_message.txt", "r", encoding="utf-8")
+        m = message.read()
+        if m in answers:
+            answers.remove(m)
+        message.close()
+        index = random.randint(0, len(answers) - 1)
+        answer = answers[index]
         os.remove("prev_alice_message.txt")
-        with open("prev_alice_message.txt", "w") as out:
+        with open("prev_alice_message.txt", "w", encoding="utf-8") as out:
             out.write(answer)
         return answer
