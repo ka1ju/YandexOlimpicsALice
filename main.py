@@ -34,7 +34,7 @@ def handle_dialog(req, res):
     user_id = req['session']['user_id']
     user_message = req['request']['original_utterance'].lower()
 
-    if req['session']['new']:
+    if req['session']['new'] and user_message == "":
         res['response']['text'] = authorization(user_id)
         logging.info("Authorising user")
         return
