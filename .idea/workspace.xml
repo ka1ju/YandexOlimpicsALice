@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="Немного подредачил текст сообщений">
+    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alise_3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Alise_3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all_wallets.py" beforeDir="false" afterPath="$PROJECT_DIR$/all_wallets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +52,7 @@
       <recent name="C:\Users\Ярослав\Documents\my_projects\YandexOlympicsAlice" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Alise_3">
+  <component name="RunManager" selected="Python.main">
     <configuration name="Alise_3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -109,6 +108,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="C:\Users\Administrator\PycharmProjects\BalanceBot\main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="YandexOlimpicsALice" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Ярослав\Documents\my_projects\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -245,10 +265,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.oleg" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.all_wallets" />
-        <item itemvalue="Python.Alise_3" />
         <item itemvalue="Python.Alise_3" />
       </list>
     </recent_temporary>
@@ -261,13 +281,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00003" summary="добавил авто-файл">
-      <created>1650726834659</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1650726834659</updated>
     </task>
     <task id="LOCAL-00004" summary="добавил авто-файл">
       <created>1650726863217</created>
@@ -605,7 +618,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650984877384</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="...">
+      <created>1650986519936</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1650986519936</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -616,13 +636,6 @@
             <State>
               <option name="FILTERS">
                 <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/Ярик" />
-                      </list>
-                    </value>
-                  </entry>
                   <entry key="user">
                     <value>
                       <list>
@@ -705,7 +718,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ПОЗДРАВЛЯЮ ВСЕХ НАС ФУНКЦИЯ ЯРИКА РАБОТАЕТ НА 100% ТАКЖЕ КАРКАС РАБОТАЕТ ПОЛНОСТЬЮ И ВЫЗЫВАЕТ УЖЕ ГОТОВУЮ ФУНКЦИЮ АРТЁМА И ФУНКЦИЮ ЯРИКА." />
     <MESSAGE value="сделал почище код" />
     <MESSAGE value="Создал функцию помощи" />
     <MESSAGE value="Заменил счЁт на счЕт" />
@@ -718,7 +730,6 @@
     <MESSAGE value="убрал лишний кусок в 1 строке" />
     <MESSAGE value="взял файлы димы и обнову от артетя" />
     <MESSAGE value="обновил путь до ngrok" />
-    <MESSAGE value="..." />
     <MESSAGE value="Добавил в свою функцию обработку случая при котором нет кошельков" />
     <MESSAGE value="Сделал так, чтобы бот не говорил одно и то же при отсутствии кошельков по несколько раз." />
     <MESSAGE value="Заменил txt на json и теперь не удаляю файл каждый раз как даун" />
@@ -730,6 +741,8 @@
     <MESSAGE value="Обновил приветственную фразу бота, а также его ответ на &quot;Что ты умеешь?&quot;. Также добавил рандомный ответ и завершение сессии на слово спасибо." />
     <MESSAGE value="Теперь бота можно поприветствовать, и он ответит тем же, но если это уже не первое сообщение боту в этой сессии то он скажет что вы уже здоровались." />
     <MESSAGE value="Немного подредачил текст сообщений" />
-    <option name="LAST_COMMIT_MESSAGE" value="Немного подредачил текст сообщений" />
+    <MESSAGE value="Взял версию из ветки Ярика" />
+    <MESSAGE value="..." />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
 </project>
