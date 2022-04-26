@@ -30,6 +30,7 @@ def wasting(s, user_name):
             s += a[j]
             if s in names:
                 N.append(i)
+                break
     for i in a:
         if i in list2:
             n.append(i)
