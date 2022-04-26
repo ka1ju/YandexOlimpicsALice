@@ -6,6 +6,7 @@ from oleg import *
 from all_wallets import *
 from create_delete_wallet import *
 from helper import *
+from thanks import *
 
 app = Flask(__name__)
 
@@ -87,8 +88,8 @@ def handle_dialog(req, res):
         res['response']['text'] = helper()
         return
 
-    if True:
-        pass
+    if "спасибо" in user_message:
+        res['response']['text'] = thanks()
 
     res['response']['text'] = "Извините, я Вас не понял."
 
