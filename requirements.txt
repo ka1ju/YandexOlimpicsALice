@@ -1,2 +1,4 @@
-sqlite
-pymorphy2
+pymorphy2~=0.9.1
+
+SQLAlchemy~=1.4.35
+Flask~=2.1.1
