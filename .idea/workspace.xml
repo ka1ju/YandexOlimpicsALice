@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="Теперь бота можно поприветствовать, и он ответит тем же, но если это уже не первое сообщение боту в этой сессии то он скажет что вы уже здоровались." />
+    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="Немного подредачил текст сообщений">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alise_3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Alise_3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all_wallets.py" beforeDir="false" afterPath="$PROJECT_DIR$/all_wallets.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,7 +53,7 @@
       <recent name="C:\Users\Ярослав\Documents\my_projects\YandexOlympicsAlice" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.Alise_3">
     <configuration name="Alise_3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -241,10 +245,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Alise_3" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.all_wallets" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.Alise_3" />
         <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
@@ -257,13 +261,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00002" summary="добавил гея артура">
-      <created>1650726634766</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1650726634766</updated>
     </task>
     <task id="LOCAL-00003" summary="добавил авто-файл">
       <created>1650726834659</created>
@@ -601,7 +598,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650984435084</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Немного подредачил текст сообщений">
+      <created>1650984877384</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1650984877384</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -701,7 +705,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ПОЗДРАВЛЯЮ ВСЕХ НАС ФУНКЦИИ АРТЁМА РАБОТАЮТ ПОЧТИ НА 100% ОСТАЛОСЬ ЛИШЬ ДОБАВИТЬ СЛОВА-ИСКЛЮЧЕНИЯ И КЛЮЧЕВЫЕ СЛОВА И ВСЁ БУДЕТ ГОТОВО." />
     <MESSAGE value="ПОЗДРАВЛЯЮ ВСЕХ НАС ФУНКЦИЯ ЯРИКА РАБОТАЕТ НА 100% ТАКЖЕ КАРКАС РАБОТАЕТ ПОЛНОСТЬЮ И ВЫЗЫВАЕТ УЖЕ ГОТОВУЮ ФУНКЦИЮ АРТЁМА И ФУНКЦИЮ ЯРИКА." />
     <MESSAGE value="сделал почище код" />
     <MESSAGE value="Создал функцию помощи" />
@@ -726,6 +729,7 @@
     <MESSAGE value="Пока что он работает, но сессию он завершает полностью, хотя должен просто не включать микрофон юзера." />
     <MESSAGE value="Обновил приветственную фразу бота, а также его ответ на &quot;Что ты умеешь?&quot;. Также добавил рандомный ответ и завершение сессии на слово спасибо." />
     <MESSAGE value="Теперь бота можно поприветствовать, и он ответит тем же, но если это уже не первое сообщение боту в этой сессии то он скажет что вы уже здоровались." />
-    <option name="LAST_COMMIT_MESSAGE" value="Теперь бота можно поприветствовать, и он ответит тем же, но если это уже не первое сообщение боту в этой сессии то он скажет что вы уже здоровались." />
+    <MESSAGE value="Немного подредачил текст сообщений" />
+    <option name="LAST_COMMIT_MESSAGE" value="Немного подредачил текст сообщений" />
   </component>
 </project>
