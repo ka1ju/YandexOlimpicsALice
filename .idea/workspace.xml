@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="Теперь при прощании офается сессия" />
+    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="...">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -258,13 +260,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Пофиксил немного бед">
-      <created>1650732060066</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1650732060066</updated>
     </task>
     <task id="LOCAL-00013" summary="Добавил ключевое слово">
       <created>1650732192726</created>
@@ -602,7 +597,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651044864093</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="...">
+      <created>1651045313272</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1651045313273</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -713,13 +715,13 @@
     <MESSAGE value="Теперь бота можно поприветствовать, и он ответит тем же, но если это уже не первое сообщение боту в этой сессии то он скажет что вы уже здоровались." />
     <MESSAGE value="Немного подредачил текст сообщений" />
     <MESSAGE value="Взял версию из ветки Ярика" />
-    <MESSAGE value="..." />
     <MESSAGE value="обновил requirements.txt" />
     <MESSAGE value="создал функцию прощания в боте" />
     <MESSAGE value="Обновил немного json, пофиксил рандом в прощании." />
     <MESSAGE value="Немного поменял текст ответов." />
     <MESSAGE value="Вернул import logging." />
     <MESSAGE value="Теперь при прощании офается сессия" />
-    <option name="LAST_COMMIT_MESSAGE" value="Теперь при прощании офается сессия" />
+    <MESSAGE value="..." />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
 </project>
