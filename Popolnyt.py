@@ -4,7 +4,7 @@ morph = pymorphy2.MorphAnalyzer()
 
 
 def Replenishment(st, user_name):
-    b = st.split(', ', ' и ')
+    b = st.split(' и ')
     user_id1 = [i.id for i in from_db("users", "Users", {"username": user_name})]
     user_id = user_id1[0]
     bd = [i.accounts for i in from_db("accounts", "Accounts", {"user_id": user_id})]
@@ -72,3 +72,6 @@ def Replenishment(st, user_name):
         elif q[j] not in words:
             return 'У вас нет кошелька с названием:', q[j]
     pass
+
+
+Replenishment("пополни кошелёк коплю на машину на пятьсот рублей", "Test2")
