@@ -93,12 +93,13 @@ def handle_dialog(req, res):
         res['response']['end_session'] = True
         return
 
-    if "привет" in user_message:
+    if "привет" in user_message or "здорово" in user_message or "хай" in user_message:
         res['response']['text'] = hello(req['session']['message_id'])
         return
 
     if "до свидания" in user_message or "пока" in user_message or "прощай" in user_message:
         res['response']['text'] = bye()
+        res['response']['end_session'] = True
         return
 
     res['response']['text'] = "Извините, я Вас не понял."

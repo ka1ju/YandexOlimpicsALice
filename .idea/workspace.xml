@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="Немного поменял текст ответов.">
-      <change beforePath="$PROJECT_DIR$/all_wallets.py" beforeDir="false" afterPath="$PROJECT_DIR$/all_wallets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="Вернул import logging.">
+      <change beforePath="$PROJECT_DIR$/oleg.py" beforeDir="false" afterPath="$PROJECT_DIR$/oleg.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +53,7 @@
       <recent name="C:\Users\Ярослав\Documents\my_projects\YandexOlympicsAlice" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="YandexOlympicsAlice" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -223,9 +222,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="oleg" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="YandexOlympicsAlice" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/oleg.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.oleg" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.main" />
       </list>
@@ -239,13 +260,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00010" summary="доделал все if-ы для 6 основных функций">
-      <created>1650731518493</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1650731518493</updated>
     </task>
     <task id="LOCAL-00011" summary="сделал переменную в main для сообщения от юзера">
       <created>1650731873477</created>
@@ -583,7 +597,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651044035023</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Вернул import logging.">
+      <created>1651044508601</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1651044508601</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -676,7 +697,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="теперь я могу запускать ngrok с консоли" />
     <MESSAGE value="обновил ngrok чтобы он не брал request-ы от кс" />
     <MESSAGE value="взял ветку Феди" />
     <MESSAGE value="переименовал функцию Феди на top_up_wallet и файл на то же имя. Также почистил его файл." />
@@ -701,6 +721,7 @@
     <MESSAGE value="создал функцию прощания в боте" />
     <MESSAGE value="Обновил немного json, пофиксил рандом в прощании." />
     <MESSAGE value="Немного поменял текст ответов." />
-    <option name="LAST_COMMIT_MESSAGE" value="Немного поменял текст ответов." />
+    <MESSAGE value="Вернул import logging." />
+    <option name="LAST_COMMIT_MESSAGE" value="Вернул import logging." />
   </component>
 </project>
