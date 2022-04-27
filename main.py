@@ -1,13 +1,11 @@
 from flask import Flask, request
-import logging
-import json
-from funcs import out
 from oleg import *
 from all_wallets import *
 from create_delete_wallet import *
 from helper import *
 from thanks import *
 from hello import *
+from bye import *
 
 app = Flask(__name__)
 
@@ -99,7 +97,8 @@ def handle_dialog(req, res):
         return
 
     if "до свидания" in user_message or "пока" in user_message or "прощай" in user_message:
-        res['response']['text'] = ""
+        res['response']['text'] = bye()
+        return
 
     res['response']['text'] = "Извините, я Вас не понял."
 
