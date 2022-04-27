@@ -66,7 +66,7 @@ def Replenishment(st, user_name):
         y = 0
     for j in range(len(q)):
         if q[j] in bd:
-            v = from_db('accounts', 'Accounts', {'accounts': q[j]})
+            v = [i.id for i in from_db('accounts', 'Accounts', {'accounts': q[j], 'username': user_id})]
             change_db('accounts', 'Accounts', {'accounts': q[j], 'bank': int(v[0].bank + summa)})
             return 'Баланс кошелька', q[j], 'пополнен'
         elif q[j] not in words:
