@@ -3,7 +3,7 @@ import json
 
 
 def thanks():
-    answers = ["Не за что 😅", "Пожалуйста 👍", "Обращайтесь 😃"]
+    answers = ["Не за что 😅.", "Пожалуйста 👍.", "Обращайтесь 😃."]
     inp = open("prev_alice_message.json", "r", encoding="utf-8")
     mess = json.load(inp)
     inp.close()

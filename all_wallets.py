@@ -14,7 +14,7 @@ def return_wallets(user_id):
         return "Вот ваши кошельки:\n" + '\n'.join(wallets)
     else:
         answers = ["Пока что кошельков нет.", "Извините, но я не нашел у вас ни одного кошелька.",
-                   "Вы пока что не создали ни один счёт"]
+                   "Вы пока что не создали ни один счёт."]
         message = open("prev_alice_message.json", "r", encoding="utf-8")
         m = json.load(message)
         if m["previous_message"] in answers:
