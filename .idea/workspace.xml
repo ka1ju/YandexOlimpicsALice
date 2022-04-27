@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="создал функцию прощания в боте">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="Немного поменял текст ответов.">
       <change beforePath="$PROJECT_DIR$/all_wallets.py" beforeDir="false" afterPath="$PROJECT_DIR$/all_wallets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bye.py" beforeDir="false" afterPath="$PROJECT_DIR$/bye.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prev_alice_message.json" beforeDir="false" afterPath="$PROJECT_DIR$/prev_alice_message.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,20 +239,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Почистил часть файла Артёмки">
-      <created>1650730010364</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1650730010364</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Почистил весь файл Артёмки.">
-      <created>1650730041682</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1650730041682</updated>
     </task>
     <task id="LOCAL-00010" summary="доделал все if-ы для 6 основных функций">
       <created>1650731518493</created>
@@ -586,7 +569,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651043249990</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Обновил немного json, пофиксил рандом в прощании.">
+      <created>1651043938948</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1651043938948</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Немного поменял текст ответов.">
+      <created>1651044035023</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1651044035023</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -679,8 +676,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Заменил счЁт на счЕт" />
-    <MESSAGE value="обновил коммент с командами для cmd" />
     <MESSAGE value="теперь я могу запускать ngrok с консоли" />
     <MESSAGE value="обновил ngrok чтобы он не брал request-ы от кс" />
     <MESSAGE value="взял ветку Феди" />
@@ -704,6 +699,8 @@
     <MESSAGE value="..." />
     <MESSAGE value="обновил requirements.txt" />
     <MESSAGE value="создал функцию прощания в боте" />
-    <option name="LAST_COMMIT_MESSAGE" value="создал функцию прощания в боте" />
+    <MESSAGE value="Обновил немного json, пофиксил рандом в прощании." />
+    <MESSAGE value="Немного поменял текст ответов." />
+    <option name="LAST_COMMIT_MESSAGE" value="Немного поменял текст ответов." />
   </component>
 </project>
