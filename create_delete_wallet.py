@@ -66,13 +66,13 @@ def create_wallet(req, user_ya_id):
                 c_k = cur_d[item]
         res_d[k.strip()] = (b_k, c_k)
     no = []
-    yes = []
+    yes = {}
     res_s = ""
     if len(lst) != 0:
         for i in res_d:
             if len(from_db("accounts", "Accounts", {"user_id": int(user_id), "accounts": i})) == 0:
                 to_db("accounts", "Accounts", ("accounts", "bank", "currency"), (i, res_d[i][0], res_d[i][-1]), int(user_id))
-                yes.append(i)
+                yes[i] = res_d[i]
             else:
                 no.append(i)
         if len(no) > 0:
@@ -86,10 +86,10 @@ def create_wallet(req, user_ya_id):
                 res_s += ll[r - 1]
         if len(yes) > 0:
             res_lst = []
-            for k in res_d:
-                t = morph.parse(res_d[k][1])[0]
-                res_lst.append(f'"{k.capitalize()}" с суммой {res_d[k][0]} {t.make_agree_with_number(res_d[k][0]).word}\n')
-            if len(res_d.keys()) > 1:
+            for k in yes:
+                t = morph.parse(yes[k][1])[0]
+                res_lst.append(f'"{k.capitalize()}" с суммой {yes[k][0]} {t.make_agree_with_number(yes[k][0]).word}\n')
+            if len(yes.keys()) > 1:
                 r = random.randint(1, 3)
                 ll = [f"Созданы счета:\n{''.join(res_lst)}\n", f"Ура! Вы создали несколько счетов\n{''.join(res_lst)}\n", f"Успешно созданы счета\n{''.join(res_lst)}\n"]
                 res_s += ll[r - 1]
