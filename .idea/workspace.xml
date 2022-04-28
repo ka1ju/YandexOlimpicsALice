@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="...">
+    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="добавил слово счёт к слову счет">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all_wallets.py" beforeDir="false" afterPath="$PROJECT_DIR$/all_wallets.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -261,13 +262,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Обновил функцию Артёма">
-      <created>1650802965103</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1650802965103</updated>
     </task>
     <task id="LOCAL-00016" summary="Добавил pymorphy2 в requirements.txt">
       <created>1650803829846</created>
@@ -605,7 +599,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651049092062</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="добавил слово счёт к слову счет">
+      <created>1651137717424</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1651137717424</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -698,7 +699,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="взял ветку Феди" />
     <MESSAGE value="переименовал функцию Феди на top_up_wallet и файл на то же имя. Также почистил его файл." />
     <MESSAGE value="обновил файлы Артёмки" />
     <MESSAGE value="убрал лишний кусок в 1 строке" />
@@ -723,6 +723,7 @@
     <MESSAGE value="Вернул import logging." />
     <MESSAGE value="Теперь при прощании офается сессия" />
     <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value="добавил слово счёт к слову счет" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавил слово счёт к слову счет" />
   </component>
 </project>
