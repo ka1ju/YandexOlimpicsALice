@@ -27,10 +27,9 @@ def main():
         }
     }
 
-
     return json.dumps({
-    "start_account_linking": {},
-    "version": "1.0"
+        "start_account_linking": {},
+        "version": "1.0"
     })
 
 
@@ -54,7 +53,8 @@ def getting():
 def code_get():
     global code
     code = request.args.get('code')
-    return redirect(f'https://social.yandex.net/broker/redirect?state={statuation}&client_id={client_id}&scope={scope}&code={code}')
+    return redirect(
+        f'https://social.yandex.net/broker/redirect?state={statuation}&client_id={client_id}&scope={scope}&code={code}')
 
 
 @app.route('/login', methods=['POST', 'GET'])
@@ -63,7 +63,8 @@ def login():
     statuation = request.args.get('state')
     client_id = request.args.get('client_id')
     scope = request.args.get('scope')
-    return flask.redirect(f'https://oauth.yandex.ru/authorize?response_type=code&client_id=bd45522bdc974905a993b3666e87e79c&redirect_uri=https://248c-94-180-1-142.eu.ngrok.io/code_get')
+    return flask.redirect(
+        f'https://oauth.yandex.ru/authorize?response_type=code&client_id=bd45522bdc974905a993b3666e87e79c&redirect_uri=https://248c-94-180-1-142.eu.ngrok.io/code_get')
 
 
 if __name__ == '__main__':
