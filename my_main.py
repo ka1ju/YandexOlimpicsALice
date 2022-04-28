@@ -1,3 +1,4 @@
+import sys
 import flask
 from flask import Flask, request
 import requests
@@ -9,6 +10,10 @@ from all_wallets import *
 from create_delete_wallet import *
 from flask import Flask, request, jsonify, redirect
 from requests import post
+if sys.version_info < (3, 0):
+    from urllib import urlencode
+else:
+    from urllib.parse import urlencode
 
 app = Flask(__name__)
 

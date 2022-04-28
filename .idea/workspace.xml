@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="..." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,7 +52,7 @@
       <recent name="C:\Users\Ярослав\Documents\my_projects\YandexOlympicsAlice" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.my_main">
+  <component name="RunManager" selected="Python.main">
     <configuration name="Alise_3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="YandexOlympicsAlice" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -288,8 +286,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.my_main" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.my_main" />
         <item itemvalue="Python.Alise_3" />
         <item itemvalue="Python.oleg" />
         <item itemvalue="Python.main" />
@@ -304,20 +302,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Добавил pymorphy2 в requirements.txt">
-      <created>1650803829846</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1650803829846</updated>
-    </task>
-    <task id="LOCAL-00017" summary="...">
-      <created>1650804715847</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1650804715847</updated>
     </task>
     <task id="LOCAL-00018" summary="Обновил user_message">
       <created>1650805204947</created>
@@ -648,7 +632,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651137717424</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="...">
+      <created>1651161805589</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1651161805590</updated>
+    </task>
+    <task id="LOCAL-00066" summary="...">
+      <created>1651161985076</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1651161985076</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -764,8 +762,8 @@
     <MESSAGE value="Немного поменял текст ответов." />
     <MESSAGE value="Вернул import logging." />
     <MESSAGE value="Теперь при прощании офается сессия" />
-    <MESSAGE value="..." />
     <MESSAGE value="добавил слово счёт к слову счет" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавил слово счёт к слову счет" />
+    <MESSAGE value="..." />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
 </project>
