@@ -54,78 +54,83 @@ def main():
 
 
 def handle_dialog(req, res):
-    user_id = req['session']['user_id']
-    user_message = req['request']['original_utterance'].lower()
+    user_id = req['session']['user']['access_token']
+    try:
+        user_message = req['request']['original_utterance'].lower()
 
-    if req['session']['new'] and user_message == "":
-        res['response']['text'] = authorization(user_id)
-        logging.info("Authorising user")
+        if req['session']['new'] and user_message == "":
+            res['response']['text'] = authorization(user_id)
+            logging.info("Authorising user")
+            return
+
+        if ('созд' in user_message or 'доб' in user_message) and \
+                ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
+            res['response']['text'] = create_wallet(user_message, user_id)
+            logging.info("Adding wallet")
+            return
+
+        if ('удал' in user_message or 'убр' in user_message) and \
+                ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
+            res['response']['text'] = delete_wallet(user_message, user_id)
+            logging.info("Deleting wallet")
+            return
+
+        if ('пополн' in user_message or 'зачисл' in user_message) and \
+                ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
+            res['response']['text'] = "Пополнил кошелёк"
+            logging.info("Adding money")
+            return
+
+        if ('трат' in user_message or 'сн' in user_message) and \
+                ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
+            res['response']['text'] = "Снял с кошелька"
+            logging.info("Spending money")
+            return
+
+        if ('выв' in user_message or 'дай' in user_message or 'ска' in user_message) and \
+                'инф' in user_message and \
+                ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
+            res['response']['text'] = "Вывел информацию о счёте"
+            logging.info("Giving info about wallet")
+            return
+
+        if ('выв' in user_message or 'дай' in user_message or 'ска' in user_message) and \
+                'стат' in user_message:
+            res['response']['text'] = "Вывел статистику"
+            logging.info("Giving statics about expenses")
+            return
+
+        if ('выв' in user_message or 'дай' in user_message
+            or 'ска' in user_message or "покаж" in user_message
+            or "показ" in user_message) and \
+                ('кошел' in user_message or 'счет' in user_message):
+            res['response']['text'] = return_wallets(user_id)
+            logging.info("Giving all wallets")
+            return
+
+        if "помо" in user_message or ("что" in user_message and "ты" in user_message and "умеешь" in user_message):
+            res['response']['text'] = helper()
+            return
+
+        if "спасибо" in user_message:
+            res['response']['text'] = thanks()
+            res['response']['end_session'] = True
+            return
+
+        if "привет" in user_message or "здорово" in user_message or "хай" in user_message:
+            res['response']['text'] = hello(req['session']['message_id'])
+            return
+
+        if "до свидания" in user_message or "пока" in user_message or "прощай" in user_message:
+            res['response']['text'] = bye()
+            res['response']['end_session'] = True
+            return
+
+        res['response']['text'] = "Извините, я Вас не понял."
+    except KeyError:
+        print(req)
+        res['response']['text'] = authorization(req['session']['user']['access_token'])
         return
-
-    if ('созд' in user_message or 'доб' in user_message) and \
-            ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
-        res['response']['text'] = create_wallet(user_message, user_id)
-        logging.info("Adding wallet")
-        return
-
-    if ('удал' in user_message or 'убр' in user_message) and \
-            ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
-        res['response']['text'] = delete_wallet(user_message, user_id)
-        logging.info("Deleting wallet")
-        return
-
-    if ('пополн' in user_message or 'зачисл' in user_message) and \
-            ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
-        res['response']['text'] = "Пополнил кошелёк"
-        logging.info("Adding money")
-        return
-
-    if ('трат' in user_message or 'сн' in user_message) and \
-            ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
-        res['response']['text'] = "Снял с кошелька"
-        logging.info("Spending money")
-        return
-
-    if ('выв' in user_message or 'дай' in user_message or 'ска' in user_message) and \
-            'инф' in user_message and \
-            ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
-        res['response']['text'] = "Вывел информацию о счёте"
-        logging.info("Giving info about wallet")
-        return
-
-    if ('выв' in user_message or 'дай' in user_message or 'ска' in user_message) and \
-            'стат' in user_message:
-        res['response']['text'] = "Вывел статистику"
-        logging.info("Giving statics about expenses")
-        return
-
-    if ('выв' in user_message or 'дай' in user_message
-        or 'ска' in user_message or "покаж" in user_message
-        or "показ" in user_message) and \
-            ('кошел' in user_message or 'счет' in user_message):
-        res['response']['text'] = return_wallets(user_id)
-        logging.info("Giving all wallets")
-        return
-
-    if "помо" in user_message or ("что" in user_message and "ты" in user_message and "умеешь" in user_message):
-        res['response']['text'] = helper()
-        return
-
-    if "спасибо" in user_message:
-        res['response']['text'] = thanks()
-        res['response']['end_session'] = True
-        return
-
-    if "привет" in user_message or "здорово" in user_message or "хай" in user_message:
-        res['response']['text'] = hello(req['session']['message_id'])
-        return
-
-    if "до свидания" in user_message or "пока" in user_message or "прощай" in user_message:
-        res['response']['text'] = bye()
-        res['response']['end_session'] = True
-        return
-
-    res['response']['text'] = "Извините, я Вас не понял."
 
 
 # ТУТ НАЧИНАЕТСЯ ПИЗДА, ПОЭТОМУ НЕ ЛЕЗЬ А ТО ВЫЕБУ КТО БЫ ТЫ НИ БЫЛ.
@@ -136,8 +141,8 @@ def getting():
     data = {
         'grant_type': 'authorization_code',
         'code': code,
-        'client_id': 'bd45522bdc974905a993b3666e87e79c',
-        'client_secret': '615c67d59a2c4b95a8ddb7dd774475aa'
+        'client_id': 'eb2919ba420a467d9f9d958096364a97',
+        'client_secret': '445686f67ceb472dad8c77d0631e74f9'
     }
     data = urlencode(data)
     print(code)
@@ -162,7 +167,7 @@ def login():
     client_id = request.args.get('client_id')
     scope = request.args.get('scope')
     return flask.redirect(
-        f'https://oauth.yandex.ru/authorize?response_type=code&client_id=bd45522bdc974905a993b3666e87e79c&redirect_uri=https://248c-94-180-1-142.eu.ngrok.io/code_get')
+        f'https://oauth.yandex.ru/authorize?response_type=code&client_id=eb2919ba420a467d9f9d958096364a97&redirect_uri=https://0152-5-137-125-18.eu.ngrok.io/code_get')
 
 
 if __name__ == '__main__':
