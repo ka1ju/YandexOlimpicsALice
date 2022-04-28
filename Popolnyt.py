@@ -12,7 +12,7 @@ def Replenishment(st, user_name):
     for j in range(len(b)):
         y = 0
         for i in bd:
-            if i in ' '.join(b[j]):
+            if i in ''.join(b):
                 y = 1
                 q.append(i)
         if y == 0:
@@ -24,7 +24,8 @@ def Replenishment(st, user_name):
     else:
         x = st.split(' ')
     words = ["кошел", "счёт", "счета", "кошелёк", "кошельки", "с", "на", "названием", "название", "названиями",
-             "который", "которые", "назваются", "назвается", "привет", "пожалуйста", "пока", "спасибо", "а", "ещё"]
+             "который", "которые", "назваются", "назвается", "привет", "пожалуйста", "пока", "спасибо", "а", "ещё",
+             'пополни']
 
     units = {'один': '1', 'два': '2', 'три': '3', 'четыре': '4', 'пять': '5', 'шесть': '6', 'семь': '7',
              'восемь': '8', 'девять': '9', 'десять': '10', 'одиннадцать': '11', 'двенадцать': '12',
@@ -66,12 +67,14 @@ def Replenishment(st, user_name):
         y = 0
     for j in range(len(q)):
         if q[j] in bd:
-            v = [i.id for i in from_db('accounts', 'Accounts', {'accounts': q[j], 'username': user_id})]
-            change_db('accounts', 'Accounts', {'accounts': q[j], 'bank': int(v[0].bank + summa)})
-            return 'Баланс кошелька', q[j], 'пополнен'
+            v = [i.bank for i in from_db('accounts', 'Accounts', {'accounts': q[j], 'user_id': user_id})]
+            v1 = v[0]
+            change_db('accounts', 'Accounts', {'bank': int(v1) + summa}, {'accounts': q[j], 'user_id': user_id})
+            ret = 'Баланс кошелька "' + q[j] + '" пополнен'
+            return ret
         elif q[j] not in words:
             return 'У вас нет кошелька с названием:', q[j]
     pass
 
 
-Replenishment("пополни кошелёк коплю на машину на пятьсот рублей", "Test2")
+print(Replenishment("пополни кошелёк коплю на машину на пятьсот рублей", "Test2"))
