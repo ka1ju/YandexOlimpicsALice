@@ -262,13 +262,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
     </task>
-    <task id="LOCAL-00014" summary="создал if для вывода всех кошельков">
-      <created>1650739523547</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1650739523547</updated>
-    </task>
     <task id="LOCAL-00015" summary="Обновил функцию Артёма">
       <created>1650802965103</created>
       <option name="number" value="00015" />
@@ -605,7 +598,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651045368628</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="...">
+      <created>1651049092062</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1651049092062</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -619,7 +619,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/Федя" />
+                        <option value="origin/Семён" />
                       </list>
                     </value>
                   </entry>
@@ -635,6 +635,16 @@
         <entry key="Branch">
           <value>
             <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/Семён" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/Дима" />
+                </option>
+              </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="origin/Ярик" />
@@ -653,16 +663,6 @@
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="origin/Артём" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="origin/Дима" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="origin/Семён" />
                 </option>
               </RecentGroup>
               <RecentGroup>
