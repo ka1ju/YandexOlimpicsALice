@@ -62,7 +62,8 @@ def Replenishment(st, user_name):
                 y += int(s[i])
                 y = y * int(s[i + 1])
         else:
-            y += int(s[i])
+            if s[i] != '1000' and s[i] != '1000000':
+                y += int(s[i])
         summa += y
         y = 0
     for j in range(len(q)):
@@ -70,11 +71,10 @@ def Replenishment(st, user_name):
             v = [i.bank for i in from_db('accounts', 'Accounts', {'accounts': q[j], 'user_id': user_id})]
             v1 = v[0]
             change_db('accounts', 'Accounts', {'bank': int(v1) + summa}, {'accounts': q[j], 'user_id': user_id})
+            print(int(v1 + summa))
             ret = 'Баланс кошелька "' + q[j] + '" пополнен'
             return ret
         elif q[j] not in words:
             return 'У вас нет кошелька с названием:', q[j]
     pass
 
-
-print(Replenishment("пополни кошелёк коплю на машину на пятьсот рублей", "Test2"))
