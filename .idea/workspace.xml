@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="Немного подредачил текст сообщений">
+    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="добавил слово счёт к слову счет">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alise_3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Alise_3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all_wallets.py" beforeDir="false" afterPath="$PROJECT_DIR$/all_wallets.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +26,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -42,6 +41,8 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;exceleditor.install&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Ярослав/Documents/my_projects/YandexOlympicsAlice&quot;,
@@ -53,19 +54,19 @@
       <recent name="C:\Users\Ярослав\Documents\my_projects\YandexOlympicsAlice" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Alise_3">
+  <component name="RunManager" selected="Python.main">
     <configuration name="Alise_3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="YandexOlympicsAlice" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\ProgramData\Anaconda3\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Alise_3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -75,8 +76,8 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="all_wallets" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="YandexOlimpicsALice" />
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="YandexOlympicsAlice" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -84,10 +85,10 @@
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/all_wallets.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -96,19 +97,40 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="YandexOlympicsAlice" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Ярослав\Documents\my_projects\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="YandexOlimpicsALice" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\Ярослав\Documents\my_projects\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\Administrator\PycharmProjects\BalanceBot\main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -223,7 +245,7 @@
       <method v="2" />
     </configuration>
     <configuration name="oleg" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="YandexOlimpicsALice" />
+      <module name="YandexOlympicsAlice" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -231,7 +253,7 @@
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/oleg.py" />
@@ -245,9 +267,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Alise_3" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.all_wallets" />
+        <item itemvalue="Python.Alise_3" />
+        <item itemvalue="Python.oleg" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.main" />
       </list>
@@ -261,97 +283,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00003" summary="добавил авто-файл">
-      <created>1650726834659</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1650726834659</updated>
-    </task>
-    <task id="LOCAL-00004" summary="добавил авто-файл">
-      <created>1650726863217</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1650726863217</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Почистил Олега от говна + добавил импорт олега">
-      <created>1650727079690</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1650727079690</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Пофиксили говнайство с flask_app.py">
-      <created>1650728658936</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1650728658936</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Почистил часть файла Артёмки">
-      <created>1650729964369</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1650729964369</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Почистил часть файла Артёмки">
-      <created>1650730010364</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1650730010364</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Почистил весь файл Артёмки.">
-      <created>1650730041682</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1650730041682</updated>
-    </task>
-    <task id="LOCAL-00010" summary="доделал все if-ы для 6 основных функций">
-      <created>1650731518493</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1650731518493</updated>
-    </task>
-    <task id="LOCAL-00011" summary="сделал переменную в main для сообщения от юзера">
-      <created>1650731873477</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1650731873477</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Пофиксил немного бед">
-      <created>1650732060066</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1650732060066</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Добавил ключевое слово">
-      <created>1650732192726</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1650732192726</updated>
-    </task>
-    <task id="LOCAL-00014" summary="создал if для вывода всех кошельков">
-      <created>1650739523547</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1650739523547</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Обновил функцию Артёма">
-      <created>1650802965103</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1650802965103</updated>
     </task>
     <task id="LOCAL-00016" summary="Добавил pymorphy2 в requirements.txt">
       <created>1650803829846</created>
@@ -605,7 +536,98 @@
       <option name="project" value="LOCAL" />
       <updated>1650984877384</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="...">
+      <created>1650986519936</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1650986519936</updated>
+    </task>
+    <task id="LOCAL-00053" summary="...">
+      <created>1650987705907</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1650987705907</updated>
+    </task>
+    <task id="LOCAL-00054" summary="...">
+      <created>1650996145767</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1650996145768</updated>
+    </task>
+    <task id="LOCAL-00055" summary="обновил requirements.txt">
+      <created>1650996349157</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1650996349158</updated>
+    </task>
+    <task id="LOCAL-00056" summary="создал функцию прощания в боте">
+      <created>1651043249989</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1651043249990</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Обновил немного json, пофиксил рандом в прощании.">
+      <created>1651043938948</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1651043938948</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Немного поменял текст ответов.">
+      <created>1651044035023</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1651044035023</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Вернул import logging.">
+      <created>1651044508601</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1651044508601</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Теперь при прощании офается сессия">
+      <created>1651044864093</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1651044864093</updated>
+    </task>
+    <task id="LOCAL-00061" summary="...">
+      <created>1651045313272</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1651045313273</updated>
+    </task>
+    <task id="LOCAL-00062" summary="...">
+      <created>1651045368628</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1651045368628</updated>
+    </task>
+    <task id="LOCAL-00063" summary="...">
+      <created>1651049092062</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1651049092062</updated>
+    </task>
+    <task id="LOCAL-00064" summary="добавил слово счёт к слову счет">
+      <created>1651137717424</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1651137717424</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -619,14 +641,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/Ярик" />
-                      </list>
-                    </value>
-                  </entry>
-                  <entry key="user">
-                    <value>
-                      <list>
-                        <option value="*" />
+                        <option value="origin/Семён" />
                       </list>
                     </value>
                   </entry>
@@ -642,6 +657,16 @@
         <entry key="Branch">
           <value>
             <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/Семён" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/Дима" />
+                </option>
+              </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="origin/Ярик" />
@@ -660,16 +685,6 @@
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="origin/Артём" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="origin/Дима" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="origin/Семён" />
                 </option>
               </RecentGroup>
               <RecentGroup>
@@ -705,20 +720,11 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ПОЗДРАВЛЯЮ ВСЕХ НАС ФУНКЦИЯ ЯРИКА РАБОТАЕТ НА 100% ТАКЖЕ КАРКАС РАБОТАЕТ ПОЛНОСТЬЮ И ВЫЗЫВАЕТ УЖЕ ГОТОВУЮ ФУНКЦИЮ АРТЁМА И ФУНКЦИЮ ЯРИКА." />
-    <MESSAGE value="сделал почище код" />
-    <MESSAGE value="Создал функцию помощи" />
-    <MESSAGE value="Заменил счЁт на счЕт" />
-    <MESSAGE value="обновил коммент с командами для cmd" />
-    <MESSAGE value="теперь я могу запускать ngrok с консоли" />
-    <MESSAGE value="обновил ngrok чтобы он не брал request-ы от кс" />
-    <MESSAGE value="взял ветку Феди" />
     <MESSAGE value="переименовал функцию Феди на top_up_wallet и файл на то же имя. Также почистил его файл." />
     <MESSAGE value="обновил файлы Артёмки" />
     <MESSAGE value="убрал лишний кусок в 1 строке" />
     <MESSAGE value="взял файлы димы и обнову от артетя" />
     <MESSAGE value="обновил путь до ngrok" />
-    <MESSAGE value="..." />
     <MESSAGE value="Добавил в свою функцию обработку случая при котором нет кошельков" />
     <MESSAGE value="Сделал так, чтобы бот не говорил одно и то же при отсутствии кошельков по несколько раз." />
     <MESSAGE value="Заменил txt на json и теперь не удаляю файл каждый раз как даун" />
@@ -730,6 +736,15 @@
     <MESSAGE value="Обновил приветственную фразу бота, а также его ответ на &quot;Что ты умеешь?&quot;. Также добавил рандомный ответ и завершение сессии на слово спасибо." />
     <MESSAGE value="Теперь бота можно поприветствовать, и он ответит тем же, но если это уже не первое сообщение боту в этой сессии то он скажет что вы уже здоровались." />
     <MESSAGE value="Немного подредачил текст сообщений" />
-    <option name="LAST_COMMIT_MESSAGE" value="Немного подредачил текст сообщений" />
+    <MESSAGE value="Взял версию из ветки Ярика" />
+    <MESSAGE value="обновил requirements.txt" />
+    <MESSAGE value="создал функцию прощания в боте" />
+    <MESSAGE value="Обновил немного json, пофиксил рандом в прощании." />
+    <MESSAGE value="Немного поменял текст ответов." />
+    <MESSAGE value="Вернул import logging." />
+    <MESSAGE value="Теперь при прощании офается сессия" />
+    <MESSAGE value="..." />
+    <MESSAGE value="добавил слово счёт к слову счет" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавил слово счёт к слову счет" />
   </component>
 </project>

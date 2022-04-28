@@ -1,13 +1,12 @@
 from flask import Flask, request
-import logging
-import json
-from funcs import out
 from oleg import *
 from all_wallets import *
 from create_delete_wallet import *
 from helper import *
 from thanks import *
 from hello import *
+from bye import *
+import logging
 
 app = Flask(__name__)
 
@@ -41,32 +40,32 @@ def handle_dialog(req, res):
         return
 
     if ('созд' in user_message or 'доб' in user_message) and \
-            ('кошел' in user_message or 'счет' in user_message):
+            ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
         res['response']['text'] = create_wallet(user_message, user_id)
         logging.info("Adding wallet")
         return
 
     if ('удал' in user_message or 'убр' in user_message) and \
-            ('кошел' in user_message or 'счет' in user_message):
+            ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
         res['response']['text'] = delete_wallet(user_message, user_id)
         logging.info("Deleting wallet")
         return
 
     if ('пополн' in user_message or 'зачисл' in user_message) and \
-            ('кошел' in user_message or 'счет' in user_message):
+            ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
         res['response']['text'] = "Пополнил кошелёк"
         logging.info("Adding money")
         return
 
     if ('трат' in user_message or 'сн' in user_message) and \
-            ('кошел' in user_message or 'счет' in user_message):
+            ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
         res['response']['text'] = "Снял с кошелька"
         logging.info("Spending money")
         return
 
     if ('выв' in user_message or 'дай' in user_message or 'ска' in user_message) and \
             'инф' in user_message and \
-            ('кошел' in user_message or 'счет' in user_message):
+            ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
         res['response']['text'] = "Вывел информацию о счёте"
         logging.info("Giving info about wallet")
         return
@@ -94,8 +93,13 @@ def handle_dialog(req, res):
         res['response']['end_session'] = True
         return
 
-    if "привет" in user_message:
+    if "привет" in user_message or "здорово" in user_message or "хай" in user_message:
         res['response']['text'] = hello(req['session']['message_id'])
+        return
+
+    if "до свидания" in user_message or "пока" in user_message or "прощай" in user_message:
+        res['response']['text'] = bye()
+        res['response']['end_session'] = True
         return
 
     res['response']['text'] = "Извините, я Вас не понял."
