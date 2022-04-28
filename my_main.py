@@ -1,14 +1,8 @@
 import flask
-from flask import Flask, request
-import requests
-import logging
-import json
-from funcs import out
-from oleg import *
-from all_wallets import *
-from create_delete_wallet import *
-from flask import Flask, request, jsonify, redirect
+from flask import Flask, request, redirect
 from requests import post
+
+from all_wallets import *
 
 app = Flask(__name__)
 

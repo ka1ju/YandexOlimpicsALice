@@ -2,3 +2,4 @@ pymorphy2~=0.9.1
 
 SQLAlchemy~=1.4.35
 Flask~=2.1.1
+requests~=2.27.1
