@@ -29,28 +29,42 @@ def converter(text):
             elif i in d.keys() and d[i] not in lst:
                 lst.append(d[i])
         flag = False
-        s = "https://pokur.su/"
         res = []
+        is_strange = False
+        is_strange_v = False
+        c = False
         if "сколько" in req:
             for i in lst:
                 if i == "в":
                     flag = True
+                    c = True
+                    if len(res) == 0:
+                        is_strange_v = True
                 elif i.isalpha() and not flag:
                     res.append(i)
                 elif i.isalpha() and flag:
                     res.insert(0, i)
                     flag = False
+                if i.isdigit() and len(res) == 1 and c:
+                    is_strange = True
         elif "переведи" in req:
             for i in lst:
                 if i == "в":
                     flag = True
+                    c = True
+                    if len(res) == 0:
+                        is_strange_v = True
                 elif i.isalpha() and flag:
                     res.append(i)
                 elif i.isalpha() and not flag:
                     res.insert(0, i)
+                if i.isdigit() and len(res) == 1 and c:
+                    is_strange = True
         for it in lst:
             if it.isdigit():
                 res.insert(1, it)
+        if is_strange and is_strange_v:
+            res = res[::-1]
         r = requests.get(f'https://ru.myfin.by/converter/{res[0].lower()}-{res[2].lower()}/{res[1]}')
         r = r.text
         r = r[r.find('<input id="to_input_curr" type="tel" value="') + 44::]
