@@ -2,9 +2,6 @@ from helper import *
 from thanks import *
 from hello import *
 from bye import *
-import sys
-import requests
-import logging
 from oleg import *
 from all_wallets import *
 from create_delete_wallet import *
@@ -12,11 +9,7 @@ import flask
 from flask import Flask, request, redirect, session
 from requests import post
 from converter import *
-
-if sys.version_info < (3, 0):
-    from urllib import urlencode
-else:
-    from urllib.parse import urlencode
+from urllib.parse import urlencode
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'ИДИ НАХУЙ'
@@ -52,35 +45,41 @@ def handle_dialog(req, res):
     try:
         user_message = req['request']['original_utterance'].lower()
 
+        # Авторизация
         if req['session']['new'] and user_message == "":
             res['response']['text'] = authorization(user_id)
             logging.info("Authorising user")
             return
 
+        # Создание кошелька
         if ('созд' in user_message or 'доб' in user_message) and \
                 ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
             res['response']['text'] = create_wallet(user_message, user_id)
             logging.info("Adding wallet")
             return
 
+        # Удаление кошелька
         if ('удал' in user_message or 'убр' in user_message) and \
                 ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
             res['response']['text'] = delete_wallet(user_message, user_id)
             logging.info("Deleting wallet")
             return
 
+        # Пополнение кошелька
         if ('пополн' in user_message or 'зачисл' in user_message) and \
                 ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
             res['response']['text'] = "Пополнил кошелёк"
             logging.info("Adding money")
             return
 
+        # Снятие денег или трата денег с кошелька
         if ('трат' in user_message or 'сн' in user_message) and \
                 ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
             res['response']['text'] = "Снял с кошелька"
             logging.info("Spending money")
             return
 
+        # Вывод информации о счёте
         if ('выв' in user_message or 'дай' in user_message or 'ска' in user_message) and \
                 'инф' in user_message and \
                 ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
@@ -88,12 +87,14 @@ def handle_dialog(req, res):
             logging.info("Giving info about wallet")
             return
 
+        # Вывод статистики о счёте
         if ('выв' in user_message or 'дай' in user_message or 'ска' in user_message) and \
                 'стат' in user_message:
-            res['response']['text'] = "Вывел статистику"
+            res['response']['text'] = statistic(user_message, user_id)
             logging.info("Giving statics about expenses")
             return
 
+        # Вывод всех кошельков
         if ('выв' in user_message or 'дай' in user_message
             or 'ска' in user_message or "покаж" in user_message
             or "показ" in user_message) and \
@@ -102,23 +103,28 @@ def handle_dialog(req, res):
             logging.info("Giving all wallets")
             return
 
+        # Конвертация валют
         if 'конверт' in user_message or 'перев' in user_message or ("сколько" in user_message and "в" in user_message):
             res['response']['text'] = converter(user_message)
             return
 
+        # Помощь
         if "помо" in user_message or ("что" in user_message and "ты" in user_message and "умеешь" in user_message):
             res['response']['text'] = helper()
             return
 
-        if "спасибо" in user_message:
+        # Ответ на благодарность
+        if "спасибо" in user_message or "благодар" in user_message or "спс" in user_message:
             res['response']['text'] = thanks()
             res['response']['end_session'] = True
             return
 
+        # Ответ на приветствие
         if "привет" in user_message or "здорово" in user_message or "хай" in user_message:
             res['response']['text'] = hello(req['session']['message_id'])
             return
 
+        # Ответ на прощание
         if "до свидания" in user_message or "пока" in user_message or "прощай" in user_message:
             res['response']['text'] = bye()
             res['response']['end_session'] = True
