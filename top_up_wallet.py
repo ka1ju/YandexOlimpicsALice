@@ -95,7 +95,6 @@ def top_up_wallet(st, user_name):
             return ret
         elif q[j] not in words:
             return 'У вас нет кошелька с названием:', q[j]
-            y = 1
             v = from_db('accounts', 'Accounts', {'accounts': q[j]})
             change_db('accounts', 'Accounts', {'accounts': q[j], 'bank': int(v[0].bank + int(a[j]))})
             return 'Баланс кошелька', q[j], 'пополнен'
