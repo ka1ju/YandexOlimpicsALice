@@ -73,11 +73,6 @@ def converter(text):
             w1 = morph.parse(res[0])[0].make_agree_with_number(int(res[1])).word
         else:
             w1 = res[0]
-        return f'{res[1]} {w1} равны {round(float(r), 2)} {w2}'
+        return f'{res[1]} {w1} равно {round(float(r), 2)} {morph.parse(w2)[0].inflect({"datv"}).word}'
     except Exception:
         return "Не понял вас, повторите"
-
-# converter("Сколько в пяти рублях юань")
-# converter("Сколько тенге в пяти рублях")
-# converter("Сколько рублей в пяти тенге")
-# converter("Переведи пять рублей в доллары")
