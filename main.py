@@ -11,6 +11,7 @@ from create_delete_wallet import *
 import flask
 from flask import Flask, request, redirect, session
 from requests import post
+from converter import *
 
 if sys.version_info < (3, 0):
     from urllib import urlencode
@@ -99,6 +100,10 @@ def handle_dialog(req, res):
                 ('кошел' in user_message or 'счет' in user_message):
             res['response']['text'] = return_wallets(user_id)
             logging.info("Giving all wallets")
+            return
+
+        if 'конверт' in user_message or 'перев' in user_message:
+            res['response']['text'] = converter(user_message)
             return
 
         if "помо" in user_message or ("что" in user_message and "ты" in user_message and "умеешь" in user_message):
