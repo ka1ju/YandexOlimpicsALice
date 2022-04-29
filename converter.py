@@ -65,7 +65,7 @@ def converter(text):
             if res[i].isalpha():
                 res[i] = d_from_abbr[res[i]]
         if res[2] != "тенге":
-            w2 = morph.parse(res[2])[0].make_agree_with_number(round(float(r), 2)).word
+            w2 = morph.parse(res[2])[0].make_agree_with_number(round(float(r), 2)).inflect({"datv"}).word
         else:
             w2 = res[2]
             r = float(r1) * int(res[1])
@@ -73,6 +73,6 @@ def converter(text):
             w1 = morph.parse(res[0])[0].make_agree_with_number(int(res[1])).word
         else:
             w1 = res[0]
-        return f'{res[1]} {w1} равно {round(float(r), 2)} {morph.parse(w2)[0].inflect({"datv"}).word}'
+        return f'{res[1]} {w1} равно {round(float(r), 2)} {w2}'
     except Exception:
         return "Не понял вас, повторите"
