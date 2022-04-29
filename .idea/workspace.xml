@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="...">
-      <change afterPath="$PROJECT_DIR$/testing_dicks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prev_alice_message.json" beforeDir="false" afterPath="$PROJECT_DIR$/prev_alice_message.json" afterDir="false" />
-    </list>
+    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="Создал тестовый файл и также обновил main.py" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -308,13 +302,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00020" summary="ПОЗДРАВЛЯЮ ВСЕХ НАС ФУНКЦИИ АРТЁМА РАБОТАЮТ ПОЧТИ НА 100% ОСТАЛОСЬ ЛИШЬ ДОБАВИТЬ СЛОВА-ИСКЛЮЧЕНИЯ И КЛЮЧЕВЫЕ СЛОВА И ВСЁ БУДЕТ ГОТОВО.">
-      <created>1650805900565</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1650805900565</updated>
     </task>
     <task id="LOCAL-00021" summary="ПОЗДРАВЛЯЮ ВСЕХ НАС ФУНКЦИЯ ЯРИКА РАБОТАЕТ НА 100% ТАКЖЕ КАРКАС РАБОТАЕТ ПОЛНОСТЬЮ И ВЫЗЫВАЕТ УЖЕ ГОТОВУЮ ФУНКЦИЮ АРТЁМА И ФУНКЦИЮ ЯРИКА.">
       <created>1650808422082</created>
@@ -652,7 +639,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651166352829</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Создал тестовый файл и также обновил main.py">
+      <created>1651231888859</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1651231888860</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -745,7 +739,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="убрал лишний кусок в 1 строке" />
     <MESSAGE value="взял файлы димы и обнову от артетя" />
     <MESSAGE value="обновил путь до ngrok" />
     <MESSAGE value="Добавил в свою функцию обработку случая при котором нет кошельков" />
@@ -770,6 +763,7 @@
     <MESSAGE value="..." />
     <MESSAGE value="ХУЙЪ" />
     <MESSAGE value="всё ласт версия на гите" />
-    <option name="LAST_COMMIT_MESSAGE" value="всё ласт версия на гите" />
+    <MESSAGE value="Создал тестовый файл и также обновил main.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Создал тестовый файл и также обновил main.py" />
   </component>
 </project>
