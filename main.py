@@ -1,31 +1,24 @@
-from flask import Flask, request
-from oleg import *
-from all_wallets import *
-from create_delete_wallet import *
 from helper import *
 from thanks import *
 from hello import *
 from bye import *
-import logging
 import sys
-import flask
-from flask import Flask, request
 import requests
 import logging
-import json
-from funcs import out
 from oleg import *
 from all_wallets import *
 from create_delete_wallet import *
-from flask import Flask, request, jsonify, redirect
+import flask
+from flask import Flask, request, redirect, session
 from requests import post
+
 if sys.version_info < (3, 0):
     from urllib import urlencode
 else:
     from urllib.parse import urlencode
 
-
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'ИДИ НАХУЙ'
 
 logging.basicConfig(level=logging.INFO)
 
@@ -42,7 +35,7 @@ def main():
         }
     }
 
-    if request.json['session']['new']:
+    if request.json['session']['new'] and "access_token" not in request.json['session']['user']:
         return json.dumps({
             "start_account_linking": {},
             "version": "1.0"
@@ -138,6 +131,7 @@ def handle_dialog(req, res):
 
 @app.route('/getting', methods=['POST', 'GET'])
 def getting():
+    code = request.values.to_dict()['code']
     data = {
         'grant_type': 'authorization_code',
         'code': code,
@@ -145,27 +139,30 @@ def getting():
         'client_secret': '445686f67ceb472dad8c77d0631e74f9'
     }
     data = urlencode(data)
-    print(code)
     baseurl = 'https://oauth.yandex.ru/'
     k = post(baseurl + "token", data).json()
-    print(k)
     return json.dumps(k)
 
 
 @app.route('/code_get', methods=['POST', 'GET'])
 def code_get():
-    global code
     code = request.args.get('code')
+    session['code'] = code
+    statuation = session.get('statuation', None)
+    client_id = session.get('client_id', None)
+    scope = session.get('scope', None)
     return redirect(
         f'https://social.yandex.net/broker/redirect?state={statuation}&client_id={client_id}&scope={scope}&code={code}')
 
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
-    global statuation, client_id, scope
     statuation = request.args.get('state')
     client_id = request.args.get('client_id')
     scope = request.args.get('scope')
+    session['statuation'] = statuation
+    session['client_id'] = client_id
+    session['scope'] = scope
     return flask.redirect(
         f'https://oauth.yandex.ru/authorize?response_type=code&client_id=eb2919ba420a467d9f9d958096364a97&redirect_uri=https://0152-5-137-125-18.eu.ngrok.io/code_get')
 

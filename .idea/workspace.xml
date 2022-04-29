@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="ХУЙЪ">
+    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="...">
+      <change afterPath="$PROJECT_DIR$/testing_dicks.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
@@ -307,13 +308,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Обновил файл для работы с бд">
-      <created>1650805685674</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1650805685674</updated>
     </task>
     <task id="LOCAL-00020" summary="ПОЗДРАВЛЯЮ ВСЕХ НАС ФУНКЦИИ АРТЁМА РАБОТАЮТ ПОЧТИ НА 100% ОСТАЛОСЬ ЛИШЬ ДОБАВИТЬ СЛОВА-ИСКЛЮЧЕНИЯ И КЛЮЧЕВЫЕ СЛОВА И ВСЁ БУДЕТ ГОТОВО.">
       <created>1650805900565</created>
@@ -651,7 +645,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651162336308</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="всё ласт версия на гите">
+      <created>1651166352829</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1651166352829</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -665,7 +666,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/Семён" />
+                        <option value="HEAD" />
                       </list>
                     </value>
                   </entry>
@@ -744,7 +745,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="обновил файлы Артёмки" />
     <MESSAGE value="убрал лишний кусок в 1 строке" />
     <MESSAGE value="взял файлы димы и обнову от артетя" />
     <MESSAGE value="обновил путь до ngrok" />
@@ -769,6 +769,7 @@
     <MESSAGE value="добавил слово счёт к слову счет" />
     <MESSAGE value="..." />
     <MESSAGE value="ХУЙЪ" />
-    <option name="LAST_COMMIT_MESSAGE" value="ХУЙЪ" />
+    <MESSAGE value="всё ласт версия на гите" />
+    <option name="LAST_COMMIT_MESSAGE" value="всё ласт версия на гите" />
   </component>
 </project>
