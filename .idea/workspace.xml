@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="Добавил пояснения в код main">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alise_3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Alise_3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all_wallets.py" beforeDir="false" afterPath="$PROJECT_DIR$/all_wallets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_working.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_working.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing_dicks.py" beforeDir="false" />
+    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="Взял федину обновлённую версию">
       <change beforePath="$PROJECT_DIR$/top_up_wallet.py" beforeDir="false" afterPath="$PROJECT_DIR$/top_up_wallet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/w2n.py" beforeDir="false" afterPath="$PROJECT_DIR$/w2n.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wasting.py" beforeDir="false" afterPath="$PROJECT_DIR$/wasting.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
