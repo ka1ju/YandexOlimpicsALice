@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import random
+
 import w2n
 import pymorphy2
 import requests
@@ -89,6 +91,8 @@ def converter(text):
             w1 = morph.parse(res[0])[0].make_agree_with_number(int(res[1])).word
         else:
             w1 = res[0]
-        return f'{res[1]} {w1} равно {round(float(r), 2)} {w2}'
+        x = random.randint(0, 2)
+        rand = ["Давайте посчитаем...", "По нынешнему курсу", "По моим подсчётам"]
+        return f'{rand[x]}\n{res[1]} {w1} равно {round(float(r), 2)} {w2}'
     except Exception:
         return "Не понял вас, повторите"
