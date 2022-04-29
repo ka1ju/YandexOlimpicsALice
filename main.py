@@ -102,7 +102,7 @@ def handle_dialog(req, res):
             logging.info("Giving all wallets")
             return
 
-        if 'конверт' in user_message or 'перев' in user_message:
+        if 'конверт' in user_message or 'перев' in user_message or ("сколько" in user_message and "в" in user_message):
             res['response']['text'] = converter(user_message)
             return
 
