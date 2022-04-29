@@ -4,9 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="Обновил if в main для перевода валют">
+    <list default="true" id="4f00a12e-aba7-4180-b4ef-ce505d5a56d5" name="Changes" comment="Добавил пояснения в код main">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alise_3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Alise_3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all_wallets.py" beforeDir="false" afterPath="$PROJECT_DIR$/all_wallets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_working.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_working.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing_dicks.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/top_up_wallet.py" beforeDir="false" afterPath="$PROJECT_DIR$/top_up_wallet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/w2n.py" beforeDir="false" afterPath="$PROJECT_DIR$/w2n.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wasting.py" beforeDir="false" afterPath="$PROJECT_DIR$/wasting.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +40,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="28Bug09B5shimwJoM8T6fIlQRut" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -305,13 +317,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00025" summary="...">
-      <created>1650815252138</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1650815252138</updated>
     </task>
     <task id="LOCAL-00026" summary="...">
       <created>1650816521018</created>
@@ -649,7 +654,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651233593274</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="Добавил пояснения в код main">
+      <created>1651235722316</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1651235722316</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -742,7 +754,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Заменил txt на json и теперь не удаляю файл каждый раз как даун" />
     <MESSAGE value="Обновил кусок артёма" />
     <MESSAGE value="Почистил файл с функциями артёма" />
     <MESSAGE value="Создал ответ на слово спасибо" />
@@ -767,6 +778,7 @@
     <MESSAGE value="Почистил файл Артёма" />
     <MESSAGE value="Также добавил операцию перевода валют" />
     <MESSAGE value="Обновил if в main для перевода валют" />
-    <option name="LAST_COMMIT_MESSAGE" value="Обновил if в main для перевода валют" />
+    <MESSAGE value="Добавил пояснения в код main" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил пояснения в код main" />
   </component>
 </project>

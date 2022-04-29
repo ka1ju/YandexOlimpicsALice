@@ -1,7 +1,6 @@
 from db_working import *
 import pymorphy2
 import random
-import logging
 import json
 
 

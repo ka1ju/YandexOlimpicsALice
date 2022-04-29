@@ -10,6 +10,7 @@ from flask import Flask, request, redirect, session
 from requests import post
 from converter import *
 from urllib.parse import urlencode
+import logging
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'ИДИ НАХУЙ'

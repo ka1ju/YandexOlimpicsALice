@@ -1,7 +1,7 @@
 from db_working import *
 
 
-def Popolnyt(st, user_name):
+def top_up_wallet(st, user_name):
     b = st.split('и')
     user_id1 = [i.id for i in from_db("users", "Users", {"username": user_name})]
     user_id = user_id1[0]
@@ -15,7 +15,7 @@ def Popolnyt(st, user_name):
                 q.append(i)
         if y == 0:
             q.append(' ')
-    #----------
+    # ----------
     c = []
     if len(b) > 1:
         for i in range(len(b)):
@@ -37,7 +37,7 @@ def Popolnyt(st, user_name):
                 a.append(c[j][i])
             else:
                 a.append(' ')
-    #----------
+    # ----------
     for j in range(len(q)):
         y = 0
         if q[j] in bd:
@@ -46,5 +46,5 @@ def Popolnyt(st, user_name):
             change_db('accounts', 'Accounts', {'accounts': q[j], 'bank': int(v[0].bank + int(a[j]))})
             return 'Баланс кошелька', q[j], 'пополнен'
         if y == 0:
-            return 'У вас нет кошелька с таким названием' #??????????
+            return 'У вас нет кошелька с таким названием'  # ??????????
     pass

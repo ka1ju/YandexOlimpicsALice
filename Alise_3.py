@@ -2,7 +2,6 @@ from db_working import *
 
 
 def information(general_frase, user_name):
-    global rar
     rar = False
     a = from_db('users', 'Users', {'username': user_name})
     base1 = from_db('accounts', 'Accounts', {'user_id': a[0].id})
@@ -10,7 +9,7 @@ def information(general_frase, user_name):
 
     main_words = []
     words = ["кошел", "счёт", "счета", "кошелёк", "кошельки", "с", "на", "названием", "название", "названиями",
-             "который", "которые", "назваются", "назвается", "привет", "пожалуйста", "пока", "спасибо", "а", "ещё",
+             "который", "которые", "называются", "называется", "привет", "пожалуйста", "пока", "спасибо", "а", "ещё",
              "расскажи", "нам", "им", "мне", "всем", "про", "банк", "инфо", "информ", "информация", "информацию"
              ]
     for it in main_frase:
