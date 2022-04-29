@@ -2,7 +2,9 @@
 import w2n
 import pymorphy2
 import requests
+
 morph = pymorphy2.MorphAnalyzer()
+
 
 def converter(text):
     try:
