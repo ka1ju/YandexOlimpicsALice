@@ -5,6 +5,7 @@ from bye import *
 from oleg import *
 from all_wallets import *
 from create_delete_wallet import *
+from top_up_wallet import *
 import flask
 from flask import Flask, request, redirect, session
 from requests import post
@@ -79,7 +80,8 @@ def handle_dialog(req, res):
         if (('пополн' in user_message or 'зачисл' in user_message) and
                 ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message)) or \
                 'top_up_wallet' in req['state']['session']:
-            res['response']['text'], res['session_state']['top_up_wallet'] = "Пополнил кошелёк", {"1": 1}
+            res['response']['text'], res['session_state']['top_up_wallet'] = \
+                top_up_wallet(user_message, user_id, req['state']['session']['top_up_wallet'])
             logging.info("Adding money")
             return
 

@@ -3,7 +3,7 @@ import pymorphy2
 morph = pymorphy2.MorphAnalyzer()
 
 
-def top_up_wallet(st, user_name):
+def top_up_wallet(st, user_name, x):
     b = st.split(' и ')
     user_id1 = [i.id for i in from_db("users", "Users", {"username": user_name})]
     user_id = user_id1[0]
