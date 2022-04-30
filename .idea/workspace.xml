@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="обновил часть функций и сделал так что они работают без файла. Также добавил сохранение стадий моих функций.">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_04_2022_16_36_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_04_2022_16_36__Changes_.xml" beforeDir="false" />
+    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -330,13 +329,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00027" summary="обновил коммент с командами для cmd">
-      <created>1650826615549</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1650826615549</updated>
     </task>
     <task id="LOCAL-00028" summary="теперь я могу запускать ngrok с консоли">
       <created>1650826815605</created>
@@ -674,7 +666,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651312928475</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="...">
+      <created>1651324761909</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1651324761910</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -770,7 +769,6 @@
     <MESSAGE value="Вернул import logging." />
     <MESSAGE value="Теперь при прощании офается сессия" />
     <MESSAGE value="добавил слово счёт к слову счет" />
-    <MESSAGE value="..." />
     <MESSAGE value="ХУЙЪ" />
     <MESSAGE value="всё ласт версия на гите" />
     <MESSAGE value="Создал тестовый файл и также обновил main.py" />
@@ -780,6 +778,7 @@
     <MESSAGE value="Обновил if в main для перевода валют" />
     <MESSAGE value="Добавил пояснения в код main" />
     <MESSAGE value="обновил часть функций и сделал так что они работают без файла. Также добавил сохранение стадий моих функций." />
-    <option name="LAST_COMMIT_MESSAGE" value="обновил часть функций и сделал так что они работают без файла. Также добавил сохранение стадий моих функций." />
+    <MESSAGE value="..." />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
 </project>

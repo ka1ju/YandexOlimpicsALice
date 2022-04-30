@@ -129,12 +129,12 @@ def handle_dialog(req, res):
 
         # Ответ на приветствие
         if "привет" in user_message or "здорово" in user_message or "хай" in user_message:
-            res['response']['text'] = res['session_state']['hello'] = hello(req['session']['message_id'])
+            res['response']['text'] = res['session_state']['hello'] = hello(req['session']['message_id'], req['state'])
             return
 
         # Ответ на прощание
         if "до свидания" in user_message or "пока" in user_message or "прощай" in user_message:
-            res['response']['text'] = res['session_state']['bye'] = bye()
+            res['response']['text'] = res['session_state']['bye'] = bye(req['state'])
             res['response']['end_session'] = True
             return
 
@@ -183,7 +183,7 @@ def login():
     session['client_id'] = client_id
     session['scope'] = scope
     return flask.redirect(
-        f'https://oauth.yandex.ru/authorize?response_type=code&client_id=eb2919ba420a467d9f9d958096364a97&redirect_uri=https://0152-5-137-125-18.eu.ngrok.io/code_get')
+        f'https://oauth.yandex.ru/authorize?response_type=code&client_id=eb2919ba420a467d9f9d958096364a97&redirect_uri=https://643b-95-191-236-132.eu.ngrok.io/code_get')
 
 
 if __name__ == '__main__':
