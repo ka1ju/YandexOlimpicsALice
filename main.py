@@ -189,7 +189,7 @@ def login():
     session['client_id'] = client_id
     session['scope'] = scope
     return flask.redirect(
-        f'https://oauth.yandex.ru/authorize?response_type=code&client_id=eb2919ba420a467d9f9d958096364a97&redirect_uri=https://643b-95-191-236-132.eu.ngrok.io/code_get')
+        f'https://oauth.yandex.ru/authorize?response_type=code&client_id=eb2919ba420a467d9f9d958096364a97&redirect_uri=https://74bc-95-191-236-132.eu.ngrok.io/code_get')
 
 
 if __name__ == '__main__':
