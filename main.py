@@ -28,7 +28,7 @@ def main():
         'response': {
             'end_session': False
         },
-        'session_state':{
+        'session_state': {
 
         }
     }

@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="Добавил стадии для моих функций">
+    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="Теперь мои функции возвращают что должны, а не авторизацию">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -330,13 +328,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00029" summary="теперь я могу запускать ngrok с консоли">
-      <created>1650826833839</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1650826833839</updated>
     </task>
     <task id="LOCAL-00030" summary="обновил ngrok чтобы он не брал request-ы от кс">
       <created>1650891172032</created>
@@ -674,7 +665,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651332726061</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="Теперь мои функции возвращают что должны, а не авторизацию">
+      <created>1651334610976</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1651334610976</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -755,7 +753,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Создал ответ на слово спасибо" />
     <MESSAGE value="Сделал так, чтобы после слова спасибо сессия заканчивалась" />
     <MESSAGE value="Пока что он работает, но сессию он завершает полностью, хотя должен просто не включать микрофон юзера." />
     <MESSAGE value="Обновил приветственную фразу бота, а также его ответ на &quot;Что ты умеешь?&quot;. Также добавил рандомный ответ и завершение сессии на слово спасибо." />
@@ -780,27 +777,7 @@
     <MESSAGE value="обновил часть функций и сделал так что они работают без файла. Также добавил сохранение стадий моих функций." />
     <MESSAGE value="..." />
     <MESSAGE value="Добавил стадии для моих функций" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил стадии для моих функций" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>127</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>133</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>138</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Теперь мои функции возвращают что должны, а не авторизацию" />
+    <option name="LAST_COMMIT_MESSAGE" value="Теперь мои функции возвращают что должны, а не авторизацию" />
   </component>
 </project>
