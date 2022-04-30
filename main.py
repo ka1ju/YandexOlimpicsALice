@@ -27,6 +27,9 @@ def main():
         'version': request.json['version'],
         'response': {
             'end_session': False
+        },
+        'session_state':{
+
         }
     }
     if "session" in request.json['state']:
@@ -49,7 +52,7 @@ def main():
 
 def handle_dialog(req, res):
     user_id = req['session']['user']['access_token']
-    try:
+    if 'original_utterance' in req['request']:
         user_message = req['request']['original_utterance'].lower()
 
         # Авторизация
@@ -134,12 +137,13 @@ def handle_dialog(req, res):
 
         # Ответ на прощание
         if "до свидания" in user_message or "пока" in user_message or "прощай" in user_message:
+            logging.info('Bot says bye-bye')
             res['response']['text'] = res['session_state']['bye'] = bye(req['state'])
             res['response']['end_session'] = True
             return
 
         res['response']['text'] = "Извините, я Вас не понял."
-    except KeyError:
+    else:
         print(req)
         res['response']['text'] = authorization(req['session']['user']['access_token'])
         return
