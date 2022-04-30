@@ -29,7 +29,13 @@ def main():
             'end_session': False
         }
     }
-
+    if "session" in request.json['state']:
+        if 'bye' in request.json['state']['session']:
+            response['session_state']['bye'] = request.json['state']['session']['bye']
+        if 'hello' in request.json['state']['session']:
+            response['session_state']['hello'] = request.json['state']['session']['hello']
+        if 'thanks' in request.json['state']['session']:
+            response['session_state']['thanks'] = request.json['state']['session']['thanks']
     if request.json['session']['new'] and "access_token" not in request.json['session']['user']:
         return json.dumps({
             "start_account_linking": {},
@@ -67,9 +73,10 @@ def handle_dialog(req, res):
             return
 
         # Пополнение кошелька
-        if ('пополн' in user_message or 'зачисл' in user_message) and \
-                ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
-            res['response']['text'] = "Пополнил кошелёк"
+        if (('пополн' in user_message or 'зачисл' in user_message) and
+                ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message)) or \
+                'top_up_wallet' in req['state']['session']:
+            res['response']['text'], res['session_state']['top_up_wallet'] = "Пополнил кошелёк", {"1": 1}
             logging.info("Adding money")
             return
 
@@ -116,18 +123,18 @@ def handle_dialog(req, res):
 
         # Ответ на благодарность
         if "спасибо" in user_message or "благодар" in user_message or "спс" in user_message:
-            res['response']['text'] = thanks()
+            res['response']['text'] = res['session_state']['thanks'] = thanks(req['state'])
             res['response']['end_session'] = True
             return
 
         # Ответ на приветствие
         if "привет" in user_message or "здорово" in user_message or "хай" in user_message:
-            res['response']['text'] = hello(req['session']['message_id'])
+            res['response']['text'] = res['session_state']['hello'] = hello(req['session']['message_id'])
             return
 
         # Ответ на прощание
         if "до свидания" in user_message or "пока" in user_message or "прощай" in user_message:
-            res['response']['text'] = bye()
+            res['response']['text'] = res['session_state']['bye'] = bye()
             res['response']['end_session'] = True
             return
 
