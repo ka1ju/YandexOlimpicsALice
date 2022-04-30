@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="Убрал лишний пробел">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_04_2022_22_52_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_04_2022_22_52__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="обновил ссылку">
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/top_up_wallet.py" beforeDir="false" afterPath="$PROJECT_DIR$/top_up_wallet.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -332,20 +328,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00031" summary="взял ветку Феди">
-      <created>1650894799178</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1650894799178</updated>
-    </task>
-    <task id="LOCAL-00032" summary="переименовал функцию Феди на top_up_wallet и файл на то же имя. Также почистил его файл.">
-      <created>1650895741074</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1650895741074</updated>
     </task>
     <task id="LOCAL-00033" summary="...">
       <created>1650895769766</created>
@@ -676,7 +658,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651338970169</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="...">
+      <created>1651340785000</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1651340785001</updated>
+    </task>
+    <task id="LOCAL-00081" summary="обновил ссылку">
+      <created>1651340889392</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1651340889392</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -757,7 +753,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Пока что он работает, но сессию он завершает полностью, хотя должен просто не включать микрофон юзера." />
     <MESSAGE value="Обновил приветственную фразу бота, а также его ответ на &quot;Что ты умеешь?&quot;. Также добавил рандомный ответ и завершение сессии на слово спасибо." />
     <MESSAGE value="Теперь бота можно поприветствовать, и он ответит тем же, но если это уже не первое сообщение боту в этой сессии то он скажет что вы уже здоровались." />
     <MESSAGE value="Немного подредачил текст сообщений" />
@@ -778,10 +773,11 @@
     <MESSAGE value="Обновил if в main для перевода валют" />
     <MESSAGE value="Добавил пояснения в код main" />
     <MESSAGE value="обновил часть функций и сделал так что они работают без файла. Также добавил сохранение стадий моих функций." />
-    <MESSAGE value="..." />
     <MESSAGE value="Добавил стадии для моих функций" />
     <MESSAGE value="Теперь мои функции возвращают что должны, а не авторизацию" />
     <MESSAGE value="Убрал лишний пробел" />
-    <option name="LAST_COMMIT_MESSAGE" value="Убрал лишний пробел" />
+    <MESSAGE value="..." />
+    <MESSAGE value="обновил ссылку" />
+    <option name="LAST_COMMIT_MESSAGE" value="обновил ссылку" />
   </component>
 </project>

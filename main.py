@@ -67,6 +67,7 @@ def handle_dialog(req, res):
                 ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
             res['response']['text'] = create_wallet(user_message, user_id)
             logging.info("Adding wallet")
+            # TODO
             return
 
         # Удаление кошелька
@@ -74,6 +75,7 @@ def handle_dialog(req, res):
                 ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
             res['response']['text'] = delete_wallet(user_message, user_id)
             logging.info("Deleting wallet")
+            # TODO
             return
 
         # Пополнение кошелька
@@ -90,6 +92,7 @@ def handle_dialog(req, res):
                 ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
             res['response']['text'] = "Снял с кошелька"
             logging.info("Spending money")
+            # TODO
             return
 
         # Вывод информации о счёте
@@ -119,6 +122,7 @@ def handle_dialog(req, res):
         # Конвертация валют
         if 'конверт' in user_message or 'перев' in user_message or ("сколько" in user_message and "в" in user_message):
             res['response']['text'] = converter(user_message)
+            # TODO
             return
 
         # Помощь
