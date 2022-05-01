@@ -157,7 +157,6 @@ def delete_wallet(req, user_ya_id, k=None):
         no = []
         yes = []
         res_s = ""
-        print(lst)
         if "" not in lst:
             for i in lst:
                 if len(from_db("accounts", "Accounts", {"accounts": i, "user_id": user_id})) == 0:
