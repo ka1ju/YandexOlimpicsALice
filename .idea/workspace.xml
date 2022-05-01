@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="добавил слово счёт к слову счет">
+    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="Сделал рабочие стадии для удаления и создания кошельков">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create_delete_wallet.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_delete_wallet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -414,20 +411,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
     </task>
-    <task id="LOCAL-00036" summary="...">
-      <created>1650896753836</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1650896753836</updated>
-    </task>
-    <task id="LOCAL-00037" summary="убрал лишний кусок в 1 строке">
-      <created>1650898670336</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1650898670336</updated>
-    </task>
     <task id="LOCAL-00038" summary="взял файлы димы и обнову от артетя">
       <created>1650900085125</created>
       <option name="number" value="00038" />
@@ -757,7 +740,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651381342726</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Сделал рабочие стадии">
+      <created>1651415095975</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1651415095975</updated>
+    </task>
+    <task id="LOCAL-00086" summary="Сделал рабочие стадии для удаления и создания кошельков">
+      <created>1651415117522</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1651415117522</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -838,8 +835,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Взял версию из ветки Ярика" />
-    <MESSAGE value="обновил requirements.txt" />
     <MESSAGE value="создал функцию прощания в боте" />
     <MESSAGE value="Обновил немного json, пофиксил рандом в прощании." />
     <MESSAGE value="Немного поменял текст ответов." />
@@ -863,6 +858,8 @@
     <MESSAGE value="Сделал TODO чтобы не забыть" />
     <MESSAGE value="Сделал стадию для добавления кошелька" />
     <MESSAGE value="Обновил стадию для артёма" />
-    <option name="LAST_COMMIT_MESSAGE" value="Обновил стадию для артёма" />
+    <MESSAGE value="Сделал рабочие стадии" />
+    <MESSAGE value="Сделал рабочие стадии для удаления и создания кошельков" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сделал рабочие стадии для удаления и создания кошельков" />
   </component>
 </project>

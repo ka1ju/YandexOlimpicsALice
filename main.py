@@ -84,7 +84,6 @@ def handle_dialog(req, res):
         if ('удал' in user_message or 'убр' in user_message) and \
                 ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message) or \
                 'delete_wallet' in req['state']['session']:
-            logging.info("Deleting wallet")
             x = {}
             if 'delete_wallet' in req['state']['session']:
                 x = req['state']['session']['delete_wallet']
@@ -103,9 +102,19 @@ def handle_dialog(req, res):
         if (('пополн' in user_message or 'зачисл' in user_message) and
             ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message)) or \
                 'top_up_wallet' in req['state']['session']:
-            res['response']['text'], res['session_state']['top_up_wallet'] = \
-                top_up_wallet(user_message, user_id, req['state']['session']['top_up_wallet'])
-            logging.info("Adding money")
+            x = {}
+            if 'top_up_wallet' in req['state']['session']:
+                x = req['state']['session']['top_up_wallet']
+                if x != {}:
+                    res['response']['text'], res['session_state']['top_up_wallet'] = \
+                        top_up_wallet(user_message, user_id, x)
+                    logging.info("Topping wallet up")
+                    return
+            else:
+                res['response']['text'], res['session_state']['top_up_wallet'] = \
+                    top_up_wallet(user_message, user_id, x)
+                logging.info("Topping wallet up")
+                return
             return
 
         # Снятие денег или трата денег с кошелька
