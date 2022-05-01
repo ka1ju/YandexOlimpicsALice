@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="Сделал TODO чтобы не забыть">
+    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="Обновил стадию для артёма">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prev_alice_message.json" beforeDir="false" afterPath="$PROJECT_DIR$/prev_alice_message.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -330,20 +328,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00034" summary="обновил файлы Артёмки">
-      <created>1650896127743</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1650896127743</updated>
-    </task>
-    <task id="LOCAL-00035" summary="...">
-      <created>1650896510020</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1650896510020</updated>
     </task>
     <task id="LOCAL-00036" summary="...">
       <created>1650896753836</created>
@@ -674,7 +658,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651341214084</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="Сделал стадию для добавления кошелька">
+      <created>1651381166540</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1651381166540</updated>
+    </task>
+    <task id="LOCAL-00084" summary="Обновил стадию для артёма">
+      <created>1651381342726</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1651381342726</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -755,8 +753,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Теперь бота можно поприветствовать, и он ответит тем же, но если это уже не первое сообщение боту в этой сессии то он скажет что вы уже здоровались." />
-    <MESSAGE value="Немного подредачил текст сообщений" />
     <MESSAGE value="Взял версию из ветки Ярика" />
     <MESSAGE value="обновил requirements.txt" />
     <MESSAGE value="создал функцию прощания в боте" />
@@ -780,6 +776,8 @@
     <MESSAGE value="..." />
     <MESSAGE value="обновил ссылку" />
     <MESSAGE value="Сделал TODO чтобы не забыть" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сделал TODO чтобы не забыть" />
+    <MESSAGE value="Сделал стадию для добавления кошелька" />
+    <MESSAGE value="Обновил стадию для артёма" />
+    <option name="LAST_COMMIT_MESSAGE" value="Обновил стадию для артёма" />
   </component>
 </project>
