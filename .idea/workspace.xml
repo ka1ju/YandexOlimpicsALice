@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cd48d0f-d61c-4538-a980-3f488df4062d" name="Changes" comment="Убрал лишний return">
+    <list default="true" id="7cd48d0f-d61c-4538-a980-3f488df4062d" name="Changes" comment="Обновил файлы арчибальда">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -411,27 +412,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
     </task>
-    <task id="LOCAL-00045" summary="Почистил файл с функциями артёма">
-      <created>1650978876567</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1650978876567</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Создал ответ на слово спасибо">
-      <created>1650979546606</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1650979546606</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Сделал так, чтобы после слова спасибо сессия заканчивалась">
-      <created>1650979620072</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1650979620072</updated>
-    </task>
     <task id="LOCAL-00048" summary="Пока что он работает, но сессию он завершает полностью, хотя должен просто не включать микрофон юзера.">
       <created>1650981121549</created>
       <option name="number" value="00048" />
@@ -754,7 +734,28 @@
       <option name="project" value="LOCAL" />
       <updated>1651420795864</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="Сделал стадии для">
+      <created>1651421050546</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1651421050546</updated>
+    </task>
+    <task id="LOCAL-00095" summary="Сделал стадии для функции артура">
+      <created>1651421066308</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1651421066308</updated>
+    </task>
+    <task id="LOCAL-00096" summary="Обновил файлы арчибальда">
+      <created>1651421107760</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1651421107760</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -774,6 +775,11 @@
             <list>
               <RecentGroup>
                 <option name="FILTER_VALUES">
+                  <option value="origin/main" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
                   <option value="origin/Семён" />
                 </option>
               </RecentGroup>
@@ -785,11 +791,6 @@
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="origin/Ярик" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="origin/main" />
                 </option>
               </RecentGroup>
               <RecentGroup>
@@ -835,10 +836,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="добавил слово счёт к слову счет" />
-    <MESSAGE value="ХУЙЪ" />
-    <MESSAGE value="всё ласт версия на гите" />
-    <MESSAGE value="Создал тестовый файл и также обновил main.py" />
     <MESSAGE value="Обновили файлы бд" />
     <MESSAGE value="Почистил файл Артёма" />
     <MESSAGE value="Также добавил операцию перевода валют" />
@@ -860,6 +857,10 @@
     <MESSAGE value="..." />
     <MESSAGE value="Сделал рабочую стадию для вывода информации о счёте" />
     <MESSAGE value="Убрал лишний return" />
-    <option name="LAST_COMMIT_MESSAGE" value="Убрал лишний return" />
+    <MESSAGE value="Сделал стадии для" />
+    <MESSAGE value="Сделал стадии для функ" />
+    <MESSAGE value="Сделал стадии для функции артура" />
+    <MESSAGE value="Обновил файлы арчибальда" />
+    <option name="LAST_COMMIT_MESSAGE" value="Обновил файлы арчибальда" />
   </component>
 </project>

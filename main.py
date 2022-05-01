@@ -182,8 +182,19 @@ def handle_dialog(req, res):
 
         # Конвертация валют
         if 'конверт' in user_message or 'перев' in user_message or ("сколько" in user_message and "в" in user_message):
-            res['response']['text'] = converter(user_message)
-            # TODO
+            x = {}
+            if 'conversion' in req['state']['session']:
+                x = req['state']['session']['conversion']
+                if x != {}:
+                    res['response']['text'], res['session_state']['conversion'] = \
+                        converter(user_message, x)
+                    logging.info("Converting")
+                    return
+            else:
+                res['response']['text'], res['session_state']['conversion'] = \
+                    converter(user_message, x)
+                logging.info("Converting")
+                return
             return
 
         # Помощь
