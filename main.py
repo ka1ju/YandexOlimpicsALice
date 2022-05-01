@@ -63,24 +63,45 @@ def handle_dialog(req, res):
             return
 
         # Создание кошелька
-        if ('созд' in user_message or 'доб' in user_message) and \
-                ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
-            res['response']['text'], res['session_state']['create_wallet'] = \
-                create_wallet(user_message, req['state']['session']['create_wallet'])
-            logging.info("Adding wallet")
-            return
+        if (('созд' in user_message or 'доб' in user_message) and
+            ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message)) \
+                or 'create_wallet' in req['state']['session']:
+            x = {}
+            if 'create_wallet' in req['state']['session']:
+                x = req['state']['session']['create_wallet']
+                if x != {}:
+                    res['response']['text'], res['session_state']['create_wallet'] = \
+                        create_wallet(user_message, user_id, x)
+                    logging.info("Adding wallet")
+                    return
+            else:
+                res['response']['text'], res['session_state']['create_wallet'] = \
+                    create_wallet(user_message, user_id, x)
+                logging.info("Adding wallet")
+                return
 
         # Удаление кошелька
         if ('удал' in user_message or 'убр' in user_message) and \
-                ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
-            res['response']['text'] = delete_wallet(user_message, user_id)
+                ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message) or \
+                'delete_wallet' in req['state']['session']:
             logging.info("Deleting wallet")
-            # TODO
-            return
+            x = {}
+            if 'delete_wallet' in req['state']['session']:
+                x = req['state']['session']['delete_wallet']
+                if x != {}:
+                    res['response']['text'], res['session_state']['delete_wallet'] = \
+                        delete_wallet(user_message, user_id, x)
+                    logging.info("Deleting wallet")
+                    return
+            else:
+                res['response']['text'], res['session_state']['delete_wallet'] = \
+                    delete_wallet(user_message, user_id, x)
+                logging.info("Deleting wallet")
+                return
 
         # Пополнение кошелька
         if (('пополн' in user_message or 'зачисл' in user_message) and
-                ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message)) or \
+            ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message)) or \
                 'top_up_wallet' in req['state']['session']:
             res['response']['text'], res['session_state']['top_up_wallet'] = \
                 top_up_wallet(user_message, user_id, req['state']['session']['top_up_wallet'])
