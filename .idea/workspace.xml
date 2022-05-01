@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="Сделал рабочие стадии для удаления и создания кошельков">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="Сделал рабочую стадию для пополнения счёта">
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -411,13 +411,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
     </task>
-    <task id="LOCAL-00038" summary="взял файлы димы и обнову от артетя">
-      <created>1650900085125</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1650900085125</updated>
-    </task>
     <task id="LOCAL-00039" summary="обновил путь до ngrok">
       <created>1650900236073</created>
       <option name="number" value="00039" />
@@ -754,7 +747,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651415117522</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="Сделал рабочую стадию для пополнения счёта">
+      <created>1651419366876</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1651419366876</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -835,7 +835,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="создал функцию прощания в боте" />
     <MESSAGE value="Обновил немного json, пофиксил рандом в прощании." />
     <MESSAGE value="Немного поменял текст ответов." />
     <MESSAGE value="Вернул import logging." />
@@ -860,6 +859,7 @@
     <MESSAGE value="Обновил стадию для артёма" />
     <MESSAGE value="Сделал рабочие стадии" />
     <MESSAGE value="Сделал рабочие стадии для удаления и создания кошельков" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сделал рабочие стадии для удаления и создания кошельков" />
+    <MESSAGE value="Сделал рабочую стадию для пополнения счёта" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сделал рабочую стадию для пополнения счёта" />
   </component>
 </project>

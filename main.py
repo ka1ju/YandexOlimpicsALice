@@ -6,11 +6,13 @@ from oleg import *
 from all_wallets import *
 from create_delete_wallet import *
 from top_up_wallet import *
-import flask
+from wasting import *
+from wasting2 import *
 from flask import Flask, request, redirect, session
 from requests import post
 from converter import *
 from urllib.parse import urlencode
+import flask
 import logging
 
 app = Flask(__name__)
@@ -120,10 +122,19 @@ def handle_dialog(req, res):
         # Снятие денег или трата денег с кошелька
         if ('трат' in user_message or 'сн' in user_message) and \
                 ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
-            res['response']['text'] = "Снял с кошелька"
-            logging.info("Spending money")
-            # TODO
-            return
+            x = {}
+            if 'spend_money' in req['state']['session']:
+                x = req['state']['session']['spend_money']
+                if x != {}:
+                    res['response']['text'], res['session_state']['spend_money'] = \
+                        wasting(user_message, user_id, x)
+                    logging.info("Spending money")
+                    return
+            else:
+                res['response']['text'], res['session_state']['spend_money'] = \
+                    wasting(user_message, user_id, x)
+                logging.info("Spending money")
+                return
 
         # Вывод информации о счёте
         if ('выв' in user_message or 'дай' in user_message or 'ска' in user_message) and \
