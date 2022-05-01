@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cd48d0f-d61c-4538-a980-3f488df4062d" name="Changes" comment="Обновил файлы арчибальда">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="7cd48d0f-d61c-4538-a980-3f488df4062d" name="Changes" comment="Сделал рабочую стадию для конвертации" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -412,13 +409,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
     </task>
-    <task id="LOCAL-00048" summary="Пока что он работает, но сессию он завершает полностью, хотя должен просто не включать микрофон юзера.">
-      <created>1650981121549</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1650981121549</updated>
-    </task>
     <task id="LOCAL-00049" summary="Обновил приветственную фразу бота, а также его ответ на &quot;Что ты умеешь?&quot;. Также добавил рандомный ответ и завершение сессии на слово спасибо.">
       <created>1650982022096</created>
       <option name="number" value="00049" />
@@ -755,7 +745,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651421107760</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="Сделал рабочую стадию для конвертации">
+      <created>1651421659272</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1651421659272</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -836,7 +833,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Обновили файлы бд" />
     <MESSAGE value="Почистил файл Артёма" />
     <MESSAGE value="Также добавил операцию перевода валют" />
     <MESSAGE value="Обновил if в main для перевода валют" />
@@ -861,6 +857,7 @@
     <MESSAGE value="Сделал стадии для функ" />
     <MESSAGE value="Сделал стадии для функции артура" />
     <MESSAGE value="Обновил файлы арчибальда" />
-    <option name="LAST_COMMIT_MESSAGE" value="Обновил файлы арчибальда" />
+    <MESSAGE value="Сделал рабочую стадию для конвертации" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сделал рабочую стадию для конвертации" />
   </component>
 </project>
