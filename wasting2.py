@@ -1,17 +1,29 @@
-from db_working import *
+from db_working import to_db, from_db, change_db
+import pymorphy2
+import w2n
+morph = pymorphy2.MorphAnalyzer()
 
 
-def wasting(s, user_name):
+def wasting(s, user_name, info):
+    req = s.split()
+    for i in range(len(req)):
+        try:
+            parse_it = morph.parse(req[i])
+            maybe_num = parse_it[0].normal_form
+            req[i] = str(w2n.word_to_num(maybe_num))
+        except Exception:
+            pass
+    s = ' '.join(req)
     flag = True
     list = [('развлечения', ['развлечения', 'кафе', 'ресторан', 'ресторане', 'шоппинг']),
             ('продукты', ['продукты']),
             ('налоги', ['налоги', 'жкх', 'ЖКХ', 'кредит', 'ипотека', 'ипотеку']),
             ('магазины', ['магазины', 'пятёрочка', 'пятерочке', 'одежду', 'одежда', 'канцелярию', 'канцелярия']),
-            ('другое', ['другое', 'алкоголь', 'кофе', 'сигареты', 'квартплату', 'квартплата', 'подарки', 'чипсы',
+            ('другое', ['другое', 'алкоголь', 'кофе', 'сиграеты', 'кварплату', 'кварплата', 'подарки', 'чипсы',
                         'вкусняшки', 'техника', 'технику', 'игру', 'игры'])]
     list2 = ['развлечения', 'кафе', 'ресторан', 'ресторане', 'шоппинг', 'продукты', 'налоги', 'жкх', 'ЖКХ', 'магазины',
              'пятёрочка', 'одежду', 'одежда', 'канцелярию', 'канцелярия', 'пятерочке', 'другое', 'алкоголь', 'кофе',
-             'сигареты', 'квартплату', 'квартплата', 'подарки', 'ипотека', 'ипотеку', 'чипсы', 'вкусняшки', 'техника',
+             'сиграеты', 'кварплату', 'кварплата', 'подарки', 'ипотека', 'ипотеку', 'чипсы', 'вкусняшки', 'техника',
              'технику', 'игру', 'игры']
     user_id1 = [i.id for i in from_db("users", "Users", {"username": user_name})]
     user_id = user_id1[0]
@@ -19,48 +31,133 @@ def wasting(s, user_name):
     N = []
     x = []
     t = []
-    a = s.split()
-    for i in range(0, len(a)):
-        if ord('0') <= ord(a[i][0]) <= ord('9'):
-            x.append(a[i])
     names = [i.accounts for i in from_db("accounts", "Accounts", {"user_id": user_id})]
-    for i in range(len(a)):
-        s = a[i]
-        for j in range(i + 1, len(a)):
-            s += a[j]
-            if s in names:
-                N.append(i)
-                break
-    for i in a:
-        if i in list2:
-            n.append(i)
-    for i in range(len(list)):
-        for j in n:
-            if j in list[i][1]:
-                t.append(j)
-    s = ''
-    for o in range(min(len(N), len(x), len(t))):
-        if x[o] == 0 or N[o] == '' or t[o] == '':
-            flag = False
-        if flag:
-            id1 = [i.id for i in from_db("accounts", "Accounts", {"accounts": N[o], "user_id": user_id})]
-            id = id1[0]
-            summ1 = [j.bank for j in from_db("accounts", "Accounts", {"accounts": N[o], "user_id": user_id})]
-            summ = summ1[0]
-            summ -= x[o]
-            change_db("accounts", "Accounts", {"bank": summ}, {"accounts": N[o], "user_id": user_id})
-            newcount1 = [k.count for k in from_db("waste", "Waste", {"account_id": id, "category": t[o]})]
-            if len(newcount1) != 0:
-                newcount = newcount1[0]
-                newcount += x[o]
-                change_db("waste", "Waste", {"count": newcount}, {"account_id": id, "category": t[o]})
+    if info == {}:
+        a = s.split()
+        for i in range(0, len(a)):
+            if ord('0') <= ord(a[i][0]) <= ord('9'):
+                x.append(a[i])
+            elif a[i] == 'и':
+                x.append(None)
+        for i in range(len(a)):
+            s = a[i]
+            if s == 'и':
+                N.append(None)
+                continue
+            for j in range(i + 1, len(a)):
+                s += a[j]
+                if 'и' in s:
+                    break
+                elif s in names:
+                    N.append(s)
+                    break
+        for i in a:
+            if i in list2:
+                n.append(i)
+            elif i == 'и':
+                n.append(None)
+        for i in range(len(list)):
+            for j in n:
+                if j == None:
+                    t.append(None)
+                elif j in list[i][1]:
+                    t.append(j)
+        s = ''
+        s_error = ''
+        for o in range(min(len(N), len(x), len(t))):
+            if x[o] == None or N[o] == None or t[o] == None:
+                if x[o] == None and N[o] == None and t[o] == None:
+                    s_error += 'Извините, не совсем Вас поняла'
+                elif x[o] != None and N[o] == None and t[o] == None:
+                    s_error += 'Повторите пожалуйста, с какого счёта и за что списать ' + str(x[o]) + ' рублей'
+                elif x[o] == None and N[o] != None and t[o] == None:
+                    s_error += 'Извините, не расслышала за что и сколько вы потратили со счёта ' + N[o]
+                elif x[o] == None and N[o] == None and t[o] != None:
+                    s_error += 'Прошу прощения, сколько и с какого счёта вы потратили на ' + t[o]
+                elif x[o] != None and N[o] != None and t[o] == None:
+                    s_error += 'Извините, за что вы заплатили ' + x[o] + ' рублей из кошелька ' + N[o]
+                elif x[o] != None and N[o] == None and t[o] != None:
+                    s_error += 'Повторите, пожалуйста, с какого счёта списать ' + x[o] + ' рублей за ' + t[o]
+                elif x[o] == None and N[o] != None and t[o] != None:
+                    s_error += 'Прошу прощения, сколько вы потратили со счёта ' + N[o] + ' на ' + t[o]
+                info[len(info) + 1] = [x[o], N[o], t[o]]
             else:
-                to_db("waste", "Waste", ("account_id", "category", "count"), (id, t, x))
-            st = 'Успешно списано ' + str(x[o]) + ' рублей с кошелька ' + N[o] + ' за ' + t[o]
-            s += st
-            s += '\n'
-        else:
-            s += 'Извините, не совсем Вас поняла'
-            s += '\n'
-    return s
-# частично сделал распознавание
+                id1 = [i.id for i in from_db("accounts", "Accounts", {"accounts": N[o], "user_id": user_id})]
+                id = id1[0]
+                summ1 = [j.bank for j in from_db("accounts", "Accounts", {"accounts": N[o], "user_id": user_id})]
+                summ = summ1[0]
+                summ -= x[o]
+                change_db("accounts", "Accounts", {"bank": summ}, {"accounts": N[o], "user_id": user_id})
+                newcount1 = [k.count for k in from_db("waste", "Waste", {"account_id": id, "category": t[o]})]
+                if len(newcount1) != 0:
+                    newcount = newcount1[0]
+                    newcount += x[o]
+                    change_db("waste", "Waste", {"count": newcount}, {"account_id": id, "category": t[o]})
+                else:
+                    to_db("waste", "Waste", ("account_id", "category", "count"), (id, t, x))
+                st = 'Успешно списано ' + str(x[o]) + ' рублей с кошелька ' + str(N[o]) + ' за ' + t[o]
+                s += st
+            s += s_error
+        return s, info
+    else:
+        a = s.split('и')
+        for i in range(min(len(a), len(info))):
+            a1 = a[i].split()
+            if info[i][0] == None:
+                for j in range(len(a1)):
+                    if ord('0') <= ord(a1[j][0]) <= ord('9') and info[i][0] == None:
+                        info[i][0] = a1[j]
+            if info[i][1] == None:
+                for j in names:
+                    if j in a[i] and info[i][1] == None:
+                        info[i][1] = j
+            if info[i][2] == None:
+                k = ''
+                for j in a1:
+                    if j in list2:
+                        k = j
+                        break
+                for j in range(len(list)):
+                    if k in list[i][1] and info[i][2] == None:
+                        info[i][2] = list[i][0]
+        x = [info[i][0] for i in info]
+        N = [info[i][1] for i in info]
+        t = [info[i][2] for i in info]
+        info = {}
+        s = ''
+        s_error = ''
+        for o in range(min(len(N), len(x), len(t))):
+            if x[o] == None or N[o] == None or t[o] == None:
+                if x[o] == None and N[o] == None and t[o] == None:
+                    s_error += 'Извините, не совсем Вас поняла'
+                elif x[o] != None and N[o] == None and t[o] == None:
+                    s_error += 'Повторите пожалуйста, с какого счёта и за что списать ' + str(x[o]) + ' рублей'
+                elif x[o] == None and N[o] != None and t[o] == None:
+                    s_error += 'Извините, не расслышала за что и сколько вы потратили со счёта ' + N[o]
+                elif x[o] == None and N[o] == None and t[o] != None:
+                    s_error += 'Прошу прощения, сколько и с какого счёта вы потратили на ' + t[o]
+                elif x[o] != None and N[o] != None and t[o] == None:
+                    s_error += 'Извините, за что вы заплатили ' + x[o] + ' рублей из кошелька ' + N[o]
+                elif x[o] != None and N[o] == None and t[o] != None:
+                    s_error += 'Повторите, пожалуйста, с какого счёта списать ' + x[o] + ' рублей за ' + t[o]
+                elif x[o] == None and N[o] != None and t[o] != None:
+                    s_error += 'Прошу прощения, сколько вы потратили со счёта ' + N[o] + ' на ' + t[o]
+                info[len(info) + 1] = [x[o], N[o], t[o]]
+            else:
+                id1 = [i.id for i in from_db("accounts", "Accounts", {"accounts": N[o], "user_id": user_id})]
+                id = id1[0]
+                summ1 = [j.bank for j in from_db("accounts", "Accounts", {"accounts": N[o], "user_id": user_id})]
+                summ = summ1[0]
+                summ -= x[o]
+                change_db("accounts", "Accounts", {"bank": summ}, {"accounts": N[o], "user_id": user_id})
+                newcount1 = [k.count for k in from_db("waste", "Waste", {"account_id": id, "category": t[o]})]
+                if len(newcount1) != 0:
+                    newcount = newcount1[0]
+                    newcount += x[o]
+                    change_db("waste", "Waste", {"count": newcount}, {"account_id": id, "category": t[o]})
+                else:
+                    to_db("waste", "Waste", ("account_id", "category", "count"), (id, t, x))
+                st = 'Успешно списано ' + str(x[o]) + ' рублей с кошелька ' + str(N[o]) + ' за ' + t[o]
+                s += st
+            s += s_error
+        return s, info
