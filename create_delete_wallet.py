@@ -6,9 +6,11 @@ import random
 morph = pymorphy2.MorphAnalyzer()
 
 
-def create_wallet(req, user_ya_id, k=False):
-    user_id = [i.id for i in from_db("users", "Users", {"username": user_ya_id})][0]
-    if not k:
+def create_wallet(req, user_ya_id, k=None):
+    if k is None:
+        k = {}
+    if len(k) == 0:
+        user_id = [i.id for i in from_db("users", "Users", {"username": user_ya_id})][0]
         req = req.lower().split()
         req_lst = ["олег", "создай", "создать", "добавь", "добавить", "можно", "можешь", "счет",
                    "счёт", "счета", "кошелек", "кошелёк", "кошельки", "с", "названием", "название",
@@ -74,12 +76,15 @@ def create_wallet(req, user_ya_id, k=False):
         res_s = ""
         if len(lst) != 0:
             for i in res_d:
-                if len(from_db("accounts", "Accounts", {"user_id": int(user_id), "accounts": i})) == 0:
-                    to_db("accounts", "Accounts", ("accounts", "bank", "currency"),
-                          (i, res_d[i][0], res_d[i][-1]), int(user_id))
-                    yes[i] = res_d[i]
+                if i == "":
+                    return "Как будет называться ваш кошелёк?", {"bnk": res_d[i][0], "curr": res_d[i][1], "user_id": int(user_id)}
                 else:
-                    no.append(i)
+                    if len(from_db("accounts", "Accounts", {"user_id": int(user_id), "accounts": i})) == 0:
+                        to_db("accounts", "Accounts", ("accounts", "bank", "currency"),
+                              (i, res_d[i][0], res_d[i][-1]), int(user_id))
+                        yes[i] = res_d[i]
+                    else:
+                        no.append(i)
             if len(no) > 0:
                 if len(no) > 1:
                     r = random.randint(1, 2)
@@ -113,13 +118,13 @@ def create_wallet(req, user_ya_id, k=False):
                           f"Поздравляю!\nВы создали счёт {''.join(res_lst)}\n",
                           f"Новый счёт создан.\nЕго название {''.join(res_lst)}\n"]
                     res_s += ll[r - 1]
-            return res_s.rstrip("\n")
+            return res_s.rstrip("\n"), {}
         else:
-            return "Не понял вас, повторите"
-    elif k:
+            return "Не понял вас :(\nКак будет называться ваш кошелёк?", {"bnk": 0, "curr": "рубль", "user_id": int(user_id)}
+    elif len(k) > 0:
         res_s = ""
-        if len(from_db("accounts", "Accounts", {"user_id": int(user_id), "accounts": req})) == 0:
-            to_db("accounts", "Accounts", ("accounts", "currency", "bank"), (req, "рубль", 0), int(user_id))
+        if len(from_db("accounts", "Accounts", {"user_id": k["user_id"], "accounts": req})) == 0:
+            to_db("accounts", "Accounts", ("accounts", "currency", "bank"), (req, k["curr"], k["bnk"]), k["user_id"])
             r = random.randint(1, 3)
             ress = f'"{req.capitalize()}" с суммой 0 рублей\n'
             ll = [f"Создан счёт {req}\n",
@@ -132,12 +137,14 @@ def create_wallet(req, user_ya_id, k=False):
                   f'Увы :(\nСчёт "{req}" уже существует\n',
                   f'Вы уже создали счёт "{req}" ранее\n']
             res_s += ll[r - 1]
-        return res_s
+        return res_s, {}
 
 
-def delete_wallet(req, user_ya_id, k=False):
-    user_id = [i.id for i in from_db("users", "Users", {"username": user_ya_id})][0]
-    if not k:
+def delete_wallet(req, user_ya_id, k=None):
+    if k is None:
+        k = {}
+    if len(k) == 0:
+        user_id = [i.id for i in from_db("users", "Users", {"username": user_ya_id})][0]
         req = req.lower().split()
         req_lst = ["олег", "удали", "счет", "счёт", "счета", "кошелек", "кошелёк", "кошельки", "с",
                    "названием", "название", "названиями", "который", "которые", "называются",
@@ -150,6 +157,7 @@ def delete_wallet(req, user_ya_id, k=False):
         no = []
         yes = []
         res_s = ""
+        print(lst)
         if "" not in lst:
             for i in lst:
                 if len(from_db("accounts", "Accounts", {"accounts": i, "user_id": user_id})) == 0:
@@ -180,20 +188,20 @@ def delete_wallet(req, user_ya_id, k=False):
                     r = random.randint(1, 2)
                     ll = [f'Счёт "{yes[0]}" был удалён\n', f'Готово!\nЯ удалил счёт "{yes[0]}"\n']
                     res_s += ll[r - 1]
-            return res_s.rstrip("\n")
+            return res_s.rstrip("\n"), {}
         else:
-            return "Не понял вас, повторите"
-    elif k:
+            return "Какой счёт я должен удалить?", {"user_id": int(user_id)}
+    elif len(k) > 0:
         res_s = ""
-        if len(from_db("accounts", "Accounts", {"accounts": req, "user_id": user_id})) == 0:
+        if len(from_db("accounts", "Accounts", {"accounts": req, "user_id": k["user_id"]})) == 0:
             r = random.randint(1, 3)
             ll = [f'Счёта "{req}" не существует\n',
                   f'Ой!\n Кажется, я не нашёл счёта "{req}"\n',
                   f'Что-то не так!\n Счёта "{req}" не существует\n']
             res_s += ll[r - 1]
         else:
-            remove_from_db("accounts", "Accounts", {"accounts": req, "user_id": user_id})
+            remove_from_db("accounts", "Accounts", {"accounts": req, "user_id": k["user_id"]})
             r = random.randint(1, 2)
             ll = [f'Счёт "{req}" был удалён\n', f'Готово!\nЯ удалил счёт "{req}"\n']
             res_s += ll[r - 1]
-        return res_s
+        return res_s, {}
