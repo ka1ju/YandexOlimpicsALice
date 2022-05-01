@@ -66,7 +66,7 @@ def handle_dialog(req, res):
         if ('созд' in user_message or 'доб' in user_message) and \
                 ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
             res['response']['text'], res['session_state']['create_wallet'] = \
-                create_wallet(user_message, user_id, req['state']['session']['create_wallet'])
+                create_wallet(user_message, req['state']['session']['create_wallet'])
             logging.info("Adding wallet")
             return
 
