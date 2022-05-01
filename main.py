@@ -6,7 +6,6 @@ from oleg import *
 from all_wallets import *
 from create_delete_wallet import *
 from top_up_wallet import *
-from wasting import *
 from wasting2 import *
 from flask import Flask, request, redirect, session
 from requests import post
