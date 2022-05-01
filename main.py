@@ -7,9 +7,10 @@ from all_wallets import *
 from create_delete_wallet import *
 from top_up_wallet import *
 from wasting2 import *
+from converter import *
+from Alise_3 import *
 from flask import Flask, request, redirect, session
 from requests import post
-from converter import *
 from urllib.parse import urlencode
 import flask
 import logging
@@ -139,8 +140,19 @@ def handle_dialog(req, res):
         if ('выв' in user_message or 'дай' in user_message or 'ска' in user_message) and \
                 'инф' in user_message and \
                 ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message):
-            res['response']['text'] = "Вывел информацию о счёте"
-            logging.info("Giving info about wallet")
+            x = {}
+            if 'wallet_info' in req['state']['session']:
+                x = req['state']['session']['wallet_info']
+                if x != {}:
+                    res['response']['text'], res['session_state']['wallet_info'] = \
+                        information(user_message, user_id, x)
+                    logging.info("Giving info about wallet")
+                    return
+            else:
+                res['response']['text'], res['session_state']['wallet_info'] = \
+                    information(user_message, user_id, x)
+                logging.info("Giving info about wallet")
+                return
             return
 
         # Вывод статистики о счёте

@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cd48d0f-d61c-4538-a980-3f488df4062d" name="Changes" comment="Убрал лишний импорт, а также обновил файлы Димы и Семёна" />
+    <list default="true" id="7cd48d0f-d61c-4538-a980-3f488df4062d" name="Changes" comment="...">
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -409,13 +411,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
     </task>
-    <task id="LOCAL-00042" summary="Сделал так, чтобы бот не говорил одно и то же при отсутствии кошельков по несколько раз.">
-      <created>1650977036496</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1650977036496</updated>
-    </task>
     <task id="LOCAL-00043" summary="Заменил txt на json и теперь не удаляю файл каждый раз как даун">
       <created>1650978305933</created>
       <option name="number" value="00043" />
@@ -752,7 +747,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651419923853</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="...">
+      <created>1651419996988</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1651419996988</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -848,7 +850,6 @@
     <MESSAGE value="Добавил стадии для моих функций" />
     <MESSAGE value="Теперь мои функции возвращают что должны, а не авторизацию" />
     <MESSAGE value="Убрал лишний пробел" />
-    <MESSAGE value="..." />
     <MESSAGE value="обновил ссылку" />
     <MESSAGE value="Сделал TODO чтобы не забыть" />
     <MESSAGE value="Сделал стадию для добавления кошелька" />
@@ -858,6 +859,7 @@
     <MESSAGE value="Сделал рабочую стадию для пополнения счёта" />
     <MESSAGE value="Обновил Федин файл" />
     <MESSAGE value="Убрал лишний импорт, а также обновил файлы Димы и Семёна" />
-    <option name="LAST_COMMIT_MESSAGE" value="Убрал лишний импорт, а также обновил файлы Димы и Семёна" />
+    <MESSAGE value="..." />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
 </project>
