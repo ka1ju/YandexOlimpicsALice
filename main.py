@@ -153,7 +153,6 @@ def handle_dialog(req, res):
                     information(user_message, user_id, x)
                 logging.info("Giving info about wallet")
                 return
-            return
 
         # Вывод статистики о счёте
         if ('выв' in user_message or 'дай' in user_message or 'ска' in user_message) and \
