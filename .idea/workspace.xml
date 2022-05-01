@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="Сделал рабочую стадию для пополнения счёта">
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="7cd48d0f-d61c-4538-a980-3f488df4062d" name="Changes" comment="Убрал лишний импорт, а также обновил файлы Димы и Семёна" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -411,27 +409,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
     </task>
-    <task id="LOCAL-00039" summary="обновил путь до ngrok">
-      <created>1650900236073</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1650900236073</updated>
-    </task>
-    <task id="LOCAL-00040" summary="...">
-      <created>1650956582778</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1650956582778</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Добавил в свою функцию обработку случая при котором нет кошельков">
-      <created>1650976195203</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1650976195203</updated>
-    </task>
     <task id="LOCAL-00042" summary="Сделал так, чтобы бот не говорил одно и то же при отсутствии кошельков по несколько раз.">
       <created>1650977036496</created>
       <option name="number" value="00042" />
@@ -754,7 +731,28 @@
       <option name="project" value="LOCAL" />
       <updated>1651419366876</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="Обновил Федин файл">
+      <created>1651419770878</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1651419770878</updated>
+    </task>
+    <task id="LOCAL-00089" summary="Обновил Федин файл">
+      <created>1651419784270</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1651419784270</updated>
+    </task>
+    <task id="LOCAL-00090" summary="Убрал лишний импорт, а также обновил файлы Димы и Семёна">
+      <created>1651419923853</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1651419923853</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -835,8 +833,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Обновил немного json, пофиксил рандом в прощании." />
-    <MESSAGE value="Немного поменял текст ответов." />
     <MESSAGE value="Вернул import logging." />
     <MESSAGE value="Теперь при прощании офается сессия" />
     <MESSAGE value="добавил слово счёт к слову счет" />
@@ -860,6 +856,8 @@
     <MESSAGE value="Сделал рабочие стадии" />
     <MESSAGE value="Сделал рабочие стадии для удаления и создания кошельков" />
     <MESSAGE value="Сделал рабочую стадию для пополнения счёта" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сделал рабочую стадию для пополнения счёта" />
+    <MESSAGE value="Обновил Федин файл" />
+    <MESSAGE value="Убрал лишний импорт, а также обновил файлы Димы и Семёна" />
+    <option name="LAST_COMMIT_MESSAGE" value="Убрал лишний импорт, а также обновил файлы Димы и Семёна" />
   </component>
 </project>
