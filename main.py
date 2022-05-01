@@ -157,9 +157,19 @@ def handle_dialog(req, res):
         # Вывод статистики о счёте
         if ('выв' in user_message or 'дай' in user_message or 'ска' in user_message) and \
                 'стат' in user_message:
-            res['response']['text'] = statistic(user_message, user_id)
-            logging.info("Giving statics about expenses")
-            return
+            x = {}
+            if 'wallet_statistic' in req['state']['session']:
+                x = req['state']['session']['wallet_statistic']
+                if x != {}:
+                    res['response']['text'], res['session_state']['wallet_statistic'] = \
+                        information(user_message, user_id, x)
+                    logging.info("Giving statistic of wallet")
+                    return
+            else:
+                res['response']['text'], res['session_state']['wallet_statistic'] = \
+                    information(user_message, user_id, x)
+                logging.info("Giving statistic about wallet")
+                return
 
         # Вывод всех кошельков
         if ('выв' in user_message or 'дай' in user_message

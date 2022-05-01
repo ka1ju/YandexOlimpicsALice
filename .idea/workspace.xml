@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cd48d0f-d61c-4538-a980-3f488df4062d" name="Changes" comment="...">
+    <list default="true" id="7cd48d0f-d61c-4538-a980-3f488df4062d" name="Changes" comment="Убрал лишний return">
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -411,20 +411,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
     </task>
-    <task id="LOCAL-00043" summary="Заменил txt на json и теперь не удаляю файл каждый раз как даун">
-      <created>1650978305933</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1650978305933</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Обновил кусок артёма">
-      <created>1650978501833</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1650978501833</updated>
-    </task>
     <task id="LOCAL-00045" summary="Почистил файл с функциями артёма">
       <created>1650978876567</created>
       <option name="number" value="00045" />
@@ -754,7 +740,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651419996988</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="Сделал рабочую стадию для вывода информации о счёте">
+      <created>1651420747093</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1651420747093</updated>
+    </task>
+    <task id="LOCAL-00093" summary="Убрал лишний return">
+      <created>1651420795864</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1651420795864</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -835,8 +835,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Вернул import logging." />
-    <MESSAGE value="Теперь при прощании офается сессия" />
     <MESSAGE value="добавил слово счёт к слову счет" />
     <MESSAGE value="ХУЙЪ" />
     <MESSAGE value="всё ласт версия на гите" />
@@ -860,6 +858,8 @@
     <MESSAGE value="Обновил Федин файл" />
     <MESSAGE value="Убрал лишний импорт, а также обновил файлы Димы и Семёна" />
     <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value="Сделал рабочую стадию для вывода информации о счёте" />
+    <MESSAGE value="Убрал лишний return" />
+    <option name="LAST_COMMIT_MESSAGE" value="Убрал лишний return" />
   </component>
 </project>
