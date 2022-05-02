@@ -70,7 +70,7 @@ def wasting(s, user_name, info):
                 elif x[o] == None and N[o] == None and t[o] != None:
                     s_error += 'Прошу прощения, сколько и с какого счёта вы потратили на ' + t[o]
                 elif x[o] != None and N[o] != None and t[o] == None:
-                    s_error += 'Извините, за что вы заплатили ' + x[o] + ' рублей из кошелька ' + t[o]
+                    s_error += 'Извините, за что вы заплатили ' + x[o] + ' рублей из кошелька ' + N[o]
                 elif x[o] != None and N[o] == None and t[o] != None:
                     s_error += 'Повторите, пожалуйста, с какого счёта списать ' + x[o] + ' рублей за ' + t[o]
                 elif x[o] == None and N[o] != None and t[o] != None:
@@ -163,7 +163,3 @@ def wasting(s, user_name, info):
                 s += st
             s += s_error
     return s, info
-
-
-info = {}
-print(wasting('спиши 300 рублей со счета на убийство олега за игру', 'Test2', info))
