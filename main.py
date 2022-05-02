@@ -88,7 +88,7 @@ def handle_dialog(req, res):
             return
 
         # Пополнение кошелька
-        if (('пополн' in user_message or 'зачисл' in user_message) and
+        if (('пополн' in user_message or 'зачисл' in user_message or "доб") and
             ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message)) \
                 or req['state']['session']['top_up_wallet'] != {}:
             res['response']['text'], res['session_state']['top_up_wallet'] = \
