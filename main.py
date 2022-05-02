@@ -97,11 +97,11 @@ def handle_dialog(req, res):
             return
 
         # Снятие денег или трата денег с кошелька
-        if ('трат' in user_message or 'сн' in user_message) and \
+        if ('трат' in user_message or 'сн' in user_message or "спи" in user_message) and \
                 ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message)\
                 or req['state']['session']['spend_money'] != {}:
             res['response']['text'], res['session_state']['spend_money'] = \
-                wasting(user_message, user_id, req['state']['session']['create_wallet'])
+                wasting(user_message, user_id, req['state']['session']['spend_money'])
             logging.info("Spending money")
             return
 

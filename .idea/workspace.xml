@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cd48d0f-d61c-4538-a980-3f488df4062d" name="Changes" comment="...">
+    <list default="true" id="7cd48d0f-d61c-4538-a980-3f488df4062d" name="Changes" comment="теперь помощь не сбрасывает стадии, а также добавлен вариант ответа на прощание">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bye.py" beforeDir="false" afterPath="$PROJECT_DIR$/bye.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -330,13 +330,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00058" summary="Немного поменял текст ответов.">
-      <created>1651044035023</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1651044035023</updated>
     </task>
     <task id="LOCAL-00059" summary="Вернул import logging.">
       <created>1651044508601</created>
@@ -674,7 +667,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651487196277</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="теперь помощь не сбрасывает стадии, а также добавлен вариант ответа на прощание">
+      <created>1651489413641</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1651489413641</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -682,7 +682,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -699,21 +711,6 @@
               </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
-                  <option value="origin/Семён" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="origin/Дима" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="origin/Ярик" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
                   <option value="origin/Артур" />
                 </option>
               </RecentGroup>
@@ -724,7 +721,22 @@
               </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
+                  <option value="origin/Дима" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/Семён" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
                   <option value="origin/Федя" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/Ярик" />
                 </option>
               </RecentGroup>
             </list>
@@ -755,7 +767,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="обновил часть функций и сделал так что они работают без файла. Также добавил сохранение стадий моих функций." />
     <MESSAGE value="Добавил стадии для моих функций" />
     <MESSAGE value="Теперь мои функции возвращают что должны, а не авторизацию" />
     <MESSAGE value="Убрал лишний пробел" />
@@ -780,6 +791,7 @@
     <MESSAGE value="Заменил 2 функции которые забыл поменять в прошлом коммите" />
     <MESSAGE value="Заменил statuation на st" />
     <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value="теперь помощь не сбрасывает стадии, а также добавлен вариант ответа на прощание" />
+    <option name="LAST_COMMIT_MESSAGE" value="теперь помощь не сбрасывает стадии, а также добавлен вариант ответа на прощание" />
   </component>
 </project>
