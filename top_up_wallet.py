@@ -105,14 +105,15 @@ def top_up_wallet(st, user_name, k):
         if len(b) > 1:
             for i in range(len(s)):
                 y = 0
-                if len(s[i] - 1) != 0:
+                if len(s[i]) - 1 != 0:
                     for j in range(len(s[i]) - 1):
                         if s[i][j + 1] == '1000' or s[i][j + 1] == '1000000':
                             if s[i][j] != '1000' and s[i][j] != '1000000':
                                 y += int(s[i][j])
                                 y = y * int(s[i][j + 1])
                         else:
-                            y += int(s[i][j])
+                            if s[i][j] != '1000' and s[i][j] != '1000000':
+                                y += int(s[i][j])
                     summa.append(y)
                     y = 0
                 else:
@@ -129,7 +130,8 @@ def top_up_wallet(st, user_name, k):
                             y += int(s[i])
                             y = y * int(s[i + 1])
                     else:
-                        y += int(s[i])
+                        if s[i] != '1000' and s[i] != '1000000':
+                            y += int(s[i])
                 summa.append(y)
             else:
                 if s[0] != None:
@@ -259,14 +261,15 @@ def top_up_wallet(st, user_name, k):
         if len(b) > 1:
             for i in range(len(s)):
                 y = 0
-                if len(s[i] - 1) != 0:
+                if len(s[i]) - 1 != 0:
                     for j in range(len(s[i]) - 1):
                         if s[i][j + 1] == '1000' or s[i][j + 1] == '1000000':
                             if s[i][j] != '1000' and s[i][j] != '1000000':
                                 y += int(s[i][j])
                                 y = y * int(s[i][j + 1])
                         else:
-                            y += int(s[i][j])
+                            if s[i][j] != '1000' and s[i][j] != '1000000':
+                                y += int(s[i][j])
                     summa.append(y)
                     y = 0
                 else:
@@ -283,7 +286,8 @@ def top_up_wallet(st, user_name, k):
                             y += int(s[i])
                             y = y * int(s[i + 1])
                     else:
-                        y += int(s[i])
+                        if s[i] != '1000' and s[i] != '1000000':
+                            y += int(s[i])
                 summa.append(y)
             else:
                 if s[0] != None:
@@ -319,3 +323,5 @@ def top_up_wallet(st, user_name, k):
                 ret += 'У вас нет кошелька с названием: ' + q[j] + '\n'
         return ret, {}
 
+
+print(top_up_wallet("пополни кошелёк коплю на машину на пять тысяч рублей", "Test2", {}))
