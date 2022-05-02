@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cd48d0f-d61c-4538-a980-3f488df4062d" name="Changes" comment="Заменил 2 функции которые забыл поменять в прошлом коммите" />
+    <list default="true" id="7cd48d0f-d61c-4538-a980-3f488df4062d" name="Changes" comment="Заменил statuation на st" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -326,13 +326,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00055" summary="обновил requirements.txt">
-      <created>1650996349157</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1650996349158</updated>
     </task>
     <task id="LOCAL-00056" summary="создал функцию прощания в боте">
       <created>1651043249989</created>
@@ -670,7 +663,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651486497619</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="Заменил statuation на st">
+      <created>1651486954945</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1651486954945</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -751,7 +751,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавил пояснения в код main" />
     <MESSAGE value="обновил часть функций и сделал так что они работают без файла. Также добавил сохранение стадий моих функций." />
     <MESSAGE value="Добавил стадии для моих функций" />
     <MESSAGE value="Теперь мои функции возвращают что должны, а не авторизацию" />
@@ -776,6 +775,7 @@
     <MESSAGE value="..." />
     <MESSAGE value="Пофиксил (предположительно) беды со стадиями, а также добавил логи ко всем функциям." />
     <MESSAGE value="Заменил 2 функции которые забыл поменять в прошлом коммите" />
-    <option name="LAST_COMMIT_MESSAGE" value="Заменил 2 функции которые забыл поменять в прошлом коммите" />
+    <MESSAGE value="Заменил statuation на st" />
+    <option name="LAST_COMMIT_MESSAGE" value="Заменил statuation на st" />
   </component>
 </project>
