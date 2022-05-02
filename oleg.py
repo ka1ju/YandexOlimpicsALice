@@ -94,4 +94,3 @@ def statistic(string, usr_name, k):
                    f'На другое: {d["другое"]}', {}
         else:
             return 'Уточните, пожалуйста, с какого счета нужно вывести статистику.', {'flag': 'koshel'}
-#C:\Users\talek\Desktop\ngrok
