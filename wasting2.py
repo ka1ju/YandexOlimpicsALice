@@ -57,6 +57,8 @@ def wasting(s, user_name, info):
                 t.append(None)
         s = ''
         s_error = ''
+        info['длина'] = 0
+        long = 0
         for o in range(min(len(N), len(x), len(t))):
             if x[o] == None or N[o] == None or t[o] == None:
                 if x[o] == None and N[o] == None and t[o] == None:
@@ -73,7 +75,9 @@ def wasting(s, user_name, info):
                     s_error += 'Повторите, пожалуйста, с какого счёта списать ' + x[o] + ' рублей за ' + t[o]
                 elif x[o] == None and N[o] != None and t[o] != None:
                     s_error += 'Прошу прощения, сколько вы потратили со счёта ' + N[o] + ' на ' + t[o]
-                info[str(len(info) + 1)] = [x[o], N[o], t[o]]
+                info[str(long)] = [x[o], N[o], t[o]]
+                long += 1
+                info['длина'] = long
             else:
                 id1 = [i.id for i in from_db("accounts", "Accounts", {"accounts": N[o], "user_id": user_id})]
                 id = id1[0]
@@ -91,20 +95,19 @@ def wasting(s, user_name, info):
                 st = 'Успешно списано ' + str(x[o]) + ' рублей с кошелька ' + str(N[o]) + ' за ' + t[o]
                 s += st
             s += s_error
-        return s, info
     else:
         a = s.split(' и ')
-        for i in range(min(len(a), len(info))):
+        for i in range(min(len(a), info['длина'])):
             a1 = a[i].split()
-            if info[str(i)][0] == None:
+            if info[str(i + 1)][0] is None:
                 for j in range(len(a1)):
-                    if ord('0') <= ord(a1[j][0]) <= ord('9') and info[str(i)][0] == None:
+                    if ord('0') <= ord(a1[j][0]) <= ord('9') and info[str(i + 1)][0] == None:
                         info[str(i)][0] = a1[j]
-            if info[str(i)][1] == None:
+            if info[str(i + 1)][1] == None:
                 for j in names:
-                    if j in a[i] and info[str(i)][1] == None:
-                        info[str(i)][1] = j
-            if info[str(i)][2] == None:
+                    if j in a[i] and info[str(i + 1)][1] == None:
+                        info[str(i + 1)][1] = j
+            if info[str(i + 1)][2] == None:
                 k = ''
                 for j in a1:
                     if j in list2:
@@ -112,13 +115,17 @@ def wasting(s, user_name, info):
                         break
                 for j in range(len(list)):
                     if k in list[i][1] and info[str(i)][2] == None:
-                        info[str(i)][2] = list[i][0]
-        x = [info[str(i)][0] for i in info]
-        N = [info[str(i)][1] for i in info]
-        t = [info[str(i)][2] for i in info]
+                        info[str(i + 1)][2] = list[i][0]
+        x = []
+        for i in range(info['длина']):
+            x.append(info[str(i + 1)][0])
+            N.append(info[str(i + 1)][1])
+            t.append(info[str(i + 1)][2])
         info = {}
         s = ''
         s_error = ''
+        info['длина'] = 0
+        long = 0
         for o in range(min(len(N), len(x), len(t))):
             if x[o] == None or N[o] == None or t[o] == None:
                 if x[o] == None and N[o] == None and t[o] == None:
@@ -135,7 +142,9 @@ def wasting(s, user_name, info):
                     s_error += 'Повторите, пожалуйста, с какого счёта списать ' + x[o] + ' рублей за ' + t[o]
                 elif x[o] == None and N[o] != None and t[o] != None:
                     s_error += 'Прошу прощения, сколько вы потратили со счёта ' + N[o] + ' на ' + t[o]
-                info[str(len(info) + 1)] = [x[o], N[o], t[o]]
+                info[str(long)] = [x[o], N[o], t[o]]
+                long += 1
+                info['длина'] = long
             else:
                 id1 = [i.id for i in from_db("accounts", "Accounts", {"accounts": N[o], "user_id": user_id})]
                 id = id1[0]
@@ -153,5 +162,5 @@ def wasting(s, user_name, info):
                 st = 'Успешно списано ' + str(x[o]) + ' рублей с кошелька ' + str(N[o]) + ' за ' + t[o]
                 s += st
             s += s_error
-        return s, info
+    return s, info
 
