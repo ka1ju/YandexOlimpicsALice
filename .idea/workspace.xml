@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cd48d0f-d61c-4538-a980-3f488df4062d" name="Changes" comment="Убрал стадию для конвертации">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
-    </list>
+    <list default="true" id="7cd48d0f-d61c-4538-a980-3f488df4062d" name="Changes" comment="..." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -324,18 +321,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="..." />
+      <changelist id="7cd48d0f-d61c-4538-a980-3f488df4062d" name="Changes" comment="Убрал стадию для конвертации" />
       <created>1650702408030</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00050" summary="Теперь бота можно поприветствовать, и он ответит тем же, но если это уже не первое сообщение боту в этой сессии то он скажет что вы уже здоровались.">
-      <created>1650984435084</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1650984435084</updated>
     </task>
     <task id="LOCAL-00051" summary="Немного подредачил текст сообщений">
       <created>1650984877384</created>
@@ -673,7 +663,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651422195101</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="...">
+      <created>1651426939339</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1651426939339</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -770,7 +767,6 @@
     <MESSAGE value="Сделал рабочую стадию для пополнения счёта" />
     <MESSAGE value="Обновил Федин файл" />
     <MESSAGE value="Убрал лишний импорт, а также обновил файлы Димы и Семёна" />
-    <MESSAGE value="..." />
     <MESSAGE value="Сделал рабочую стадию для вывода информации о счёте" />
     <MESSAGE value="Убрал лишний return" />
     <MESSAGE value="Сделал стадии для" />
@@ -779,6 +775,7 @@
     <MESSAGE value="Обновил файлы арчибальда" />
     <MESSAGE value="Сделал рабочую стадию для конвертации" />
     <MESSAGE value="Убрал стадию для конвертации" />
-    <option name="LAST_COMMIT_MESSAGE" value="Убрал стадию для конвертации" />
+    <MESSAGE value="..." />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
 </project>
