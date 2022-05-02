@@ -93,5 +93,4 @@ def statistic(string, usr_name, k):
         else:
             return 'Уточните, пожалуйста, с какого счета нужно вывести статистику.', {'flag': 'koshel'}
 
-statistic('негры', 'Test2', {})
 #C:\Users\talek\Desktop\ngrok
