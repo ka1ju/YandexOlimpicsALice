@@ -300,4 +300,3 @@ def top_up_wallet(st, user_name, k):
             elif q[j] not in words:
                 ret += 'У вас нет кошелька с названием: ' + q[j] + '\n'
         return ret, {}
-
