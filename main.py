@@ -8,7 +8,7 @@ from create_delete_wallet import *
 from top_up_wallet import *
 from wasting2 import *
 from converter import *
-from Alise_3 import *
+from Info_Alise_3 import *
 from flask import Flask, request, redirect, session
 from requests import post
 from urllib.parse import urlencode

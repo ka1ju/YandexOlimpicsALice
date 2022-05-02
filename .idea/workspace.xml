@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cd48d0f-d61c-4538-a980-3f488df4062d" name="Changes" comment="обновил федин файл" />
+    <list default="true" id="7cd48d0f-d61c-4538-a980-3f488df4062d" name="Changes" comment="...">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,6 +82,7 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="YandexOlympicsAlice" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -88,7 +93,6 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
       <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -330,6 +334,7 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="YandexOlympicsAlice" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
@@ -340,6 +345,7 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="docs" factoryName="Docutils task">
+      <module name="YandexOlympicsAlice" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
@@ -347,7 +353,6 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
       <option name="docutils_input_file" value="" />
       <option name="docutils_output_file" value="" />
       <option name="docutils_params" value="" />
@@ -356,6 +361,7 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="docs" factoryName="Sphinx task">
+      <module name="YandexOlympicsAlice" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
@@ -363,7 +369,6 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
       <option name="docutils_input_file" value="" />
       <option name="docutils_output_file" value="" />
       <option name="docutils_params" value="" />
@@ -372,6 +377,7 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
+      <module name="YandexOlympicsAlice" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
@@ -379,7 +385,6 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -407,13 +412,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00060" summary="Теперь при прощании офается сессия">
-      <created>1651044864093</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1651044864093</updated>
     </task>
     <task id="LOCAL-00061" summary="...">
       <created>1651045313272</created>
@@ -751,7 +749,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651491389540</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="...">
+      <created>1651491936263</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1651491936263</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -866,9 +871,9 @@
     <MESSAGE value="Пофиксил (предположительно) беды со стадиями, а также добавил логи ко всем функциям." />
     <MESSAGE value="Заменил 2 функции которые забыл поменять в прошлом коммите" />
     <MESSAGE value="Заменил statuation на st" />
-    <MESSAGE value="..." />
     <MESSAGE value="теперь помощь не сбрасывает стадии, а также добавлен вариант ответа на прощание" />
     <MESSAGE value="обновил федин файл" />
-    <option name="LAST_COMMIT_MESSAGE" value="обновил федин файл" />
+    <MESSAGE value="..." />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
 </project>
