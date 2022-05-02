@@ -197,19 +197,19 @@ def getting():
 def code_get():
     code = request.args.get('code')
     session['code'] = code
-    statuation = session.get('statuation', None)
+    st = session.get('st', None)
     client_id = session.get('client_id', None)
     scope = session.get('scope', None)
     return redirect(
-        f'https://social.yandex.net/broker/redirect?state={statuation}&client_id={client_id}&scope={scope}&code={code}')
+        f'https://social.yandex.net/broker/redirect?state={st}&client_id={client_id}&scope={scope}&code={code}')
 
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
-    statuation = request.args.get('state')
+    st = request.args.get('state')
     client_id = request.args.get('client_id')
     scope = request.args.get('scope')
-    session['statuation'] = statuation
+    session['st'] = st
     session['client_id'] = client_id
     session['scope'] = scope
     return flask.redirect(

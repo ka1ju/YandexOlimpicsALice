@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cd48d0f-d61c-4538-a980-3f488df4062d" name="Changes" comment="...">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="7cd48d0f-d61c-4538-a980-3f488df4062d" name="Changes" comment="Заменил 2 функции которые забыл поменять в прошлом коммите" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -330,20 +326,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00053" summary="...">
-      <created>1650987705907</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1650987705907</updated>
-    </task>
-    <task id="LOCAL-00054" summary="...">
-      <created>1650996145767</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1650996145768</updated>
     </task>
     <task id="LOCAL-00055" summary="обновил requirements.txt">
       <created>1650996349157</created>
@@ -674,7 +656,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651479121521</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="Пофиксил (предположительно) беды со стадиями, а также добавил логи ко всем функциям.">
+      <created>1651486218871</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1651486218871</updated>
+    </task>
+    <task id="LOCAL-00103" summary="Заменил 2 функции которые забыл поменять в прошлом коммите">
+      <created>1651486497619</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1651486497619</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -755,8 +751,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Также добавил операцию перевода валют" />
-    <MESSAGE value="Обновил if в main для перевода валют" />
     <MESSAGE value="Добавил пояснения в код main" />
     <MESSAGE value="обновил часть функций и сделал так что они работают без файла. Также добавил сохранение стадий моих функций." />
     <MESSAGE value="Добавил стадии для моих функций" />
@@ -780,6 +774,8 @@
     <MESSAGE value="Сделал рабочую стадию для конвертации" />
     <MESSAGE value="Убрал стадию для конвертации" />
     <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value="Пофиксил (предположительно) беды со стадиями, а также добавил логи ко всем функциям." />
+    <MESSAGE value="Заменил 2 функции которые забыл поменять в прошлом коммите" />
+    <option name="LAST_COMMIT_MESSAGE" value="Заменил 2 функции которые забыл поменять в прошлом коммите" />
   </component>
 </project>
