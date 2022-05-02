@@ -20,7 +20,7 @@ def authorization(user_name):
 
 
 def statistic(string, usr_name, k):
-    if k == {}
+    if k == {}:
         a = from_db('users', 'Users', {'username': usr_name})[0]
         account_element_id = a.id
         yuy = from_db('accounts', 'Accounts', {'user_id': account_element_id})
