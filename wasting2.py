@@ -40,10 +40,10 @@ def wasting(s, user_name, info):
                 if ord('0') <= ord(a1[j][0]) <= ord('9') and len(x) < (i + 1):
                     x.append(a1[j])
             for j in names:
-                if j in a and len(N) < (1 + i):
+                if j in a[i] and len(N) < (1 + i):
                     N.append(j)
             for j in list2:
-                if j in a:
+                if j in a[i]:
                     n.append(j)
             for j in n:
                 for k in list:
@@ -70,7 +70,7 @@ def wasting(s, user_name, info):
                 elif x[o] == None and N[o] == None and t[o] != None:
                     s_error += 'Прошу прощения, сколько и с какого счёта вы потратили на ' + t[o]
                 elif x[o] != None and N[o] != None and t[o] == None:
-                    s_error += 'Извините, за что вы заплатили ' + x[o] + ' рублей из кошелька ' + N[o]
+                    s_error += 'Извините, за что вы заплатили ' + x[o] + ' рублей из кошелька ' + t[o]
                 elif x[o] != None and N[o] == None and t[o] != None:
                     s_error += 'Повторите, пожалуйста, с какого счёта списать ' + x[o] + ' рублей за ' + t[o]
                 elif x[o] == None and N[o] != None and t[o] != None:
@@ -164,3 +164,6 @@ def wasting(s, user_name, info):
             s += s_error
     return s, info
 
+
+info = {}
+print(wasting('спиши 300 рублей со счета на убийство олега за игру', 'Test2', info))
