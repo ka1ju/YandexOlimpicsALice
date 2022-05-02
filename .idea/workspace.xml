@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="456822aa-a66e-4b8b-aa02-696753ac6362" name="Changes" comment="...">
-      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
+    <list default="true" id="456822aa-a66e-4b8b-aa02-696753ac6362" name="Changes" comment="Пофиксил говно-if">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -323,18 +323,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7cd48d0f-d61c-4538-a980-3f488df4062d" name="Changes" comment="Убрал стадию для конвертации" />
+      <changelist id="456822aa-a66e-4b8b-aa02-696753ac6362" name="Changes" comment="..." />
       <created>1650702408030</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00064" summary="добавил слово счёт к слову счет">
-      <created>1651137717424</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1651137717424</updated>
     </task>
     <task id="LOCAL-00065" summary="...">
       <created>1651161805589</created>
@@ -672,7 +665,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651497522652</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="Пофиксил говно-if">
+      <created>1651498598469</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1651498598469</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -765,7 +765,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="обновил ссылку" />
     <MESSAGE value="Сделал TODO чтобы не забыть" />
     <MESSAGE value="Сделал стадию для добавления кошелька" />
     <MESSAGE value="Обновил стадию для артёма" />
@@ -790,6 +789,7 @@
     <MESSAGE value="Добавил кусок проверки" />
     <MESSAGE value="Федин файл" />
     <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value="Пофиксил говно-if" />
+    <option name="LAST_COMMIT_MESSAGE" value="Пофиксил говно-if" />
   </component>
 </project>
