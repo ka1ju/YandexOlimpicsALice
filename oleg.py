@@ -10,16 +10,18 @@ def authorization(user_name):
         to_db('users', 'Users', ('username', 'password'), (user_name, '1'))
         print(user_name)
         return 'Привет, меня зовут Олег. Я создан для того чтобы вести учёт ваших трат. ' \
-               'Вот краткий список моих функций:\n\
-                Добавление кошелька\n\
-                Удаление кошелька\n\
-                Зачисление денег на счёт\n\
-                Снятие или трата денег со счёта\n\
-                Вывод статистики\n\
-                Вывод информации о счёте'
+               'Вот краткий список моих функций:\n'\
+                'Добавление кошелька\n'\
+                'Удаление кошелька\n'\
+                'Зачисление денег на счёт\n'\
+                'Снятие или трата денег со счёта\n'\
+                'Вывод статистики\n'\
+                'Вывод информации о счёте'
 
 
 def statistic(string, usr_name, k):
+    if string[-1] == '.':
+        string = string[:-1]
     if k == {}:
         a = from_db('users', 'Users', {'username': usr_name})[0]
         account_element_id = a.id
@@ -38,7 +40,7 @@ def statistic(string, usr_name, k):
             ok = from_db('waste', 'Waste', {'account_id': yuy.id})
             for i in ok:
                 k = 0
-                dad = i.split('.')
+                dad = i.date.split('.')
                 if 'за все время' in string:
                     k = 1
                 if 'год' in string:
@@ -74,7 +76,7 @@ def statistic(string, usr_name, k):
             ok = from_db('waste', 'Waste', {'account_id': yuy.id})
             for i in ok:
                 k = 0
-                dad = i.split('.')
+                dad = i.date.split('.')
                 if 'за все время' in string:
                     k = 1
                 if 'год' in string:
@@ -88,9 +90,11 @@ def statistic(string, usr_name, k):
             return f'В общем было потрачено: {spend_all}\nНа развлечения: {d["развлечения"]}\n' \
                    f'На продукты: {d["продукты"]}\n' \
                    f'На оплату налогов: {d["налоги"]}\n' \
-                   f'В магазинах: {d["магазины"]}' \
+                   f'В магазинах: {d["магазины"]}\n' \
                    f'На другое: {d["другое"]}', {}
         else:
             return 'Уточните, пожалуйста, с какого счета нужно вывести статистику.', {'flag': 'koshel'}
 
+
+print(statistic('выведи информацию по счету негры', 'Test2', {}))
 #C:\Users\talek\Desktop\ngrok
