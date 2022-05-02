@@ -91,7 +91,7 @@ def wasting(s, user_name, info):
                 st = 'Успешно списано ' + str(x[o]) + ' рублей с кошелька ' + str(N[o]) + ' за ' + t[o]
                 s += st
             s += s_error
-        return s, info, x, N, t
+        return s, info
     else:
         a = s.split(' и ')
         for i in range(min(len(a), len(info))):
