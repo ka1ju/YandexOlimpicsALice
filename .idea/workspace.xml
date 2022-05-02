@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cd48d0f-d61c-4538-a980-3f488df4062d" name="Changes" comment="...">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    <list default="true" id="7cd48d0f-d61c-4538-a980-3f488df4062d" name="Changes" comment="Добавил кусок проверки">
+      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -412,13 +411,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
     </task>
-    <task id="LOCAL-00062" summary="...">
-      <created>1651045368628</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1651045368628</updated>
-    </task>
     <task id="LOCAL-00063" summary="...">
       <created>1651049092062</created>
       <option name="number" value="00063" />
@@ -755,7 +747,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651495156026</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="Добавил кусок проверки">
+      <created>1651496754804</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1651496754804</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -848,7 +847,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Теперь мои функции возвращают что должны, а не авторизацию" />
     <MESSAGE value="Убрал лишний пробел" />
     <MESSAGE value="обновил ссылку" />
     <MESSAGE value="Сделал TODO чтобы не забыть" />
@@ -873,6 +871,7 @@
     <MESSAGE value="теперь помощь не сбрасывает стадии, а также добавлен вариант ответа на прощание" />
     <MESSAGE value="обновил федин файл" />
     <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value="Добавил кусок проверки" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил кусок проверки" />
   </component>
 </project>
