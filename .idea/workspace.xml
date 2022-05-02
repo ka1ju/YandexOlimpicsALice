@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cd48d0f-d61c-4538-a980-3f488df4062d" name="Changes" comment="Заменил statuation на st" />
+    <list default="true" id="7cd48d0f-d61c-4538-a980-3f488df4062d" name="Changes" comment="...">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bye.py" beforeDir="false" afterPath="$PROJECT_DIR$/bye.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -311,8 +315,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.oleg" />
         <item itemvalue="Python.test-file" />
+        <item itemvalue="Python.oleg" />
         <item itemvalue="Python.my_main" />
         <item itemvalue="Python.Alise_3" />
       </list>
@@ -326,20 +330,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00056" summary="создал функцию прощания в боте">
-      <created>1651043249989</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1651043249990</updated>
-    </task>
-    <task id="LOCAL-00057" summary="Обновил немного json, пофиксил рандом в прощании.">
-      <created>1651043938948</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1651043938948</updated>
     </task>
     <task id="LOCAL-00058" summary="Немного поменял текст ответов.">
       <created>1651044035023</created>
@@ -670,7 +660,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651486954945</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="...">
+      <created>1651487028926</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1651487028926</updated>
+    </task>
+    <task id="LOCAL-00106" summary="...">
+      <created>1651487196277</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1651487196277</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -772,10 +776,10 @@
     <MESSAGE value="Обновил файлы арчибальда" />
     <MESSAGE value="Сделал рабочую стадию для конвертации" />
     <MESSAGE value="Убрал стадию для конвертации" />
-    <MESSAGE value="..." />
     <MESSAGE value="Пофиксил (предположительно) беды со стадиями, а также добавил логи ко всем функциям." />
     <MESSAGE value="Заменил 2 функции которые забыл поменять в прошлом коммите" />
     <MESSAGE value="Заменил statuation на st" />
-    <option name="LAST_COMMIT_MESSAGE" value="Заменил statuation на st" />
+    <MESSAGE value="..." />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
 </project>

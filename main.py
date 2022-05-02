@@ -141,7 +141,8 @@ def handle_dialog(req, res):
 
         # Помощь
         if "помо" in user_message or ("что" in user_message and "ты" in user_message and "умеешь" in user_message):
-            res['response']['text'] = helper()
+            res['response']['text'],  = helper()
+            res['session_state'] = req['state']['session']
             logging.info("Helping")
             return
 
