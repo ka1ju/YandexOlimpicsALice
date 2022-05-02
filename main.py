@@ -111,7 +111,7 @@ def handle_dialog(req, res):
                 ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message)\
                 or req['state']['session']['wallet_info'] != {}:
             res['response']['text'], res['session_state']['wallet_info'] = \
-                create_wallet(user_message, user_id, req['state']['session']['wallet_info'])
+                information(user_message, user_id, req['state']['session']['wallet_info'])
             logging.info("Giving info about wallet")
             return
 
@@ -119,7 +119,7 @@ def handle_dialog(req, res):
         if ('выв' in user_message or 'дай' in user_message or 'ска' in user_message) and \
                 'стат' in user_message or req['state']['session']['wallet_statistic'] != {}:
             res['response']['text'], res['session_state']['wallet_statistic'] = \
-                create_wallet(user_message, user_id, req['state']['session']['wallet_statistic'])
+                statistic(user_message, user_id, req['state']['session']['wallet_statistic'])
             logging.info("Giving wallet statistic")
             return
 
