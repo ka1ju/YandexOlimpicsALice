@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="функция пополнения12">
+    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="функция пополнения13">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Popolnyt.py" beforeDir="false" afterPath="$PROJECT_DIR$/Popolnyt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/top_up_wallet.py" beforeDir="false" afterPath="$PROJECT_DIR$/top_up_wallet.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +43,7 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration name="Popolnyt" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="top_up_wallet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -54,7 +55,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="" />
-      <option name="SCRIPT_NAME" value="C:\Users\Федор\PycharmProjects\YandexOlympicsAlice\Popolnyt.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Федор\PycharmProjects\YandexOlympicsAlice\top_up_wallet.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -65,7 +66,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Popolnyt" />
+        <item itemvalue="Python.top_up_wallet" />
       </list>
     </recent_temporary>
   </component>
@@ -141,7 +142,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651390638263</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="функция пополнения13">
+      <created>1651491191771</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1651491191771</updated>
+    </task>
+    <task id="LOCAL-00011" summary="функция пополнения13">
+      <created>1651491402679</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1651491402679</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -165,20 +180,16 @@
     <MESSAGE value="функция пополнения10" />
     <MESSAGE value="функция пополнения11*" />
     <MESSAGE value="функция пополнения12" />
-    <option name="LAST_COMMIT_MESSAGE" value="функция пополнения12" />
+    <MESSAGE value="функция пополнения13" />
+    <option name="LAST_COMMIT_MESSAGE" value="функция пополнения13" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Popolnyt.py</url>
-          <line>129</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Popolnyt.py</url>
-          <line>135</line>
-          <option name="timeStamp" value="38" />
+          <url>file://$PROJECT_DIR$/top_up_wallet.py</url>
+          <line>103</line>
+          <option name="timeStamp" value="44" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

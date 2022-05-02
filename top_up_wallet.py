@@ -72,7 +72,7 @@ def top_up_wallet(st, user_name, k):
                 m = morph.parse(x[i])[0].normal_form
                 c.append(m)
         s = []
-        if len(c) > 1:
+        if len(b) > 1:
             for i in range(len(c)):
                 s1 = []
                 for j in range(len(c[i])):
@@ -86,7 +86,7 @@ def top_up_wallet(st, user_name, k):
                         s1.append(dozens[c[i][j]])
                     elif c[i][j] in hundreds:
                         s1.append(hundreds[c[i][j]])
-                    s1.append(0)
+                s1.append(None)
                 s.append(s1)
         else:
             for i in range(len(c)):
@@ -100,10 +100,10 @@ def top_up_wallet(st, user_name, k):
                     s.append(dozens[c[i]])
                 elif c[i] in hundreds:
                     s.append(hundreds[c[i]])
-            s.append(0)
+            s.append(None)
         summa = []
         if len(s) > 1:
-            for i in range(len(s)):
+            for i in range(len(s) - 1):
                 y = 0
                 for j in range(len(s[i]) - 1):
                     if s[i][j + 1] == '1000' or s[i][j + 1] == '1000000':
@@ -116,17 +116,11 @@ def top_up_wallet(st, user_name, k):
                 summa.append(y)
                 y = 0
         else:
+            if s[0] != None:
+                summa.append(int(s[0]))
+            else:
+                summa.append(None)
             y = 0
-            for i in range(len(s) - 1):
-                if s[i + 1] == '1000' or s[i + 1] == '1000000':
-                    if s[i] != '1000' and s[i] != '1000000':
-                        y += int(s[i])
-                        y = y * int(s[i + 1])
-                else:
-                    if s[i] != '1000' and s[i] != '1000000':
-                        y += int(s[i])
-                summa.append(y)
-                y = 0
         for i in range(len(q)):
             if q[i] == None:
                 ret = 'Какой кошелёк вы хотите пополнить на ' + summa[i] + '?', {'username': q}
@@ -245,7 +239,7 @@ def top_up_wallet(st, user_name, k):
                     s.append(dozens[c[i]])
                 elif c[i] in hundreds:
                     s.append(hundreds[c[i]])
-            s.append(0)
+            s.append(None)
         summa = []
         if len(s) > 1:
             for i in range(len(s)):
@@ -300,3 +294,6 @@ def top_up_wallet(st, user_name, k):
             elif q[j] not in words:
                 ret += 'У вас нет кошелька с названием: ' + q[j] + '\n'
         return ret, {}
+
+
+print(top_up_wallet('пополни кошелёк коплю на машину', "Test2", {}))
