@@ -1,4 +1,5 @@
 from db_working import *
+import datetime
 
 
 def authorization(user_name):
@@ -18,12 +19,14 @@ def authorization(user_name):
                 Вывод информации о счёте'
 
 
-def statistic(string, usr_name):
+def statistic(string, usr_name, k):
     a = from_db('users', 'Users', {'username': usr_name})[0]
     account_element_id = a.id
     yuy = from_db('accounts', 'Accounts', {'user_id': account_element_id})
     names = [i.accounts for i in yuy]
     ac = ''
+    m = datetime.datetime.now().month
+    y = datetime.datetime.now().year
     for i in names:
         if i in string.split():
             ac = i
@@ -33,6 +36,13 @@ def statistic(string, usr_name):
         spend_all = 0
         ok = from_db('waste', 'Waste', {'account_id': yuy.id})
         for i in ok:
+            k = 0
+            dad = i.split('.')
+            if 'год' in string:
+                if int(dad[2]) == y:
+                    k = 1
+            if int(dad[1]) == m and int(dad[2]) == y:
+                k = 1
             d[i.category] += i.count
             spend_all += i.count
         return f'В общем было потрачено: {spend_all}\nНа развлечения: {d["развлечения"]}\n' \
@@ -41,7 +51,7 @@ def statistic(string, usr_name):
                f'В магазинах: {d["магазины"]}' \
                f'На другое: {d["другое"]}'
     else:
-        return 'Уточните, пожалуйста, с какого счета нужно вывести статистику.'
+        return 'Уточните, пожалуйста, с какого счета нужно вывести статистику.', {}
 
-
+statistic('негры', 'Test2', {})
 #C:\Users\talek\Desktop\ngrok
