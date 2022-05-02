@@ -32,7 +32,7 @@ def top_up_wallet(st, user_name, k):
                 cur.append(' ')
         words = ["кошел", "счёт", "счета", "кошелёк", "кошельки", "с", "на", "названием", "название", "названиями",
                  "который", "которые", "назваются", "назвается", "привет", "пожалуйста", "пока", "спасибо", "а", "ещё",
-                 'пополни']
+                 'пополни', 'добавь']
         units = {'один': '1', 'два': '2', 'три': '3', 'четыре': '4', 'пять': '5', 'шесть': '6', 'семь': '7',
                  'восемь': '8', 'девять': '9', 'десять': '10', 'одиннадцать': '11', 'двенадцать': '12',
                  'тринадцать': '13', 'четырнадцать': '14', 'пятнадцать': '15', 'шестнадцать': '16', 'семнадцать': '17',
@@ -102,25 +102,40 @@ def top_up_wallet(st, user_name, k):
                     s.append(hundreds[c[i]])
             s.append(None)
         summa = []
-        if len(s) > 1:
-            for i in range(len(s) - 1):
+        if len(b) > 1:
+            for i in range(len(s)):
                 y = 0
-                for j in range(len(s[i]) - 1):
-                    if s[i][j + 1] == '1000' or s[i][j + 1] == '1000000':
-                        if s[i][j] != '1000' and s[i][j] != '1000000':
+                if len(s[i] - 1) != 0:
+                    for j in range(len(s[i]) - 1):
+                        if s[i][j + 1] == '1000' or s[i][j + 1] == '1000000':
+                            if s[i][j] != '1000' and s[i][j] != '1000000':
+                                y += int(s[i][j])
+                                y = y * int(s[i][j + 1])
+                        else:
                             y += int(s[i][j])
-                            y = y * int(s[i][j + 1])
+                    summa.append(y)
+                    y = 0
+                else:
+                    if s[i] != None:
+                        summa.append(int(s[i]))
                     else:
-                        if s[i][j] != '1000' and s[i][j] != '1000000':
-                            y += int(s[i][j])
-                summa.append(y)
-                y = 0
+                        summa.append(None)
         else:
-            if s[0] != None:
-                summa.append(int(s[0]))
-            else:
-                summa.append(None)
             y = 0
+            if len(s) - 1 != 0:
+                for i in range(len(s) - 1):
+                    if s[i + 1] == '1000' or s[i + 1] == '1000000':
+                        if s[i] != '1000' and s[i] != '1000000':
+                            y += int(s[i])
+                            y = y * int(s[i + 1])
+                    else:
+                        y += int(s[i])
+                summa.append(y)
+            else:
+                if s[0] != None:
+                    summa.append(int(s[0]))
+                else:
+                    summa.append(None)
         for i in range(len(q)):
             if q[i] == None:
                 ret = 'Какой кошелёк вы хотите пополнить на ' + summa[i] + '?', {'username': q}
@@ -170,7 +185,7 @@ def top_up_wallet(st, user_name, k):
                 cur.append(' ')
         words = ["кошел", "счёт", "счета", "кошелёк", "кошельки", "с", "на", "названием", "название", "названиями",
                  "который", "которые", "назваются", "назвается", "привет", "пожалуйста", "пока", "спасибо", "а", "ещё",
-                 'пополни']
+                 'пополни', 'добавь']
         units = {'один': '1', 'два': '2', 'три': '3', 'четыре': '4', 'пять': '5', 'шесть': '6', 'семь': '7',
                  'восемь': '8', 'девять': '9', 'десять': '10', 'одиннадцать': '11', 'двенадцать': '12',
                  'тринадцать': '13', 'четырнадцать': '14', 'пятнадцать': '15', 'шестнадцать': '16', 'семнадцать': '17',
@@ -241,31 +256,40 @@ def top_up_wallet(st, user_name, k):
                     s.append(hundreds[c[i]])
             s.append(None)
         summa = []
-        if len(s) > 1:
+        if len(b) > 1:
             for i in range(len(s)):
                 y = 0
-                for j in range(len(s[i]) - 1):
-                    if s[i][j + 1] == '1000' or s[i][j + 1] == '1000000':
-                        if s[i][j] != '1000' and s[i][j] != '1000000':
+                if len(s[i] - 1) != 0:
+                    for j in range(len(s[i]) - 1):
+                        if s[i][j + 1] == '1000' or s[i][j + 1] == '1000000':
+                            if s[i][j] != '1000' and s[i][j] != '1000000':
+                                y += int(s[i][j])
+                                y = y * int(s[i][j + 1])
+                        else:
                             y += int(s[i][j])
-                            y = y * int(s[i][j + 1])
+                    summa.append(y)
+                    y = 0
+                else:
+                    if s[i] != None:
+                        summa.append(int(s[i]))
                     else:
-                        if s[i][j] != '1000' and s[i][j] != '1000000':
-                            y += int(s[i][j])
-                summa.append(y)
-                y = 0
+                        summa.append(None)
         else:
             y = 0
-            for i in range(len(s) - 1):
-                if s[i + 1] == '1000' or s[i + 1] == '1000000':
-                    if s[i] != '1000' and s[i] != '1000000':
-                        y += int(s[i])
-                        y = y * int(s[i + 1])
-                else:
-                    if s[i] != '1000' and s[i] != '1000000':
+            if len(s) - 1 != 0:
+                for i in range(len(s) - 1):
+                    if s[i + 1] == '1000' or s[i + 1] == '1000000':
+                        if s[i] != '1000' and s[i] != '1000000':
+                            y += int(s[i])
+                            y = y * int(s[i + 1])
+                    else:
                         y += int(s[i])
                 summa.append(y)
-                y = 0
+            else:
+                if s[0] != None:
+                    summa.append(int(s[0]))
+                else:
+                    summa.append(None)
         username = k['username']
         summaO = k['summa']
         for i in range(len(username)):
@@ -294,3 +318,4 @@ def top_up_wallet(st, user_name, k):
             elif q[j] not in words:
                 ret += 'У вас нет кошелька с названием: ' + q[j] + '\n'
         return ret, {}
+
