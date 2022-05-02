@@ -61,8 +61,12 @@ def wasting(s, user_name, info):
         long = 0
         for o in range(min(len(N), len(x), len(t))):
             if x[o] == None or N[o] == None or t[o] == None:
+                if info == {}:
+                    info['summ'] = []
+                    info['name'] = []
+                    info['cate'] = []
                 if x[o] == None and N[o] == None and t[o] == None:
-                    s_error += 'Извините, не совсем Вас поняла'
+                    s_error += 'Извините, не совсем Вас понял'
                 elif x[o] != None and N[o] == None and t[o] == None:
                     s_error += 'Повторите пожалуйста, с какого счёта и за что списать ' + str(x[o]) + ' рублей'
                 elif x[o] == None and N[o] != None and t[o] == None:
@@ -75,47 +79,53 @@ def wasting(s, user_name, info):
                     s_error += 'Повторите, пожалуйста, с какого счёта списать ' + x[o] + ' рублей за ' + t[o]
                 elif x[o] == None and N[o] != None and t[o] != None:
                     s_error += 'Прошу прощения, сколько вы потратили со счёта ' + N[o] + ' на ' + t[o]
-                info[str(long)] = [x[o], N[o], t[o]]
-                long += 1
-                info['длина'] = long
+                x1 = info['summ']
+                N1 = info['name']
+                t1 = info['cate']
+                t1.append(t[o])
+                N1.append(N[o])
+                x1.append(x[o])
+                info['summ'] = x1
+                info['name'] = N1
+                info['cate'] = t1
             else:
                 id1 = [i.id for i in from_db("accounts", "Accounts", {"accounts": N[o], "user_id": user_id})]
                 id = id1[0]
                 summ1 = [j.bank for j in from_db("accounts", "Accounts", {"accounts": N[o], "user_id": user_id})]
                 summ = summ1[0]
-                summ -= x[o]
+                summ -= int(x[o])
                 change_db("accounts", "Accounts", {"bank": summ}, {"accounts": N[o], "user_id": user_id})
                 newcount1 = [k.count for k in from_db("waste", "Waste", {"account_id": id, "category": t[o]})]
                 if len(newcount1) != 0:
                     newcount = newcount1[0]
-                    newcount += x[o]
+                    newcount += int(x[o])
                     change_db("waste", "Waste", {"count": newcount}, {"account_id": id, "category": t[o]})
                 else:
-                    to_db("waste", "Waste", ("account_id", "category", "count"), (id, t, x))
+                    to_db("waste", "Waste", ("account_id", "category", "count"), (id, t[o], int(x[o])))
                 st = 'Успешно списано ' + str(x[o]) + ' рублей с кошелька ' + str(N[o]) + ' за ' + t[o]
                 s += st
             s += s_error
     else:
         a = s.split(' и ')
-        for i in range(min(len(a), info['длина'])):
+        for i in range(len(a)):
             a1 = a[i].split()
-            if info[str(i + 1)][0] is None:
+            if info['summ'][i] is None:
                 for j in range(len(a1)):
-                    if ord('0') <= ord(a1[j][0]) <= ord('9') and info[str(i + 1)][0] == None:
-                        info[str(i)][0] = a1[j]
-            if info[str(i + 1)][1] == None:
+                    if ord('0') <= ord(a1[j][0]) <= ord('9') and info['summ'][i] == None:
+                        info['summ'][i] = a1[j]
+            if info['name'][i] == None:
                 for j in names:
-                    if j in a[i] and info[str(i + 1)][1] == None:
-                        info[str(i + 1)][1] = j
-            if info[str(i + 1)][2] == None:
+                    if j in a[i] and info['name'][i] == None:
+                        info['name'][i] = j
+            if info['cate'][i] == None:
                 k = ''
                 for j in a1:
                     if j in list2:
                         k = j
                         break
                 for j in range(len(list)):
-                    if k in list[i][1] and info[str(i)][2] == None:
-                        info[str(i + 1)][2] = list[i][0]
+                    if k in list[i][1] and info['cate'][i] == None:
+                        info['cate'][i] = list[i][0]
         x = []
         for i in range(info['длина']):
             x.append(info[str(i + 1)][0])
@@ -124,12 +134,14 @@ def wasting(s, user_name, info):
         info = {}
         s = ''
         s_error = ''
-        info['длина'] = 0
-        long = 0
         for o in range(min(len(N), len(x), len(t))):
             if x[o] == None or N[o] == None or t[o] == None:
+                if info == {}:
+                    info['summ'] = []
+                    info['name'] = []
+                    info['cate'] = []
                 if x[o] == None and N[o] == None and t[o] == None:
-                    s_error += 'Извините, не совсем Вас поняла'
+                    s_error += 'Извините, не совсем Вас понял'
                 elif x[o] != None and N[o] == None and t[o] == None:
                     s_error += 'Повторите пожалуйста, с какого счёта и за что списать ' + str(x[o]) + ' рублей'
                 elif x[o] == None and N[o] != None and t[o] == None:
@@ -142,9 +154,15 @@ def wasting(s, user_name, info):
                     s_error += 'Повторите, пожалуйста, с какого счёта списать ' + x[o] + ' рублей за ' + t[o]
                 elif x[o] == None and N[o] != None and t[o] != None:
                     s_error += 'Прошу прощения, сколько вы потратили со счёта ' + N[o] + ' на ' + t[o]
-                info[str(long)] = [x[o], N[o], t[o]]
-                long += 1
-                info['длина'] = long
+                x1 = info['summ']
+                N1 = info['name']
+                t1 = info['cate']
+                t1.append(t[o])
+                N1.append(N[o])
+                x1.append(x[o])
+                info['summ'] = x1
+                info['name'] = N1
+                info['cate'] = t1
             else:
                 id1 = [i.id for i in from_db("accounts", "Accounts", {"accounts": N[o], "user_id": user_id})]
                 id = id1[0]
