@@ -50,7 +50,7 @@ def information(general_frase, user_name, k):
                                     f'В этом кошельке {base1[accounts_data.index(q)].bank} ',
                                     ]
                     return random.choice(variations02) + \
-                           f'{currency_normal_form[0].make_agree_with_number(base1[accounts_data.index(q)].bank).word}'
+                        f'{currency_normal_form[0].make_agree_with_number(base1[accounts_data.index(q)].bank).word}', {}
 
         all_accounts = [str(akk.accounts) for akk in from_db('accounts', 'Accounts')]
         if len(all_accounts) > 3:
@@ -108,7 +108,7 @@ def information(general_frase, user_name, k):
                                     f'В этом кошельке {base1[accounts_data.index(q)].bank} ',
                                     ]
                     return random.choice(variations12) + \
-                        currency_normal_form[0].make_agree_with_number(base1[accounts_data.index(q)].bank).word
+                        currency_normal_form[0].make_agree_with_number(base1[accounts_data.index(q)].bank).word, {}
 
         all_accounts = [str(akk.accounts) for akk in from_db('accounts', 'Accounts')]
         if len(all_accounts) > 3:
@@ -124,4 +124,4 @@ def information(general_frase, user_name, k):
 
 
 # print(information('выведи информацию по счёту одктпот', 'Test2', {}))
-# 2.05.2022, 18:45, by Mr_Hamstr
+# 2.05.2022, 19:35, by Mr_Hamstr
