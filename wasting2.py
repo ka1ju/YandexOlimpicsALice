@@ -20,11 +20,11 @@ def wasting(s, user_name, info):
             ('налоги', ['налоги', 'жкх', 'ЖКХ', 'кредит', 'ипотека', 'ипотеку']),
             ('магазины', ['магазины', 'пятёрочка', 'пятерочке', 'одежду', 'одежда', 'канцелярию', 'канцелярия']),
             ('другое', ['другое', 'алкоголь', 'кофе', 'сиграеты', 'кварплату', 'кварплата', 'подарки', 'чипсы',
-                        'вкусняшки', 'техника', 'технику', 'игру', 'игры'])]
+                        'вкусняшки', 'техника', 'технику', 'игру', 'игры', 'попить'])]
     list2 = ['развлечения', 'кафе', 'ресторан', 'ресторане', 'шоппинг', 'продукты', 'налоги', 'жкх', 'ЖКХ', 'магазины',
              'пятёрочка', 'одежду', 'одежда', 'канцелярию', 'канцелярия', 'пятерочке', 'другое', 'алкоголь', 'кофе',
              'сиграеты', 'кварплату', 'кварплата', 'подарки', 'ипотека', 'ипотеку', 'чипсы', 'вкусняшки', 'техника',
-             'технику', 'игру', 'игры']
+             'технику', 'игру', 'игры', "попить"]
     user_id1 = [i.id for i in from_db("users", "Users", {"username": user_name})]
     user_id = user_id1[0]
     n = []
@@ -33,35 +33,28 @@ def wasting(s, user_name, info):
     t = []
     names = [i.accounts for i in from_db("accounts", "Accounts", {"user_id": user_id})]
     if info == {}:
-        a = s.split()
-        for i in range(0, len(a)):
-            if ord('0') <= ord(a[i][0]) <= ord('9'):
-                x.append(a[i])
-            elif a[i] == 'и':
-                x.append(None)
+        a = s.split(' и ')
         for i in range(len(a)):
-            s = a[i]
-            if s == 'и':
-                N.append(None)
-                continue
-            for j in range(i + 1, len(a)):
-                s += a[j]
-                if 'и' in s:
-                    break
-                elif s in names:
-                    N.append(s)
-                    break
-        for i in a:
-            if i in list2:
-                n.append(i)
-            elif i == 'и':
-                n.append(None)
-        for i in range(len(list)):
+            a1 = a[i].split()
+            for j in range(len(a1)):
+                if ord('0') <= ord(a1[j][0]) <= ord('9') and len(x) < (i + 1):
+                    x.append(a1[j])
+            for j in names:
+                if j in a and len(N) < (1 + i):
+                    N.append(j)
+            for j in list2:
+                if j in a:
+                    n.append(j)
             for j in n:
-                if j == None:
-                    t.append(None)
-                elif j in list[i][1]:
-                    t.append(j)
+                for k in list:
+                    if j in k[1] and len(t) < (i + 1):
+                        t.append(k[0])
+            if len(x) < (i + 1):
+                x.append(None)
+            if len(N) < (i + 1):
+                N.append(None)
+            if len(t) < (i + 1):
+                t.append(None)
         s = ''
         s_error = ''
         for o in range(min(len(N), len(x), len(t))):
@@ -98,9 +91,9 @@ def wasting(s, user_name, info):
                 st = 'Успешно списано ' + str(x[o]) + ' рублей с кошелька ' + str(N[o]) + ' за ' + t[o]
                 s += st
             s += s_error
-        return s, info
+        return s, info, x, N, t
     else:
-        a = s.split('и')
+        a = s.split(' и ')
         for i in range(min(len(a), len(info))):
             a1 = a[i].split()
             if info[i][0] == None:
@@ -161,3 +154,5 @@ def wasting(s, user_name, info):
                 s += st
             s += s_error
         return s, info
+
+
