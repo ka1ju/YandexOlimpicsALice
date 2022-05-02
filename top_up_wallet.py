@@ -10,8 +10,8 @@ def top_up_wallet(st, user_name, k):
         user_id = user_id1[0]
         bd = [i.accounts for i in from_db("accounts", "Accounts", {"user_id": user_id})]
         q1 = []
-        currency = ['рубль', 'рубля', 'рублей', 'евро', 'доллар', 'доллара', 'долларов', 'фунт', 'фунта', 'фунтов', 'йена',
-                    'йены', 'йен', 'франк', 'франка', 'франков', 'тенге']
+        currency = ['рубль', 'рубля', 'рублей', 'евро', 'доллар', 'доллара', 'долларов', 'фунт', 'фунта', 'фунтов',
+                    'йена', 'йены', 'йен', 'франк', 'франка', 'франков', 'тенге']
         cur = []
         for j in range(len(b)):
             y = 0
@@ -132,7 +132,7 @@ def top_up_wallet(st, user_name, k):
                 ret = 'Какой кошелёк вы хотите пополнить на ' + summa[i] + '?', {'username': q}
                 return ret
             elif summa[i] == None:
-                ret = 'На какую сумму вы хотите пополнить кошелёк ' + q[i] + '?', {'summa' : summa}
+                ret = 'На какую сумму вы хотите пополнить кошелёк ' + q[i] + '?', {'summa': summa}
                 return ret
         ret = ''
         for j in range(len(q)):
@@ -144,10 +144,10 @@ def top_up_wallet(st, user_name, k):
                 v = [i.bank for i in from_db('accounts', 'Accounts', {'accounts': q[j], 'user_id': user_id})]
                 v1 = v[0]
                 change_db('accounts', 'Accounts', {'bank': int(v1) + summa[j]}, {'accounts': q[j], 'user_id': user_id})
-                ret += 'Баланс кошелька "' + q[j] + '" пополнен\n'
+                ret += 'Баланс кошелька "' + q[j] + '" пополнен' + '\n'
             elif q[j] not in words:
                 ret += 'У вас нет кошелька с названием: ' + q[j] + '\n'
-        return ret
+        return ret, {}
     else:
         b = st.split(' и ')
         user_id1 = [i.id for i in from_db("users", "Users", {"username": user_name})]
@@ -296,7 +296,8 @@ def top_up_wallet(st, user_name, k):
                 v = [i.bank for i in from_db('accounts', 'Accounts', {'accounts': q[j], 'user_id': user_id})]
                 v1 = v[0]
                 change_db('accounts', 'Accounts', {'bank': int(v1) + summa[j]}, {'accounts': q[j], 'user_id': user_id})
-                ret += 'Баланс кошелька "' + q[j] + '" пополнен\n'
+                ret += 'Баланс кошелька "' + q[j] + '" пополнен' + '\n'
             elif q[j] not in words:
                 ret += 'У вас нет кошелька с названием: ' + q[j] + '\n'
-        return ret
+        return ret, {}
+
