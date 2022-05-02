@@ -38,6 +38,8 @@ def statistic(string, usr_name, k):
         for i in ok:
             k = 0
             dad = i.split('.')
+            if 'за все время' in string:
+                k = 1
             if 'год' in string:
                 if int(dad[2]) == y:
                     k = 1
