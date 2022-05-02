@@ -126,7 +126,8 @@ def create_wallet(req, user_ya_id, k=None):
         if len(from_db("accounts", "Accounts", {"user_id": k["user_id"], "accounts": req})) == 0:
             to_db("accounts", "Accounts", ("accounts", "currency", "bank"), (req, k["curr"], k["bnk"]), k["user_id"])
             r = random.randint(1, 3)
-            ress = f'"{req.capitalize()}" с суммой 0 рублей\n'
+            t = morph.parse(k["curr"])[0]
+            ress = f'"{req.capitalize()}" с суммой {k["bnk"]} {t.make_agree_with_number(int(k["bnk"])).word}\n'
             ll = [f"Создан счёт {req}\n",
                   f"Поздравляю!\nВы создали счёт {ress}\n",
                   f"Новый счёт создан.\nЕго название {ress}\n"]
