@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="456822aa-a66e-4b8b-aa02-696753ac6362" name="Changes" comment="Пофиксил говно-if">
+    <list default="true" id="456822aa-a66e-4b8b-aa02-696753ac6362" name="Changes" comment="...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all_wallets.py" beforeDir="false" afterPath="$PROJECT_DIR$/all_wallets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -328,13 +331,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00065" summary="...">
-      <created>1651161805589</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1651161805590</updated>
     </task>
     <task id="LOCAL-00066" summary="...">
       <created>1651161985076</created>
@@ -672,7 +668,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651498598469</updated>
     </task>
-    <option name="localTasksCounter" value="114" />
+    <task id="LOCAL-00114" summary="...">
+      <created>1651498951619</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1651498951619</updated>
+    </task>
+    <option name="localTasksCounter" value="115" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -788,8 +791,8 @@
     <MESSAGE value="обновил федин файл" />
     <MESSAGE value="Добавил кусок проверки" />
     <MESSAGE value="Федин файл" />
-    <MESSAGE value="..." />
     <MESSAGE value="Пофиксил говно-if" />
-    <option name="LAST_COMMIT_MESSAGE" value="Пофиксил говно-if" />
+    <MESSAGE value="..." />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
 </project>

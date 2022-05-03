@@ -37,7 +37,8 @@ def main():
             'top_up_wallet': {},
             'spend_money': {},
             'wallet_info': {},
-            'wallet_statistic': {}
+            'wallet_statistic': {},
+            'all_wallets': {}
         }
     }
     if "session" in request.json['state']:
@@ -128,20 +129,19 @@ def handle_dialog(req, res):
             or 'ска' in user_message or "покаж" in user_message
             or "показ" in user_message) and \
                 ('кошел' in user_message or 'счет' in user_message):
-            res['response']['text'] = return_wallets(user_id)
+            res['response']['text'] = res['session_state']['all_wallets'] = return_wallets(user_id, req['state'])
             logging.info("Giving all wallets")
             return
 
         # Конвертация валют
         if 'конверт' in user_message or 'перев' in user_message or ("сколько" in user_message and "в" in user_message):
-            res['response']['text'] = \
-                converter(user_message)
+            res['response']['text'] = converter(user_message)
             logging.info("Converting")
             return
 
         # Помощь
         if "помо" in user_message or ("что" in user_message and "ты" in user_message and "умеешь" in user_message):
-            res['response']['text'],  = helper()
+            res['response']['text'] = helper()
             res['session_state'] = req['state']['session']
             logging.info("Helping")
             return
