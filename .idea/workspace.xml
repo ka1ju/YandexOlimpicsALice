@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db325a9e-da41-458b-9654-07b82f6c0fe5" name="Changes" comment="...">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
-    </list>
+    <list default="true" id="db325a9e-da41-458b-9654-07b82f6c0fe5" name="Changes" comment="..." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -329,13 +326,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00068" summary="всё ласт версия на гите">
-      <created>1651166352829</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1651166352829</updated>
     </task>
     <task id="LOCAL-00069" summary="Создал тестовый файл и также обновил main.py">
       <created>1651231888859</created>
@@ -673,7 +663,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651559628559</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="...">
+      <created>1651585264614</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1651585264614</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
