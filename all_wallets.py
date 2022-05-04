@@ -9,13 +9,14 @@ def return_wallets(user_id, prev):
                pymorphy2.MorphAnalyzer().parse(i.currency)[0].make_agree_with_number(i.bank).inflect({'gent'}).word
                + '.' for i in from_db("accounts", "Accounts", {"user_id": u_id})]
     if len(wallets) > 0:
-        answers = ["Вот ваши кошельки", "Вот список ваших счетов", "Вот все ваши кошельки"]
+        answers = ["Вот ваши кошельки", "Вот список ваших счетов", "Вот все ваши кошельки", "Вот все ваши счета"]
         if prev['session']['all_wallets'] in answers:
             answers.remove(prev['session']['all_wallets'])
         return answers[random.randint(0, len(answers) - 1)] + ":\n" + '\n'.join(wallets)
     else:
-        answers = ["Пока что кошельков нет", "Извините, но я не нашел у вас ни одного кошелька.",
-                   "Вы пока что не создали ни один счёт"]
+        answers = ["Пока что кошельков нет", "Извините, но я не нашел у вас ни одного кошелька",
+                   "Вы пока что не создали ни один счёт", "Вы пока что не создали ни один счёт",
+                   "Вы ещё не добавили ни одного счёта"]
         if prev['session']['all_wallets'] in answers:
             answers.remove(prev['session']['all_wallets'])
         return answers[random.randint(0, len(answers) - 1)]
