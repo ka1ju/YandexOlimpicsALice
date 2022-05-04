@@ -25,7 +25,7 @@ def information(general_frase, user_name, k):
     main_words = []
     person_data = from_db('users', 'Users', {'username': user_name})
     base = from_db('accounts', 'Accounts', {'user_id': person_data[0].id})
-    all_accounts = [str(akk.accounts) for akk in from_db('accounts', 'Accounts')]
+    all_accounts = [str(akk.accounts) for akk in from_db('accounts', 'Accounts', {'user_id': person_data[0].id})]
     accounts_data = [q.accounts for q in base]
     main_frase = (general_frase.split())
     for word in main_frase:
