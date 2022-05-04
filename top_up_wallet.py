@@ -30,9 +30,9 @@ def top_up_wallet(st, user_name, k):
                     cur.append(m)
             if y == 0:
                 cur.append(' ')
-        words = ["кошел", "счёт", "счета", "кошелёк", 'кошелек', "кошельки", "с", "на", "названием", "название", "названиями",
-                 "который", "которые", "назваются", "назвается", "привет", "пожалуйста", "пока", "спасибо", "а", "ещё",
-                 'пополни', 'добавь']
+        words = ["кошел", "счёт", "счета", "кошелёк", 'кошелек', "кошельки", "с", "на", "названием", "название",
+                 "названиями", "который", "которые", "назваются", "назвается", "привет", "пожалуйста", "пока",
+                 "спасибо", "а", "ещё", 'пополни', 'добавь', 'положи']
         units = {'один': '1', 'два': '2', 'три': '3', 'четыре': '4', 'пять': '5', 'шесть': '6', 'семь': '7',
                  'восемь': '8', 'девять': '9', 'десять': '10', 'одиннадцать': '11', 'двенадцать': '12',
                  'тринадцать': '13', 'четырнадцать': '14', 'пятнадцать': '15', 'шестнадцать': '16', 'семнадцать': '17',
@@ -50,7 +50,7 @@ def top_up_wallet(st, user_name, k):
                 li = b[i].split(' ')
                 q2 = []
                 for j in range(len(li)):
-                    if li[j] not in words:
+                    if li[j] not in words and li[j] not in currency and list(li[j])[0] not in numbers:
                         q2.append(li[j])
                 if q2 == []:
                     q.append(None)
@@ -58,6 +58,10 @@ def top_up_wallet(st, user_name, k):
                     q.append(' '.join(q2))
             else:
                 q.append(q1[i])
+        for i in range(len(q)):
+            if q[i] not in bd and q[i] is not None:
+                ret = 'У вас нет кошелька с названием: ' + q[i]
+                return ret, {}
         x = []
         if len(b) > 1:
             for i in range(len(b)):
@@ -137,7 +141,7 @@ def top_up_wallet(st, user_name, k):
                 q1.append(' ')
         words = ["кошел", "счёт", "счета", "кошелёк", 'кошелек', "кошельки", "с", "на", "названием", "название",
                  "названиями", "который", "которые", "назваются", "назвается", "привет", "пожалуйста", "пока",
-                 "спасибо", "а", "ещё", 'пополни', 'добавь']
+                 "спасибо", "а", "ещё", 'пополни', 'добавь', 'положи']
         units = {'один': '1', 'два': '2', 'три': '3', 'четыре': '4', 'пять': '5', 'шесть': '6', 'семь': '7',
                  'восемь': '8', 'девять': '9', 'десять': '10', 'одиннадцать': '11', 'двенадцать': '12',
                  'тринадцать': '13', 'четырнадцать': '14', 'пятнадцать': '15', 'шестнадцать': '16', 'семнадцать': '17',
@@ -155,7 +159,7 @@ def top_up_wallet(st, user_name, k):
                 li = b[i].split(' ')
                 q2 = []
                 for j in range(len(li)):
-                    if li[j] not in words:
+                    if li[j] not in words and li[j] not in currency and list(li[j])[0] not in numbers:
                         q2.append(li[j])
                 if q2 == []:
                     q.append(None)
@@ -163,6 +167,10 @@ def top_up_wallet(st, user_name, k):
                     q.append(' '.join(q2))
             else:
                 q.append(q1[i])
+        for i in range(len(q)):
+            if q[i] not in bd:
+                ret = 'У вас нет кошелька с названием: ' + q[i]
+                return ret, {}
         x = []
         if len(b) > 1:
             for i in range(len(b)):
@@ -252,4 +260,4 @@ def top_up_wallet(st, user_name, k):
         return ret, {}
 
 
-#print(top_up_wallet('на 300 тенге', 'Test2', {'username': ['коплю на коплю'], 'summa': [None], 'currency': [' ']}))
+#print(top_up_wallet('коплю на машину', 'Test2', {'username': [None], 'summa': [400], 'currency': ['рубль']}))
