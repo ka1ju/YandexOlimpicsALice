@@ -107,8 +107,7 @@ def handle_dialog(req, res):
             return
 
         # Вывод информации о счёте
-        if ('выв' in user_message or 'дай' in user_message or 'ска' in user_message) and \
-                'инф' in user_message and \
+        if 'инф' in user_message and \
                 ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message)\
                 or req['state']['session']['wallet_info'] != {}:
             res['response']['text'], res['session_state']['wallet_info'] = \
