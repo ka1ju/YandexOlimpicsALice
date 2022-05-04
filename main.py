@@ -116,8 +116,7 @@ def handle_dialog(req, res):
             return
 
         # Вывод статистики о счёте
-        if ('выв' in user_message or 'дай' in user_message or 'ска' in user_message) and \
-                'стат' in user_message or req['state']['session']['wallet_statistic'] != {}:
+        if 'стат' in user_message or req['state']['session']['wallet_statistic'] != {}:
             res['response']['text'], res['session_state']['wallet_statistic'] = \
                 statistic(user_message, user_id, req['state']['session']['wallet_statistic'])
             logging.info("Giving wallet statistic")
