@@ -28,6 +28,8 @@ def information(general_frase, user_name, k):
     person_data = from_db('users', 'Users', {'username': user_name})
     base = from_db('accounts', 'Accounts', {'user_id': person_data[0].id})
     all_accounts = [str(akk.accounts) for akk in from_db('accounts', 'Accounts', {'user_id': person_data[0].id})]
+    if len(all_accounts) == 0:
+        return 'У вас пока нет счетов.'
     accounts_data = [q.accounts for q in base]
     main_frase = (general_frase.split())
     for word in main_frase:
@@ -85,4 +87,4 @@ def information(general_frase, user_name, k):
                 return random.choice(variations2) + wordssss, {}
 
 
-# print(information('выведи информацию о счёте негры', 'Test2', {}))
+#n print(information('выведи информацию о счёте', 'Test2', {}))
