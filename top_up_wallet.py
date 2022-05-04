@@ -97,13 +97,13 @@ def top_up_wallet(st, user_name, k):
                 summa.append(None)
         for i in range(len(q)):
             if q[i] == None and summa[i] == None:
-                ret = 'Какой кошелёк вы хотите пополнить?', {'username': q, 'summa': summa}
+                ret = 'Какой кошелёк вы хотите пополнить?', {'username': q, 'summa': summa, 'currency': cur}
                 return ret
             elif q[i] == None:
-                ret = 'Какой кошелёк вы хотите пополнить на ' + str(summa[i]) + '?', {'username': q, 'summa': summa}
+                ret = 'Какой кошелёк вы хотите пополнить на ' + str(summa[i]) + '?', {'username': q, 'summa': summa, 'currency': cur}
                 return ret
             elif summa[i] == None:
-                ret = 'На какую сумму вы хотите пополнить кошелёк ' + q[i] + '?', {'username': q, 'summa': summa}
+                ret = 'На какую сумму вы хотите пополнить кошелёк ' + q[i] + '?', {'username': q, 'summa': summa, 'currency': cur}
                 return ret
         ret = ''
         for j in range(len(q)):
@@ -125,29 +125,19 @@ def top_up_wallet(st, user_name, k):
         user_id = user_id1[0]
         bd = [i.accounts for i in from_db("accounts", "Accounts", {"user_id": user_id})]
         q1 = []
-        currency = ['рубль', 'рубля', 'рублей', 'евро', 'доллар', 'доллара', 'долларов', 'фунт', 'фунта', 'фунтов', 'йена',
-                    'йены', 'йен', 'франк', 'франка', 'франков', 'тенге']
-        cur = []
+        currency = ['рубль', 'рубля', 'рублей', 'евро', 'доллар', 'доллара', 'долларов', 'фунт', 'фунта', 'фунтов',
+                    'йена', 'йены', 'йен', 'франк', 'франка', 'франков', 'тенге']
         for j in range(len(b)):
             y = 0
-            for i in bd:
-                if i in ''.join(b[j]):
+            for e in bd:
+                if e in ''.join(b[j]):
                     y = 1
-                    q1.append(i)
+                    q1.append(e)
             if y == 0:
                 q1.append(' ')
-        for j in range(len(b)):
-            y = 0
-            for i in range(len(b[j].split(' '))):
-                if b[j].split(' ')[i] in currency:
-                    y = 1
-                    m = morph.parse(b[j].split(' ')[i])[0].normal_form
-                    cur.append(m)
-            if y == 0:
-                cur.append(' ')
-        words = ["кошел", "счёт", "счета", "кошелёк", 'кошелек', "кошельки", "с", "на", "названием", "название", "названиями",
-                 "который", "которые", "назваются", "назвается", "привет", "пожалуйста", "пока", "спасибо", "а", "ещё",
-                 'пополни', 'добавь']
+        words = ["кошел", "счёт", "счета", "кошелёк", 'кошелек', "кошельки", "с", "на", "названием", "название",
+                 "названиями", "который", "которые", "назваются", "назвается", "привет", "пожалуйста", "пока",
+                 "спасибо", "а", "ещё", 'пополни', 'добавь']
         units = {'один': '1', 'два': '2', 'три': '3', 'четыре': '4', 'пять': '5', 'шесть': '6', 'семь': '7',
                  'восемь': '8', 'девять': '9', 'десять': '10', 'одиннадцать': '11', 'двенадцать': '12',
                  'тринадцать': '13', 'четырнадцать': '14', 'пятнадцать': '15', 'шестнадцать': '16', 'семнадцать': '17',
@@ -216,23 +206,36 @@ def top_up_wallet(st, user_name, k):
             if username[i] == None:
                 username[i] = q[0]
                 q.pop(0)
+                break
             elif summaO[i] == None:
                 summaO[i] = summa[0]
                 summa.pop(0)
+                cur = []
+                for j in range(len(b)):
+                    y = 0
+                    for e in range(len(b[j].split(' '))):
+                        if b[j].split(' ')[e] in currency:
+                            y = 1
+                            m = morph.parse(b[j].split(' ')[e])[0].normal_form
+                            k['currency'][i] = m
+                    if y == 0:
+                        k['currency'][i] = ' '
+                break
         q.clear()
         summa.clear()
         q = username.copy()
         summa = summaO.copy()
         for i in range(len(q)):
             if q[i] == None and summa[i] == None:
-                ret = 'Какой кошелёк вы хотите пополнить?', {'username': q, 'summa': summa}
+                ret = 'Какой кошелёк вы хотите пополнить?', {'username': q, 'summa': summa, 'currency': k['currency']}
                 return ret
             elif q[i] == None:
-                ret = 'Какой кошелёк вы хотите пополнить на ' + str(summa[i]) + '?', {'username': q, 'summa': summa}
+                ret = 'Какой кошелёк вы хотите пополнить на ' + str(summa[i]) + '?', {'username': q, 'summa': summa, 'currency': k['currency']}
                 return ret
             elif summa[i] == None:
-                ret = 'На какую сумму вы хотите пополнить кошелёк ' + q[i] + '?', {'username': q, 'summa': summa}
+                ret = 'На какую сумму вы хотите пополнить кошелёк ' + q[i] + '?', {'username': q, 'summa': summa, 'currency': k['currency']}
                 return ret
+        cur = k['currency']
         ret = ''
         for j in range(len(q)):
             if q[j] in bd:
@@ -249,4 +252,4 @@ def top_up_wallet(st, user_name, k):
         return ret, {}
 
 
-#print(top_up_wallet('пополни кошелек', 'Test2', {}))
+#print(top_up_wallet('на 300 тенге', 'Test2', {'username': ['коплю на коплю'], 'summa': [None], 'currency': [' ']}))
