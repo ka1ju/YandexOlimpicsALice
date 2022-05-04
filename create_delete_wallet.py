@@ -10,13 +10,13 @@ morph = pymorphy2.MorphAnalyzer()
 def create_wallet(req, user_ya_id, k=None):
     if k is None:
         k = {}
+    req_lst = ["олег", "создай", "создать", "добавь", "новый", "добавить", "можно", "можешь", "счет",
+               "счёт", "счета", "кошелек", "кошелёк", "кошельки", "с", "названием", "название",
+               "названиями", "который", "которые", "называются", "называется", "суммой", "начальной",
+               "номинал", "номиналом", "в", "привет", "пожалуйста", "пока", "спасибо", "а", "ещё", "еще"]
     if len(k) == 0:
         user_id = [i.id for i in from_db("users", "Users", {"username": user_ya_id})][0]
         req = req.lower().split()
-        req_lst = ["олег", "создай", "создать", "добавь", "новый", "добавить", "можно", "можешь", "счет",
-                   "счёт", "счета", "кошелек", "кошелёк", "кошельки", "с", "названием", "название",
-                   "названиями", "который", "которые", "называются", "называется", "суммой", "начальной",
-                   "номинал", "номиналом", "в", "привет", "пожалуйста", "пока", "спасибо", "а", "ещё", "еще"]
         cur_lst = ['доллар', 'доллара', 'доллару', 'доллар', 'долларом', 'долларе', 'доллары', 'долларов', 'долларам',
                    'доллары', 'долларами', 'долларах', 'рубль', 'рубля', 'рублю', 'рубль', 'рублём', 'рубле',
                    'рубли', 'рублей', 'рублям', 'рубли', 'рублями', 'рублях', 'юань', 'юаня', 'юаню', 'юань',
@@ -135,6 +135,14 @@ def create_wallet(req, user_ya_id, k=None):
             return "Не понял вас :(\nКак будет называться ваш кошелёк?", {"bnk": 0, "curr": "рубль",
                                                                           "user_id": int(user_id)}
     elif len(k) > 0:
+        req = req.lower()
+        t = req.split()
+        req = []
+        for el in t:
+            if el not in req_lst:
+                req.append(el)
+        req = " ".join(req)
+        print(req)
         res_s = ""
         if len(from_db("accounts", "Accounts", {"user_id": k["user_id"], "accounts": req})) == 0:
             to_db("accounts", "Accounts", ("accounts", "currency", "bank"), (req, k["curr"], k["bnk"]), k["user_id"])
@@ -151,7 +159,7 @@ def create_wallet(req, user_ya_id, k=None):
                   f'Увы :(\nСчёт "{req}" уже существует\n',
                   f'Вы уже создали счёт "{req}" ранее\n']
             res_s += ll[r - 1]
-        return res_s, {}
+        return res_s.rstrip("\n"), {}
 
 
 def delete_wallet(req, user_ya_id, k=None):
@@ -218,4 +226,4 @@ def delete_wallet(req, user_ya_id, k=None):
             r = random.randint(1, 2)
             ll = [f'Счёт "{req}" был удалён\n', f'Готово!\nЯ удалил счёт "{req}"\n']
             res_s += ll[r - 1]
-        return res_s, {}
+        return res_s.rstrip("\n"), {}
