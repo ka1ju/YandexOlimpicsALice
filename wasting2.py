@@ -32,6 +32,7 @@ def wasting(s, user_name, info):
     x = []
     t = []
     names = [i.accounts for i in from_db("accounts", "Accounts", {"user_id": user_id})]
+
     if info == {}:
         a = s.split(' и ')
         for i in range(len(a)):
@@ -73,7 +74,9 @@ def wasting(s, user_name, info):
                 elif x[o] == None and N[o] == None and t[o] != None:
                     s_error += 'Прошу прощения, сколько и с какого счёта вы потратили на ' + t[o]
                 elif x[o] != None and N[o] != None and t[o] == None:
-                    s_error += 'Извините, за что вы заплатили ' + x[o] + ' рублей из кошелька ' + N[o]
+                    cur1 = [i.currancy for i in from_db('accounts', 'Accounts', {'user_id': user_id, 'accounts': N[o]})]
+                    cur = cur1[0]
+                    s_error += 'Извините, за что вы заплатили ' + x[o] + ' '+  cur + ' из кошелька ' + N[o]
                 elif x[o] != None and N[o] == None and t[o] != None:
                     s_error += 'Повторите, пожалуйста, с какого счёта списать ' + x[o] + ' рублей за ' + t[o]
                 elif x[o] == None and N[o] != None and t[o] != None:
