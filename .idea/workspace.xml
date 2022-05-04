@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b567a095-15ac-45c7-aeba-b15122553d34" name="Changes" comment="Добавил в if ещё 1 ключевое слово, а также пофиксили хуй семёна">
+    <list default="true" id="b567a095-15ac-45c7-aeba-b15122553d34" name="Changes" comment="почистил код">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -331,27 +330,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
     </task>
-    <task id="LOCAL-00074" summary="Добавил пояснения в код main">
-      <created>1651235722316</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1651235722316</updated>
-    </task>
-    <task id="LOCAL-00075" summary="обновил часть функций и сделал так что они работают без файла. Также добавил сохранение стадий моих функций.">
-      <created>1651312928474</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1651312928475</updated>
-    </task>
-    <task id="LOCAL-00076" summary="...">
-      <created>1651324761909</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1651324761910</updated>
-    </task>
     <task id="LOCAL-00077" summary="Добавил стадии для моих функций">
       <created>1651332726060</created>
       <option name="number" value="00077" />
@@ -674,7 +652,28 @@
       <option name="project" value="LOCAL" />
       <updated>1651640350917</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="Поменял if на вывод информации о счёте">
+      <created>1651641450897</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1651641450897</updated>
+    </task>
+    <task id="LOCAL-00124" summary="Поменял if на вывод статистики о счёте">
+      <created>1651641493949</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1651641493949</updated>
+    </task>
+    <task id="LOCAL-00125" summary="почистил код">
+      <created>1651641609786</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1651641609786</updated>
+    </task>
+    <option name="localTasksCounter" value="126" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -767,9 +766,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Сделал рабочие стадии для удаления и создания кошельков" />
-    <MESSAGE value="Сделал рабочую стадию для пополнения счёта" />
-    <MESSAGE value="Обновил Федин файл" />
     <MESSAGE value="Убрал лишний импорт, а также обновил файлы Димы и Семёна" />
     <MESSAGE value="Сделал рабочую стадию для вывода информации о счёте" />
     <MESSAGE value="Убрал лишний return" />
@@ -792,6 +788,9 @@
     <MESSAGE value="..." />
     <MESSAGE value="Добавил вариативность ответов для моих функций" />
     <MESSAGE value="Добавил в if ещё 1 ключевое слово, а также пофиксили хуй семёна" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил в if ещё 1 ключевое слово, а также пофиксили хуй семёна" />
+    <MESSAGE value="Поменял if на вывод информации о счёте" />
+    <MESSAGE value="Поменял if на вывод статистики о счёте" />
+    <MESSAGE value="почистил код" />
+    <option name="LAST_COMMIT_MESSAGE" value="почистил код" />
   </component>
 </project>
