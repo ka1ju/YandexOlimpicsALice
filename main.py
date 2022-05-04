@@ -62,7 +62,7 @@ def main():
 def handle_dialog(req, res):
     user_id = req['session']['user']['access_token']
     if 'original_utterance' in req['request']:
-        user_message = req['request']['original_utterance'].lower()
+        user_message = req['request']['command'].lower()
 
         # Авторизация
         if req['session']['new'] and user_message == "":
