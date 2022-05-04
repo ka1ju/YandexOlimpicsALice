@@ -238,5 +238,3 @@ def top_up_wallet(st, user_name, k):
                 ret += 'У вас нет кошелька с названием: ' + q[j] + '\n'
         return ret, {}
 
-
-print(top_up_wallet('пополни кошелёк', 'Test2', {}))
