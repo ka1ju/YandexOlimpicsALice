@@ -4,10 +4,12 @@ import random
 
 morph = pymorphy2.MorphAnalyzer()
 
-words = ['а', 'банк', 'всем', 'выведи', 'ещё', 'им', 'инфо', 'информ', 'информацию', 'информация',
-         'которые', 'который', 'кошел', 'кошельки', 'кошелек', 'мне', 'на', 'назвается', 'название',
-         'названием', 'названиями', 'назваются', 'нам', 'о', 'об', 'по', 'пожалуйста', 'пока', 'привет',
-         'про', 'про', 'расскажи', 'с', 'спасибо', 'счет', 'счета', 'счёт', 'счёте', 'счете', 'счёту', "дай", 'счету']
+words = ['а', 'банк', 'всем', 'выведи', 'дай', 'ещё', 'им', 'инфо', 'информ', 'информацию',
+         'информация', 'которые', 'который', 'кошел', 'кошелек', 'кошельке', 'кошельки',
+         'мне', 'на', 'назвается', 'название', 'названием', 'названиями', 'назваются',
+         'нам', 'о', 'об', 'по', 'пожалуйста', 'пока', 'привет', 'про', 'про',
+         'расскажи', 'с', 'спасибо', 'счет', 'счета', 'счете', 'счету', 'счёт',
+         'счёте', 'счёту']
 
 variations1 = ['Информация о каком кошельке вам нужна? У вас есть счета: ',
                'О каком кошельке вы хотите узнать? У вас есть счета: ',
@@ -26,6 +28,8 @@ def information(general_frase, user_name, k):
     person_data = from_db('users', 'Users', {'username': user_name})
     base = from_db('accounts', 'Accounts', {'user_id': person_data[0].id})
     all_accounts = [str(akk.accounts) for akk in from_db('accounts', 'Accounts', {'user_id': person_data[0].id})]
+    if len(all_accounts) == 0:
+        return 'У вас пока нет счетов.'
     accounts_data = [q.accounts for q in base]
     main_frase = (general_frase.split())
     for word in main_frase:
@@ -83,4 +87,4 @@ def information(general_frase, user_name, k):
                 return random.choice(variations2) + wordssss, {}
 
 
-# print(information('выведи информацию о счёте негры', 'Test2', {}))
+#n print(information('выведи информацию о счёте', 'Test2', {}))
