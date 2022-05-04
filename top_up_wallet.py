@@ -223,6 +223,16 @@ def top_up_wallet(st, user_name, k):
         summa.clear()
         q = username.copy()
         summa = summaO.copy()
+        for i in range(len(q)):
+            if q[i] == None and summa[i] == None:
+                ret = 'Какой кошелёк вы хотите пополнить?', {'username': q, 'summa': summa}
+                return ret
+            elif q[i] == None:
+                ret = 'Какой кошелёк вы хотите пополнить на ' + str(summa[i]) + '?', {'username': q, 'summa': summa}
+                return ret
+            elif summa[i] == None:
+                ret = 'На какую сумму вы хотите пополнить кошелёк ' + q[i] + '?', {'username': q, 'summa': summa}
+                return ret
         ret = ''
         for j in range(len(q)):
             if q[j] in bd:
@@ -238,3 +248,5 @@ def top_up_wallet(st, user_name, k):
                 ret += 'У вас нет кошелька с названием: ' + q[j] + '\n'
         return ret, {}
 
+
+#print(top_up_wallet('пополни кошелек', 'Test2', {}))

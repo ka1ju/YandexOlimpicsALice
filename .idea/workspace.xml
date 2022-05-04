@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="функция пополнения17">
+    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="функция пополнения18">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/top_up_wallet.py" beforeDir="false" afterPath="$PROJECT_DIR$/top_up_wallet.py" afterDir="false" />
     </list>
@@ -183,7 +183,28 @@
       <option name="project" value="LOCAL" />
       <updated>1651584758656</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="функция пополнения18">
+      <created>1651634727529</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1651634727529</updated>
+    </task>
+    <task id="LOCAL-00017" summary="функция пополнения18">
+      <created>1651634964322</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1651634964322</updated>
+    </task>
+    <task id="LOCAL-00018" summary="функция пополнения18">
+      <created>1651635018333</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1651635018333</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -212,6 +233,7 @@
     <MESSAGE value="функция пополнения15" />
     <MESSAGE value="функция пополнения16" />
     <MESSAGE value="функция пополнения17" />
-    <option name="LAST_COMMIT_MESSAGE" value="функция пополнения17" />
+    <MESSAGE value="функция пополнения18" />
+    <option name="LAST_COMMIT_MESSAGE" value="функция пополнения18" />
   </component>
 </project>
