@@ -31,8 +31,9 @@ def statistic(string, usr_name, k):
         m = datetime.datetime.now().month
         y = datetime.datetime.now().year
         for i in names:
-            if i in string.split():
+            if i in string:
                 ac = i
+                break
         if ac != '':
             yuy = from_db('accounts', 'Accounts', {'user_id': account_element_id, 'accounts': ac})[0]
             d = {'развлечения': 0, 'продукты': 0, 'налоги': 0, 'магазины': 0, 'другое': 0}
@@ -67,8 +68,9 @@ def statistic(string, usr_name, k):
         m = datetime.datetime.now().month
         y = datetime.datetime.now().year
         for i in names:
-            if i in string.split():
+            if i in string:
                 ac = i
+                break
         if ac != '':
             yuy = from_db('accounts', 'Accounts', {'user_id': account_element_id, 'accounts': ac})[0]
             d = {'развлечения': 0, 'продукты': 0, 'налоги': 0, 'магазины': 0, 'другое': 0}
