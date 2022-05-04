@@ -10,6 +10,9 @@ def return_wallets(user_id, prev):
                pymorphy2.MorphAnalyzer().parse(i.currency)[0].make_agree_with_number(i.bank).inflect({'gent'}).word
                + '.' for i in from_db("accounts", "Accounts", {"user_id": u_id})
                ]
+    for j in range(len(wallets)):
+        if "тенгов" in wallets[j]:
+            wallets[j] = wallets[j].replace("тенгов", "тенге")
     if len(wallets) > 0:
         answers = ["Вот ваши кошельки", "Вот список ваших счетов", "Вот все ваши кошельки", "Вот все ваши счета"]
         if prev['session']['all_wallets'] in answers:

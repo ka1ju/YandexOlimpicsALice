@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b567a095-15ac-45c7-aeba-b15122553d34" name="Changes" comment="...">
+    <list default="true" id="b567a095-15ac-45c7-aeba-b15122553d34" name="Changes" comment="пока что так">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all_wallets.py" beforeDir="false" afterPath="$PROJECT_DIR$/all_wallets.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +59,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
-    <configuration name="Alise_3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="all_wallets" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="YandexOlympicsAlice" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -70,7 +71,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Alise_3.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/all_wallets.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -313,10 +314,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.all_wallets" />
         <item itemvalue="Python.test-file" />
         <item itemvalue="Python.oleg" />
         <item itemvalue="Python.my_main" />
-        <item itemvalue="Python.Alise_3" />
       </list>
     </recent_temporary>
   </component>
@@ -328,13 +329,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00083" summary="Сделал стадию для добавления кошелька">
-      <created>1651381166540</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1651381166540</updated>
     </task>
     <task id="LOCAL-00084" summary="Обновил стадию для артёма">
       <created>1651381342726</created>
@@ -672,7 +666,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651680889692</updated>
     </task>
-    <option name="localTasksCounter" value="132" />
+    <task id="LOCAL-00132" summary="пока что так">
+      <created>1651681298518</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1651681298518</updated>
+    </task>
+    <option name="localTasksCounter" value="133" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -765,7 +766,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Сделал стадии для" />
     <MESSAGE value="Сделал стадии для функ" />
     <MESSAGE value="Сделал стадии для функции артура" />
     <MESSAGE value="Обновил файлы арчибальда" />
@@ -790,6 +790,7 @@
     <MESSAGE value="сделал так что при выводе кошельков тенге не меняется" />
     <MESSAGE value="Теперь вроде точно должен работать" />
     <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value="пока что так" />
+    <option name="LAST_COMMIT_MESSAGE" value="пока что так" />
   </component>
 </project>
