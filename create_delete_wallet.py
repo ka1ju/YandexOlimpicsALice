@@ -46,6 +46,8 @@ def create_wallet(req, user_ya_id, k=None):
                 wait = False
                 lst.append(it)
             if it.strip(",") in cur_lst:
+                if not lst[-1].isdigit():
+                    lst.append("0")
                 lst.append(it.strip(","))
         for i in range(len(lst)):
             try:
