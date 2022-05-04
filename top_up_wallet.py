@@ -50,7 +50,7 @@ def top_up_wallet(st, user_name, k):
                 li = b[i].split(' ')
                 q2 = []
                 for j in range(len(li)):
-                    if li[j] not in words:
+                    if li[j] not in words and li[j] not in currency and list(li[j])[0] not in numbers:
                         q2.append(li[j])
                 if q2 == []:
                     q.append(None)
@@ -159,7 +159,7 @@ def top_up_wallet(st, user_name, k):
                 li = b[i].split(' ')
                 q2 = []
                 for j in range(len(li)):
-                    if li[j] not in words:
+                    if li[j] not in words and li[j] not in currency and list(li[j])[0] not in numbers:
                         q2.append(li[j])
                 if q2 == []:
                     q.append(None)
@@ -260,4 +260,4 @@ def top_up_wallet(st, user_name, k):
         return ret, {}
 
 
-#print(top_up_wallet('олег', 'Test2', {'username': [None], 'summa': [None], 'currency': [' ']}))
+#print(top_up_wallet('коплю на машину', 'Test2', {'username': [None], 'summa': [400], 'currency': ['рубль']}))
