@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b567a095-15ac-45c7-aeba-b15122553d34" name="Changes" comment="...">
+    <list default="true" id="b567a095-15ac-45c7-aeba-b15122553d34" name="Changes" comment="Добавил вариативность ответов для моих функций">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all_wallets.py" beforeDir="false" afterPath="$PROJECT_DIR$/all_wallets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bye.py" beforeDir="false" afterPath="$PROJECT_DIR$/bye.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello.py" beforeDir="false" afterPath="$PROJECT_DIR$/hello.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thanks.py" beforeDir="false" afterPath="$PROJECT_DIR$/thanks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wasting2.py" beforeDir="false" afterPath="$PROJECT_DIR$/wasting2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -327,18 +326,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="456822aa-a66e-4b8b-aa02-696753ac6362" name="Changes" comment="..." />
+      <changelist id="b567a095-15ac-45c7-aeba-b15122553d34" name="Changes" comment="Добавил вариативность ответов для моих функций" />
       <created>1650702408030</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00072" summary="Также добавил операцию перевода валют">
-      <created>1651233450358</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1651233450358</updated>
     </task>
     <task id="LOCAL-00073" summary="Обновил if в main для перевода валют">
       <created>1651233593274</created>
@@ -676,7 +668,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651633705120</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="Добавил вариативность ответов для моих функций">
+      <created>1651634405912</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1651634405912</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -769,7 +768,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Обновил стадию для артёма" />
     <MESSAGE value="Сделал рабочие стадии" />
     <MESSAGE value="Сделал рабочие стадии для удаления и создания кошельков" />
     <MESSAGE value="Сделал рабочую стадию для пополнения счёта" />
@@ -794,6 +792,7 @@
     <MESSAGE value="Пофиксил проблему с выводом при отсутствии кошельков" />
     <MESSAGE value="Обновился федин файл" />
     <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value="Добавил вариативность ответов для моих функций" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил вариативность ответов для моих функций" />
   </component>
 </project>
