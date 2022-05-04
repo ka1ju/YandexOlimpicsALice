@@ -5,6 +5,7 @@ morph = pymorphy2.MorphAnalyzer()
 
 
 def wasting(s, user_name, info):
+    old = info
     req = s.split()
     for i in range(len(req)):
         try:
@@ -74,9 +75,9 @@ def wasting(s, user_name, info):
                 elif x[o] == None and N[o] == None and t[o] != None:
                     s_error += 'Прошу прощения, сколько и с какого счёта вы потратили на ' + t[o]
                 elif x[o] != None and N[o] != None and t[o] == None:
-                    cur1 = [i.currancy for i in from_db('accounts', 'Accounts', {'user_id': user_id, 'accounts': N[o]})]
+                    cur1 = [i.currency for i in from_db('accounts', 'Accounts', {'user_id': user_id, 'accounts': N[o]})]
                     cur = cur1[0]
-                    s_error += 'Извините, за что вы заплатили ' + x[o] + ' '+  cur + ' из кошелька ' + N[o]
+                    s_error += 'Извините, за что вы заплатили ' + x[o] + ' ' + cur + ' из кошелька ' + N[o]
                 elif x[o] != None and N[o] == None and t[o] != None:
                     s_error += 'Повторите, пожалуйста, с какого счёта списать ' + x[o] + ' рублей за ' + t[o]
                 elif x[o] == None and N[o] != None and t[o] != None:
@@ -149,7 +150,9 @@ def wasting(s, user_name, info):
                 elif x[o] == None and N[o] == None and t[o] != None:
                     s_error += 'Прошу прощения, сколько и с какого счёта вы потратили на ' + t[o]
                 elif x[o] != None and N[o] != None and t[o] == None:
-                    s_error += 'Извините, за что вы заплатили ' + x[o] + ' рублей из кошелька ' + N[o]
+                    cur1 = [i.currency for i in from_db('accounts', 'Accounts', {'user_id': user_id, 'accounts': N[o]})]
+                    cur = cur1[0]
+                    s_error += 'Извините, за что вы заплатили ' + x[o] + ' ' + cur + ' из кошелька ' + N[o]
                 elif x[o] != None and N[o] == None and t[o] != None:
                     s_error += 'Повторите, пожалуйста, с какого счёта списать ' + x[o] + ' рублей за ' + t[o]
                 elif x[o] == None and N[o] != None and t[o] != None:
@@ -183,5 +186,8 @@ def wasting(s, user_name, info):
                 s += '  '
         s += s_error
     if info['summ'] == [] and info['name'] == [] and info['cate'] == []:
+        info = {}
+    if old != {} and info == old:
+        s = 'Извините, я вас не понял. Проверьте правильность называемых кошельков, категорий и сумм'
         info = {}
     return s, info
