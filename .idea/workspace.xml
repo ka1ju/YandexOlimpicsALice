@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b567a095-15ac-45c7-aeba-b15122553d34" name="Changes" comment="почистил код">
+    <list default="true" id="b567a095-15ac-45c7-aeba-b15122553d34" name="Changes" comment="обновил json функций">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -329,13 +330,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00077" summary="Добавил стадии для моих функций">
-      <created>1651332726060</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1651332726061</updated>
     </task>
     <task id="LOCAL-00078" summary="Теперь мои функции возвращают что должны, а не авторизацию">
       <created>1651334610976</created>
@@ -673,7 +667,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651641609786</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="обновил json функций">
+      <created>1651679284337</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1651679284338</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -766,7 +767,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Убрал лишний импорт, а также обновил файлы Димы и Семёна" />
     <MESSAGE value="Сделал рабочую стадию для вывода информации о счёте" />
     <MESSAGE value="Убрал лишний return" />
     <MESSAGE value="Сделал стадии для" />
@@ -791,6 +791,7 @@
     <MESSAGE value="Поменял if на вывод информации о счёте" />
     <MESSAGE value="Поменял if на вывод статистики о счёте" />
     <MESSAGE value="почистил код" />
-    <option name="LAST_COMMIT_MESSAGE" value="почистил код" />
+    <MESSAGE value="обновил json функций" />
+    <option name="LAST_COMMIT_MESSAGE" value="обновил json функций" />
   </component>
 </project>

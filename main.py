@@ -38,7 +38,8 @@ def main():
             'spend_money': {},
             'wallet_info': {},
             'wallet_statistic': {},
-            'all_wallets': {}
+            'all_wallets': {},
+            'transfer': {}
         }
     }
     if "session" in request.json['state']:
@@ -132,7 +133,8 @@ def handle_dialog(req, res):
 
         # Конвертация валют
         if 'конверт' in user_message or 'перев' in user_message or ("сколько" in user_message and "в" in user_message):
-            res['response']['text'] = converter(user_message)
+            res['response']['text'], res['session_state']['transfer'] = \
+                converter(user_message, req['state']['session']['transfer'])
             logging.info("Converting")
             return
 
