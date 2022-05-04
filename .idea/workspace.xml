@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b567a095-15ac-45c7-aeba-b15122553d34" name="Changes" comment="обновил json функций">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="b567a095-15ac-45c7-aeba-b15122553d34" name="Changes" comment="сделал так что при выводе кошельков тенге не меняется" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -330,13 +326,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00078" summary="Теперь мои функции возвращают что должны, а не авторизацию">
-      <created>1651334610976</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1651334610976</updated>
     </task>
     <task id="LOCAL-00079" summary="Убрал лишний пробел">
       <created>1651338970169</created>
@@ -674,7 +663,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651679284338</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <task id="LOCAL-00127" summary="сделал так что при выводе кошельков тенге не меняется">
+      <created>1651680267886</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1651680267886</updated>
+    </task>
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -767,7 +763,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Сделал рабочую стадию для вывода информации о счёте" />
     <MESSAGE value="Убрал лишний return" />
     <MESSAGE value="Сделал стадии для" />
     <MESSAGE value="Сделал стадии для функ" />
@@ -792,6 +787,7 @@
     <MESSAGE value="Поменял if на вывод статистики о счёте" />
     <MESSAGE value="почистил код" />
     <MESSAGE value="обновил json функций" />
-    <option name="LAST_COMMIT_MESSAGE" value="обновил json функций" />
+    <MESSAGE value="сделал так что при выводе кошельков тенге не меняется" />
+    <option name="LAST_COMMIT_MESSAGE" value="сделал так что при выводе кошельков тенге не меняется" />
   </component>
 </project>
