@@ -43,6 +43,7 @@ def top_up_wallet(st, user_name, k):
                     'шестьсот': '600', 'семьсот': '700', 'восемьсот': '800', 'девятьсот': '900'}
         thousands = ['тысяча', 'тысячи', 'тысяч']
         millions = ['миллион', 'миллиона', 'миллионов']
+        numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
         q = []
         for i in range(len(q1)):
             if q1[i] == ' ':
@@ -71,79 +72,32 @@ def top_up_wallet(st, user_name, k):
             else:
                 m = morph.parse(x[i])[0].normal_form
                 c.append(m)
-        s = []
-        if len(b) > 1:
-            for i in range(len(c)):
-                s1 = []
-                for j in range(len(c[i])):
-                    if c[i][j] in millions:
-                        s1.append('1000000')
-                    elif c[i][j] in thousands:
-                        s1.append('1000')
-                    elif c[i][j] in units:
-                        s1.append(units[c[i][j]])
-                    elif c[i][j] in dozens:
-                        s1.append(dozens[c[i][j]])
-                    elif c[i][j] in hundreds:
-                        s1.append(hundreds[c[i][j]])
-                s1.append(None)
-                s.append(s1)
-        else:
-            for i in range(len(c)):
-                if c[i] in millions:
-                    s.append('1000000')
-                elif c[i] in thousands:
-                    s.append('1000')
-                elif c[i] in units:
-                    s.append(units[c[i]])
-                elif c[i] in dozens:
-                    s.append(dozens[c[i]])
-                elif c[i] in hundreds:
-                    s.append(hundreds[c[i]])
-            s.append(None)
         summa = []
         if len(b) > 1:
-            for i in range(len(s)):
+            for i in range(len(c)):
                 y = 0
-                if len(s[i]) - 1 != 0:
-                    for j in range(len(s[i]) - 1):
-                        if s[i][j + 1] == '1000' or s[i][j + 1] == '1000000':
-                            if s[i][j] != '1000' and s[i][j] != '1000000':
-                                y += int(s[i][j])
-                                y = y * int(s[i][j + 1])
-                        else:
-                            if s[i][j] != '1000' and s[i][j] != '1000000':
-                                y += int(s[i][j])
-                    summa.append(y)
-                    y = 0
-                else:
-                    if s[i] != None:
-                        summa.append(int(s[i]))
-                    else:
-                        summa.append(None)
+                for j in range(len(c[i])):
+                    w = list(c[i][j])
+                    if w[0] in numbers:
+                        y = 1
+                        summa.append(int(c[i][j]))
+                if y == 0:
+                    summa.append(None)
         else:
             y = 0
-            if len(s) - 1 != 0:
-                for i in range(len(s) - 1):
-                    if s[i + 1] == '1000' or s[i + 1] == '1000000':
-                        if s[i] != '1000' and s[i] != '1000000':
-                            y += int(s[i])
-                            y = y * int(s[i + 1])
-                    else:
-                        if s[i] != '1000' and s[i] != '1000000':
-                            y += int(s[i])
-                summa.append(y)
-            else:
-                if s[0] != None:
-                    summa.append(int(s[0]))
-                else:
-                    summa.append(None)
+            for i in range(len(c)):
+                w = list(c[i])
+                if w[0] in numbers:
+                    y = 1
+                    summa.append(int(c[i]))
+            if y == 0:
+                summa.append(None)
         for i in range(len(q)):
             if q[i] == None:
-                ret = 'Какой кошелёк вы хотите пополнить на ' + summa[i] + '?', {'username': q}
+                ret = 'Какой кошелёк вы хотите пополнить на ' + str(summa[i]) + '?', {'username': q, 'summa': summa}
                 return ret
             elif summa[i] == None:
-                ret = 'На какую сумму вы хотите пополнить кошелёк ' + q[i] + '?', {'summa': summa}
+                ret = 'На какую сумму вы хотите пополнить кошелёк ' + q[i] + '?', {'username': q, 'summa': summa}
                 return ret
         ret = ''
         for j in range(len(q)):
@@ -198,7 +152,7 @@ def top_up_wallet(st, user_name, k):
                     'шестьсот': '600', 'семьсот': '700', 'восемьсот': '800', 'девятьсот': '900'}
         thousands = ['тысяча', 'тысячи', 'тысяч']
         millions = ['миллион', 'миллиона', 'миллионов']
-        # -----------------------------
+        numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
         q = []
         for i in range(len(q1)):
             if q1[i] == ' ':
@@ -227,73 +181,26 @@ def top_up_wallet(st, user_name, k):
             else:
                 m = morph.parse(x[i])[0].normal_form
                 c.append(m)
-        s = []
-        if len(c) > 1:
-            for i in range(len(c)):
-                s1 = []
-                for j in range(len(c[i])):
-                    if c[i][j] in millions:
-                        s1.append('1000000')
-                    elif c[i][j] in thousands:
-                        s1.append('1000')
-                    elif c[i][j] in units:
-                        s1.append(units[c[i][j]])
-                    elif c[i][j] in dozens:
-                        s1.append(dozens[c[i][j]])
-                    elif c[i][j] in hundreds:
-                        s1.append(hundreds[c[i][j]])
-                    s1.append(0)
-                s.append(s1)
-        else:
-            for i in range(len(c)):
-                if c[i] in millions:
-                    s.append('1000000')
-                elif c[i] in thousands:
-                    s.append('1000')
-                elif c[i] in units:
-                    s.append(units[c[i]])
-                elif c[i] in dozens:
-                    s.append(dozens[c[i]])
-                elif c[i] in hundreds:
-                    s.append(hundreds[c[i]])
-            s.append(None)
         summa = []
         if len(b) > 1:
-            for i in range(len(s)):
+            for i in range(len(c)):
                 y = 0
-                if len(s[i]) - 1 != 0:
-                    for j in range(len(s[i]) - 1):
-                        if s[i][j + 1] == '1000' or s[i][j + 1] == '1000000':
-                            if s[i][j] != '1000' and s[i][j] != '1000000':
-                                y += int(s[i][j])
-                                y = y * int(s[i][j + 1])
-                        else:
-                            if s[i][j] != '1000' and s[i][j] != '1000000':
-                                y += int(s[i][j])
-                    summa.append(y)
-                    y = 0
-                else:
-                    if s[i] != None:
-                        summa.append(int(s[i]))
-                    else:
-                        summa.append(None)
+                for j in range(len(c[i])):
+                    w = list(c[i][j])
+                    if w[0] in numbers:
+                        y = 1
+                        summa.append(int(c[i][j]))
+                if y == 0:
+                    summa.append(None)
         else:
             y = 0
-            if len(s) - 1 != 0:
-                for i in range(len(s) - 1):
-                    if s[i + 1] == '1000' or s[i + 1] == '1000000':
-                        if s[i] != '1000' and s[i] != '1000000':
-                            y += int(s[i])
-                            y = y * int(s[i + 1])
-                    else:
-                        if s[i] != '1000' and s[i] != '1000000':
-                            y += int(s[i])
-                summa.append(y)
-            else:
-                if s[0] != None:
-                    summa.append(int(s[0]))
-                else:
-                    summa.append(None)
+            for i in range(len(c)):
+                w = list(c[i])
+                if w[0] in numbers:
+                    y = 1
+                    summa.append(int(c[i]))
+            if y == 0:
+                summa.append(None)
         username = k['username']
         summaO = k['summa']
         for i in range(len(username)):
@@ -307,7 +214,6 @@ def top_up_wallet(st, user_name, k):
         summa.clear()
         q = username.copy()
         summa = summaO.copy()
-        #---------------------
         ret = ''
         for j in range(len(q)):
             if q[j] in bd:
@@ -323,5 +229,3 @@ def top_up_wallet(st, user_name, k):
                 ret += 'У вас нет кошелька с названием: ' + q[j] + '\n'
         return ret, {}
 
-
-print(top_up_wallet("пополни кошелёк коплю на машину на пять тысяч рублей", "Test2", {}))
