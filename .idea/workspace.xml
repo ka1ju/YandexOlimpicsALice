@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="функция пополнения20">
+    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="функция пополнения21">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/top_up_wallet.py" beforeDir="false" afterPath="$PROJECT_DIR$/top_up_wallet.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -218,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651637831128</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="функция пополнения21">
+      <created>1651638987778</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1651638987778</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -250,6 +258,7 @@
     <MESSAGE value="функция пополнения18" />
     <MESSAGE value="функция пополнения19" />
     <MESSAGE value="функция пополнения20" />
-    <option name="LAST_COMMIT_MESSAGE" value="функция пополнения20" />
+    <MESSAGE value="функция пополнения21" />
+    <option name="LAST_COMMIT_MESSAGE" value="функция пополнения21" />
   </component>
 </project>
