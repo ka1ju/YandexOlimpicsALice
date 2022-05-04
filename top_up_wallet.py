@@ -52,7 +52,10 @@ def top_up_wallet(st, user_name, k):
                 for j in range(len(li)):
                     if li[j] not in words:
                         q2.append(li[j])
-                q.append(' '.join(q2))
+                if q2 == []:
+                    q.append(None)
+                else:
+                    q.append(' '.join(q2))
             else:
                 q.append(q1[i])
         x = []
@@ -93,7 +96,10 @@ def top_up_wallet(st, user_name, k):
             if y == 0:
                 summa.append(None)
         for i in range(len(q)):
-            if q[i] == None:
+            if q[i] == None and summa[i] == None:
+                ret = 'Какой кошелёк вы хотите пополнить?', {'username': q, 'summa': summa}
+                return ret
+            elif q[i] == None:
                 ret = 'Какой кошелёк вы хотите пополнить на ' + str(summa[i]) + '?', {'username': q, 'summa': summa}
                 return ret
             elif summa[i] == None:
@@ -161,7 +167,10 @@ def top_up_wallet(st, user_name, k):
                 for j in range(len(li)):
                     if li[j] not in words:
                         q2.append(li[j])
-                q.append(' '.join(q2))
+                if q2 == []:
+                    q.append(None)
+                else:
+                    q.append(' '.join(q2))
             else:
                 q.append(q1[i])
         x = []
@@ -229,3 +238,5 @@ def top_up_wallet(st, user_name, k):
                 ret += 'У вас нет кошелька с названием: ' + q[j] + '\n'
         return ret, {}
 
+
+print(top_up_wallet('пополни кошелёк', 'Test2', {}))
