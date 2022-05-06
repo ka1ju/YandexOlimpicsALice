@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="убрал логи werkzeug-а а также разделил логи каждого кола">
+    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="добавил счет к счёт">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/top_up_wallet.py" beforeDir="false" afterPath="$PROJECT_DIR$/top_up_wallet.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -328,13 +330,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00090" summary="Убрал лишний импорт, а также обновил файлы Димы и Семёна">
-      <created>1651419923853</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1651419923853</updated>
     </task>
     <task id="LOCAL-00091" summary="...">
       <created>1651419996988</created>
@@ -672,7 +667,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651835665252</updated>
     </task>
-    <option name="localTasksCounter" value="139" />
+    <task id="LOCAL-00139" summary="добавил счет к счёт">
+      <created>1651835830895</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1651835830895</updated>
+    </task>
+    <option name="localTasksCounter" value="140" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -680,19 +682,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="main" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -770,7 +760,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Пофиксил (предположительно) беды со стадиями, а также добавил логи ко всем функциям." />
     <MESSAGE value="Заменил 2 функции которые забыл поменять в прошлом коммите" />
     <MESSAGE value="Заменил statuation на st" />
     <MESSAGE value="теперь помощь не сбрасывает стадии, а также добавлен вариант ответа на прощание" />
@@ -795,6 +784,7 @@
     <MESSAGE value="мне лень иди нахуй, все всё равно уже забили номер 2" />
     <MESSAGE value="..." />
     <MESSAGE value="убрал логи werkzeug-а а также разделил логи каждого кола" />
-    <option name="LAST_COMMIT_MESSAGE" value="убрал логи werkzeug-а а также разделил логи каждого кола" />
+    <MESSAGE value="добавил счет к счёт" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавил счет к счёт" />
   </component>
 </project>
