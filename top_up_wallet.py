@@ -60,7 +60,7 @@ def top_up_wallet(st, user_name, k):
                 q.append(q1[i])
         for i in range(len(q)):
             if q[i] not in bd and q[i] is not None:
-                ret = 'У вас нет кошелька с названием: ' + q[i]
+                ret = 'У вас нет кошелька с названием: ' + str(q[i])
                 return ret, {}
         x = []
         if len(b) > 1:
@@ -169,7 +169,7 @@ def top_up_wallet(st, user_name, k):
                 q.append(q1[i])
         for i in range(len(q)):
             if q[i] not in bd:
-                ret = 'У вас нет кошелька с названием: ' + q[i]
+                ret = 'Извините, я вас не понял'
                 return ret, {}
         x = []
         if len(b) > 1:
@@ -260,4 +260,4 @@ def top_up_wallet(st, user_name, k):
         return ret, {}
 
 
-#print(top_up_wallet('коплю на машину', 'Test2', {'username': [None], 'summa': [400], 'currency': ['рубль']}))
+#print(top_up_wallet('пополни кошелек 28', 'Test2', {}))
