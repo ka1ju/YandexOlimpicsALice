@@ -1,6 +1,7 @@
 from db_working import *
 import pymorphy2
 import random
+
 morph = pymorphy2.MorphAnalyzer()
 
 
@@ -34,16 +35,6 @@ def top_up_wallet(st, user_name, k):
         words = ["кошел", "счёт", "счета", "кошелёк", 'кошелек', "кошельки", "с", "на", "названием", "название",
                  "названиями", "который", "которые", "назваются", "назвается", "привет", "пожалуйста", "пока",
                  "спасибо", "а", "ещё", 'пополни', 'добавь', 'положи', 'счет']
-        units = {'один': '1', 'два': '2', 'три': '3', 'четыре': '4', 'пять': '5', 'шесть': '6', 'семь': '7',
-                 'восемь': '8', 'девять': '9', 'десять': '10', 'одиннадцать': '11', 'двенадцать': '12',
-                 'тринадцать': '13', 'четырнадцать': '14', 'пятнадцать': '15', 'шестнадцать': '16', 'семнадцать': '17',
-                 'восемнадцать': '18', 'девятнадцать': '19'}
-        dozens = {'двадцать': '20', 'тридцать': '30', 'сорок': '40', 'пятьдесят': '50', 'шестьдесят': '60',
-                  'семьдесят': '70', 'восемьдесят': '80', 'девяносто': '90'}
-        hundreds = {'сто': '100', 'двести': '200', 'триста': '300', 'четыреста': '400',  'пятьсот': '500',
-                    'шестьсот': '600', 'семьсот': '700', 'восемьсот': '800', 'девятьсот': '900'}
-        thousands = ['тысяча', 'тысячи', 'тысяч']
-        millions = ['миллион', 'миллиона', 'миллионов']
         numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
         q = []
         for i in range(len(q1)):
@@ -53,7 +44,7 @@ def top_up_wallet(st, user_name, k):
                 for j in range(len(li)):
                     if li[j] not in words and li[j] not in currency and list(li[j])[0] not in numbers:
                         q2.append(li[j])
-                if q2 == []:
+                if not q2:
                     q.append(None)
                 else:
                     q.append(' '.join(q2))
@@ -62,7 +53,7 @@ def top_up_wallet(st, user_name, k):
         for i in range(len(q)):
             if q[i] not in bd and q[i] is not None:
                 var = ['Что-то пошло не так. ', 'Ой произошла ошибка. ', 'Я не смог выполнить операцию. ']
-                ok = random.choiсe(var)
+                ok = random.choice(var)
                 ret = ok
                 ret += 'У вас нет кошелька с названием: ' + str(q[i])
                 return ret, {}
@@ -104,14 +95,16 @@ def top_up_wallet(st, user_name, k):
             if y == 0:
                 summa.append(None)
         for i in range(len(q)):
-            if q[i] == None and summa[i] == None:
+            if q[i] is None and summa[i] is None:
                 ret = 'Какой кошелёк вы хотите пополнить?', {'username': q, 'summa': summa, 'currency': cur}
                 return ret
-            elif q[i] == None:
-                ret = 'Какой кошелёк вы хотите пополнить на ' + str(summa[i]) + '?', {'username': q, 'summa': summa, 'currency': cur}
+            elif q[i] is None:
+                ret = 'Какой кошелёк вы хотите пополнить на ' + str(summa[i]) + '?', {'username': q, 'summa': summa,
+                                                                                      'currency': cur}
                 return ret
-            elif summa[i] == None:
-                ret = 'На какую сумму вы хотите пополнить кошелёк ' + q[i] + '?', {'username': q, 'summa': summa, 'currency': cur}
+            elif summa[i] is None:
+                ret = 'На какую сумму вы хотите пополнить кошелёк ' + q[i] + '?', {'username': q, 'summa': summa,
+                                                                                   'currency': cur}
                 return ret
         ret = ''
         for j in range(len(q)):
@@ -119,7 +112,7 @@ def top_up_wallet(st, user_name, k):
                 currencyN = from_db("accounts", "Accounts", {"user_id": user_id, "accounts": q[j]})[0]
                 if cur[j] != currencyN.currency and cur[j] != ' ':
                     var = ['Что-то пошло не так. ', 'Ой произошла ошибка. ', 'Я не смог выполнить операцию. ']
-                    ok = random.choiсe(var)
+                    ok = random.choice(var)
                     ret += ok
                     ret += 'Валюта не соответствует валюте кошелька: ' + q[j] + '\n'
                     continue
@@ -127,12 +120,12 @@ def top_up_wallet(st, user_name, k):
                 v1 = v[0]
                 change_db('accounts', 'Accounts', {'bank': int(v1) + summa[j]}, {'accounts': q[j], 'user_id': user_id})
                 var = ['Получилось! ', 'Я смог! ', 'У меня получилось! ']
-                ok = random.choiсe(var)
+                ok = random.choice(var)
                 ret += ok
                 ret += 'Баланс кошелька ' + q[j] + ' пополнен' + '\n'
             elif q[j] not in words:
                 var = ['Что-то пошло не так. ', 'Ой произошла ошибка. ', 'Я не смог выполнить операцию. ']
-                ok = random.choiсe(var)
+                ok = random.choice(var)
                 ret += ok
                 ret += 'У вас нет кошелька с названием ' + q[j] + '\n'
         return ret[:-1], {}
@@ -154,17 +147,7 @@ def top_up_wallet(st, user_name, k):
                 q1.append(' ')
         words = ["кошел", "счёт", "счета", "кошелёк", 'кошелек', "кошельки", "с", "на", "названием", "название",
                  "названиями", "который", "которые", "назваются", "назвается", "привет", "пожалуйста", "пока",
-                 "спасибо", "а", "ещё", 'пополни', 'добавь', 'положи']
-        units = {'один': '1', 'два': '2', 'три': '3', 'четыре': '4', 'пять': '5', 'шесть': '6', 'семь': '7',
-                 'восемь': '8', 'девять': '9', 'десять': '10', 'одиннадцать': '11', 'двенадцать': '12',
-                 'тринадцать': '13', 'четырнадцать': '14', 'пятнадцать': '15', 'шестнадцать': '16', 'семнадцать': '17',
-                 'восемнадцать': '18', 'девятнадцать': '19'}
-        dozens = {'двадцать': '20', 'тридцать': '30', 'сорок': '40', 'пятьдесят': '50', 'шестьдесят': '60',
-                  'семьдесят': '70', 'восемьдесят': '80', 'девяносто': '90'}
-        hundreds = {'сто': '100', 'двести': '200', 'триста': '300', 'четыреста': '400',  'пятьсот': '500',
-                    'шестьсот': '600', 'семьсот': '700', 'восемьсот': '800', 'девятьсот': '900'}
-        thousands = ['тысяча', 'тысячи', 'тысяч']
-        millions = ['миллион', 'миллиона', 'миллионов']
+                 "спасибо", "а", "ещё", 'пополни', 'добавь', 'положи', "счет"]
         numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
         q = []
         for i in range(len(q1)):
@@ -174,7 +157,7 @@ def top_up_wallet(st, user_name, k):
                 for j in range(len(li)):
                     if li[j] not in words and li[j] not in currency and list(li[j])[0] not in numbers:
                         q2.append(li[j])
-                if q2 == []:
+                if not q2:
                     q.append(None)
                 else:
                     q.append(' '.join(q2))
@@ -183,7 +166,7 @@ def top_up_wallet(st, user_name, k):
         for i in range(len(q)):
             if q[i] not in bd:
                 var = ['Что-то пошло не так. ', 'Ой произошла ошибка. ', 'Я не смог выполнить операцию. ']
-                ok = random.choiсe(var)
+                ok = random.choice(var)
                 ret = ok
                 ret += 'Я вас не понял)'
                 return ret, {}
@@ -227,14 +210,13 @@ def top_up_wallet(st, user_name, k):
         username = k['username']
         summaO = k['summa']
         for i in range(len(username)):
-            if username[i] == None:
+            if username[i] is None:
                 username[i] = q[0]
                 q.pop(0)
                 break
-            elif summaO[i] == None:
+            elif summaO[i] is None:
                 summaO[i] = summa[0]
                 summa.pop(0)
-                cur = []
                 for j in range(len(b)):
                     y = 0
                     for e in range(len(b[j].split(' '))):
@@ -250,14 +232,16 @@ def top_up_wallet(st, user_name, k):
         q = username.copy()
         summa = summaO.copy()
         for i in range(len(q)):
-            if q[i] == None and summa[i] == None:
+            if q[i] is None and summa[i] is None:
                 ret = 'Какой кошелёк вы хотите пополнить?', {'username': q, 'summa': summa, 'currency': k['currency']}
                 return ret
-            elif q[i] == None:
-                ret = 'Какой кошелёк вы хотите пополнить на ' + str(summa[i]) + '?', {'username': q, 'summa': summa, 'currency': k['currency']}
+            elif q[i] is None:
+                ret = 'Какой кошелёк вы хотите пополнить на ' + str(summa[i]) + '?', {'username': q, 'summa': summa,
+                                                                                      'currency': k['currency']}
                 return ret
-            elif summa[i] == None:
-                ret = 'На какую сумму вы хотите пополнить кошелёк ' + q[i] + '?', {'username': q, 'summa': summa, 'currency': k['currency']}
+            elif summa[i] is None:
+                ret = 'На какую сумму вы хотите пополнить кошелёк ' + q[i] + '?', {'username': q, 'summa': summa,
+                                                                                   'currency': k['currency']}
                 return ret
         cur = k['currency']
         ret = ''
@@ -266,7 +250,7 @@ def top_up_wallet(st, user_name, k):
                 currencyN = from_db("accounts", "Accounts", {"user_id": user_id, "accounts": q[j]})[0]
                 if cur[j] != currencyN.currency and cur[j] != ' ':
                     var = ['Что-то пошло не так. ', 'Ой произошла ошибка. ', 'Я не смог выполнить операцию. ']
-                    ok = random.choiсe(var)
+                    ok = random.choice(var)
                     ret += ok
                     ret += 'Валюта не соответствует валюте кошелька: ' + q[j] + '\n'
                     continue
@@ -274,7 +258,7 @@ def top_up_wallet(st, user_name, k):
                 v1 = v[0]
                 change_db('accounts', 'Accounts', {'bank': int(v1) + summa[j]}, {'accounts': q[j], 'user_id': user_id})
                 var = ['Получилось! ', 'Я смог! ', 'У меня получилось! ']
-                ok = random.choiсe(var)
+                ok = random.choice(var)
                 ret += ok
                 ret += 'Баланс кошелька ' + q[j] + ' пополнен' + '\n'
             elif q[j] not in words:
@@ -284,5 +268,4 @@ def top_up_wallet(st, user_name, k):
                 ret += 'У вас нет кошелька с названием ' + q[j] + '\n'
         return ret[:-1], {}
 
-
-#print(top_up_wallet('пополни кошелек богдан', 'Test2', {}))
+# print(top_up_wallet('пополни кошелек богдан', 'Test2', {}))
