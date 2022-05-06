@@ -87,12 +87,12 @@ def handle_dialog(req, res):
 
         # Авторизация
         if req['session']['new'] and user_message == "":
-            res['response']['text'] = authorization(user_id)
+            res['response']['text'] = authorization(user_id, funcs_as_json)
             logging.info("Authorising user")
             return
 
         # Создание кошелька
-        if (('созд' in user_message or 'доб' in user_message) and
+        if (('созд' in user_message) and
             ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message)) \
                 or req['state']['session']['create_wallet'] != {}:
             res['response']['text'], res['session_state']['create_wallet'] = \
@@ -110,8 +110,7 @@ def handle_dialog(req, res):
             return
 
         # Пополнение кошелька
-        if ((
-                    'пополн' in user_message or 'зачисл' in user_message or "доб" in user_message or "полож" in user_message) and
+        if (('пополн' in user_message or 'зачисл' in user_message or "доб" in user_message or "полож" in user_message) and
             ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message)) \
                 or req['state']['session']['top_up_wallet'] != {}:
             res['response']['text'], res['session_state']['top_up_wallet'] = \

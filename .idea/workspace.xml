@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="всё.теперь нет &quot;тенгов&quot;">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_04_2022_20_52__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_04_2022_20_52__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_04_2022_22_46__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_04_2022_22_46__Changes_.xml" afterDir="false" />
+    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="восстановил всё что проебал">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/funcs.json" beforeDir="false" afterPath="$PROJECT_DIR$/funcs.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/helper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -333,13 +331,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00085" summary="Сделал рабочие стадии">
-      <created>1651415095975</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1651415095975</updated>
     </task>
     <task id="LOCAL-00086" summary="Сделал рабочие стадии для удаления и создания кошельков">
       <created>1651415117522</created>
@@ -677,7 +668,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651681952491</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="восстановил всё что проебал">
+      <created>1651834414978</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1651834414979</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -775,7 +773,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Сделал стадии для функции артура" />
     <MESSAGE value="Обновил файлы арчибальда" />
     <MESSAGE value="Сделал рабочую стадию для конвертации" />
     <MESSAGE value="Убрал стадию для конвертации" />
@@ -800,6 +797,7 @@
     <MESSAGE value="..." />
     <MESSAGE value="пока что так" />
     <MESSAGE value="всё.теперь нет &quot;тенгов&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="всё.теперь нет &quot;тенгов&quot;" />
+    <MESSAGE value="восстановил всё что проебал" />
+    <option name="LAST_COMMIT_MESSAGE" value="восстановил всё что проебал" />
   </component>
 </project>
