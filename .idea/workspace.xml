@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="мне лень иди нахуй, все всё равно уже забили">
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="убрал логи werkzeug-а а также разделил логи каждого кола">
+      <change beforePath="$PROJECT_DIR$/top_up_wallet.py" beforeDir="false" afterPath="$PROJECT_DIR$/top_up_wallet.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -329,27 +329,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
     </task>
-    <task id="LOCAL-00087" summary="Сделал рабочую стадию для пополнения счёта">
-      <created>1651419366876</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1651419366876</updated>
-    </task>
-    <task id="LOCAL-00088" summary="Обновил Федин файл">
-      <created>1651419770878</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1651419770878</updated>
-    </task>
-    <task id="LOCAL-00089" summary="Обновил Федин файл">
-      <created>1651419784270</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1651419784270</updated>
-    </task>
     <task id="LOCAL-00090" summary="Убрал лишний импорт, а также обновил файлы Димы и Семёна">
       <created>1651419923853</created>
       <option name="number" value="00090" />
@@ -672,7 +651,28 @@
       <option name="project" value="LOCAL" />
       <updated>1651835161836</updated>
     </task>
-    <option name="localTasksCounter" value="136" />
+    <task id="LOCAL-00136" summary="мне лень иди нахуй, все всё равно уже забили номер 2">
+      <created>1651835460231</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1651835460231</updated>
+    </task>
+    <task id="LOCAL-00137" summary="...">
+      <created>1651835530946</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1651835530946</updated>
+    </task>
+    <task id="LOCAL-00138" summary="убрал логи werkzeug-а а также разделил логи каждого кола">
+      <created>1651835665252</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1651835665252</updated>
+    </task>
+    <option name="localTasksCounter" value="139" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -770,8 +770,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Сделал рабочую стадию для конвертации" />
-    <MESSAGE value="Убрал стадию для конвертации" />
     <MESSAGE value="Пофиксил (предположительно) беды со стадиями, а также добавил логи ко всем функциям." />
     <MESSAGE value="Заменил 2 функции которые забыл поменять в прошлом коммите" />
     <MESSAGE value="Заменил statuation на st" />
@@ -790,11 +788,13 @@
     <MESSAGE value="обновил json функций" />
     <MESSAGE value="сделал так что при выводе кошельков тенге не меняется" />
     <MESSAGE value="Теперь вроде точно должен работать" />
-    <MESSAGE value="..." />
     <MESSAGE value="пока что так" />
     <MESSAGE value="всё.теперь нет &quot;тенгов&quot;" />
     <MESSAGE value="восстановил всё что проебал" />
     <MESSAGE value="мне лень иди нахуй, все всё равно уже забили" />
-    <option name="LAST_COMMIT_MESSAGE" value="мне лень иди нахуй, все всё равно уже забили" />
+    <MESSAGE value="мне лень иди нахуй, все всё равно уже забили номер 2" />
+    <MESSAGE value="..." />
+    <MESSAGE value="убрал логи werkzeug-а а также разделил логи каждого кола" />
+    <option name="LAST_COMMIT_MESSAGE" value="убрал логи werkzeug-а а также разделил логи каждого кола" />
   </component>
 </project>
