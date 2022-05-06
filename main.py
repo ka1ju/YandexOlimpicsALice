@@ -179,7 +179,7 @@ def handle_dialog(req, res):
             return
 
         res['response']['text'] = "Извините, я Вас не понял."
-        logging.info("Bot understandable message")
+        logging.info("Bot unknown question")
         return
     else:
         print(req)

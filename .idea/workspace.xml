@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="восстановил всё что проебал">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/funcs.json" beforeDir="false" afterPath="$PROJECT_DIR$/funcs.json" afterDir="false" />
+    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="мне лень иди нахуй, все всё равно уже забили">
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -331,13 +328,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00086" summary="Сделал рабочие стадии для удаления и создания кошельков">
-      <created>1651415117522</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1651415117522</updated>
     </task>
     <task id="LOCAL-00087" summary="Сделал рабочую стадию для пополнения счёта">
       <created>1651419366876</created>
@@ -675,7 +665,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651834414979</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="мне лень иди нахуй, все всё равно уже забили">
+      <created>1651835161836</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1651835161836</updated>
+    </task>
+    <option name="localTasksCounter" value="136" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -773,7 +770,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Обновил файлы арчибальда" />
     <MESSAGE value="Сделал рабочую стадию для конвертации" />
     <MESSAGE value="Убрал стадию для конвертации" />
     <MESSAGE value="Пофиксил (предположительно) беды со стадиями, а также добавил логи ко всем функциям." />
@@ -798,6 +794,7 @@
     <MESSAGE value="пока что так" />
     <MESSAGE value="всё.теперь нет &quot;тенгов&quot;" />
     <MESSAGE value="восстановил всё что проебал" />
-    <option name="LAST_COMMIT_MESSAGE" value="восстановил всё что проебал" />
+    <MESSAGE value="мне лень иди нахуй, все всё равно уже забили" />
+    <option name="LAST_COMMIT_MESSAGE" value="мне лень иди нахуй, все всё равно уже забили" />
   </component>
 </project>
