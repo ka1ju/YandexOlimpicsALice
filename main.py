@@ -14,11 +14,13 @@ from requests import post
 from urllib.parse import urlencode
 import flask
 import logging
+import json
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'ИДИ НАХУЙ'
 
 logging.basicConfig(level=logging.INFO)
+funcs_as_json = json.load(open('funcs.json', mode='r', encoding="utf-8"))
 
 
 @app.route('/', methods=['POST'])
@@ -62,8 +64,26 @@ def main():
 
 def handle_dialog(req, res):
     user_id = req['session']['user']['access_token']
-    if 'original_utterance' in req['request']:
+    if 'request' in req:
         user_message = req['request']['command'].lower()
+
+        # Помощь
+        if "помо" in user_message or ("что" in user_message and "ты" in user_message and "умеешь" in user_message):
+            res['response']['text'] = helper(funcs_as_json)
+            res['session_state'] = req['state']['session']
+            for i in res['session_state']:
+                if i not in ['bye', "hello," "thanks"]:
+                    res['session_state'][i] = {}
+            logging.info("Helping")
+            return
+
+        if "отмен" in user_message:
+            res['response']['text'] = "Текущая операция отменена"
+            for i in res['session_state']:
+                if i not in ['bye', "hello," "thanks"]:
+                    res['session_state'][i] = {}
+            logging.info("Cancelling")
+            return
 
         # Авторизация
         if req['session']['new'] and user_message == "":
@@ -90,7 +110,8 @@ def handle_dialog(req, res):
             return
 
         # Пополнение кошелька
-        if (('пополн' in user_message or 'зачисл' in user_message or "доб" in user_message or "полож" in user_message) and
+        if ((
+                    'пополн' in user_message or 'зачисл' in user_message or "доб" in user_message or "полож" in user_message) and
             ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message)) \
                 or req['state']['session']['top_up_wallet'] != {}:
             res['response']['text'], res['session_state']['top_up_wallet'] = \
@@ -100,7 +121,7 @@ def handle_dialog(req, res):
 
         # Снятие денег или трата денег с кошелька
         if ('трат' in user_message or 'сн' in user_message or "спи" in user_message) and \
-                ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message)\
+                ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message) \
                 or req['state']['session']['spend_money'] != {}:
             res['response']['text'], res['session_state']['spend_money'] = \
                 wasting(user_message, user_id, req['state']['session']['spend_money'])
@@ -109,7 +130,7 @@ def handle_dialog(req, res):
 
         # Вывод информации о счёте
         if 'инф' in user_message and \
-                ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message)\
+                ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message) \
                 or req['state']['session']['wallet_info'] != {}:
             res['response']['text'], res['session_state']['wallet_info'] = \
                 information(user_message, user_id, req['state']['session']['wallet_info'])
@@ -136,13 +157,6 @@ def handle_dialog(req, res):
             res['response']['text'], res['session_state']['transfer'] = \
                 converter(user_message, req['state']['session']['transfer'])
             logging.info("Converting")
-            return
-
-        # Помощь
-        if "помо" in user_message or ("что" in user_message and "ты" in user_message and "умеешь" in user_message):
-            res['response']['text'] = helper()
-            res['session_state'] = req['state']['session']
-            logging.info("Helping")
             return
 
         # Ответ на благодарность
@@ -213,7 +227,7 @@ def login():
     session['client_id'] = client_id
     session['scope'] = scope
     return flask.redirect(
-        f'https://oauth.yandex.ru/authorize?response_type=code&client_id=eb2919ba420a467d9f9d958096364a97&redirect_uri=https://74bc-95-191-236-132.eu.ngrok.io/code_get')
+        f'https://oauth.yandex.ru/authorize?response_type=code&client_id=eb2919ba420a467d9f9d958096364a97&redirect_uri=https://c065-37-193-125-171.eu.ngrok.io/code_get')
 
 
 if __name__ == '__main__':
