@@ -95,7 +95,7 @@ def handle_dialog(req, res):
             return
 
         # Создание кошелька
-        if (('созд' in user_message) and
+        if (('созд' in user_message or 'откр' in user_message) and
             ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message)) \
                 or req['state']['session']['create_wallet'] != {}:
             res['response']['text'], res['session_state']['create_wallet'] = \
@@ -104,7 +104,7 @@ def handle_dialog(req, res):
             return
 
         # Удаление кошелька
-        if ('удал' in user_message or 'убр' in user_message) and \
+        if ('удал' in user_message or 'убр' in user_message or 'закр' in user_message) and \
                 ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message) \
                 or req['state']['session']['delete_wallet'] != {}:
             res['response']['text'], res['session_state']['delete_wallet'] = \
@@ -131,7 +131,7 @@ def handle_dialog(req, res):
             return
 
         # Вывод информации о счёте
-        if 'инф' in user_message and \
+        if ('балан' in user_message or 'инф' in user_message) and \
                 ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message) \
                 or req['state']['session']['wallet_info'] != {}:
             res['response']['text'], res['session_state']['wallet_info'] = \
