@@ -19,12 +19,15 @@ import json
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'ИДИ НАХУЙ'
 
+log = logging.getLogger('werkzeug')
+log.setLevel(logging.ERROR)
 logging.basicConfig(level=logging.INFO)
 funcs_as_json = json.load(open('funcs.json', mode='r', encoding="utf-8"))
 
 
 @app.route('/', methods=['POST'])
 def main():
+    print()
     logging.info(f'Request: {request.json!r}')
 
     response = {
