@@ -6,7 +6,7 @@ morph = pymorphy2.MorphAnalyzer()
 
 words = ['а', 'банк', 'всем', 'выведи', 'дай', 'ещё', 'им', 'инфо', 'информ', 'информацию',
          'информация', 'которые', 'который', 'кошел', 'кошелек', 'кошельке', 'кошельки',
-         'мне', 'на', 'назвается', 'название', 'названием', 'названиями', 'назваются',
+         'мне', 'на', 'называется', 'название', 'названием', 'названиями', 'называются',
          'нам', 'о', 'об', 'по', 'пожалуйста', 'пока', 'привет', 'про', 'про',
          'расскажи', 'с', 'спасибо', 'счет', 'счета', 'счете', 'счету', 'счёт',
          'счёте', 'счёту']
@@ -38,11 +38,11 @@ def information(general_frase, user_name, k):
     if k == {}:
         if len(main_words) == 0:
             if len(all_accounts) > 3:
-                wordssss = ', '.join(all_accounts[:3])
-                return random.choice(variations1) + wordssss + and_other, {'name': 0}
+                _words = ', '.join(all_accounts[:3])
+                return random.choice(variations1) + _words + and_other, {'name': 0}
             else:
-                wordssss = ', '.join(all_accounts)
-                return random.choice(variations1) + wordssss + '.', {'name': 0}
+                _words = ', '.join(all_accounts)
+                return random.choice(variations1) + _words + '.', {'name': 0}
         else:
             for i in main_words:
                 for q in accounts_data:
@@ -53,22 +53,21 @@ def information(general_frase, user_name, k):
                                         f'На счету кошелька {q} ',
                                         f'В кошельке {q} ',
                                         f'В этом кошельке ']
-                        return random.choice(variations02) + str(base[accounts_data.index(q)].bank) + ' ' + \
-                               norm_fr[0].make_agree_with_number(base[accounts_data.index(q)].bank).word, {}
+                        return random.choice(variations02) + str(base[accounts_data.index(q)].bank) + ' ' + norm_fr[0].make_agree_with_number(base[accounts_data.index(q)].bank).word, {}
             if len(all_accounts) > 3:
-                wordssss = ', '.join(all_accounts[:3])
-                return random.choice(variations2) + wordssss + and_other, {}
+                _words = ', '.join(all_accounts[:3])
+                return random.choice(variations2) + _words + and_other, {}
             else:
-                wordssss = ', '.join(all_accounts)
-                return random.choice(variations2) + wordssss, {}
+                _words = ', '.join(all_accounts)
+                return random.choice(variations2) + _words, {}
     elif k['name'] == 0:
         if len(main_words) == 0:
             if len(all_accounts) > 3:
-                wordssss = ', '.join(all_accounts[:3])
-                return random.choice(variations1) + wordssss + and_other, {'name': 0}
+                _words = ', '.join(all_accounts[:3])
+                return random.choice(variations1) + _words + and_other, {'name': 0}
             else:
-                wordssss = ', '.join(all_accounts)
-                return random.choice(variations1) + wordssss, {'name': 0}
+                _words = ', '.join(all_accounts)
+                return random.choice(variations1) + _words, {'name': 0}
         else:
             for i in main_words:
                 for q in accounts_data:
@@ -77,14 +76,12 @@ def information(general_frase, user_name, k):
                         variations12 = ['На этом счету ',
                                         f'На счету {q} ',
                                         f'В кошельке ']
-                        return random.choice(variations12) + str(base[accounts_data.index(q)].bank) +\
-                               norm_fr[0].make_agree_with_number(base[accounts_data.index(q)].bank).word, {}
+                        return random.choice(variations12) + str(base[accounts_data.index(q)].bank) + norm_fr[0].make_agree_with_number(base[accounts_data.index(q)].bank).word, {}
             if len(all_accounts) > 3:
-                wordssss = ', '.join(all_accounts[:3])
-                return random.choice(variations2) + wordssss + and_other, {}
+                _words = ', '.join(all_accounts[:3])
+                return random.choice(variations2) + _words + and_other, {}
             else:
-                wordssss = ', '.join(all_accounts)
-                return random.choice(variations2) + wordssss, {}
+                _words = ', '.join(all_accounts)
+                return random.choice(variations2) + _words, {}
 
-
-#n print(information('выведи информацию о счёте', 'Test2', {}))
+# n print(information('выведи информацию о счёте', 'Test2', {}))
