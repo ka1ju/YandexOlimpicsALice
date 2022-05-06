@@ -11,16 +11,16 @@ words = ['а', 'банк', 'всем', 'выведи', 'дай', 'ещё', 'им
          'расскажи', 'с', 'спасибо', 'счет', 'счета', 'счете', 'счету', 'счёт',
          'счёте', 'счёту']
 
-variations1 = ['Информация о каком кошельке вам нужна? У вас есть счета: ',
-               'О каком кошельке вы хотите узнать? У вас есть счета: ',
-               'Не расслышал, какой кошелёк вам интересен? У вас есть счета: ',
-               'Извините, какой кошелёк вы имели ввиду? У вас есть счета: ']
+variations1 = ['Информация о каком кошельке вам нужна? ',
+               'О каком кошельке вы хотите узнать?' ,
+               'Не расслышал, какой кошелёк вам интересен? ',
+               'Извините, какой кошелёк вы имели ввиду? ']
 
-variations2 = [f'По моему, такого кошелька нет. У вас есть счета: ',
-               f'Что-то не нашёл такого кошелька. У вас есть счета: ',
-               f'Вы правильно указали кошелёк? У вас есть счета: ']
+variations2 = ['По моему, такого кошелька нет. ',
+               'Что-то не нашёл такого кошелька. ',
+               'Вы правильно указали кошелёк? ']
 
-and_other = ' и другие. Если вы хотите узнать имена всех своих кошельков, скажите "выведи все мои кошельки".'
+other_frase = 'Если вы хотите узнать имена всех своих кошельков, скажите "выведи все мои кошельки".'
 
 
 def information(general_frase, user_name, k):
@@ -32,17 +32,11 @@ def information(general_frase, user_name, k):
         return 'У вас пока нет счетов.', {}
     accounts_data = [q.accounts for q in base]
     main_frase = (general_frase.split())
-    for word in main_frase:
-        if word not in words:
-            main_words.append(word)
+    main_words = [word for word in main_frase if word not in words]
+
     if k == {}:
         if len(main_words) == 0:
-            if len(all_accounts) > 3:
-                _words = ', '.join(all_accounts[:3])
-                return random.choice(variations1) + _words + and_other, {'name': 0}
-            else:
-                _words = ', '.join(all_accounts)
-                return random.choice(variations1) + _words + '.', {'name': 0}
+            return random.choice(variations1) + other_frase, {'name': 0}
         else:
             for i in main_words:
                 for q in accounts_data:
@@ -54,34 +48,22 @@ def information(general_frase, user_name, k):
                                         f'В кошельке {q} ',
                                         f'В этом кошельке ']
                         return random.choice(variations02) + str(base[accounts_data.index(q)].bank) + ' ' + norm_fr[0].make_agree_with_number(base[accounts_data.index(q)].bank).word, {}
-            if len(all_accounts) > 3:
-                _words = ', '.join(all_accounts[:3])
-                return random.choice(variations2) + _words + and_other, {}
-            else:
-                _words = ', '.join(all_accounts)
-                return random.choice(variations2) + _words, {}
+            return random.choice(variations2) + other_frase, {}
     elif k['name'] == 0:
         if len(main_words) == 0:
-            if len(all_accounts) > 3:
-                _words = ', '.join(all_accounts[:3])
-                return random.choice(variations1) + _words + and_other, {'name': 0}
-            else:
-                _words = ', '.join(all_accounts)
-                return random.choice(variations1) + _words, {'name': 0}
+                return random.choice(variations1) + other_frase, {'name': 0}
         else:
             for i in main_words:
                 for q in accounts_data:
                     if i in q.split():
                         norm_fr = morph.parse(base[accounts_data.index(q)].currency)
-                        variations12 = ['На этом счету ',
+                        variations12 = [f'На этом счету ',
                                         f'На счету {q} ',
-                                        f'В кошельке ']
+                                        f'На счету кошелька {q} ',
+                                        f'В кошельке {q} ',
+                                        f'В этом кошельке ']
                         return random.choice(variations12) + str(base[accounts_data.index(q)].bank) + norm_fr[0].make_agree_with_number(base[accounts_data.index(q)].bank).word, {}
-            if len(all_accounts) > 3:
-                _words = ', '.join(all_accounts[:3])
-                return random.choice(variations2) + _words + and_other, {}
-            else:
-                _words = ', '.join(all_accounts)
-                return random.choice(variations2) + _words, {}
 
-# n print(information('выведи информацию о счёте', 'Test2', {}))
+                return random.choice(variations2) + other_frase, {}
+
+#print(information('выведи информацию о счёте нигга', 'Test2', {}))
