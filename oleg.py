@@ -1,22 +1,18 @@
 from db_working import *
 import datetime
+import random
 
 
-def authorization(user_name):
+def authorization(user_name, inp):
     a = from_db('users', 'Users', {'username': user_name})
     if a:
-        return 'Приветствую, приятного пользования'
+        variants = ['чем могу помочь?', 'что вам угодно?', 'чем займемся сейчас?']
+        return 'Приветствую, рад снова видеть, ' + random.choice(variants)
     else:
         to_db('users', 'Users', ('username', 'password'), (user_name, '1'))
         print(user_name)
-        return 'Привет, меня зовут Олег. Я создан для того чтобы вести учёт ваших трат. ' \
-               'Вот краткий список моих функций:\n'\
-                'Добавление кошелька\n'\
-                'Удаление кошелька\n'\
-                'Зачисление денег на счёт\n'\
-                'Снятие или трата денег со счёта\n'\
-                'Вывод статистики\n'\
-                'Вывод информации о счёте'
+        return f'Привет, меня зовут Олег. Я создан для того чтобы вести учёт ваших трат. ' \
+               f'Вот краткий список моих функций:\n' +  "\n".join([str(i) for i in inp])
 
 
 def statistic(string, usr_name, k):
