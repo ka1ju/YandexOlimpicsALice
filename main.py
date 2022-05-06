@@ -186,7 +186,7 @@ def handle_dialog(req, res):
         return
     else:
         print(req)
-        res['response']['text'] = authorization(req['session']['user']['access_token'])
+        res['response']['text'] = authorization(req['session']['user']['access_token'], funcs_as_json)
         logging.info("Authorising user")
         return
 
@@ -229,7 +229,7 @@ def login():
     session['client_id'] = client_id
     session['scope'] = scope
     return flask.redirect(
-        f'https://oauth.yandex.ru/authorize?response_type=code&client_id=eb2919ba420a467d9f9d958096364a97&redirect_uri=https://c065-37-193-125-171.eu.ngrok.io/code_get')
+        f'https://oauth.yandex.ru/authorize?response_type=code&client_id=eb2919ba420a467d9f9d958096364a97&redirect_uri=https://1d4b-91-144-183-157.eu.ngrok.io/code_get')
 
 
 if __name__ == '__main__':
