@@ -95,7 +95,7 @@ def handle_dialog(req, res):
             return
 
         # Создание кошелька
-        if (('созд' in user_message) and
+        if (('созд' in user_message or 'откр' in user_message) and
             ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message)) \
                 or req['state']['session']['create_wallet'] != {}:
             res['response']['text'], res['session_state']['create_wallet'] = \
@@ -104,7 +104,7 @@ def handle_dialog(req, res):
             return
 
         # Удаление кошелька
-        if ('удал' in user_message or 'убр' in user_message) and \
+        if ('удал' in user_message or 'убр' in user_message or 'закр' in user_message) and \
                 ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message) \
                 or req['state']['session']['delete_wallet'] != {}:
             res['response']['text'], res['session_state']['delete_wallet'] = \
@@ -131,7 +131,7 @@ def handle_dialog(req, res):
             return
 
         # Вывод информации о счёте
-        if 'инф' in user_message and \
+        if ('балан' in user_message or 'инф' in user_message) and \
                 ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message) \
                 or req['state']['session']['wallet_info'] != {}:
             res['response']['text'], res['session_state']['wallet_info'] = \
@@ -186,7 +186,7 @@ def handle_dialog(req, res):
         return
     else:
         print(req)
-        res['response']['text'] = authorization(req['session']['user']['access_token'])
+        res['response']['text'] = authorization(req['session']['user']['access_token'], funcs_as_json)
         logging.info("Authorising user")
         return
 
@@ -229,7 +229,7 @@ def login():
     session['client_id'] = client_id
     session['scope'] = scope
     return flask.redirect(
-        f'https://oauth.yandex.ru/authorize?response_type=code&client_id=eb2919ba420a467d9f9d958096364a97&redirect_uri=https://c065-37-193-125-171.eu.ngrok.io/code_get')
+        f'https://oauth.yandex.ru/authorize?response_type=code&client_id=eb2919ba420a467d9f9d958096364a97&redirect_uri=https://1d4b-91-144-183-157.eu.ngrok.io/code_get')
 
 
 if __name__ == '__main__':
