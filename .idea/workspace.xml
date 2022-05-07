@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="...">
+    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="обновил ссылку">
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -328,20 +328,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00096" summary="Обновил файлы арчибальда">
-      <created>1651421107760</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1651421107760</updated>
-    </task>
-    <task id="LOCAL-00097" summary="Сделал рабочую стадию для конвертации">
-      <created>1651421659272</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1651421659272</updated>
     </task>
     <task id="LOCAL-00098" summary="Убрал стадию для конвертации">
       <created>1651422195101</created>
@@ -672,7 +658,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651901278373</updated>
     </task>
-    <option name="localTasksCounter" value="145" />
+    <task id="LOCAL-00145" summary="...">
+      <created>1651901749581</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1651901749582</updated>
+    </task>
+    <task id="LOCAL-00146" summary="обновил ссылку">
+      <created>1651901962643</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1651901962643</updated>
+    </task>
+    <option name="localTasksCounter" value="147" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -758,7 +758,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="теперь помощь не сбрасывает стадии, а также добавлен вариант ответа на прощание" />
     <MESSAGE value="обновил федин файл" />
     <MESSAGE value="Добавил кусок проверки" />
     <MESSAGE value="Федин файл" />
@@ -783,6 +782,7 @@
     <MESSAGE value="почистил федин файл от его бездарного говна" />
     <MESSAGE value="почистил димин файл от его бездарного говна" />
     <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value="обновил ссылку" />
+    <option name="LAST_COMMIT_MESSAGE" value="обновил ссылку" />
   </component>
 </project>
