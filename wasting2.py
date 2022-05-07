@@ -71,7 +71,7 @@ def wasting(s, user_name, info):
                 elif x[o] != None and N[o] == None and t[o] == None:
                     s_error += 'Повторите пожалуйста, с какого счёта и за что списать ' + str(x[o]) + ' рублей'
                 elif x[o] == None and N[o] != None and t[o] == None:
-                    s_error += 'Извините, не расслышал за что и сколько вы потратили со счёта ' + N[o]
+                    s_error += 'Извините, за что и сколько вы потратили со счёта ' + N[o]
                 elif x[o] == None and N[o] == None and t[o] != None:
                     s_error += 'Прошу прощения, сколько и с какого счёта вы потратили на ' + t[o]
                 elif x[o] != None and N[o] != None and t[o] == None:
@@ -194,8 +194,6 @@ def wasting(s, user_name, info):
     if old != {} and info == old:
         s = 'Извините, я вас не понял. Проверьте правильность называемых кошельков, категорий и сумм'
         info = {}
+    if s_error != '':
+        s += 'Проверьте наличие кошельков и категорий, которые вы называете'
     return s, info
-
-
-info = {}
-# print(wasting('спиши за игру 500 рублей со счёт альфа банк', 'Test2', info))
