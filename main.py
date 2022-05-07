@@ -83,6 +83,7 @@ def handle_dialog(req, res):
             logging.info("Helping")
             return
 
+        # Отмена
         if "отмен" in user_message:
             res['response']['text'] = "Текущая операция отменена"
             for i in res['session_state']:
@@ -164,6 +165,7 @@ def handle_dialog(req, res):
             logging.info("Converting")
             return
 
+        # Вывод всех трат
         if "сколько" in user_message and "трат":
             res['response']['text'] = all_spends(user_id, user_message)
             logging.info("All spends")
