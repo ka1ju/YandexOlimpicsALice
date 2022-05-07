@@ -108,7 +108,7 @@ def converter(text, k):
                 if res[i].isalpha():
                     res[i] = d_from_abbr[res[i]]
             if res[2] != "тенге":
-                w2 = morph.parse(res[2])[0].make_agree_with_number(round(float(r), 2)).inflect({"datv"}).word
+                w2 = morph.parse(res[2])[0].inflect({"datv"}).make_agree_with_number(int(float(r))).word
             else:
                 w2 = res[2]
                 r = float(r1) * int(res[1])
