@@ -94,30 +94,46 @@ def converter(text, k):
         elif not sec_time and (len(res) > 3):
             return "Не понял вас, повторите", {}
         else:
-            r = requests.get(f'https://ru.myfin.by/converter/{res[0].lower()}-{res[2].lower()}/{res[1]}')
-            r = r.text
-            r = r[r.find('<input id="to_input_curr" type="tel" value="') + 44::]
-            r = r[:r.find('">')]
-
             r1 = requests.get(f'https://ru.myfin.by/converter/{res[0].lower()}-{res[2].lower()}')
             r1 = r1.text
             r1 = r1[r1.find('<input id="to_input_curr" type="tel" value="') + 44::]
             r1 = r1[:r1.find('">')]
+            exc_cur = {"евро": "евроцент", "рубль": "копейка", "доллар": "цент", "тенге": "тиын", "юань": "фынь"}
             d_from_abbr = {"RUB": "рубль", "EUR": "евро", 'USD': "доллар", "KZT": "тенге", "CNY": "юань"}
             for i in range(len(res)):
                 if res[i].isalpha():
                     res[i] = d_from_abbr[res[i]]
+            r = float(r1) * int(res[1])
             if res[2] != "тенге":
                 w2 = morph.parse(res[2])[0].inflect({"datv"}).make_agree_with_number(int(float(r))).word
             else:
                 w2 = res[2]
-                r = float(r1) * int(res[1])
+            if exc_cur[res[2]] != "тиын":
+                lil_cur = morph.parse(exc_cur[res[2]])[0].inflect({"datv"}).make_agree_with_number(int(str(float(r) % 100)[str(float(r) % 100).find(".") + 1:str(float(r) % 100).find(".") + 3].lstrip("0"))).word
+            else:
+                if int(res[1]) == 0:
+                    lil_cur = "тиынам"
+                elif int(res[1]) == 1:
+                    lil_cur = "тиыну"
+                else:
+                    lil_cur = "тиынам"
+            if int(res[1]) == 0:
+                rav = "равно"
+            elif int(res[1]) == 1:
+                rav = "равен"
+            else:
+                rav = "равны"
             if res[0] != "тенге":
                 w1 = morph.parse(res[0])[0].make_agree_with_number(int(res[1])).word
             else:
                 w1 = res[0]
             x = random.randint(0, 2)
             rand = ["Давайте посчитаем...", "По нынешнему курсу", "По моим подсчётам"]
-            return f'{rand[x]}\n{res[1]} {w1} равно {round(float(r), 2)} {w2}', {}
+            ress = ""
+            if int(float(r)) != 0:
+                ress += f" {int(float(r))} {w2}"
+            if int(str(float(r) % 100)[str(float(r) % 100).find(".") + 1:str(float(r) % 100).find(".") + 3].lstrip("0")) != 0:
+                ress += f' {str(float(r) % 100)[str(float(r) % 100).find(".") + 1:str(float(r) % 100).find(".") + 3].lstrip("0")} {lil_cur}'
+            return f'{rand[x]}\n{res[1]} {w1} примерно {rav}{ress}', {}
     except Exception:
-        return "Не понял вас, повторите", {}
+        return "Увы :(\nМеня не научили переводить такое", {}
