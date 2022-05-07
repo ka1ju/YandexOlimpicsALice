@@ -184,6 +184,8 @@ def delete_wallet(req, user_ya_id, k=None):
                 if len(from_db("accounts", "Accounts", {"accounts": i, "user_id": user_id})) == 0:
                     no.append(i)
                 else:
+                    prp = from_db("accounts", "Accounts", {"accounts": req, "user_id": k["user_id"]})[0].id
+                    remove_from_db("waste", "Waste", {"account_id": prp})
                     remove_from_db("accounts", "Accounts", {"accounts": i, "user_id": user_id})
                     yes.append(i)
             if len(no) > 0:
@@ -222,7 +224,8 @@ def delete_wallet(req, user_ya_id, k=None):
                   f'Что-то не так!\n Счёта "{req}" не существует\n']
             res_s += ll[r - 1]
         else:
-            remove_from_db("accounts", "Accounts", {"accounts": req, "user_id": k["user_id"]})
+            prp = from_db("accounts", "Accounts", {"accounts": req, "user_id": k["user_id"]})[0].id
+            remove_from_db("waste", "Waste", {"account_id": prp})
             r = random.randint(1, 2)
             ll = [f'Счёт "{req}" был удалён\n', f'Готово!\nЯ удалил счёт "{req}"\n']
             res_s += ll[r - 1]
