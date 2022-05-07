@@ -123,6 +123,14 @@ def top_up_wallet(st, user_name, k):
                 ok = random.choice(var)
                 ret += ok
                 ret += 'Баланс кошелька ' + q[j] + ' пополнен' + '\n'
+                acc_id = [i.id for i in from_db('accounts', 'Accounts', {'accounts': q[j], 'user_id': user_id})][0]
+                inwaste = [i.count for i in from_db('waste', 'Waste', {'category': 'пополнение', 'account_id': acc_id})]
+                if inwaste == []:
+                    to_db('waste', 'Waste', ('account_id', 'category', 'count'), (acc_id, 'пополнение', summa[j]))
+                else:
+                    summ = inwaste[0]
+                    summ += summa[j]
+                    change_db('waste', 'Waste', {'count': summ}, {'account_id': acc_id, 'category': 'пополнение'})
             elif q[j] not in words:
                 var = ['Что-то пошло не так. ', 'Ой произошла ошибка. ', 'Я не смог выполнить операцию. ']
                 ok = random.choice(var)
@@ -261,11 +269,17 @@ def top_up_wallet(st, user_name, k):
                 ok = random.choice(var)
                 ret += ok
                 ret += 'Баланс кошелька ' + q[j] + ' пополнен' + '\n'
+                acc_id = [i.id for i in from_db('accounts', 'Accounts', {'accounts': q[j], 'user_id': user_id})][0]
+                inwaste = [i.count for i in from_db('waste', 'Waste', {'category': 'пополнение', 'account_id': acc_id})]
+                if inwaste == []:
+                    to_db('waste', 'Waste', ('account_id', 'category', 'count'), (acc_id, 'пополнение', summa[j]))
+                else:
+                    summ = inwaste[0]
+                    summ += summa[j]
+                    change_db('waste', 'Waste', {'count': summ}, {'account_id': acc_id, 'category': 'пополнение'})
             elif q[j] not in words:
                 var = ['Что-то пошло не так. ', 'Ой произошла ошибка. ', 'Я не смог выполнить операцию. ']
                 ok = random.choice(var)
                 ret += ok
                 ret += 'У вас нет кошелька с названием ' + q[j] + '\n'
         return ret[:-1], {}
-
-# print(top_up_wallet('пополни кошелек богдан', 'Test2', {}))
