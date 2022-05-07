@@ -198,4 +198,4 @@ def wasting(s, user_name, info):
 
 
 info = {}
-print(wasting('спиши за игру 500 рублей со счёт альфа банк', 'Test2', info))
+# print(wasting('спиши за игру 500 рублей со счёт альфа банк', 'Test2', info))
