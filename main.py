@@ -10,6 +10,7 @@ from wasting2 import *
 from converter import *
 from Info_Alise_3 import *
 from all_spends import *
+from operations import *
 from flask import Flask, request, redirect, session
 from requests import post
 from urllib.parse import urlencode
@@ -47,7 +48,8 @@ def main():
             'wallet_info': {},
             'wallet_statistic': {},
             'all_wallets': {},
-            'transfer': {}
+            'transfer': {},
+            'operations': {}
         }
     }
     if "session" in request.json['state']:
@@ -170,6 +172,13 @@ def handle_dialog(req, res):
         if ("сколько" in user_message or "выв" in user_message or "все" in user_message) and "трат" and "трат" in user_message:
             res['response']['text'] = all_spends(user_id, user_message)
             logging.info("All spends")
+            return
+
+        # Вывод операций по счёту
+        if "операции" in user_message or req['state']['session']['operations'] != {}:
+            res['response']['text'], res['session_state']['operations'] = \
+                operations(user_id, user_message, req['state']['session']['operations'])
+            logging.info("Giving operations")
             return
 
         # Ответ на благодарность

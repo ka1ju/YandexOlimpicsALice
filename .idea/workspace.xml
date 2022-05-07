@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="...">
+    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="закомментил тест">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/operations.py" beforeDir="false" afterPath="$PROJECT_DIR$/operations.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +59,7 @@
       <recent name="C:\Users\Ярослав\Documents\my_projects\YandexOlympicsAlice" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.operations">
+  <component name="RunManager" selected="Python.main">
     <configuration name="all_spends (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="YandexOlympicsAlice" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -313,8 +314,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.operations" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.operations" />
         <item itemvalue="Python.all_spends (1)" />
         <item itemvalue="Python.all_spends" />
         <item itemvalue="Python.test-file" />
@@ -329,27 +330,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00106" summary="...">
-      <created>1651487196277</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1651487196277</updated>
-    </task>
-    <task id="LOCAL-00107" summary="теперь помощь не сбрасывает стадии, а также добавлен вариант ответа на прощание">
-      <created>1651489413641</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1651489413641</updated>
-    </task>
-    <task id="LOCAL-00108" summary="обновил федин файл">
-      <created>1651491389540</created>
-      <option name="number" value="00108" />
-      <option name="presentableId" value="LOCAL-00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1651491389540</updated>
     </task>
     <task id="LOCAL-00109" summary="...">
       <created>1651491936263</created>
@@ -673,7 +653,28 @@
       <option name="project" value="LOCAL" />
       <updated>1651911410931</updated>
     </task>
-    <option name="localTasksCounter" value="155" />
+    <task id="LOCAL-00155" summary="доделал вывод операций">
+      <created>1651912309887</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1651912309887</updated>
+    </task>
+    <task id="LOCAL-00156" summary="доделал вывод операций">
+      <created>1651912349254</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1651912349254</updated>
+    </task>
+    <task id="LOCAL-00157" summary="закомментил тест">
+      <created>1651912391851</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1651912391851</updated>
+    </task>
+    <option name="localTasksCounter" value="158" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -759,8 +760,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавил вариативность ответов для моих функций" />
-    <MESSAGE value="Добавил в if ещё 1 ключевое слово, а также пофиксили хуй семёна" />
     <MESSAGE value="Поменял if на вывод информации о счёте" />
     <MESSAGE value="Поменял if на вывод статистики о счёте" />
     <MESSAGE value="почистил код" />
@@ -784,7 +783,9 @@
     <MESSAGE value="обновил if для всех трат" />
     <MESSAGE value="обновил json функций, добавив туда вывод трат, а также создал файл для функции для вывода операций" />
     <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value="доделал вывод операций" />
+    <MESSAGE value="закомментил тест" />
+    <option name="LAST_COMMIT_MESSAGE" value="закомментил тест" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
