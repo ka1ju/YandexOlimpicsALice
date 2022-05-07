@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="обновил if для конвертера">
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="обновил if для всех трат">
+      <change afterPath="$PROJECT_DIR$/operations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -328,13 +329,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00103" summary="Заменил 2 функции которые забыл поменять в прошлом коммите">
-      <created>1651486497619</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1651486497619</updated>
     </task>
     <task id="LOCAL-00104" summary="Заменил statuation на st">
       <created>1651486954945</created>
@@ -672,7 +666,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651910086889</updated>
     </task>
-    <option name="localTasksCounter" value="152" />
+    <task id="LOCAL-00152" summary="обновил if для всех трат">
+      <created>1651910195787</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1651910195787</updated>
+    </task>
+    <option name="localTasksCounter" value="153" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -758,7 +759,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Пофиксил проблему с выводом при отсутствии кошельков" />
     <MESSAGE value="Обновился федин файл" />
     <MESSAGE value="Добавил вариативность ответов для моих функций" />
     <MESSAGE value="Добавил в if ещё 1 ключевое слово, а также пофиксили хуй семёна" />
@@ -783,7 +783,8 @@
     <MESSAGE value="переименовал свой файл и функцию и встроил её в main.py" />
     <MESSAGE value="добавил пару комментов к функциям" />
     <MESSAGE value="обновил if для конвертера" />
-    <option name="LAST_COMMIT_MESSAGE" value="обновил if для конвертера" />
+    <MESSAGE value="обновил if для всех трат" />
+    <option name="LAST_COMMIT_MESSAGE" value="обновил if для всех трат" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
