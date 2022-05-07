@@ -79,7 +79,7 @@ def converter(text, k):
             if "summ" in k.keys():
                 res.append(k["summ"])
             else:
-                res.append(text)
+                res.append(text.split()[0])
             if "s_v" in k.keys():
                 res.append(k["s_v"])
             else:
