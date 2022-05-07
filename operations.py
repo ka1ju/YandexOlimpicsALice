@@ -37,5 +37,4 @@ def operations(userName, userMessage):
                     operationsList.append(f"Потрачено {i.count} {cur} на {i.category}")
     return "\n".join(operationsList)
 
-
-print(operations("AQAAAAAjstOuAAfaP9kRfOsQJ00rlrOmg7BlREQ", "Выведи все мои операции по счёту тест за месяц"))
+# print(operations("AQAAAAAjstOuAAfaP9kRfOsQJ00rlrOmg7BlREQ", "Выведи все мои операции по счёту тест за месяц"))
