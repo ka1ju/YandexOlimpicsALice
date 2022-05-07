@@ -42,7 +42,7 @@ def wasting(s, user_name, info):
                 if ord('0') <= ord(a1[j][0]) <= ord('9') and len(x) < (i + 1):
                     x.append(a1[j])
             for j in names:
-                if j in a[i] and len(N) < (1 + i):
+                if (' ' + j + ' ') in (' ' + a[i] + ' ') and len(N) < (1 + i):
                     N.append(j)
             for j in list2:
                 if j in a[i]:
@@ -77,7 +77,7 @@ def wasting(s, user_name, info):
                 elif x[o] != None and N[o] != None and t[o] == None:
                     cur1 = [i.currency for i in from_db('accounts', 'Accounts', {'user_id': user_id, 'accounts': N[o]})]
                     cur = cur1[0]
-                    s_error += 'Извините, за что вы заплатили ' + x[o] + ' ' + cur + ' из кошелька ' + N[o]
+                    s_error += 'Извините, за что вы заплатили ' + x[o] + ' ' + cur[0:3] + ' из кошелька ' + N[o]
                 elif x[o] != None and N[o] == None and t[o] != None:
                     s_error += 'Повторите, пожалуйста, с какого счёта списать ' + x[o] + ' рублей за ' + t[o]
                 elif x[o] == None and N[o] != None and t[o] != None:
@@ -106,7 +106,9 @@ def wasting(s, user_name, info):
                     change_db("waste", "Waste", {"count": newcount}, {"account_id": id, "category": t[o]})
                 else:
                     to_db("waste", "Waste", ("account_id", "category", "count"), (id, t[o], int(x[o])))
-                st = 'Успешно списано ' + str(x[o]) + ' рублей с кошелька ' + str(N[o]) + ' за ' + t[o]
+                cur1 = [i.currency for i in from_db('accounts', 'Accounts', {'user_id': user_id, 'accounts': N[o]})]
+                cur = cur1[0]
+                st = 'Успешно списано ' + str(x[o]) + cur[0:3] + ' с кошелька ' + str(N[o]) + ' за ' + t[o]
                 s += st
                 s += '  '
         s += s_error
@@ -120,7 +122,7 @@ def wasting(s, user_name, info):
                         info['summ'][i] = a1[j]
             if info['name'][i] == None:
                 for j in names:
-                    if j in a[i] and info['name'][i] == None:
+                    if (' ' + j + ' ') in (' ' + a[i] + ' ') and info['name'][i] == None:
                         info['name'][i] = j
             if info['cate'][i] == None:
                 for j in list2:
@@ -152,7 +154,7 @@ def wasting(s, user_name, info):
                 elif x[o] != None and N[o] != None and t[o] == None:
                     cur1 = [i.currency for i in from_db('accounts', 'Accounts', {'user_id': user_id, 'accounts': N[o]})]
                     cur = cur1[0]
-                    s_error += 'Извините, за что вы заплатили ' + x[o] + ' ' + cur + ' из кошелька ' + N[o]
+                    s_error += 'Извините, за что вы заплатили ' + x[o] + ' ' + cur[0:3] + ' из кошелька ' + N[o]
                 elif x[o] != None and N[o] == None and t[o] != None:
                     s_error += 'Повторите, пожалуйста, с какого счёта списать ' + x[o] + ' рублей за ' + t[o]
                 elif x[o] == None and N[o] != None and t[o] != None:
@@ -181,7 +183,9 @@ def wasting(s, user_name, info):
                     change_db("waste", "Waste", {"count": newcount}, {"account_id": id, "category": t[o]})
                 else:
                     to_db("waste", "Waste", ("account_id", "category", "count"), (id, t[o], int(x[o])))
-                st = 'Успешно списано ' + str(x[o]) + ' рублей с кошелька ' + str(N[o]) + ' за ' + t[o]
+                cur1 = [i.currency for i in from_db('accounts', 'Accounts', {'user_id': user_id, 'accounts': N[o]})]
+                cur = cur1[0]
+                st = 'Успешно списано ' + str(x[o]) + cur[0:3] + ' с кошелька ' + str(N[o]) + ' за ' + t[o]
                 s += st
                 s += '  '
         s += s_error
@@ -191,3 +195,7 @@ def wasting(s, user_name, info):
         s = 'Извините, я вас не понял. Проверьте правильность называемых кошельков, категорий и сумм'
         info = {}
     return s, info
+
+
+info = {}
+print(wasting('спиши за игру 500 рублей со счёт альфа банк', 'Test2', info))
