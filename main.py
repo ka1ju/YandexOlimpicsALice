@@ -9,6 +9,7 @@ from top_up_wallet import *
 from wasting2 import *
 from converter import *
 from Info_Alise_3 import *
+from all_spends import *
 from flask import Flask, request, redirect, session
 from requests import post
 from urllib.parse import urlencode
@@ -20,6 +21,8 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'ИДИ НАХУЙ'
 
 log = logging.getLogger('werkzeug')
+log.setLevel(logging.ERROR)
+log = logging.getLogger('pymorphy2')
 log.setLevel(logging.ERROR)
 logging.basicConfig(level=logging.INFO)
 funcs_as_json = json.load(open('funcs.json', mode='r', encoding="utf-8"))
@@ -159,6 +162,11 @@ def handle_dialog(req, res):
             res['response']['text'], res['session_state']['transfer'] = \
                 converter(user_message, req['state']['session']['transfer'])
             logging.info("Converting")
+            return
+
+        if "сколько" in user_message and "трат":
+            res['response']['text'] = all_spends(user_id, user_message)
+            logging.info("All spends")
             return
 
         # Ответ на благодарность
