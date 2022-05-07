@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="переименовал свой файл и функцию и встроил её в main.py">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
+    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="обновил if для конвертера">
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -329,20 +328,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00101" summary="...">
-      <created>1651479121521</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1651479121521</updated>
-    </task>
-    <task id="LOCAL-00102" summary="Пофиксил (предположительно) беды со стадиями, а также добавил логи ко всем функциям.">
-      <created>1651486218871</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1651486218871</updated>
     </task>
     <task id="LOCAL-00103" summary="Заменил 2 функции которые забыл поменять в прошлом коммите">
       <created>1651486497619</created>
@@ -673,7 +658,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651909182757</updated>
     </task>
-    <option name="localTasksCounter" value="150" />
+    <task id="LOCAL-00150" summary="добавил пару комментов к функциям">
+      <created>1651909997080</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1651909997080</updated>
+    </task>
+    <task id="LOCAL-00151" summary="обновил if для конвертера">
+      <created>1651910086889</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1651910086889</updated>
+    </task>
+    <option name="localTasksCounter" value="152" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -759,8 +758,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Федин файл" />
-    <MESSAGE value="Пофиксил говно-if" />
     <MESSAGE value="Пофиксил проблему с выводом при отсутствии кошельков" />
     <MESSAGE value="Обновился федин файл" />
     <MESSAGE value="Добавил вариативность ответов для моих функций" />
@@ -784,7 +781,9 @@
     <MESSAGE value="..." />
     <MESSAGE value="сделал функцию для вывода всех трат пользователя" />
     <MESSAGE value="переименовал свой файл и функцию и встроил её в main.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="переименовал свой файл и функцию и встроил её в main.py" />
+    <MESSAGE value="добавил пару комментов к функциям" />
+    <MESSAGE value="обновил if для конвертера" />
+    <option name="LAST_COMMIT_MESSAGE" value="обновил if для конвертера" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

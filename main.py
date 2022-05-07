@@ -167,7 +167,7 @@ def handle_dialog(req, res):
             return
 
         # Вывод всех трат
-        if "сколько" in user_message and "трат":
+        if ("сколько" in user_message or "выв" in user_message or "все" in user_message) and "трат" and "трат" in user_message:
             res['response']['text'] = all_spends(user_id, user_message)
             logging.info("All spends")
             return
