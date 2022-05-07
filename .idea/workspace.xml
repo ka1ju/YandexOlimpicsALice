@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="почистил димин файл от его бездарного говна" />
+    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="...">
+      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -326,13 +328,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00093" summary="Убрал лишний return">
-      <created>1651420795864</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1651420795864</updated>
     </task>
     <task id="LOCAL-00094" summary="Сделал стадии для">
       <created>1651421050546</created>
@@ -670,7 +665,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651839214721</updated>
     </task>
-    <option name="localTasksCounter" value="142" />
+    <task id="LOCAL-00142" summary="...">
+      <created>1651839601194</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1651839601194</updated>
+    </task>
+    <option name="localTasksCounter" value="143" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -776,11 +778,11 @@
     <MESSAGE value="восстановил всё что проебал" />
     <MESSAGE value="мне лень иди нахуй, все всё равно уже забили" />
     <MESSAGE value="мне лень иди нахуй, все всё равно уже забили номер 2" />
-    <MESSAGE value="..." />
     <MESSAGE value="убрал логи werkzeug-а а также разделил логи каждого кола" />
     <MESSAGE value="добавил счет к счёт" />
     <MESSAGE value="почистил федин файл от его бездарного говна" />
     <MESSAGE value="почистил димин файл от его бездарного говна" />
-    <option name="LAST_COMMIT_MESSAGE" value="почистил димин файл от его бездарного говна" />
+    <MESSAGE value="..." />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
 </project>
