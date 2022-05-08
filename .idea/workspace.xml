@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6dc0041-a7bf-46e1-beaf-5ccccc26d9ba" name="Changes" comment="обновил if для вывода всех кошельков">
+    <list default="true" id="f6dc0041-a7bf-46e1-beaf-5ccccc26d9ba" name="Changes" comment="очистил базу">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all_spends.py" beforeDir="false" afterPath="$PROJECT_DIR$/all_spends.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/operations.py" beforeDir="false" afterPath="$PROJECT_DIR$/operations.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -329,13 +330,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00118" summary="...">
-      <created>1651601993504</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1651601993506</updated>
     </task>
     <task id="LOCAL-00119" summary="Обновился федин файл">
       <created>1651633335388</created>
@@ -673,7 +667,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651992810916</updated>
     </task>
-    <option name="localTasksCounter" value="167" />
+    <task id="LOCAL-00167" summary="очистил базу">
+      <created>1652005303228</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1652005303228</updated>
+    </task>
+    <option name="localTasksCounter" value="168" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -759,7 +760,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="всё.теперь нет &quot;тенгов&quot;" />
     <MESSAGE value="восстановил всё что проебал" />
     <MESSAGE value="мне лень иди нахуй, все всё равно уже забили" />
     <MESSAGE value="мне лень иди нахуй, все всё равно уже забили номер 2" />
@@ -784,7 +784,8 @@
     <MESSAGE value="обновил информацию в json-е про перевод валют" />
     <MESSAGE value="урал лишнее говно" />
     <MESSAGE value="обновил if для вывода всех кошельков" />
-    <option name="LAST_COMMIT_MESSAGE" value="обновил if для вывода всех кошельков" />
+    <MESSAGE value="очистил базу" />
+    <option name="LAST_COMMIT_MESSAGE" value="очистил базу" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
