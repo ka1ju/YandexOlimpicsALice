@@ -226,7 +226,7 @@ def handle_dialog(req, res):
             res['response']['text'] = authorization(req['session']['user']['access_token'], funcs_as_json)
             logging.info("Authorising user")
             return
-    excep:
+    except:
         res['response']['text'] = 'Простите, но вы не пользователь.'
         return 
 
