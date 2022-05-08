@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6dc0041-a7bf-46e1-beaf-5ccccc26d9ba" name="Changes" comment="убрал баги" />
+    <list default="true" id="f6dc0041-a7bf-46e1-beaf-5ccccc26d9ba" name="Changes" comment="...">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -321,18 +323,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="" />
+      <changelist id="f6dc0041-a7bf-46e1-beaf-5ccccc26d9ba" name="Changes" comment="..." />
       <created>1650702408030</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00120" summary="...">
-      <created>1651633705119</created>
-      <option name="number" value="00120" />
-      <option name="presentableId" value="LOCAL-00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1651633705120</updated>
     </task>
     <task id="LOCAL-00121" summary="Добавил вариативность ответов для моих функций">
       <created>1651634405912</created>
@@ -670,7 +665,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652008307166</updated>
     </task>
-    <option name="localTasksCounter" value="169" />
+    <task id="LOCAL-00169" summary="...">
+      <created>1652008354170</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1652008354170</updated>
+    </task>
+    <option name="localTasksCounter" value="170" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -775,13 +777,13 @@
     <MESSAGE value="Пофиксил говнище с выводом операций" />
     <MESSAGE value="Пофиксил говнище с выводом операций окончательно" />
     <MESSAGE value="обновил if для операций" />
-    <MESSAGE value="..." />
     <MESSAGE value="обновил информацию в json-е про перевод валют" />
     <MESSAGE value="урал лишнее говно" />
     <MESSAGE value="обновил if для вывода всех кошельков" />
     <MESSAGE value="очистил базу" />
     <MESSAGE value="убрал баги" />
-    <option name="LAST_COMMIT_MESSAGE" value="убрал баги" />
+    <MESSAGE value="..." />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
