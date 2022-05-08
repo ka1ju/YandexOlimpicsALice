@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from db_working import to_db, remove_from_db, from_db
+from skills.YandexOlympicsAlice.db_working import to_db, remove_from_db, from_db
 import skills.YandexOlympicsAlice.w2n
 import pymorphy2
 import random
