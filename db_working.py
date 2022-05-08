@@ -1,13 +1,14 @@
-def to_db(db_table_file_name, db_class_name, names, texts, user_id=0, db_name="database.db"):
+
+
+
+def to_db(db_table_file_name, db_class_name, names, texts, db_name="database.db"):
     try:
-        Db, db_sess = create_session(db_table_file_name, db_class_name, db_name)[0], \
-                      create_session(db_table_file_name, db_class_name, db_name)[1]
+        Db, db_sess = create_session(db_table_file_name, db_class_name, db_name)[0], create_session(db_table_file_name, db_class_name, db_name)[1]
         db_string = Db()
         if type(names) == str:
             print(f"WARNING database logs | для записи был передан элемент, содержащий одну колонну в базе данных")
             exec(f"db_string.{names} = '{texts}'")
-            print(f"database logs | Запись {texts} в таблицу {db_class_name}, "
-                  f"колонна {names}. База данных: {db_table_file_name}")
+            print(f"database logs | Запись {texts} в таблицу {db_class_name}, колонна {names}. База данных: {db_table_file_name}")
             # write to database
             db_sess.add(db_string)
             print("database logs | Элемент добавлен успешно")
@@ -16,12 +17,11 @@ def to_db(db_table_file_name, db_class_name, names, texts, user_id=0, db_name="d
                 col_name = names[i]
                 text = texts[i]
                 if db_class_name == "Accounts":
-                    current_username = user_id
-                    exec(f"""db_string.user_id = '{[i.id for i in from_db("users", "Users", 
-                                                                          {"id": current_username})][0]}'""")
+                    current_username = "Test2"
+                    current_password = "Testirovka126"
+                    exec(f"""db_string.user_id = '{[i.id for i in from_db("users", "Users", {"username": current_username, "password": current_password}, "database.db")][0]}'""")
                 exec(f"db_string.{col_name} = '{text}'")
-                print(f'database logs | Запись "{text}" в таблицу "{db_class_name}", '
-                      f'колонна "{col_name}". База данных: "{db_table_file_name}"')
+                print(f'database logs | Запись "{text}" в таблицу "{db_class_name}", колонна "{col_name}". База данных: "{db_table_file_name}"')
                 # write to database
                 db_sess.add(db_string)
                 print("database logs | Элемент добавлен успешно")
@@ -30,15 +30,12 @@ def to_db(db_table_file_name, db_class_name, names, texts, user_id=0, db_name="d
     except Exception as e:
         print(f"ERROR database logs | При создании элемента произошла ошибка\n{e}")
 
-
-# в функцию передаётся имя бд (name.db), имя таблицы, как в файле в папке data (users),
-# имя класса из этого файла (Users), имя столбца из таблицы (username), текст, который нужно записать ("Hello world!")
+# в функцию передаётся имя бд (name.db), имя таблицы, как в файле в папке data (users), имя класса из этого файла (Users), имя столбца из таблицы (username), текст, который нужно записать ("Hello world!")
 
 
 def from_db(db_table_file_name, db_class_name, filter_d=None, db_name="database.db"):
     try:
-        db, db_sess = create_session(db_table_file_name, db_class_name, db_name)[0], \
-                      create_session(db_table_file_name, db_class_name, db_name)[1]
+        db, db_sess = create_session(db_table_file_name, db_class_name, db_name)[0], create_session(db_table_file_name, db_class_name, db_name)[1]
         if filter_d is None:
             get_from_db = db_sess.query(db).all()
             return get_from_db
@@ -56,13 +53,11 @@ def from_db(db_table_file_name, db_class_name, filter_d=None, db_name="database.
     except Exception as e:
         print(f"ERROR database logs | При получении элемента(ов) произошла ошибка\n{e}")
 
-
-# взять элемент из бд
+#взять элемент из бд
 
 def change_db(db_table_file_name, db_class_name, changing, filter_d=None, db_name="database.db"):
     try:
-        db, db_sess = create_session(db_table_file_name, db_class_name, db_name)[0], \
-                      create_session(db_table_file_name, db_class_name, db_name)[1]
+        db, db_sess = create_session(db_table_file_name, db_class_name, db_name)[0], create_session(db_table_file_name, db_class_name, db_name)[1]
         change_s = "{"
         for item in changing:
             if type(changing[item]) == str:
@@ -92,11 +87,9 @@ def change_db(db_table_file_name, db_class_name, changing, filter_d=None, db_nam
     except Exception as e:
         print(f"ERROR database logs | При изменении элемента(ов) произошла ошибка\n{e}")
 
-
 def remove_from_db(db_table_file_name, db_class_name, filter_d=None, db_name="database.db"):
     try:
-        db, db_sess = create_session(db_table_file_name, db_class_name, db_name)[0], \
-                      create_session(db_table_file_name, db_class_name, db_name)[1]
+        db, db_sess = create_session(db_table_file_name, db_class_name, db_name)[0], create_session(db_table_file_name, db_class_name, db_name)[1]
         if filter_d is None:
             print(f"WARNING database logs | Удаление таблицы {db_class_name}")
             exec(f"db_sess.query(db).delete()")
@@ -118,6 +111,8 @@ def remove_from_db(db_table_file_name, db_class_name, filter_d=None, db_name="da
         print(f"ERROR database logs | При удалении элемента(ов) произошла ошибка\n{e}")
 
 
+
+
 def create_session(db_table_file_name, db_class_name, db_name="database.db"):
     try:
         from data import db_session
@@ -129,5 +124,7 @@ def create_session(db_table_file_name, db_class_name, db_name="database.db"):
         return db, db_sess
     except Exception as e:
         print(f"ERROR database logs | При создании сессии произошла ошибка\n{e}")
+
+
 
 # created by tehno_py (19.04.22)
