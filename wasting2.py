@@ -163,8 +163,6 @@ def wasting(s, user_name, info):
         s += s_error
     if info['summ'] == [] and info['name'] == [] and info['cate'] == []:
         info = {}
-    if s_error != '':
-        s += 'Проверьте наличие кошельков и категорий, которые вы называете'
     if old != {} and info == old:
         s = 'Извините, я вас не понял. Проверьте правильность называемых кошельков, категорий и сумм'
         info = {}
