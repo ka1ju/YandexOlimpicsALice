@@ -120,8 +120,8 @@ def remove_from_db(db_table_file_name, db_class_name, filter_d=None, db_name="da
 
 def create_session(db_table_file_name, db_class_name, db_name="database.db"):
     try:
-        from data import db_session
-        import data
+        from skills.YandexOlympicsAlice.data import db_session
+        import skills.YandexOlympicsAlice.data
         db_session.global_init(f"db/{db_name}")
         db_sess = db_session.create_session()
         db = eval(f"data.{db_table_file_name}.{db_class_name}")
