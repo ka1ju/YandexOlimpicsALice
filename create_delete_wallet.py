@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from db_working import to_db, remove_from_db, from_db
-import w2n
+import skills.YandexOlympicsAlice.w2n
 import pymorphy2
 import random
 
