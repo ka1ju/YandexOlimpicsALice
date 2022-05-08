@@ -101,7 +101,7 @@ def handle_dialog(req, res):
             return
 
         # Вывод операций по счёту
-        if "операции" in user_message or req['state']['session']['operations'] != {}:
+        if "операц" in user_message or req['state']['session']['operations'] != {}:
             x, y = operations(user_id, user_message, req['state']['session']['operations'])
             print(x, y)
             res['response']['text'], res['session_state']['operations'] = \
