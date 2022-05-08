@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import random
-import w2n
+from skills.YandexOlympicsAlice.w2n
 import pymorphy2
 import requests
 morph = pymorphy2.MorphAnalyzer()
