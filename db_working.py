@@ -27,7 +27,7 @@ def to_db(db_table_file_name, db_class_name, names, texts, user_id=0, db_name="d
                       f'колонна "{col_name}". База данных: "{db_table_file_name}"')
                 # write to database
                 db_sess.add(db_string)
-                print("database logs | Элемент добавлен успешно")
+                logging.info("database logs | Элемент добавлен успешно")
         db_sess.commit()
         db_sess.close()
     except Exception as e:
