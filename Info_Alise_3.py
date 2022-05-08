@@ -1,7 +1,6 @@
 from db_working import *
 import pymorphy2
 import random
-
 morph = pymorphy2.MorphAnalyzer()
 
 words = ['а', 'балан', 'баланс', 'балансе', 'банк', 'всем', 'выведи', 'дай', 'из', 'им', 'инфо', 'информ',
@@ -19,10 +18,16 @@ variations2 = ['По моему, такого кошелька нет. ',
                'Что-то не нашёл такого кошелька. ',
                'Вы правильно указали кошелёк? ']
 
+variations3 = ['Ваш баланс: ',
+                'На вашем балансе: ',
+                'В этом кошельке: ',
+                'В кошельке: ']
+
 other_frase = 'Если вам нужны имена всех счетов, скажите: "все мои кошельки".'
 
 
 def information(general_frase, user_name, k):
+    global variations02, variations12
     person_data = from_db('users', 'Users', {'username': user_name})
     base = from_db('accounts', 'Accounts', {'user_id': person_data[0].id})
     all_accounts = [str(akk.accounts) for akk in from_db('accounts', 'Accounts', {'user_id': person_data[0].id})]
@@ -39,11 +44,9 @@ def information(general_frase, user_name, k):
                 for q in accounts_data:
                     if i in q.split():
                         norm_fr = morph.parse(base[accounts_data.index(q)].currency)
-                        variations02 = [f'Ваш баланс: ',
-                                        f'На балансе {q}: ',
-                                        f'В кошельке {q}: ',
-                                        f'В кошельке: ']
-                        return random.choice(variations02) + str(base[accounts_data.index(q)].bank) + ' ' + \
+                        if base[accounts_data.index(q)].currency == 'тенге':
+                            return random.choice(variations3) + str(base[accounts_data.index(q)].bank) + ' тенге', {}
+                        return random.choice(variations3) + str(base[accounts_data.index(q)].bank) + ' ' + \
                                 norm_fr[0].make_agree_with_number(abs(base[accounts_data.index(q)].bank)).word, {}
             return random.choice(variations2) + other_frase, {}
     elif k['name'] == 0:
@@ -54,14 +57,13 @@ def information(general_frase, user_name, k):
                 for q in accounts_data:
                     if i in q.split():
                         norm_fr = morph.parse(base[accounts_data.index(q)].currency)
-                        variations12 = [f'Ваш баланс: ',
-                                        f'На балансе {q}: ',
-                                        f'В кошельке {q}: ',
-                                        f'В кошельке: ']
-                        return random.choice(variations12) + str(base[accounts_data.index(q)].bank) + ' ' + \
+                        if base[accounts_data.index(q)].currency == 'тенге':
+                            return random.choice(variations3) + str(base[accounts_data.index(q)].bank) + ' тенге', {}
+                        else:
+                            return random.choice(variations3) + str(base[accounts_data.index(q)].bank) + ' ' + \
                                norm_fr[0].make_agree_with_number(abs(base[accounts_data.index(q)].bank)).word, {}
 
                 return random.choice(variations2) + other_frase, {}
 
 
-#print(information('выведи баланс счёта 13', 'Test2', {}))
+#print(information('выведи баланс счета 12', 'Test2', {"name":0}))
