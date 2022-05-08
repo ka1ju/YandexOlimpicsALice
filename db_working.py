@@ -7,7 +7,7 @@ def to_db(db_table_file_name, db_class_name, names, texts, user_id=0, db_name="d
                       create_session(db_table_file_name, db_class_name, db_name)[1]
         db_string = Db()
         if type(names) == str:
-            print(f"WARNING database logs | для записи был передан элемент, содержащий одну колонну в базе данных")
+            logging.info(f"WARNING database logs | для записи был передан элемент, содержащий одну колонну в базе данных")
             exec(f"db_string.{names} = '{texts}'")
             logging.info(f"database logs | Запись {texts} в таблицу {db_class_name}, "
                   f"колонна {names}. База данных: {db_table_file_name}")
