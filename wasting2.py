@@ -1,6 +1,6 @@
 from skills.YandexOlympicsAlice.db_working import to_db, from_db, change_db
 import pymorphy2
-import skills.YandexOlympicsAlice.w2n
+from skills.YandexOlympicsAlice import w2n
 morph = pymorphy2.MorphAnalyzer()
 
 
