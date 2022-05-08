@@ -19,8 +19,6 @@ import logging
 import json
 from flask import Blueprint
 
-app = Flask(__name__)
-app.config['SECRET_KEY'] = 'ahh, sempai!'
 
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
