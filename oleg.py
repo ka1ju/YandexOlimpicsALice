@@ -32,7 +32,7 @@ def statistic(string, usr_name, k):
                 break
         if ac != '':
             yuy = from_db('accounts', 'Accounts', {'user_id': account_element_id, 'accounts': ac})[0]
-            d = {'развлечения': 0, 'продукты': 0, 'налоги': 0, 'магазины': 0, 'другое': 0}
+            d = {'развлечения': 0, 'продукты': 0, 'налоги': 0, 'магазины': 0, 'другое': 0, "пополнения": 0}
             spend_all = 0
             ok = from_db('waste', 'Waste', {'account_id': yuy.id})
             for i in ok:
@@ -52,7 +52,8 @@ def statistic(string, usr_name, k):
                    f'На продукты: {d["продукты"]}\n' \
                    f'На оплату налогов: {d["налоги"]}\n' \
                    f'В магазинах: {d["магазины"]}\n' \
-                   f'На другое: {d["другое"]}', {}
+                   f'На другое: {d["другое"]}\n' \
+                   f'Пополнения : {d["пополнения"]}', {}
         else:
             return 'Уточните, пожалуйста, с какого счета нужно вывести статистику.', {'flag': 'koshel'}
     else:
