@@ -9,14 +9,14 @@ morph = pymorphy2.MorphAnalyzer()
 def converter(text, k):
     try:
         sec_time = False
+        req = text.lower().split()
+        d = {'доллар': 'USD', 'доллара': 'USD', 'доллару': 'USD', 'долларом': 'USD', 'долларе': 'USD', 'доллары': 'USD',
+             'долларов': 'USD', 'долларам': 'USD', 'долларами': 'USD', 'долларах': 'USD', 'евро': 'EUR',
+             'рубль': 'RUB', 'рубля': 'RUB', 'рублю': 'RUB', 'рублём': 'RUB', 'рубле': 'RUB',
+             'рубли': 'RUB', 'рублей': 'RUB', 'рублям': 'RUB', 'рублями': 'RUB', 'рублях': 'RUB', "тенге": "KZT",
+             'юань': 'CNY', 'юаня': 'CNY', 'юаню': 'CNY', 'юанем': 'CNY', 'юане': 'CNY', 'юани': 'CNY',
+             'юаней': 'CNY', 'юаням': 'CNY', 'юанями': 'CNY', 'юанях': 'CNY'}
         if len(k) == 0:
-            req = text.lower().split()
-            d = {'доллар': 'USD', 'доллара': 'USD', 'доллару': 'USD', 'долларом': 'USD', 'долларе': 'USD', 'доллары': 'USD',
-                 'долларов': 'USD', 'долларам': 'USD', 'долларами': 'USD', 'долларах': 'USD', 'евро': 'EUR',
-                 'рубль': 'RUB', 'рубля': 'RUB', 'рублю': 'RUB', 'рублём': 'RUB', 'рубле': 'RUB',
-                 'рубли': 'RUB', 'рублей': 'RUB', 'рублям': 'RUB', 'рублями': 'RUB', 'рублях': 'RUB', "тенге": "KZT",
-                 'юань': 'CNY', 'юаня': 'CNY', 'юаню': 'CNY', 'юанем': 'CNY', 'юане': 'CNY', 'юани': 'CNY',
-                 'юаней': 'CNY', 'юаням': 'CNY', 'юанями': 'CNY', 'юанях': 'CNY'}
             lst = []
             for i in range(len(req)):
                 try:
@@ -75,7 +75,7 @@ def converter(text, k):
             if "f_v" in k.keys():
                 res.append(k["f_v"])
             else:
-                res.append(text)
+                res.append(d[text.lower()])
             if "summ" in k.keys():
                 res.append(k["summ"])
             else:
@@ -83,8 +83,7 @@ def converter(text, k):
             if "s_v" in k.keys():
                 res.append(k["s_v"])
             else:
-                res.append(text)
-            print(res)
+                res.append(d[text.lower()])
         if not sec_time and (len(res) > 0 and True not in [x.isdigit() for x in res]):
             return "Какую сумму я должен перевести?", {"f_v": res[0], "s_v": res[1]}
         elif not sec_time and (len(res) > 0 and res[0].isdigit()):
@@ -135,5 +134,6 @@ def converter(text, k):
             if int(str(float(r) % 100)[str(float(r) % 100).find(".") + 1:str(float(r) % 100).find(".") + 3].lstrip("0")) != 0:
                 ress += f' {str(float(r) % 100)[str(float(r) % 100).find(".") + 1:str(float(r) % 100).find(".") + 3].lstrip("0")} {lil_cur}'
             return f'{rand[x]}\n{res[1]} {w1} примерно {rav}{ress}', {}
-    except Exception:
+    except Exception as e:
+        print("ERROR converter", e)
         return "Увы :(\nМеня не научили переводить такое", {}
