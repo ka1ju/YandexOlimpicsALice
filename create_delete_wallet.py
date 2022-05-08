@@ -132,7 +132,7 @@ def create_wallet(req, user_ya_id, k=None):
                     res_s += ll[r - 1]
             return res_s.rstrip("\n"), {}
         else:
-            return "Не понял вас :(\nКак будет называться ваш кошелёк?", {"bnk": 0, "curr": "рубль",
+            return "Как будет называться ваш кошелёк?", {"bnk": 0, "curr": "рубль",
                                                                           "user_id": int(user_id)}
     elif len(k) > 0:
         req = req.lower()
