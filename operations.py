@@ -1,4 +1,4 @@
-from db_working import *
+from skills.YandexOlympicsAlice.db_working import *
 import datetime
 from datetime import timedelta
 import pymorphy2
