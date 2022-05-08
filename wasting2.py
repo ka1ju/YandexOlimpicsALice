@@ -124,8 +124,7 @@ def wasting(s, user_name, info):
         info['cate'] = []
         for o in range(min(len(N), len(x), len(t))):
             if x[o] == None or N[o] == None or t[o] == None:
-                if x[o] == None or N[o] == None:
-                    if x[o] == None and N[o] == None:
+                if x[o] == None and N[o] == None:
                     s_error += 'Извините, не совсем Вас понял.'
                 elif x[o] != None and N[o] == None:
                     s_error += 'Повторите пожалуйста, с какого счёта списать ' + str(x[o]) + '?'
@@ -167,3 +166,4 @@ def wasting(s, user_name, info):
         s = 'Извините, я вас не понял. Проверьте правильность называемых кошельков, категорий и сумм.'
         info = {}
     return s, info
+
