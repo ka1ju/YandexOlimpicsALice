@@ -89,142 +89,146 @@ def main():
 
 
 def handle_dialog(req, res):
-    user_id = req['session']['user']['access_token']
-    if 'request' in req:
-        user_message = req['request']['command'].lower()
+    try:
+        user_id = req['session']['user']['access_token']
+        if 'request' in req:
+            user_message = req['request']['command'].lower()
 
-        # Помощь
-        if "помо" in user_message or ("что" in user_message and "ты" in user_message and "умеешь" in user_message):
-            res['response']['text'] = helper(funcs_as_json)
-            res['session_state'] = req['state']['session']
-            for i in res['session_state']:
-                if i not in ['bye', "hello," "thanks"]:
-                    res['session_state'][i] = {}
-            logging.info("Helping")
+            # Помощь
+            if "помо" in user_message or ("что" in user_message and "ты" in user_message and "умеешь" in user_message):
+                res['response']['text'] = helper(funcs_as_json)
+                res['session_state'] = req['state']['session']
+                for i in res['session_state']:
+                    if i not in ['bye', "hello," "thanks"]:
+                        res['session_state'][i] = {}
+                logging.info("Helping")
+                return
+
+            # Отмена
+            if "отмен" in user_message:
+                res['response']['text'] = "Текущая операция отменена"
+                for i in res['session_state']:
+                    if i not in ['bye', "hello," "thanks"]:
+                        res['session_state'][i] = {}
+                logging.info("Cancelling")
+                return
+
+            # Авторизация
+            if req['session']['new'] and user_message == "":
+                res['response']['text'] = authorization(user_id, funcs_as_json)
+                logging.info("Authorising user")
+                return
+
+            # Вывод операций по счёту
+            if "операц" in user_message or req['state']['session']['operations'] != {}:
+                res['response']['text'], res['session_state']['operations'] = \
+                    operations(user_id, user_message, req['state']['session']['operations'])
+                logging.info("Giving operations")
+                return
+
+            # Создание кошелька
+            if (('созд' in user_message or 'откр' in user_message) and
+                ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message)) \
+                    or req['state']['session']['create_wallet'] != {}:
+                res['response']['text'], res['session_state']['create_wallet'] = \
+                    create_wallet(user_message, user_id, req['state']['session']['create_wallet'])
+                logging.info("Adding wallet")
+                return
+
+            # Удаление кошелька
+            if ('удал' in user_message or 'убр' in user_message or 'закр' in user_message) and \
+                    ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message) \
+                    or req['state']['session']['delete_wallet'] != {}:
+                res['response']['text'], res['session_state']['delete_wallet'] = \
+                    delete_wallet(user_message, user_id, req['state']['session']['delete_wallet'])
+                logging.info("Deleting wallet")
+                return
+
+            # Пополнение кошелька
+            if (('пополн' in user_message or 'зачисл' in user_message or "доб" in user_message or "полож" in user_message) and
+                ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message)) \
+                    or req['state']['session']['top_up_wallet'] != {}:
+                res['response']['text'], res['session_state']['top_up_wallet'] = \
+                    top_up_wallet(user_message, user_id, req['state']['session']['top_up_wallet'])
+                logging.info("Topping wallet up")
+                return
+
+            # Снятие денег или трата денег с кошелька
+            if ('трат' in user_message or 'сн' in user_message or "спи" in user_message) and \
+                    ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message) \
+                    or req['state']['session']['spend_money'] != {}:
+                res['response']['text'], res['session_state']['spend_money'] = \
+                    wasting(user_message, user_id, req['state']['session']['spend_money'])
+                logging.info("Spending money")
+                return
+
+            # Вывод информации о счёте
+            if ('балан' in user_message or 'инф' in user_message) and \
+                    ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message) \
+                    or req['state']['session']['wallet_info'] != {}:
+                res['response']['text'], res['session_state']['wallet_info'] = \
+                    information(user_message, user_id, req['state']['session']['wallet_info'])
+                logging.info("Giving info about wallet")
+                return
+
+            # Вывод статистики о счёте
+            if 'стат' in user_message or req['state']['session']['wallet_statistic'] != {}:
+                res['response']['text'], res['session_state']['wallet_statistic'] = \
+                    statistic(user_message, user_id, req['state']['session']['wallet_statistic'])
+                logging.info("Giving wallet statistic")
+                return
+
+            # Вывод всех кошельков
+            if ('выв' in user_message or 'дай' in user_message or 'ска' in user_message or "покаж" in user_message
+                or "показ" in user_message or "все" in user_message) and \
+                    ('кошел' in user_message or 'счет' in user_message):
+                res['response']['text'] = res['session_state']['all_wallets'] = return_wallets(user_id, req['state'])
+                logging.info("Giving all wallets")
+                return
+
+            # Конвертация валют
+            if 'конверт' in user_message or 'перев' in user_message or ("сколько" in user_message and "в" in user_message) \
+                    or req['state']['session']['transfer'] != {}:
+                res['response']['text'], res['session_state']['transfer'] = \
+                    converter(user_message, req['state']['session']['transfer'])
+                logging.info("Converting")
+                return
+
+            # Вывод всех трат
+            if ("сколько" in user_message or "выв" in user_message or "все" in user_message) and "трат" and "трат" in user_message:
+                res['response']['text'] = all_spends(user_id, user_message)
+                logging.info("All spends")
+                return
+
+            # Ответ на благодарность
+            if "спасибо" in user_message or "благодар" in user_message or "спс" in user_message:
+                res['response']['text'] = res['session_state']['thanks'] = thanks(req['state'])
+                logging.info("Saying 'Thanks'")
+                return
+
+            # Ответ на приветствие
+            if "привет" in user_message or "здорово" in user_message or "хай" in user_message:
+                res['response']['text'] = res['session_state']['hello'] = hello(req['session']['message_id'], req['state'])
+                logging.info("Saying 'Hello'")
+                return
+
+            # Ответ на прощание
+            if "до свидания" in user_message or "пока" in user_message or "прощай" in user_message:
+                res['response']['text'] = res['session_state']['bye'] = bye(req['state'])
+                logging.info("Saying 'Bye'")
+                return
+
+            res['response']['text'] = "Извините, я Вас не понял."
+            logging.info("Bot unknown question")
             return
-
-        # Отмена
-        if "отмен" in user_message:
-            res['response']['text'] = "Текущая операция отменена"
-            for i in res['session_state']:
-                if i not in ['bye', "hello," "thanks"]:
-                    res['session_state'][i] = {}
-            logging.info("Cancelling")
-            return
-
-        # Авторизация
-        if req['session']['new'] and user_message == "":
-            res['response']['text'] = authorization(user_id, funcs_as_json)
+        else:
+            print(req)
+            res['response']['text'] = authorization(req['session']['user']['access_token'], funcs_as_json)
             logging.info("Authorising user")
             return
-
-        # Вывод операций по счёту
-        if "операц" in user_message or req['state']['session']['operations'] != {}:
-            res['response']['text'], res['session_state']['operations'] = \
-                operations(user_id, user_message, req['state']['session']['operations'])
-            logging.info("Giving operations")
-            return
-
-        # Создание кошелька
-        if (('созд' in user_message or 'откр' in user_message) and
-            ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message)) \
-                or req['state']['session']['create_wallet'] != {}:
-            res['response']['text'], res['session_state']['create_wallet'] = \
-                create_wallet(user_message, user_id, req['state']['session']['create_wallet'])
-            logging.info("Adding wallet")
-            return
-
-        # Удаление кошелька
-        if ('удал' in user_message or 'убр' in user_message or 'закр' in user_message) and \
-                ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message) \
-                or req['state']['session']['delete_wallet'] != {}:
-            res['response']['text'], res['session_state']['delete_wallet'] = \
-                delete_wallet(user_message, user_id, req['state']['session']['delete_wallet'])
-            logging.info("Deleting wallet")
-            return
-
-        # Пополнение кошелька
-        if (('пополн' in user_message or 'зачисл' in user_message or "доб" in user_message or "полож" in user_message) and
-            ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message)) \
-                or req['state']['session']['top_up_wallet'] != {}:
-            res['response']['text'], res['session_state']['top_up_wallet'] = \
-                top_up_wallet(user_message, user_id, req['state']['session']['top_up_wallet'])
-            logging.info("Topping wallet up")
-            return
-
-        # Снятие денег или трата денег с кошелька
-        if ('трат' in user_message or 'сн' in user_message or "спи" in user_message) and \
-                ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message) \
-                or req['state']['session']['spend_money'] != {}:
-            res['response']['text'], res['session_state']['spend_money'] = \
-                wasting(user_message, user_id, req['state']['session']['spend_money'])
-            logging.info("Spending money")
-            return
-
-        # Вывод информации о счёте
-        if ('балан' in user_message or 'инф' in user_message) and \
-                ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message) \
-                or req['state']['session']['wallet_info'] != {}:
-            res['response']['text'], res['session_state']['wallet_info'] = \
-                information(user_message, user_id, req['state']['session']['wallet_info'])
-            logging.info("Giving info about wallet")
-            return
-
-        # Вывод статистики о счёте
-        if 'стат' in user_message or req['state']['session']['wallet_statistic'] != {}:
-            res['response']['text'], res['session_state']['wallet_statistic'] = \
-                statistic(user_message, user_id, req['state']['session']['wallet_statistic'])
-            logging.info("Giving wallet statistic")
-            return
-
-        # Вывод всех кошельков
-        if ('выв' in user_message or 'дай' in user_message or 'ска' in user_message or "покаж" in user_message
-            or "показ" in user_message or "все" in user_message) and \
-                ('кошел' in user_message or 'счет' in user_message):
-            res['response']['text'] = res['session_state']['all_wallets'] = return_wallets(user_id, req['state'])
-            logging.info("Giving all wallets")
-            return
-
-        # Конвертация валют
-        if 'конверт' in user_message or 'перев' in user_message or ("сколько" in user_message and "в" in user_message) \
-                or req['state']['session']['transfer'] != {}:
-            res['response']['text'], res['session_state']['transfer'] = \
-                converter(user_message, req['state']['session']['transfer'])
-            logging.info("Converting")
-            return
-
-        # Вывод всех трат
-        if ("сколько" in user_message or "выв" in user_message or "все" in user_message) and "трат" and "трат" in user_message:
-            res['response']['text'] = all_spends(user_id, user_message)
-            logging.info("All spends")
-            return
-
-        # Ответ на благодарность
-        if "спасибо" in user_message or "благодар" in user_message or "спс" in user_message:
-            res['response']['text'] = res['session_state']['thanks'] = thanks(req['state'])
-            logging.info("Saying 'Thanks'")
-            return
-
-        # Ответ на приветствие
-        if "привет" in user_message or "здорово" in user_message or "хай" in user_message:
-            res['response']['text'] = res['session_state']['hello'] = hello(req['session']['message_id'], req['state'])
-            logging.info("Saying 'Hello'")
-            return
-
-        # Ответ на прощание
-        if "до свидания" in user_message or "пока" in user_message or "прощай" in user_message:
-            res['response']['text'] = res['session_state']['bye'] = bye(req['state'])
-            logging.info("Saying 'Bye'")
-            return
-
-        res['response']['text'] = "Извините, я Вас не понял."
-        logging.info("Bot unknown question")
-        return
-    else:
-        print(req)
-        res['response']['text'] = authorization(req['session']['user']['access_token'], funcs_as_json)
-        logging.info("Authorising user")
-        return
+    exception:
+        res['response']['text'] = 'Простите, но вы не пользователь.'
+        return 
 
 
 @server_main.route('/getting', methods=['POST', 'GET'])
