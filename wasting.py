@@ -1,4 +1,4 @@
-from db_working import *
+from skills.YandexOlympicsAlice.db_working import *
 
 
 def wasting(s, user_name):
