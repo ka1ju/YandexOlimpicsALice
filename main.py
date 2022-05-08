@@ -19,7 +19,7 @@ import logging
 import json
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'ИДИ НАХУЙ'
+app.config['SECRET_KEY'] = 'ahh, sempai!'
 
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
@@ -100,6 +100,13 @@ def handle_dialog(req, res):
             logging.info("Authorising user")
             return
 
+        # Вывод операций по счёту
+        if "операции" in user_message or req['state']['session']['operations'] != {}:
+            res['response']['text'], res['session_state']['operations'] = \
+                operations(user_id, user_message, req['state']['session']['operations'])
+            logging.info("Giving operations")
+            return
+
         # Создание кошелька
         if (('созд' in user_message or 'откр' in user_message) and
             ('кошел' in user_message or 'счет' in user_message or 'счёт' in user_message)) \
@@ -172,13 +179,6 @@ def handle_dialog(req, res):
         if ("сколько" in user_message or "выв" in user_message or "все" in user_message) and "трат" and "трат" in user_message:
             res['response']['text'] = all_spends(user_id, user_message)
             logging.info("All spends")
-            return
-
-        # Вывод операций по счёту
-        if "операции" in user_message or req['state']['session']['operations'] != {}:
-            res['response']['text'], res['session_state']['operations'] = \
-                operations(user_id, user_message, req['state']['session']['operations'])
-            logging.info("Giving operations")
             return
 
         # Ответ на благодарность
