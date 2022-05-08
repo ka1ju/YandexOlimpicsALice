@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="закомментил тест">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/operations.py" beforeDir="false" afterPath="$PROJECT_DIR$/operations.py" afterDir="false" />
-    </list>
+    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="обновил функцию после ребута" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -330,13 +326,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00109" summary="...">
-      <created>1651491936263</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1651491936263</updated>
     </task>
     <task id="LOCAL-00110" summary="...">
       <created>1651495156026</created>
@@ -674,7 +663,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651912391851</updated>
     </task>
-    <option name="localTasksCounter" value="158" />
+    <task id="LOCAL-00158" summary="обновил функцию после ребута">
+      <created>1651920214307</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1651920214308</updated>
+    </task>
+    <option name="localTasksCounter" value="159" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -760,7 +756,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Поменял if на вывод информации о счёте" />
     <MESSAGE value="Поменял if на вывод статистики о счёте" />
     <MESSAGE value="почистил код" />
     <MESSAGE value="обновил json функций" />
@@ -785,7 +780,8 @@
     <MESSAGE value="..." />
     <MESSAGE value="доделал вывод операций" />
     <MESSAGE value="закомментил тест" />
-    <option name="LAST_COMMIT_MESSAGE" value="закомментил тест" />
+    <MESSAGE value="обновил функцию после ребута" />
+    <option name="LAST_COMMIT_MESSAGE" value="обновил функцию после ребута" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
