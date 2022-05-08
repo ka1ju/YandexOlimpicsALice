@@ -184,7 +184,6 @@ def handle_dialog(req, res):
         # Ответ на благодарность
         if "спасибо" in user_message or "благодар" in user_message or "спс" in user_message:
             res['response']['text'] = res['session_state']['thanks'] = thanks(req['state'])
-            res['response']['end_session'] = True
             logging.info("Saying 'Thanks'")
             return
 
@@ -197,7 +196,6 @@ def handle_dialog(req, res):
         # Ответ на прощание
         if "до свидания" in user_message or "пока" in user_message or "прощай" in user_message:
             res['response']['text'] = res['session_state']['bye'] = bye(req['state'])
-            res['response']['end_session'] = True
             logging.info("Saying 'Bye'")
             return
 

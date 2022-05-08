@@ -49,8 +49,7 @@ def operations(userName, userMessage, state):
                 walletId = i.id
                 break
         if type(walletId) == str:
-            return "Такого кошелька не существует, повторите название", \
-                   {"date": {"day": date.day, "month": date.month, "year": date.year}, "operationsList": operationsList}
+            return "Извините, такого кошелька не существует, отменяю операцию", {}
         currency = [i.currency for i in from_db("accounts", "Accounts", {"id": walletId})][0]
         for i in from_db("waste", "Waste"):
             d = i.date.split(".")

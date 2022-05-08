@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="обновил информацию в json-е про перевод валют">
+    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="обновил if для вывода всех кошельков">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
@@ -330,20 +330,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00116" summary="...">
-      <created>1651559628559</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1651559628559</updated>
-    </task>
-    <task id="LOCAL-00117" summary="...">
-      <created>1651585264614</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1651585264614</updated>
     </task>
     <task id="LOCAL-00118" summary="...">
       <created>1651601993504</created>
@@ -674,7 +660,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651992022853</updated>
     </task>
-    <option name="localTasksCounter" value="165" />
+    <task id="LOCAL-00165" summary="урал лишнее говно">
+      <created>1651992643127</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1651992643127</updated>
+    </task>
+    <task id="LOCAL-00166" summary="обновил if для вывода всех кошельков">
+      <created>1651992810916</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1651992810916</updated>
+    </task>
+    <option name="localTasksCounter" value="167" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -760,8 +760,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Теперь вроде точно должен работать" />
-    <MESSAGE value="пока что так" />
     <MESSAGE value="всё.теперь нет &quot;тенгов&quot;" />
     <MESSAGE value="восстановил всё что проебал" />
     <MESSAGE value="мне лень иди нахуй, все всё равно уже забили" />
@@ -785,7 +783,9 @@
     <MESSAGE value="обновил if для операций" />
     <MESSAGE value="..." />
     <MESSAGE value="обновил информацию в json-е про перевод валют" />
-    <option name="LAST_COMMIT_MESSAGE" value="обновил информацию в json-е про перевод валют" />
+    <MESSAGE value="урал лишнее говно" />
+    <MESSAGE value="обновил if для вывода всех кошельков" />
+    <option name="LAST_COMMIT_MESSAGE" value="обновил if для вывода всех кошельков" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
