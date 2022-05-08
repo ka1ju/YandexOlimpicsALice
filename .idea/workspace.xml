@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b567a095-15ac-45c7-aeba-b15122553d34" name="Changes" comment="Добавил норм склонение">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="b567a095-15ac-45c7-aeba-b15122553d34" name="Changes" comment="&gt;&gt;&gt;">
       <change beforePath="$PROJECT_DIR$/Info_Alise_3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Info_Alise_3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_working.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_working.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/test1.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -436,13 +429,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
     </task>
-    <task id="LOCAL-00073" summary="Обновил if в main для перевода валют">
-      <created>1651233593274</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1651233593274</updated>
-    </task>
     <task id="LOCAL-00074" summary="Добавил пояснения в код main">
       <created>1651235722316</created>
       <option name="number" value="00074" />
@@ -779,7 +765,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651932926628</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="&gt;&gt;&gt;">
+      <created>1651991987513</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1651991987513</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -875,7 +868,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Сделал рабочие стадии" />
     <MESSAGE value="Сделал рабочие стадии для удаления и создания кошельков" />
     <MESSAGE value="Сделал рабочую стадию для пополнения счёта" />
     <MESSAGE value="Обновил Федин файл" />
@@ -900,6 +892,7 @@
     <MESSAGE value="Обновился федин файл" />
     <MESSAGE value="..." />
     <MESSAGE value="Добавил норм склонение" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил норм склонение" />
+    <MESSAGE value="&gt;&gt;&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&gt;&gt;&gt;" />
   </component>
 </project>
