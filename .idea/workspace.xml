@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="Пофиксил говнище с выводом операций">
-      <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
+    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="обновил if для операций">
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/operations.py" beforeDir="false" afterPath="$PROJECT_DIR$/operations.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -330,20 +328,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00112" summary="Федин файл">
-      <created>1651497522652</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1651497522652</updated>
-    </task>
-    <task id="LOCAL-00113" summary="Пофиксил говно-if">
-      <created>1651498598469</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1651498598469</updated>
     </task>
     <task id="LOCAL-00114" summary="...">
       <created>1651498951619</created>
@@ -674,7 +658,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651991225962</updated>
     </task>
-    <option name="localTasksCounter" value="161" />
+    <task id="LOCAL-00161" summary="Пофиксил говнище с выводом операций окончательно">
+      <created>1651991639056</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1651991639056</updated>
+    </task>
+    <task id="LOCAL-00162" summary="обновил if для операций">
+      <created>1651991802710</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1651991802710</updated>
+    </task>
+    <option name="localTasksCounter" value="163" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -760,8 +758,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="почистил код" />
-    <MESSAGE value="обновил json функций" />
     <MESSAGE value="сделал так что при выводе кошельков тенге не меняется" />
     <MESSAGE value="Теперь вроде точно должен работать" />
     <MESSAGE value="пока что так" />
@@ -785,7 +781,9 @@
     <MESSAGE value="обновил функцию после ребута" />
     <MESSAGE value="..." />
     <MESSAGE value="Пофиксил говнище с выводом операций" />
-    <option name="LAST_COMMIT_MESSAGE" value="Пофиксил говнище с выводом операций" />
+    <MESSAGE value="Пофиксил говнище с выводом операций окончательно" />
+    <MESSAGE value="обновил if для операций" />
+    <option name="LAST_COMMIT_MESSAGE" value="обновил if для операций" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
