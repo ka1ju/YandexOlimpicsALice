@@ -70,18 +70,21 @@ def main():
             'operations': {}
         }
     }
-    if "session" in request.json['state']:
-        if 'bye' in request.json['state']['session']:
-            response['session_state']['bye'] = request.json['state']['session']['bye']
-        if 'hello' in request.json['state']['session']:
-            response['session_state']['hello'] = request.json['state']['session']['hello']
-        if 'thanks' in request.json['state']['session']:
-            response['session_state']['thanks'] = request.json['state']['session']['thanks']
-    if request.json['session']['new'] and "access_token" not in request.json['session']['user']:
-        return json.dumps({
-            "start_account_linking": {},
-            "version": "1.0"
-        })
+    try:
+        if "session" in request.json['state']:
+            if 'bye' in request.json['state']['session']:
+                response['session_state']['bye'] = request.json['state']['session']['bye']
+            if 'hello' in request.json['state']['session']:
+                response['session_state']['hello'] = request.json['state']['session']['hello']
+            if 'thanks' in request.json['state']['session']:
+                response['session_state']['thanks'] = request.json['state']['session']['thanks']
+        if request.json['session']['new'] and "access_token" not in request.json['session']['user']:
+            return json.dumps({
+                "start_account_linking": {},
+                "version": "1.0"
+            })
+    except:
+        response['response']['text'] = 'Простите, но вы не пользователь.'
 
     handle_dialog(request.json, response)
     logging.info(f'Response:  {response!r}')
