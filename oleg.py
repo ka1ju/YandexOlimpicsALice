@@ -47,7 +47,8 @@ def statistic(string, usr_name, k):
                     k = 1
                 if k == 1:
                     d[i.category] += i.count
-                    spend_all += i.count
+                    if i.category != 'пополнение':
+                        spend_all += i.count
             return f'В общем было потрачено: {spend_all}\nНа развлечения: {d["развлечения"]}\n' \
                    f'На продукты: {d["продукты"]}\n' \
                    f'На оплату налогов: {d["налоги"]}\n' \
