@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6dc0041-a7bf-46e1-beaf-5ccccc26d9ba" name="Changes" comment="очистил базу">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all_spends.py" beforeDir="false" afterPath="$PROJECT_DIR$/all_spends.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/operations.py" beforeDir="false" afterPath="$PROJECT_DIR$/operations.py" afterDir="false" />
-    </list>
+    <list default="true" id="f6dc0041-a7bf-46e1-beaf-5ccccc26d9ba" name="Changes" comment="убрал баги" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -330,13 +326,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00119" summary="Обновился федин файл">
-      <created>1651633335388</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1651633335388</updated>
     </task>
     <task id="LOCAL-00120" summary="...">
       <created>1651633705119</created>
@@ -674,7 +663,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652005303228</updated>
     </task>
-    <option name="localTasksCounter" value="168" />
+    <task id="LOCAL-00168" summary="убрал баги">
+      <created>1652008307166</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1652008307166</updated>
+    </task>
+    <option name="localTasksCounter" value="169" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -760,7 +756,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="восстановил всё что проебал" />
     <MESSAGE value="мне лень иди нахуй, все всё равно уже забили" />
     <MESSAGE value="мне лень иди нахуй, все всё равно уже забили номер 2" />
     <MESSAGE value="убрал логи werkzeug-а а также разделил логи каждого кола" />
@@ -785,7 +780,8 @@
     <MESSAGE value="урал лишнее говно" />
     <MESSAGE value="обновил if для вывода всех кошельков" />
     <MESSAGE value="очистил базу" />
-    <option name="LAST_COMMIT_MESSAGE" value="очистил базу" />
+    <MESSAGE value="убрал баги" />
+    <option name="LAST_COMMIT_MESSAGE" value="убрал баги" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
