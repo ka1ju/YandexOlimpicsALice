@@ -2,7 +2,6 @@ import json
 
 
 def out():
-    f = open('funcs.json', 'r', encoding='utf-8')
     x = {
   "Создание кошелька":
     "создает кошелёк",
