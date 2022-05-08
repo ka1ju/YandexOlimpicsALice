@@ -1,16 +1,16 @@
-from helper import *
-from thanks import *
-from hello import *
-from bye import *
-from oleg import *
-from all_wallets import *
-from create_delete_wallet import *
-from top_up_wallet import *
-from wasting2 import *
-from converter import *
-from Info_Alise_3 import *
-from all_spends import *
-from operations import *
+from skills.YandexOlympicsAlice.helper import *
+from skills.YandexOlympicsAlice.thanks import *
+from skills.YandexOlympicsAlice.hello import *
+from skills.YandexOlympicsAlice.bye import *
+from skills.YandexOlympicsAlice.oleg import *
+from skills.YandexOlympicsAlice.all_wallets import *
+from skills.YandexOlympicsAlice.create_delete_wallet import *
+from skills.YandexOlympicsAlice.top_up_wallet import *
+from skills.YandexOlympicsAlice.wasting2 import *
+from skills.YandexOlympicsAlice.converter import *
+from skills.YandexOlympicsAlice.Info_Alise_3 import *
+from skills.YandexOlympicsAlice.all_spends import *
+from skills.YandexOlympicsAlice.operations import *
 from flask import Flask, request, redirect, session
 from requests import post
 from urllib.parse import urlencode
@@ -248,7 +248,7 @@ def login():
     session['client_id'] = client_id
     session['scope'] = scope
     return flask.redirect(
-        f'https://oauth.yandex.ru/authorize?response_type=code&client_id=eb2919ba420a467d9f9d958096364a97&redirect_uri=https://501c-93-91-160-93.eu.ngrok.io/code_get')
+        f'https://oauth.yandex.ru/authorize?response_type=code&client_id=eb2919ba420a467d9f9d958096364a97&redirect_uri=https://alice-skills.ru/olympics/code_get')
 
 
 if __name__ == '__main__':
