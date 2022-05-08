@@ -66,11 +66,11 @@ def wasting(s, user_name, info):
         for o in range(min(len(N), len(x), len(t))):
             if x[o] == None or N[o] == None:
                 if x[o] == None and N[o] == None:
-                    s_error += 'Извините, не совсем Вас понял'
+                    s_error += 'Извините, не совсем Вас понял.'
                 elif x[o] != None and N[o] == None:
-                    s_error += 'Повторите пожалуйста, с какого счёта списать ' + str(x[o])
+                    s_error += 'Повторите пожалуйста, с какого счёта списать ' + str(x[o]) + '?'
                 elif x[o] == None and N[o] != None:
-                    s_error += 'Извините, сколько вы потратили со счёта ' + N[o]
+                    s_error += 'Извините, сколько вы потратили со счёта ' + N[o] + '?'
                 x1 = info['summ']
                 N1 = info['name']
                 t1 = info['cate']
@@ -97,7 +97,7 @@ def wasting(s, user_name, info):
                     to_db("waste", "Waste", ("account_id", "category", "count"), (id, t[o], int(x[o])))
                 cur1 = [i.currency for i in from_db('accounts', 'Accounts', {'user_id': user_id, 'accounts': N[o]})]
                 cur = cur1[0]
-                st = 'Успешно списано ' + str(x[o]) + ' ' + cur[0:3] + '.' + ' с кошелька ' + str(N[o]) + ' за ' + t[o]
+                st = 'Успешно списано ' + str(x[o]) + ' ' + cur[0:3] + '.' + ' с кошелька ' + str(N[o]) + ' за ' + t[o] + '.'
                 s += st
                 s += '  '
         s += s_error
@@ -126,11 +126,11 @@ def wasting(s, user_name, info):
             if x[o] == None or N[o] == None or t[o] == None:
                 if x[o] == None or N[o] == None:
                     if x[o] == None and N[o] == None:
-                        s_error += 'Извините, не совсем Вас понял'
-                    elif x[o] != None and N[o] == None:
-                        s_error += 'Повторите пожалуйста, с какого счёта списать ' + str(x[o])
-                    elif x[o] == None and N[o] != None:
-                        s_error += 'Извините, сколько вы потратили со счёта ' + N[o]
+                    s_error += 'Извините, не совсем Вас понял.'
+                elif x[o] != None and N[o] == None:
+                    s_error += 'Повторите пожалуйста, с какого счёта списать ' + str(x[o]) + '?'
+                elif x[o] == None and N[o] != None:
+                    s_error += 'Извините, сколько вы потратили со счёта ' + N[o] + '?'
                 x1 = info['summ']
                 N1 = info['name']
                 t1 = info['cate']
@@ -157,13 +157,13 @@ def wasting(s, user_name, info):
                     to_db("waste", "Waste", ("account_id", "category", "count"), (id, t[o], int(x[o])))
                 cur1 = [i.currency for i in from_db('accounts', 'Accounts', {'user_id': user_id, 'accounts': N[o]})]
                 cur = cur1[0]
-                st = 'Успешно списано ' + str(x[o]) + ' ' + cur[0:3] + '.' + ' с кошелька ' + str(N[o]) + ' за ' + t[o]
+                st = 'Успешно списано ' + str(x[o]) + ' ' + cur[0:3] + '.' + ' с кошелька ' + str(N[o]) + ' за ' + t[o] + '.'
                 s += st
                 s += '  '
         s += s_error
     if info['summ'] == [] and info['name'] == [] and info['cate'] == []:
         info = {}
     if old != {} and info == old:
-        s = 'Извините, я вас не понял. Проверьте правильность называемых кошельков, категорий и сумм'
+        s = 'Извините, я вас не понял. Проверьте правильность называемых кошельков, категорий и сумм.'
         info = {}
     return s, info
