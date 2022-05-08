@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="...">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="aaa9180f-48be-4af1-87f6-b4005f5fa7e8" name="Changes" comment="Пофиксил говнище с выводом операций">
       <change beforePath="$PROJECT_DIR$/db/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/operations.py" beforeDir="false" afterPath="$PROJECT_DIR$/operations.py" afterDir="false" />
@@ -331,13 +330,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650702408030</updated>
-    </task>
-    <task id="LOCAL-00111" summary="Добавил кусок проверки">
-      <created>1651496754804</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1651496754804</updated>
     </task>
     <task id="LOCAL-00112" summary="Федин файл">
       <created>1651497522652</created>
@@ -675,7 +667,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651989683326</updated>
     </task>
-    <option name="localTasksCounter" value="160" />
+    <task id="LOCAL-00160" summary="Пофиксил говнище с выводом операций">
+      <created>1651991225962</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1651991225962</updated>
+    </task>
+    <option name="localTasksCounter" value="161" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -761,7 +760,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Поменял if на вывод статистики о счёте" />
     <MESSAGE value="почистил код" />
     <MESSAGE value="обновил json функций" />
     <MESSAGE value="сделал так что при выводе кошельков тенге не меняется" />
@@ -786,7 +784,8 @@
     <MESSAGE value="закомментил тест" />
     <MESSAGE value="обновил функцию после ребута" />
     <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value="Пофиксил говнище с выводом операций" />
+    <option name="LAST_COMMIT_MESSAGE" value="Пофиксил говнище с выводом операций" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

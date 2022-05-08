@@ -34,7 +34,7 @@ def operations(userName, userMessage, state):
                             {'gent'}).word
                     else:
                         cur = currency
-                    if i.category == "":
+                    if i.category == "пополнение":
                         operationsList.append(f"Получено {i.count} {cur}")
                     else:
                         operationsList.append(f"Потрачено {i.count} {cur} на {i.category}")
@@ -61,7 +61,7 @@ def operations(userName, userMessage, state):
                             {'gent'}).word
                     else:
                         cur = currency
-                    if i.category == "":
+                    if i.category == "пополнение":
                         operationsList.append(f"Получено {i.count} {cur}")
                     else:
                         operationsList.append(f"Потрачено {i.count} {cur} на {i.category}")
