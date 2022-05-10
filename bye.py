@@ -2,6 +2,7 @@ import random
 
 
 def bye(prev):
+
     answers = ["До свидания", "Пока", "Увидимся", "До встречи", "Всего хорошего", "До скорой встречи"]
     if 'session' in prev:
         if 'bye' in prev['session']:
