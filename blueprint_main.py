@@ -88,7 +88,7 @@ def main():
                 response['response']['text'] = key(uyu, funcs_as_json)
                 return json.dumps(response)
     except:
-        response['response']['text'] = 'Простите, но вы не пользователь.'
+        response['response']['text'] = 'Простите, но вы не пользователь в мейне.'
 
     handle_dialog(request.json, response)
     if 'auto' in response:
