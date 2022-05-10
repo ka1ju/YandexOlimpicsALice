@@ -108,7 +108,7 @@ def handle_dialog(req, res):
 
             
             #Авторизация
-            if "авторризация" in user_message:
+            if "авторизация" in user_message:
                 res['auto'] = ''
                 return 
             
