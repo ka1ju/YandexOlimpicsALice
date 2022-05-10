@@ -240,8 +240,13 @@ def handle_dialog(req, res):
             logging.info("Bot unknown question")
             return
         else:
-            print(req)
-            res['response']['text'] = authorization(req['session']['user']['access_token'], funcs_as_json)
+            if ['access_token'] in request.json['session']['user']:
+                key = authorization
+                uyu = request.json['session']['user']['access_token']
+            else:
+                key = authorization1
+                uyu = request.json['user_id']
+            response['response']['text'] = key(uyu, funcs_as_json)
             logging.info("Authorising user")
             return
     except:
