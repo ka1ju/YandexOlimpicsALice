@@ -88,7 +88,7 @@ def main():
                 response['response']['text'] = key(uyu, funcs_as_json)
                 return json.dumps(response)
     except Exception as e:
-        response['response']['text'] = 'Простите, но вы не пользователь в мейне.' + e.__str__
+        response['response']['text'] = 'Простите, но вы не пользователь в мейне.' + e.__str__()
         return json.dumps(response)
 
     handle_dialog(request.json, response)
