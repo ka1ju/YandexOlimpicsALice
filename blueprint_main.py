@@ -36,8 +36,8 @@ funcs_as_json = {
     "уменьшает баланс выбранного кошелька, а также сохраняет названную операцию",
   "Вывод статистики счёта":
     "выводит статику выбранного кошелька за определённый период",
-  "Вывод баланса счёта":
-    "выводит баланс счёта",
+  "Вывод информации о счёте":
+    "выводит информацию о выбранном счёте",
   "Перевод валют": "переводит из одной валюты в другую (доступны: евро, рубль, доллар, тенге, юань)",
   "Отмена (возврат к началу диалога)": "отменяет текущую операцию (действие) проводимое ботом",
   "Вывод трат": "выводит траты за выбранный период (неделя, месяц - по умолчанию, год)"
@@ -78,41 +78,25 @@ def main():
                 response['session_state']['hello'] = request.json['state']['session']['hello']
             if 'thanks' in request.json['state']['session']:
                 response['session_state']['thanks'] = request.json['state']['session']['thanks']
-        if request.json['session']['new']:
-                if ['access_token'] in request.json['session']['user']:
-                    key = authorization
-                    uyu = request.json['session']['user']['access_token']
-                else:
-                    key = authorization1
-                    uyu = request.json["session"]['user_id']
-                response['response']['text'] = key(uyu, funcs_as_json)
-                return json.dumps(response)
-    except Exception as e:
-        response['response']['text'] = 'Простите, но вы не пользователь в мейне.' + e.__str__()
-        return json.dumps(response)
+        if request.json['session']['new'] and "access_token" not in request.json['session']['user']:
+            return json.dumps({
+                "start_account_linking": {},
+                "version": "1.0"
+            })
+    except:
+        response['response']['text'] = 'Простите, но вы не пользователь.'
 
     handle_dialog(request.json, response)
-    if 'auto' in response:
-        return json.dumps({"start_account_linking": {}, "version": "1.0"})
     logging.info(f'Response:  {response!r}')
     return json.dumps(response)
 
 
 def handle_dialog(req, res):
     try:
-        if ['access_token'] in req['session']['user']:
-            user_id = req['session']['user']['access_token']
-        else:
-            user_id = req["session"]['user_id']
+        user_id = req['session']['user']['access_token']
         if 'request' in req:
             user_message = req['request']['command'].lower()
 
-            
-            #Авторизация
-            if "авторизация" in user_message:
-                res['auto'] = ''
-                return 
-            
             # Помощь
             if "помо" in user_message or ("что" in user_message and "ты" in user_message and "умеешь" in user_message):
                 res['response']['text'] = helper(funcs_as_json)
@@ -241,13 +225,8 @@ def handle_dialog(req, res):
             logging.info("Bot unknown question")
             return
         else:
-            if ['access_token'] in request.json['session']['user']:
-                key = authorization
-                uyu = request.json['session']['user']['access_token']
-            else:
-                key = authorization1
-                uyu = request.json["session"]['user_id']
-            response['response']['text'] = key(uyu, funcs_as_json)
+            print(req)
+            res['response']['text'] = authorization(req['session']['user']['access_token'], funcs_as_json)
             logging.info("Authorising user")
             return
     except:
@@ -297,3 +276,4 @@ if __name__ == '__main__':
     app.run(port=6000)
 
 # cd C:\Users\Ярослав\OneDrive\Рабочий стол .\ngrok http 6000
+
