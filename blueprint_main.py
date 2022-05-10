@@ -87,8 +87,8 @@ def main():
                     uyu = request.json["session"]['user_id']
                 response['response']['text'] = key(uyu, funcs_as_json)
                 return json.dumps(response)
-    except:
-        response['response']['text'] = 'Простите, но вы не пользователь в мейне.'
+    except Exception as e:
+        response['response']['text'] = 'Простите, но вы не пользователь в мейне.' + e
         return json.dumps(response)
 
     handle_dialog(request.json, response)
