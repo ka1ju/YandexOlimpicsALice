@@ -70,26 +70,22 @@ def main():
             'operations': {}
         }
     }
-    try:
-        if "session" in request.json['state']:
-            if 'bye' in request.json['state']['session']:
-                response['session_state']['bye'] = request.json['state']['session']['bye']
-            if 'hello' in request.json['state']['session']:
-                response['session_state']['hello'] = request.json['state']['session']['hello']
-            if 'thanks' in request.json['state']['session']:
-                response['session_state']['thanks'] = request.json['state']['session']['thanks']
-        if request.json['session']['new']:
-                if ['access_token'] in request.json['session']['user']:
-                    key = authorization
-                    uyu = request.json['session']['user']['access_token']
-                else:
-                    key = authorization1
-                    uyu = request.json['user_id']
-                response['response']['text'] = key(uyu, funcs_as_json)
-                return json.dumps(response)
-    except:
-        response['response']['text'] = 'Простите, но вы не пользователь в мейне.'
-        return json.dumps(response)
+    if "session" in request.json['state']:
+        if 'bye' in request.json['state']['session']:
+            response['session_state']['bye'] = request.json['state']['session']['bye']
+        if 'hello' in request.json['state']['session']:
+            response['session_state']['hello'] = request.json['state']['session']['hello']
+        if 'thanks' in request.json['state']['session']:
+            response['session_state']['thanks'] = request.json['state']['session']['thanks']
+    if request.json['session']['new']:
+            if ['access_token'] in request.json['session']['user']:
+                key = authorization
+                uyu = request.json['session']['user']['access_token']
+            else:
+                key = authorization1
+                uyu = request.json['user_id']
+            response['response']['text'] = key(uyu, funcs_as_json)
+            return json.dumps(response)
 
     handle_dialog(request.json, response)
     if 'auto' in response:
