@@ -89,6 +89,7 @@ def main():
                 return json.dumps(response)
     except:
         response['response']['text'] = 'Простите, но вы не пользователь в мейне.'
+        return json.dumps(response)
 
     handle_dialog(request.json, response)
     if 'auto' in response:
