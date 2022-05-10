@@ -78,25 +78,40 @@ def main():
                 response['session_state']['hello'] = request.json['state']['session']['hello']
             if 'thanks' in request.json['state']['session']:
                 response['session_state']['thanks'] = request.json['state']['session']['thanks']
-        if request.json['session']['new'] and "access_token" not in request.json['session']['user']:
-            return json.dumps({
-                "start_account_linking": {},
-                "version": "1.0"
-            })
+        if request.json['session']['new']:
+                if ['access_token'] in request.json['session']['user']:
+                    key = authorization
+                    uyu = request.json['session']['user']['access_token']
+                else:
+                    key = authorization1
+                    uyu = request.json['user_id']
+                response['response']['text'] = key(uyu, funcs_as_json)
+                return json.dumps(response)
     except:
         response['response']['text'] = 'Простите, но вы не пользователь.'
 
     handle_dialog(request.json, response)
+    if 'auto' in response:
+        return json.dumps({"start_account_linking": {}, "version": "1.0"})
     logging.info(f'Response:  {response!r}')
     return json.dumps(response)
 
 
 def handle_dialog(req, res):
     try:
-        user_id = req['session']['user']['access_token']
+        if ['access_token'] in req['session']['user']:
+            user_id = req['session']['user']['access_token']
+        else:
+            user_id = req['user_id']
         if 'request' in req:
             user_message = req['request']['command'].lower()
 
+            
+            #Авторизация
+            if "авторризация" in user_message
+                res['auto'] = ''
+                return 
+            
             # Помощь
             if "помо" in user_message or ("что" in user_message and "ты" in user_message and "умеешь" in user_message):
                 res['response']['text'] = helper(funcs_as_json)
