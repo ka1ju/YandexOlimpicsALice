@@ -5,6 +5,7 @@ morph = pymorphy2.MorphAnalyzer()
 
 
 def wasting(s, user_name, info):
+    s = s.replase('списание', 'спиши')
     old = info
     req = s.split()
     for i in range(len(req)):
