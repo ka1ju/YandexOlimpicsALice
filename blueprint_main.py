@@ -98,7 +98,16 @@ def handle_dialog(req, res):
             user_message = req['request']['command'].lower()
 
             # Помощь
-            if "помо" in user_message or ("что" in user_message and "ты" in user_message and "умеешь" in user_message):
+            if "что" in user_message and "ты" in user_message and "умеешь" in user_message:
+                res['response']['text'] = 'Вот краткий список того, что я умею: создание или удаление кошелька, пополнение кошелька, списание с кошелька, вывод статистики или баланса счета, конвертация валют, вывод операций с кошелька.'
+                res['session_state'] = req['state']['session']
+                for i in res['session_state']:
+                    if i not in ['bye', "hello," "thanks"]:
+                        res['session_state'][i] = {}
+                logging.info("Helping")
+                return
+            
+            if 'пом' in user_message:
                 res['response']['text'] = helper(funcs_as_json)
                 res['session_state'] = req['state']['session']
                 for i in res['session_state']:
@@ -106,6 +115,7 @@ def handle_dialog(req, res):
                         res['session_state'][i] = {}
                 logging.info("Helping")
                 return
+            
 
             # Отмена
             if "отмен" in user_message:
